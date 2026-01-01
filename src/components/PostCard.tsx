@@ -2,7 +2,7 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import type { PostMeta } from "@/lib/blog";
+import { CATEGORIES, type PostMeta } from "@/lib/types";
 
 interface PostCardProps {
   post: PostMeta;
@@ -10,6 +10,8 @@ interface PostCardProps {
 }
 
 export function PostCard({ post, featured = false }: PostCardProps) {
+  const category = CATEGORIES[post.category];
+
   return (
     <Link href={`/posts/${post.slug}`}>
       <Card className={`card-hover group border-border/50 bg-card/50 backdrop-blur-sm overflow-hidden ${featured ? 'md:col-span-2' : ''}`}>
@@ -21,20 +23,23 @@ export function PostCard({ post, featured = false }: PostCardProps) {
               className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+            {/* Category badge on image */}
+            <div className="absolute top-4 left-4">
+              <Badge className="bg-background/80 backdrop-blur-sm text-foreground hover:bg-background/90 border-0">
+                <span className="mr-1.5">{category.icon}</span>
+                {category.name}
+              </Badge>
+            </div>
           </div>
         )}
         <CardContent className={`${post.coverImage ? 'pt-4' : 'pt-6'} pb-6`}>
-          <div className="flex flex-wrap gap-2 mb-3">
-            {post.tags.slice(0, 3).map((tag) => (
-              <Badge
-                key={tag}
-                variant="secondary"
-                className="text-xs font-medium bg-secondary/80 hover:bg-primary/20 hover:text-primary transition-colors"
-              >
-                {tag}
-              </Badge>
-            ))}
-          </div>
+          {/* Category badge when no cover image */}
+          {!post.coverImage && (
+            <Badge className="mb-3 bg-secondary/80 text-secondary-foreground hover:bg-secondary border-0">
+              <span className="mr-1.5">{category.icon}</span>
+              {category.name}
+            </Badge>
+          )}
 
           <h2 className={`font-semibold tracking-tight mb-2 group-hover:text-primary transition-colors ${featured ? 'text-2xl md:text-3xl' : 'text-xl'}`}>
             {post.title}

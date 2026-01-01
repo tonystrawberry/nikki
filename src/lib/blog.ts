@@ -3,21 +3,10 @@ import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
 import html from 'remark-html';
+import { CATEGORIES, type Category, type PostMeta, type Post } from './types';
 
-export interface PostMeta {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt: string;
-  author: string;
-  tags: string[];
-  coverImage?: string;
-  readingTime: string;
-}
-
-export interface Post extends PostMeta {
-  content: string;
-}
+// Re-export types and constants for convenience
+export { CATEGORIES, type Category, type PostMeta, type Post };
 
 const postsDirectory = path.join(process.cwd(), 'posts');
 
@@ -49,6 +38,7 @@ export function getAllPosts(): PostMeta[] {
         date: data.date || new Date().toISOString(),
         excerpt: data.excerpt || '',
         author: data.author || 'Anonymous',
+        category: (data.category as Category) || 'life',
         tags: data.tags || [],
         coverImage: data.coverImage,
         readingTime: calculateReadingTime(content),
@@ -92,11 +82,21 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
     date: data.date || new Date().toISOString(),
     excerpt: data.excerpt || '',
     author: data.author || 'Anonymous',
+    category: (data.category as Category) || 'life',
     tags: data.tags || [],
     coverImage: data.coverImage,
     readingTime: calculateReadingTime(content),
     content: contentHtml,
   };
+}
+
+export function getAllCategories(): Category[] {
+  return Object.keys(CATEGORIES) as Category[];
+}
+
+export function getPostsByCategory(category: Category): PostMeta[] {
+  const posts = getAllPosts();
+  return posts.filter((post) => post.category === category);
 }
 
 export function getAllTags(): string[] {

@@ -1,10 +1,8 @@
-import { getAllPosts, getAllTags } from "@/lib/blog";
-import { PostCard } from "@/components/PostCard";
-import { Badge } from "@/components/ui/badge";
+import { getAllPosts } from "@/lib/blog";
+import { PostList } from "@/components/PostList";
 
 export default function Home() {
   const posts = getAllPosts();
-  const tags = getAllTags();
 
   return (
     <div className="mx-auto max-w-4xl px-6 py-16">
@@ -20,50 +18,8 @@ export default function Home() {
         </p>
       </section>
 
-      {/* Tags Section */}
-      <section className="mb-12 opacity-0 animate-fade-in-up animation-delay-100">
-        <div className="flex flex-wrap gap-2">
-          <Badge
-            variant="outline"
-            className="border-primary/50 text-primary hover:bg-primary/10 cursor-pointer"
-          >
-            All Posts
-          </Badge>
-          {tags.map((tag) => (
-            <Badge
-              key={tag}
-              variant="outline"
-              className="border-border hover:border-primary/50 hover:text-primary cursor-pointer transition-colors"
-            >
-              {tag}
-            </Badge>
-          ))}
-        </div>
-      </section>
-
-      {/* Posts Grid */}
-      <section>
-        {posts.length === 0 ? (
-          <div className="text-center py-16">
-            <p className="text-muted-foreground">No posts yet. Check back soon!</p>
-          </div>
-        ) : (
-          <div className="grid gap-6 md:grid-cols-2">
-            {posts.map((post, index) => (
-              <div
-                key={post.slug}
-                className={`opacity-0 animate-fade-in-up ${
-                  index === 0 ? 'animation-delay-200 md:col-span-2' :
-                  index === 1 ? 'animation-delay-300' :
-                  index === 2 ? 'animation-delay-400' : 'animation-delay-500'
-                }`}
-              >
-                <PostCard post={post} featured={index === 0} />
-              </div>
-            ))}
-          </div>
-        )}
-      </section>
+      {/* Posts with Category Filter */}
+      <PostList posts={posts} />
 
       {/* Newsletter Section */}
       <section className="mt-20 p-8 rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm opacity-0 animate-fade-in-up animation-delay-500">

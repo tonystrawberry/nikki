@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { format } from "date-fns";
 import { getAllPostSlugs, getPostBySlug } from "@/lib/blog";
+import { CATEGORIES } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -37,6 +38,8 @@ export default async function PostPage({ params }: PageProps) {
     notFound();
   }
 
+  const category = CATEGORIES[post.category];
+
   return (
     <article className="mx-auto max-w-3xl px-6 py-16">
       {/* Back Button */}
@@ -63,17 +66,11 @@ export default async function PostPage({ params }: PageProps) {
 
       {/* Header */}
       <header className="mb-12 opacity-0 animate-fade-in-up animation-delay-100">
-        <div className="flex flex-wrap gap-2 mb-4">
-          {post.tags.map((tag) => (
-            <Badge
-              key={tag}
-              variant="secondary"
-              className="bg-secondary/80"
-            >
-              {tag}
-            </Badge>
-          ))}
-        </div>
+        {/* Category */}
+        <Badge className="mb-4 bg-secondary/80 text-secondary-foreground hover:bg-secondary border-0">
+          <span className="mr-1.5">{category.icon}</span>
+          {category.name}
+        </Badge>
 
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
           {post.title}
@@ -90,6 +87,21 @@ export default async function PostPage({ params }: PageProps) {
             </div>
           </div>
         </div>
+
+        {/* Tags */}
+        {post.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-6">
+            {post.tags.map((tag) => (
+              <Badge
+                key={tag}
+                variant="outline"
+                className="text-xs border-border/50 text-muted-foreground"
+              >
+                #{tag}
+              </Badge>
+            ))}
+          </div>
+        )}
       </header>
 
       {/* Cover Image */}

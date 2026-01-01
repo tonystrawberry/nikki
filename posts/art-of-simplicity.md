@@ -3,6 +3,7 @@ title: "The Art of Simplicity in Software Design"
 date: "2025-12-20"
 excerpt: "Why the best software is often the simplest, and how to cultivate a mindset of elegant minimalism in your code and architecture."
 author: "Tony Duong"
+category: "tech"
 tags: ["software-design", "philosophy", "clean-code"]
 coverImage: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&h=630&fit=crop"
 ---

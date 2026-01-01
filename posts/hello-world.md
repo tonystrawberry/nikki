@@ -3,6 +3,7 @@ title: "Hello World: A New Beginning"
 date: "2026-01-01"
 excerpt: "Welcome to my blog! This is the first post where I share my thoughts on writing, technology, and the journey of building in public."
 author: "Tony Duong"
+category: "life"
 tags: ["introduction", "personal", "blogging"]
 coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&h=630&fit=crop"
 ---

@@ -3,6 +3,7 @@ title: "Building Modern Web Apps with Next.js 15"
 date: "2025-12-28"
 excerpt: "An exploration of Next.js 15's powerful features including the App Router, Server Components, and streaming SSR that make building web applications a joy."
 author: "Tony Duong"
+category: "tech"
 tags: ["nextjs", "react", "web-development", "tutorial"]
 coverImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=630&fit=crop"
 ---
