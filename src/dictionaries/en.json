@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "posts": "Journal",
+    "about": "About me",
+    "subscribe": "Subscribe"
+  },
+  "home": {
+    "welcome": "Welcome to my",
+    "tagline": "My digital diary. A personal space where I share my thoughts, experiences, and reflections on life.",
+    "browseByCategory": "Browse by theme",
+    "latestPosts": "Latest entries",
+    "allPosts": "All entries",
+    "posts": "entries",
+    "post": "entry",
+    "noPosts": "No entries yet. The diary starts soon!",
+    "noPostsInCategory": "No entries in this category yet.",
+    "stayUpdated": "Follow my diary",
+    "stayUpdatedDesc": "Get notified when I publish a new entry.",
+    "emailPlaceholder": "your@email.com"
+  },
+  "activity": {
+    "writingActivity": "Writing days",
+    "less": "Less",
+    "more": "More",
+    "postsCount": "entries",
+    "postCount": "entry"
+  },
+  "post": {
+    "backToPosts": "Back to diary",
+    "writtenBy": "By",
+    "viewAllPosts": "← Back to diary",
+    "minRead": "min"
+  },
+  "about": {
+    "title": "About me",
+    "subtitle": "A few words about the person behind this diary.",
+    "aboutMe": "About me",
+    "techStack": "My tools",
+    "notCoding": "Outside of work",
+    "journey": "My journey",
+    "connect": "Get in touch",
+    "thanks": "Thanks for visiting! 🙏",
+    "readPosts": "Read my diary →"
+  },
+  "footer": {
+    "tagline": "A digital diary. Thoughts, experiences, and reflections.",
+    "rights": "All rights reserved."
+  },
+  "categories": {
+    "all": "All",
+    "reflections": "Reflections",
+    "experiences": "Experiences",
+    "culture": "Culture",
+    "work": "Work",
+    "tech": "Tech",
+    "daily": "Daily"
+  },
+  "filter": {
+    "showingPostsFrom": "Entries from",
+    "postsFound": "entries",
+    "postFound": "entry",
+    "clearFilter": "Clear ✕",
+    "noPostsOnDay": "No entry on this day.",
+    "viewAllPosts": "View all entries"
+  }
+}
+

@@ -1,10 +1,11 @@
-// Define available categories
+// Define available categories for the personal diary
 export const CATEGORIES = {
-  tech: { name: 'Tech', icon: '💻', description: 'Technology, programming, and digital tools' },
-  society: { name: 'Society', icon: '🌍', description: 'Culture, trends, and social observations' },
-  hobbies: { name: 'Hobbies', icon: '🎨', description: 'Creative pursuits and personal interests' },
-  life: { name: 'Life', icon: '✨', description: 'Personal growth and life lessons' },
-  books: { name: 'Books', icon: '📚', description: 'Reading notes and book reviews' },
+  reflections: { name: 'Reflections', icon: '💭', description: 'Thoughts on life, philosophy, and personal growth' },
+  experiences: { name: 'Experiences', icon: '🌟', description: 'Memories, travels, and life moments' },
+  culture: { name: 'Culture', icon: '🎬', description: 'Movies, music, books, and art' },
+  work: { name: 'Work', icon: '💼', description: 'Career, projects, and professional life' },
+  tech: { name: 'Tech', icon: '💻', description: 'Technology, coding, and digital tools' },
+  daily: { name: 'Daily', icon: '📝', description: 'Everyday life and random thoughts' },
 } as const;
 
 export type Category = keyof typeof CATEGORIES;

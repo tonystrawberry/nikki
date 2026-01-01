@@ -1,4 +1,4 @@
-# sekai — A Next.js Blog
+# nikki — A Next.js Blog
 
 A beautiful, minimal blog built with Next.js 15, gray-matter, and shadcn/ui components.
 

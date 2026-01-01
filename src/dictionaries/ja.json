@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "posts": "日記",
+    "about": "私について",
+    "subscribe": "購読"
+  },
+  "home": {
+    "welcome": "ようこそ、私の",
+    "tagline": "私のデジタル日記。思考、経験、人生についての考えを共有する個人的な空間。",
+    "browseByCategory": "テーマで探す",
+    "latestPosts": "最新の日記",
+    "allPosts": "すべての日記",
+    "posts": "件",
+    "post": "件",
+    "noPosts": "まだ日記がありません。もうすぐ始まります！",
+    "noPostsInCategory": "このカテゴリーにはまだ日記がありません。",
+    "stayUpdated": "日記をフォロー",
+    "stayUpdatedDesc": "新しい日記を公開したらお知らせします。",
+    "emailPlaceholder": "your@email.com"
+  },
+  "activity": {
+    "writingActivity": "執筆日",
+    "less": "少",
+    "more": "多",
+    "postsCount": "件",
+    "postCount": "件"
+  },
+  "post": {
+    "backToPosts": "日記に戻る",
+    "writtenBy": "著者：",
+    "viewAllPosts": "← 日記に戻る",
+    "minRead": "分"
+  },
+  "about": {
+    "title": "私について",
+    "subtitle": "この日記を書いている人について。",
+    "aboutMe": "自己紹介",
+    "techStack": "使っているツール",
+    "notCoding": "仕事以外の時間",
+    "journey": "これまでの歩み",
+    "connect": "連絡先",
+    "thanks": "ご訪問ありがとうございます！🙏",
+    "readPosts": "日記を読む →"
+  },
+  "footer": {
+    "tagline": "デジタル日記。思考、経験、そして人生についての考え。",
+    "rights": "無断転載禁止。"
+  },
+  "categories": {
+    "all": "すべて",
+    "reflections": "考え",
+    "experiences": "体験",
+    "culture": "文化",
+    "work": "仕事",
+    "tech": "テック",
+    "daily": "日常"
+  },
+  "filter": {
+    "showingPostsFrom": "表示中：",
+    "postsFound": "件",
+    "postFound": "件",
+    "clearFilter": "解除 ✕",
+    "noPostsOnDay": "この日の日記はありません。",
+    "viewAllPosts": "すべての日記を見る"
+  }
+}
+

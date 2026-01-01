@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "posts": "Journal",
+    "about": "Qui suis-je",
+    "subscribe": "S'abonner"
+  },
+  "home": {
+    "welcome": "Bienvenue dans mon",
+    "tagline": "Mon journal intime numérique. Un espace personnel où je partage mes réflexions, mes expériences et ma vision de la vie.",
+    "browseByCategory": "Explorer par thème",
+    "latestPosts": "Dernières entrées",
+    "allPosts": "Toutes les entrées",
+    "posts": "entrées",
+    "post": "entrée",
+    "noPosts": "Pas encore d'entrées. Le journal commence bientôt !",
+    "noPostsInCategory": "Pas encore d'entrées dans cette catégorie.",
+    "stayUpdated": "Suivre mon journal",
+    "stayUpdatedDesc": "Recevez une notification quand je publie une nouvelle entrée.",
+    "emailPlaceholder": "votre@email.com"
+  },
+  "activity": {
+    "writingActivity": "Jours d'écriture",
+    "less": "Moins",
+    "more": "Plus",
+    "postsCount": "entrées",
+    "postCount": "entrée"
+  },
+  "post": {
+    "backToPosts": "Retour au journal",
+    "writtenBy": "Par",
+    "viewAllPosts": "← Retour au journal",
+    "minRead": "min"
+  },
+  "about": {
+    "title": "Qui suis-je",
+    "subtitle": "Quelques mots sur la personne derrière ce journal.",
+    "aboutMe": "À propos de moi",
+    "techStack": "Mes outils",
+    "notCoding": "En dehors du travail",
+    "journey": "Mon parcours",
+    "connect": "Me contacter",
+    "thanks": "Merci de ta visite ! 🙏",
+    "readPosts": "Lire mon journal →"
+  },
+  "footer": {
+    "tagline": "Un journal intime numérique. Pensées, expériences et réflexions.",
+    "rights": "Tous droits réservés."
+  },
+  "categories": {
+    "all": "Tout",
+    "reflections": "Réflexions",
+    "experiences": "Expériences",
+    "culture": "Culture",
+    "work": "Travail",
+    "tech": "Tech",
+    "daily": "Quotidien"
+  },
+  "filter": {
+    "showingPostsFrom": "Entrées du",
+    "postsFound": "entrées",
+    "postFound": "entrée",
+    "clearFilter": "Effacer ✕",
+    "noPostsOnDay": "Pas d'entrée ce jour.",
+    "viewAllPosts": "Voir tout le journal"
+  }
+}
+

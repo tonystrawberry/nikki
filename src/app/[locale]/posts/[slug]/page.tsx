@@ -1,50 +1,80 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { format } from "date-fns";
-import { getAllPostSlugs, getPostBySlug } from "@/lib/blog";
+import { fr, enUS, ja } from "date-fns/locale";
+import { getAllPostSlugs, getPostBySlugWithFallback, getPostAvailableLocales } from "@/lib/blog";
 import { CATEGORIES } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { type Locale, locales, hasLocale, getDictionary, localeFlags, localeNames } from "@/lib/i18n";
 
 interface PageProps {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 }
 
+const dateLocales = {
+  fr: fr,
+  en: enUS,
+  ja: ja,
+};
+
 export async function generateStaticParams() {
-  const slugs = getAllPostSlugs();
-  return slugs.map((slug) => ({ slug }));
+  const frenchSlugs = getAllPostSlugs('fr');
+  const params: { slug: string; locale: string }[] = [];
+  
+  for (const slug of frenchSlugs) {
+    for (const locale of locales) {
+      params.push({ slug, locale });
+    }
+  }
+  
+  return params;
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const { slug, locale } = await params;
+  
+  if (!hasLocale(locale)) {
+    return { title: "Not Found" };
+  }
+  
+  const result = await getPostBySlugWithFallback(slug, locale);
 
-  if (!post) {
+  if (!result) {
     return { title: "Post Not Found" };
   }
 
   return {
-    title: `${post.title} | sekai`,
-    description: post.excerpt,
+    title: `${result.post.title} | nikki`,
+    description: result.post.excerpt,
   };
 }
 
 export default async function PostPage({ params }: PageProps) {
-  const { slug } = await params;
-  const post = await getPostBySlug(slug);
+  const { slug, locale } = await params;
+  
+  if (!hasLocale(locale)) {
+    notFound();
+  }
+  
+  const result = await getPostBySlugWithFallback(slug, locale);
+  const dict = await getDictionary(locale);
 
-  if (!post) {
+  if (!result) {
     notFound();
   }
 
+  const { post, actualLocale } = result;
+  const isShowingFallback = actualLocale !== locale;
   const category = CATEGORIES[post.category];
+  const availableLocales = getPostAvailableLocales(slug);
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-16">
       {/* Back Button */}
       <div className="mb-8 opacity-0 animate-fade-in-up">
-        <Link href="/">
+        <Link href={`/${locale}`}>
           <Button variant="ghost" className="gap-2 text-muted-foreground hover:text-foreground -ml-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -57,19 +87,46 @@ export default async function PostPage({ params }: PageProps) {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="m15 18-6-6 6-6"/>
+              <path d="m15 18-6-6 6-6" />
             </svg>
-            Back to posts
+            {dict.post.backToPosts}
           </Button>
         </Link>
       </div>
+
+      {/* Fallback Language Notice */}
+      {isShowingFallback && (
+        <div className="mb-8 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 opacity-0 animate-fade-in-up">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">{localeFlags[actualLocale]}</span>
+            <div>
+              <p className="font-medium text-amber-200">
+                {locale === 'en' 
+                  ? 'This article is not yet available in English'
+                  : locale === 'ja'
+                  ? 'この記事はまだ日本語では利用できません'
+                  : "Cet article n'est pas encore disponible en français"
+                }
+              </p>
+              <p className="text-sm text-amber-200/70">
+                {locale === 'en'
+                  ? `Showing the ${localeNames[actualLocale]} version`
+                  : locale === 'ja'
+                  ? `${localeNames[actualLocale]}版を表示しています`
+                  : `Affichage de la version ${localeNames[actualLocale]}`
+                }
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Header */}
       <header className="mb-12 opacity-0 animate-fade-in-up animation-delay-100">
         {/* Category */}
         <Badge className="mb-4 bg-secondary/80 text-secondary-foreground hover:bg-secondary border-0">
           <span className="mr-1.5">{category.icon}</span>
-          {category.name}
+          {dict.categories[post.category as keyof typeof dict.categories]}
         </Badge>
 
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
@@ -82,11 +139,32 @@ export default async function PostPage({ params }: PageProps) {
             <div>
               <p className="font-medium text-foreground">{post.author}</p>
               <p className="text-sm">
-                {format(new Date(post.date), "MMMM d, yyyy")} · {post.readingTime}
+                {format(new Date(post.date), "MMMM d, yyyy", { locale: dateLocales[actualLocale] })} · {post.readingTime} {dict.post.minRead}
               </p>
             </div>
           </div>
         </div>
+
+        {/* Available translations */}
+        {availableLocales.length > 1 && (
+          <div className="flex items-center gap-2 mt-4">
+            <span className="text-sm text-muted-foreground">
+              {locale === 'fr' ? 'Aussi disponible en' : locale === 'ja' ? '他の言語' : 'Also available in'}:
+            </span>
+            {availableLocales
+              .filter((l) => l !== locale && l !== actualLocale)
+              .map((l) => (
+                <Link
+                  key={l}
+                  href={`/${l}/posts/${slug}`}
+                  className="text-lg hover:scale-110 transition-transform"
+                  title={localeNames[l]}
+                >
+                  {localeFlags[l]}
+                </Link>
+              ))}
+          </div>
+        )}
 
         {/* Tags */}
         {post.tags.length > 0 && (
@@ -128,9 +206,9 @@ export default async function PostPage({ params }: PageProps) {
         <div className="flex items-start gap-4">
           <div className="h-16 w-16 rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0" />
           <div>
-            <h3 className="font-semibold text-lg mb-1">Written by {post.author}</h3>
+            <h3 className="font-semibold text-lg mb-1">{dict.post.writtenBy} {post.author}</h3>
             <p className="text-muted-foreground mb-3">
-              Building things on the internet. Writing about technology, design, and the journey of creation.
+              {dict.footer.tagline}
             </p>
             <div className="flex gap-3">
               <a
@@ -156,9 +234,9 @@ export default async function PostPage({ params }: PageProps) {
 
       {/* Back to Posts */}
       <div className="mt-12 text-center opacity-0 animate-fade-in-up animation-delay-500">
-        <Link href="/">
+        <Link href={`/${locale}`}>
           <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground">
-            ← View all posts
+            {dict.post.viewAllPosts}
           </Button>
         </Link>
       </div>

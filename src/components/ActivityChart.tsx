@@ -2,19 +2,29 @@
 
 import { useState, useMemo, useRef, useEffect } from "react";
 import { format, startOfWeek, endOfWeek, addDays, isSameDay, parseISO, subYears, addYears, getYear, differenceInWeeks } from "date-fns";
+import { fr, enUS, ja } from "date-fns/locale";
 import { Button } from "@/components/ui/button";
 import type { PostMeta } from "@/lib/types";
+import { type Locale, type Dictionary } from "@/lib/i18n-config";
 
 interface ActivityChartProps {
   posts: PostMeta[];
-  onDateSelect: (date: Date | null, posts: PostMeta[]) => void;
+  onDateSelect: (date: Date | null) => void;
+  locale: Locale;
+  dict: Dictionary;
 }
 
 const DAYS_IN_WEEK = 7;
 const DAY_LABEL_WIDTH = 28;
 const GAP = 3;
 
-export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
+const dateLocales = {
+  fr: fr,
+  en: enUS,
+  ja: ja,
+};
+
+export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityChartProps) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [hoveredDate, setHoveredDate] = useState<Date | null>(null);
   const [cellSize, setCellSize] = useState(10);
@@ -25,13 +35,11 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
   const displayedYear = getYear(viewingYear);
   const isCurrentYear = displayedYear === currentYear;
 
-  // Calculate cell size based on container width
   useEffect(() => {
     const calculateCellSize = () => {
       if (containerRef.current) {
         const containerWidth = containerRef.current.offsetWidth;
         const availableWidth = containerWidth - DAY_LABEL_WIDTH;
-        // Use 53 weeks as max (full year can have up to 53 weeks)
         const weeksForCalculation = 53;
         const totalGaps = (weeksForCalculation - 1) * GAP;
         const calculatedSize = Math.floor((availableWidth - totalGaps) / weeksForCalculation);
@@ -44,7 +52,6 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
     return () => window.removeEventListener("resize", calculateCellSize);
   }, []);
 
-  // Build a map of dates to posts
   const postsByDate = useMemo(() => {
     const map = new Map<string, PostMeta[]>();
     posts.forEach((post) => {
@@ -55,16 +62,13 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
     return map;
   }, [posts]);
 
-  // Generate the grid of dates based on viewing year (calendar year view)
   const { weeks, monthLabels } = useMemo(() => {
-    // Always show full year grid: from the week containing Jan 1 to week containing Dec 31
     const yearStart = new Date(displayedYear, 0, 1);
     const yearEnd = new Date(displayedYear, 11, 31);
 
     const startDate = startOfWeek(yearStart, { weekStartsOn: 0 });
     const endDate = endOfWeek(yearEnd, { weekStartsOn: 0 });
 
-    // Calculate number of weeks
     const weeksCount = differenceInWeeks(endDate, startDate) + 1;
 
     const weeks: Date[][] = [];
@@ -77,11 +81,10 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
         const date = addDays(startDate, week * 7 + day);
         weekDays.push(date);
 
-        // Track month labels - only for dates in the displayed year
         const month = date.getMonth();
         const dateYear = getYear(date);
         if (month !== lastMonth && day === 0 && dateYear === displayedYear) {
-          monthLabels.push({ label: format(date, "MMM"), weekIndex: week });
+          monthLabels.push({ label: format(date, "MMM", { locale: dateLocales[locale] }), weekIndex: week });
           lastMonth = month;
         }
       }
@@ -89,9 +92,8 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
     }
 
     return { weeks, monthLabels };
-  }, [displayedYear]);
+  }, [displayedYear, locale]);
 
-  // Count posts in the displayed year
   const postsInYear = useMemo(() => {
     return posts.filter(post => {
       const postYear = getYear(parseISO(post.date));
@@ -99,7 +101,6 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
     }).length;
   }, [posts, displayedYear]);
 
-  // Get the earliest post year for pagination limits
   const earliestPostYear = useMemo(() => {
     if (posts.length === 0) return currentYear;
     const years = posts.map(post => getYear(parseISO(post.date)));
@@ -109,31 +110,27 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
   const handlePreviousYear = () => {
     setViewingYear(prev => subYears(prev, 1));
     setSelectedDate(null);
-    onDateSelect(null, []);
+    onDateSelect(null);
   };
 
   const handleNextYear = () => {
     setViewingYear(prev => addYears(prev, 1));
     setSelectedDate(null);
-    onDateSelect(null, []);
+    onDateSelect(null);
   };
 
   const handleCellClick = (date: Date) => {
-    const dateKey = format(date, "yyyy-MM-dd");
-    const postsOnDate = postsByDate.get(dateKey) || [];
-
     if (selectedDate && isSameDay(selectedDate, date)) {
       setSelectedDate(null);
-      onDateSelect(null, []);
+      onDateSelect(null);
     } else {
       setSelectedDate(date);
-      onDateSelect(date, postsOnDate);
+      onDateSelect(date);
     }
   };
 
   const getIntensity = (date: Date): number => {
-    // Only show intensity for dates in the displayed year
-    if (getYear(date) !== displayedYear) return -1; // Outside year
+    if (getYear(date) !== displayedYear) return -1;
     const dateKey = format(date, "yyyy-MM-dd");
     const count = postsByDate.get(dateKey)?.length || 0;
     if (count === 0) return 0;
@@ -142,23 +139,27 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
     return 3;
   };
 
-  const dayLabels = ["", "Mon", "", "Wed", "", "Fri", ""];
+  const dayLabels = locale === 'ja' 
+    ? ["", "月", "", "水", "", "金", ""]
+    : locale === 'fr'
+    ? ["", "Lun", "", "Mer", "", "Ven", ""]
+    : ["", "Mon", "", "Wed", "", "Fri", ""];
+    
   const cellWithGap = cellSize + GAP;
 
   return (
     <div className="w-full" ref={containerRef}>
-      {/* Header with year navigation */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-            Writing Activity
+            {dict.activity.writingActivity}
           </h2>
           <span className="text-lg font-semibold text-primary">{displayedYear}</span>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="text-sm text-muted-foreground mr-2">
-            {postsInYear} {postsInYear === 1 ? "post" : "posts"}
+            {postsInYear} {postsInYear === 1 ? dict.activity.postCount : dict.activity.postsCount}
           </span>
           <Button
             variant="ghost"
@@ -185,7 +186,6 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
         </div>
       </div>
 
-      {/* Month labels */}
       <div className="flex mb-2" style={{ marginLeft: DAY_LABEL_WIDTH }}>
         {monthLabels.map(({ label, weekIndex }, i) => (
           <div
@@ -204,7 +204,6 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
       </div>
 
       <div className="flex">
-        {/* Day labels */}
         <div className="flex flex-col" style={{ width: DAY_LABEL_WIDTH, gap: GAP }}>
           {dayLabels.map((day, i) => (
             <div
@@ -217,7 +216,6 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
           ))}
         </div>
 
-        {/* Grid */}
         <div className="flex flex-1" style={{ gap: GAP }}>
           {weeks.map((week, weekIndex) => (
             <div key={weekIndex} className="flex flex-col" style={{ gap: GAP }}>
@@ -229,7 +227,6 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
                 const today = new Date();
                 const isFuture = date > today;
                 const isOutsideYear = intensity === -1;
-                // Only disable cells outside the displayed year
                 const isDisabled = isOutsideYear;
 
                 return (
@@ -251,7 +248,7 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
                       ${intensity === 2 ? 'bg-primary/70' : ''}
                       ${intensity === 3 ? 'bg-primary' : ''}
                     `}
-                    title={isOutsideYear ? '' : `${format(date, "MMM d, yyyy")}${postsOnDate.length > 0 ? ` - ${postsOnDate.length} post${postsOnDate.length > 1 ? 's' : ''}` : ''}`}
+                    title={isOutsideYear ? '' : `${format(date, "MMM d, yyyy", { locale: dateLocales[locale] })}${postsOnDate.length > 0 ? ` - ${postsOnDate.length} ${postsOnDate.length === 1 ? dict.activity.postCount : dict.activity.postsCount}` : ''}`}
                   />
                 );
               })}
@@ -260,16 +257,14 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
         </div>
       </div>
 
-      {/* Legend and hover info */}
       <div className="flex items-center justify-between mt-3">
-        {/* Tooltip for hovered date */}
         <div className="h-5 text-sm text-muted-foreground">
           {hoveredDate ? (
             <>
-              {format(hoveredDate, "EEEE, MMMM d, yyyy")}
+              {format(hoveredDate, "EEEE, MMMM d, yyyy", { locale: dateLocales[locale] })}
               {postsByDate.get(format(hoveredDate, "yyyy-MM-dd"))?.length ? (
                 <span className="text-primary ml-2">
-                  {postsByDate.get(format(hoveredDate, "yyyy-MM-dd"))?.length} post(s)
+                  {postsByDate.get(format(hoveredDate, "yyyy-MM-dd"))?.length} {dict.activity.postsCount}
                 </span>
               ) : null}
             </>
@@ -278,16 +273,15 @@ export function ActivityChart({ posts, onDateSelect }: ActivityChartProps) {
           )}
         </div>
 
-        {/* Legend */}
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
-          <span>Less</span>
+          <span>{dict.activity.less}</span>
           <div className="flex" style={{ gap: 2 }}>
             <div className="w-[10px] h-[10px] rounded-sm bg-secondary/50" />
             <div className="w-[10px] h-[10px] rounded-sm bg-primary/40" />
             <div className="w-[10px] h-[10px] rounded-sm bg-primary/70" />
             <div className="w-[10px] h-[10px] rounded-sm bg-primary" />
           </div>
-          <span>More</span>
+          <span>{dict.activity.more}</span>
         </div>
       </div>
     </div>

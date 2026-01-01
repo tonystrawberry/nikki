@@ -1,6 +1,12 @@
 import { Separator } from "@/components/ui/separator";
+import { type Locale, type Dictionary } from "@/lib/i18n-config";
 
-export function Footer() {
+interface FooterProps {
+  locale: Locale;
+  dict: Dictionary;
+}
+
+export function Footer({ locale, dict }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -8,11 +14,11 @@ export function Footer() {
       <div className="mx-auto max-w-4xl px-6 py-12">
         <div className="flex flex-col items-center gap-6">
           <div className="text-2xl font-semibold tracking-tight">
-            <span className="text-gradient">sekai</span>
+            <span className="text-gradient">nikki</span>
           </div>
 
           <p className="text-center text-muted-foreground max-w-md">
-            Thoughts on technology, design, and building things that matter.
+            {dict.footer.tagline}
           </p>
 
           <Separator className="w-24 bg-border/50" />
@@ -43,7 +49,7 @@ export function Footer() {
           </div>
 
           <p className="text-sm text-muted-foreground/60">
-            © {currentYear} sekai. All rights reserved.
+            © {currentYear} nikki. {dict.footer.rights}
           </p>
         </div>
       </div>
