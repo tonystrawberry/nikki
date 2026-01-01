@@ -139,12 +139,12 @@ export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityCha
     return 3;
   };
 
-  const dayLabels = locale === 'ja' 
+  const dayLabels = locale === 'ja'
     ? ["", "月", "", "水", "", "金", ""]
     : locale === 'fr'
     ? ["", "Lun", "", "Mer", "", "Ven", ""]
     : ["", "Mon", "", "Wed", "", "Fri", ""];
-    
+
   const cellWithGap = cellSize + GAP;
 
   return (

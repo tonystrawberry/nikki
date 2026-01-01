@@ -27,12 +27,12 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
   const handleLocaleChange = (newLocale: Locale) => {
     // Set cookie for persistence
     document.cookie = `NEXT_LOCALE=${newLocale};path=/;max-age=31536000`;
-    
+
     // Replace the locale in the pathname
     const segments = pathname.split('/');
     segments[1] = newLocale;
     const newPath = segments.join('/');
-    
+
     router.push(newPath);
   };
 
@@ -44,8 +44,8 @@ export function LanguageSwitcher({ currentLocale }: LanguageSwitcherProps) {
           onClick={() => handleLocaleChange(locale)}
           className={`
             px-2 py-1 text-sm rounded-md transition-all cursor-pointer
-            ${currentLocale === locale 
-              ? 'bg-primary/10 text-primary' 
+            ${currentLocale === locale
+              ? 'bg-primary/10 text-primary'
               : 'text-muted-foreground hover:text-foreground hover:bg-secondary/50'
             }
           `}

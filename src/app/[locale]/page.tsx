@@ -9,11 +9,11 @@ interface PageProps {
 
 export default async function Home({ params }: PageProps) {
   const { locale } = await params;
-  
+
   if (!hasLocale(locale)) {
     notFound();
   }
-  
+
   const posts = getAllPosts(locale);
   const allPosts = getAllPostsAcrossLocales();
   const dict = await getDictionary(locale);

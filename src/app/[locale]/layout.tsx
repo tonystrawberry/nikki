@@ -35,13 +35,13 @@ interface LayoutProps {
 
 export async function generateMetadata({ params }: LayoutProps): Promise<Metadata> {
   const { locale } = await params;
-  
+
   if (!hasLocale(locale)) {
     return { title: "nikki" };
   }
-  
+
   const dict = await getDictionary(locale);
-  
+
   return {
     title: "nikki | " + dict.footer.tagline,
     description: dict.home.tagline,
@@ -54,14 +54,14 @@ export default async function LocaleLayout({
   params,
 }: LayoutProps) {
   const { locale } = await params;
-  
+
   // Validate locale
   if (!hasLocale(locale)) {
     notFound();
   }
-  
+
   const dict = await getDictionary(locale);
-  
+
   return (
     <html lang={locale} className="dark">
       <body className={`${outfit.variable} ${crimsonPro.variable} ${jetbrainsMono.variable} min-h-screen flex flex-col gradient-bg font-sans`}>

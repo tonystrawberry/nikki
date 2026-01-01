@@ -20,7 +20,7 @@ function getLocale(request: NextRequest): string {
   // Parse accept-language header using Negotiator
   const headers = { 'accept-language': acceptLanguage };
   const languages = new Negotiator({ headers }).languages();
-  
+
   try {
     return match(languages, locales, defaultLocale);
   } catch {
@@ -53,7 +53,7 @@ export function proxy(request: NextRequest) {
   // Redirect to localized path
   const newUrl = new URL(`/${locale}${pathname}`, request.url);
   newUrl.search = request.nextUrl.search;
-  
+
   return NextResponse.redirect(newUrl);
 }
 
@@ -63,4 +63,3 @@ export const config = {
     '/((?!_next|api|favicon.ico).*)',
   ],
 };
-

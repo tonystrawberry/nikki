@@ -88,4 +88,3 @@ export interface Dictionary {
     viewAllPosts: string;
   };
 }
-

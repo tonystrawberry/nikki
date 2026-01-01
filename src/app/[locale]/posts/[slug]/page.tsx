@@ -22,23 +22,23 @@ const dateLocales = {
 export async function generateStaticParams() {
   const frenchSlugs = getAllPostSlugs('fr');
   const params: { slug: string; locale: string }[] = [];
-  
+
   for (const slug of frenchSlugs) {
     for (const locale of locales) {
       params.push({ slug, locale });
     }
   }
-  
+
   return params;
 }
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug, locale } = await params;
-  
+
   if (!hasLocale(locale)) {
     return { title: "Not Found" };
   }
-  
+
   const result = await getPostBySlugWithFallback(slug, locale);
 
   if (!result) {
@@ -53,11 +53,11 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function PostPage({ params }: PageProps) {
   const { slug, locale } = await params;
-  
+
   if (!hasLocale(locale)) {
     notFound();
   }
-  
+
   const result = await getPostBySlugWithFallback(slug, locale);
   const dict = await getDictionary(locale);
 
@@ -101,7 +101,7 @@ export default async function PostPage({ params }: PageProps) {
             <span className="text-2xl">{localeFlags[actualLocale]}</span>
             <div>
               <p className="font-medium text-amber-200">
-                {locale === 'en' 
+                {locale === 'en'
                   ? 'This article is not yet available in English'
                   : locale === 'ja'
                   ? 'この記事はまだ日本語では利用できません'

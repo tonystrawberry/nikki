@@ -10,13 +10,13 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps) {
   const { locale } = await params;
-  
+
   if (!hasLocale(locale)) {
     return { title: "Not Found" };
   }
-  
+
   const dict = await getDictionary(locale);
-  
+
   return {
     title: `${dict.about.title} | nikki`,
     description: dict.about.subtitle,
@@ -55,11 +55,11 @@ const bio = {
 
 export default async function AboutPage({ params }: PageProps) {
   const { locale } = await params;
-  
+
   if (!hasLocale(locale)) {
     notFound();
   }
-  
+
   const dict = await getDictionary(locale);
   const content = bio[locale];
 
@@ -124,7 +124,7 @@ export default async function AboutPage({ params }: PageProps) {
       {/* Bio Section */}
       <section className="mb-16 opacity-0 animate-fade-in-up animation-delay-200">
         <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-          <span className="text-primary">01.</span> 
+          <span className="text-primary">01.</span>
           {locale === 'fr' ? 'Pourquoi ce journal' : locale === 'ja' ? 'なぜこの日記を' : 'Why this diary'}
         </h2>
         <div className="prose">
@@ -138,7 +138,7 @@ export default async function AboutPage({ params }: PageProps) {
       {/* Interests Section */}
       <section className="mb-16 opacity-0 animate-fade-in-up animation-delay-300">
         <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-          <span className="text-primary">02.</span> 
+          <span className="text-primary">02.</span>
           {locale === 'fr' ? 'Ce qui m\'intéresse' : locale === 'ja' ? '興味があること' : 'Things I like'}
         </h2>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
@@ -197,7 +197,7 @@ export default async function AboutPage({ params }: PageProps) {
       <div className="p-8 rounded-2xl bg-gradient-to-br from-primary/10 via-card/50 to-accent/10 border border-border/50 text-center opacity-0 animate-fade-in-up animation-delay-500">
         <h3 className="text-xl font-semibold mb-2">{dict.about.thanks}</h3>
         <p className="text-muted-foreground mb-4">
-          {locale === 'fr' 
+          {locale === 'fr'
             ? "N'hésite pas à parcourir mes entrées."
             : locale === 'ja'
             ? '日記を読んでみてください。'

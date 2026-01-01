@@ -182,9 +182,9 @@ export function PostList({ posts, allPostsForChart, locale, dict }: PostListProp
                   index === 2 ? 'animation-delay-400' : 'animation-delay-500'
                 }`}
               >
-                <PostCard 
-                  post={post} 
-                  featured={index === 0 && activeCategory === "all" && !selectedDate} 
+                <PostCard
+                  post={post}
+                  featured={index === 0 && activeCategory === "all" && !selectedDate}
                   locale={locale}
                   dict={dict}
                   showUntranslatedNotice={!isTranslated(post.slug)}
