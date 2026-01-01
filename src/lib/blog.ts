@@ -1,61 +1,229 @@
+/**
+ * BLOG UTILITIES - src/lib/blog.ts
+ * =================================
+ * 
+ * This file contains all the logic for reading and processing blog posts.
+ * It uses Node.js file system APIs, so it can ONLY run on the server.
+ * 
+ * KEY RESPONSIBILITIES:
+ * 1. Read markdown files from the posts/ directory
+ * 2. Parse frontmatter (YAML metadata) using gray-matter
+ * 3. Convert markdown to HTML using remark
+ * 4. Provide functions to query posts (by slug, category, tag, etc.)
+ * 
+ * FILE STRUCTURE:
+ * ```
+ * posts/
+ * ├── fr/              ← French posts (canonical/required)
+ * │   ├── hello-world.md
+ * │   └── my-post.md
+ * ├── en/              ← English translations
+ * │   ├── hello-world.md
+ * │   └── my-post.md
+ * └── ja/              ← Japanese translations
+ *     └── hello-world.md
+ * ```
+ * 
+ * WHY NODE.JS APIs HERE?
+ * ---------------------
+ * This file uses `fs` (file system) and `path` modules from Node.js.
+ * These ONLY exist on the server, not in browsers.
+ * 
+ * Client Components CANNOT import this file because:
+ * 1. `fs` doesn't exist in browsers → build error
+ * 2. Posts are on the server's file system, not the client's
+ * 
+ * SOLUTION: Server Components call these functions, then pass
+ * the data as props to Client Components.
+ * 
+ * @see https://nextjs.org/docs/app/building-your-application/data-fetching
+ */
+
+// Node.js file system module - for reading files
+// This import FAILS in Client Components (fs doesn't exist in browsers)
 import fs from 'fs';
+
+// Node.js path module - for building file paths safely across OS
 import path from 'path';
+
+/**
+ * gray-matter
+ * 
+ * Parses YAML frontmatter from markdown files.
+ * 
+ * Input:
+ * ```markdown
+ * ---
+ * title: "Hello World"
+ * date: "2026-01-01"
+ * ---
+ * # Content here
+ * ```
+ * 
+ * Output:
+ * ```js
+ * {
+ *   data: { title: "Hello World", date: "2026-01-01" },
+ *   content: "# Content here"
+ * }
+ * ```
+ */
 import matter from 'gray-matter';
+
+/**
+ * remark & remark-html
+ * 
+ * Converts markdown to HTML.
+ * 
+ * remark = markdown parser (creates AST)
+ * remark-html = converts AST to HTML string
+ * 
+ * Pipeline: Markdown → AST → HTML
+ */
 import { remark } from 'remark';
 import html from 'remark-html';
+
+// Import shared types (these CAN be used in Client Components)
 import { CATEGORIES, type Category, type PostMeta, type Post } from './types';
+
+// Import i18n config (NOT i18n.ts which is server-only)
 import { type Locale, defaultLocale, locales } from './i18n-config';
 
-// Re-export types and constants for convenience
+// ============================================================================
+// RE-EXPORTS
+// ============================================================================
+
+/**
+ * RE-EXPORT FOR CONVENIENCE
+ * 
+ * Some files import from blog.ts, so we re-export types here.
+ * This way, they don't need to import from both blog.ts and types.ts.
+ */
 export { CATEGORIES, type Category, type PostMeta, type Post };
 
+// ============================================================================
+// PATHS
+// ============================================================================
+
+/**
+ * POSTS DIRECTORY
+ * 
+ * process.cwd() returns the project root directory.
+ * path.join() safely combines paths (handles / vs \ on different OS).
+ * 
+ * Result: /Users/you/nikki/posts
+ */
 const postsDirectory = path.join(process.cwd(), 'posts');
 
+// ============================================================================
+// HELPER FUNCTIONS
+// ============================================================================
+
+/**
+ * calculateReadingTime
+ * ====================
+ * 
+ * Estimates how long it takes to read a post.
+ * Average reading speed: 200 words per minute.
+ * 
+ * @param content - The raw markdown content
+ * @returns Reading time in minutes (as string, e.g., "5")
+ */
 function calculateReadingTime(content: string): string {
   const wordsPerMinute = 200;
+  // Split by whitespace to count words
   const words = content.split(/\s+/).length;
   const minutes = Math.ceil(words / wordsPerMinute);
   return `${minutes}`;
 }
 
+/**
+ * getPostsDirectoryForLocale
+ * ==========================
+ * 
+ * Builds the path to a locale's posts directory.
+ * 
+ * @param locale - 'fr' | 'en' | 'ja'
+ * @returns Path like /Users/you/nikki/posts/fr
+ */
 function getPostsDirectoryForLocale(locale: Locale): string {
   return path.join(postsDirectory, locale);
 }
 
+// ============================================================================
+// POST RETRIEVAL FUNCTIONS
+// ============================================================================
+
+/**
+ * getAllPosts
+ * ===========
+ * 
+ * Gets all posts for a specific locale.
+ * Returns metadata only (no content) for listing pages.
+ * 
+ * USAGE:
+ * ```tsx
+ * // In Server Component
+ * const posts = getAllPosts('fr');
+ * return <PostList posts={posts} />;
+ * ```
+ * 
+ * @param locale - Which language's posts to get
+ * @returns Array of PostMeta, sorted by date (newest first)
+ */
 export function getAllPosts(locale: Locale = defaultLocale): PostMeta[] {
   const localizedDir = getPostsDirectoryForLocale(locale);
 
-  // Ensure posts directory exists
+  // Check if directory exists (might not have posts in all languages)
   if (!fs.existsSync(localizedDir)) {
     return [];
   }
 
+  // Read all files in the directory
   const fileNames = fs.readdirSync(localizedDir);
+  
   const posts = fileNames
+    // Only process .md files
     .filter((fileName) => fileName.endsWith('.md'))
     .map((fileName) => {
+      // Extract slug from filename: hello-world.md → hello-world
       const slug = fileName.replace(/\.md$/, '');
+      
+      // Build full path and read file
       const fullPath = path.join(localizedDir, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
+      
+      // Parse frontmatter
       const { data, content } = matter(fileContents);
 
+      // Build PostMeta object
       return {
         slug,
         title: data.title || 'Untitled',
         date: data.date || new Date().toISOString(),
         excerpt: data.excerpt || '',
         author: data.author || 'Anonymous',
-        category: (data.category as Category) || 'life',
+        category: (data.category as Category) || 'daily',
         tags: data.tags || [],
         coverImage: data.coverImage,
         readingTime: calculateReadingTime(content),
       } as PostMeta;
     });
 
-  // Sort posts by date (newest first)
+  // Sort by date, newest first
   return posts.sort((a, b) => (new Date(b.date).getTime() - new Date(a.date).getTime()));
 }
 
+/**
+ * getAllPostSlugs
+ * ===============
+ * 
+ * Gets just the slugs (filenames without .md) for a locale.
+ * Used for generating static paths.
+ * 
+ * @param locale - Which language's posts
+ * @returns Array of slugs like ['hello-world', 'my-post']
+ */
 export function getAllPostSlugs(locale: Locale = defaultLocale): string[] {
   const localizedDir = getPostsDirectoryForLocale(locale);
 
@@ -69,7 +237,25 @@ export function getAllPostSlugs(locale: Locale = defaultLocale): string[] {
     .map((fileName) => fileName.replace(/\.md$/, ''));
 }
 
-// Get all slugs across all locales for static generation
+/**
+ * getAllPostSlugsWithLocales
+ * ==========================
+ * 
+ * Gets all slugs with their locales for generateStaticParams().
+ * This enables static generation for all locale/slug combinations.
+ * 
+ * USAGE IN PAGE:
+ * ```tsx
+ * export async function generateStaticParams() {
+ *   return getAllPostSlugsWithLocales();
+ *   // Returns: [
+ *   //   { slug: 'hello-world', locale: 'fr' },
+ *   //   { slug: 'hello-world', locale: 'en' },
+ *   //   { slug: 'my-post', locale: 'fr' },
+ *   // ]
+ * }
+ * ```
+ */
 export function getAllPostSlugsWithLocales(): { slug: string; locale: Locale }[] {
   const result: { slug: string; locale: Locale }[] = [];
 
@@ -83,18 +269,45 @@ export function getAllPostSlugsWithLocales(): { slug: string; locale: Locale }[]
   return result;
 }
 
+/**
+ * getPostBySlug
+ * =============
+ * 
+ * Gets a single post with FULL content (including HTML).
+ * Used on individual post pages.
+ * 
+ * ASYNC because remark markdown processing is async.
+ * 
+ * @param slug - The post's slug (filename without .md)
+ * @param locale - Which language version
+ * @returns Full Post object or null if not found
+ */
 export async function getPostBySlug(slug: string, locale: Locale = defaultLocale): Promise<Post | null> {
   const localizedDir = getPostsDirectoryForLocale(locale);
   const fullPath = path.join(localizedDir, `${slug}.md`);
 
+  // Return null if post doesn't exist
   if (!fs.existsSync(fullPath)) {
     return null;
   }
 
+  // Read and parse the file
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  // Process markdown to HTML
+  /**
+   * MARKDOWN TO HTML CONVERSION
+   * 
+   * remark().use(html).process(content)
+   * 
+   * 1. remark() creates a processor
+   * 2. .use(html) adds HTML output capability
+   * 3. .process(content) runs the conversion
+   * 4. .toString() gets the HTML string
+   * 
+   * Input: "# Hello\n\nWorld"
+   * Output: "<h1>Hello</h1>\n<p>World</p>"
+   */
   const processedContent = await remark()
     .use(html)
     .process(content);
@@ -106,23 +319,42 @@ export async function getPostBySlug(slug: string, locale: Locale = defaultLocale
     date: data.date || new Date().toISOString(),
     excerpt: data.excerpt || '',
     author: data.author || 'Anonymous',
-    category: (data.category as Category) || 'life',
+    category: (data.category as Category) || 'daily',
     tags: data.tags || [],
     coverImage: data.coverImage,
     readingTime: calculateReadingTime(content),
-    content: contentHtml,
+    content: contentHtml, // The full HTML content
   };
 }
 
+/**
+ * getAllCategories
+ * ================
+ * 
+ * Returns all available category keys.
+ * Useful for building category filters.
+ */
 export function getAllCategories(): Category[] {
   return Object.keys(CATEGORIES) as Category[];
 }
 
+/**
+ * getPostsByCategory
+ * ==================
+ * 
+ * Filters posts by category.
+ */
 export function getPostsByCategory(category: Category, locale: Locale = defaultLocale): PostMeta[] {
   const posts = getAllPosts(locale);
   return posts.filter((post) => post.category === category);
 }
 
+/**
+ * getAllTags
+ * ==========
+ * 
+ * Collects all unique tags across all posts.
+ */
 export function getAllTags(locale: Locale = defaultLocale): string[] {
   const posts = getAllPosts(locale);
   const tagsSet = new Set<string>();
@@ -134,12 +366,31 @@ export function getAllTags(locale: Locale = defaultLocale): string[] {
   return Array.from(tagsSet).sort();
 }
 
+/**
+ * getPostsByTag
+ * =============
+ * 
+ * Filters posts by tag.
+ */
 export function getPostsByTag(tag: string, locale: Locale = defaultLocale): PostMeta[] {
   const posts = getAllPosts(locale);
   return posts.filter((post) => post.tags.includes(tag));
 }
 
-// Get available locales for a specific post
+// ============================================================================
+// I18N-SPECIFIC FUNCTIONS
+// ============================================================================
+
+/**
+ * getPostAvailableLocales
+ * =======================
+ * 
+ * Checks which translations exist for a given post.
+ * Used to show "Also available in: 🇬🇧 🇯🇵" links.
+ * 
+ * @param slug - The post's slug
+ * @returns Array of locales that have this post
+ */
 export function getPostAvailableLocales(slug: string): Locale[] {
   const available: Locale[] = [];
 
@@ -154,22 +405,31 @@ export function getPostAvailableLocales(slug: string): Locale[] {
   return available;
 }
 
-// Get all unique posts across all locales (uses French as canonical source)
-// This is used for the activity chart to show all posts regardless of language
+/**
+ * getAllPostsAcrossLocales
+ * ========================
+ * 
+ * Gets all unique posts from all locales.
+ * Used for the activity chart (shows all posts regardless of language).
+ * 
+ * French is canonical - if a post exists in multiple languages,
+ * we use the French metadata (for consistent dates, etc.).
+ * 
+ * @returns Array of unique posts from all locales
+ */
 export function getAllPostsAcrossLocales(): PostMeta[] {
-  // French is always the canonical source - all posts must exist in French
+  // French posts are the canonical source
   const frenchPosts = getAllPosts('fr');
 
-  // Create a map of slug -> post to avoid duplicates
+  // Map to avoid duplicates (key = slug)
   const postsMap = new Map<string, PostMeta>();
 
-  // Add French posts first (canonical)
+  // Add French posts first
   for (const post of frenchPosts) {
     postsMap.set(post.slug, post);
   }
 
-  // Check other locales for any posts that might only exist there
-  // (though ideally all posts should have a French version)
+  // Add posts from other locales if they don't exist in French
   for (const locale of locales) {
     if (locale === 'fr') continue;
 
@@ -181,18 +441,40 @@ export function getAllPostsAcrossLocales(): PostMeta[] {
     }
   }
 
-  // Sort by date (newest first)
+  // Sort by date, newest first
   return Array.from(postsMap.values()).sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   );
 }
 
-// Get post by slug with fallback to French
+/**
+ * getPostBySlugWithFallback
+ * =========================
+ * 
+ * Gets a post in the requested locale, falling back to French if not found.
+ * This enables showing French posts to users browsing in English/Japanese
+ * even if the translation doesn't exist yet.
+ * 
+ * USAGE:
+ * ```tsx
+ * const result = await getPostBySlugWithFallback('hello-world', 'ja');
+ * if (result) {
+ *   const { post, actualLocale } = result;
+ *   if (actualLocale !== 'ja') {
+ *     // Show "Translation not available" notice
+ *   }
+ * }
+ * ```
+ * 
+ * @param slug - The post's slug
+ * @param locale - Requested locale
+ * @returns Post with actual locale, or null if not found anywhere
+ */
 export async function getPostBySlugWithFallback(
   slug: string,
   locale: Locale = defaultLocale
 ): Promise<{ post: Post; actualLocale: Locale } | null> {
-  // Try the requested locale first
+  // Try requested locale first
   let post = await getPostBySlug(slug, locale);
   if (post) {
     return { post, actualLocale: locale };
@@ -206,5 +488,6 @@ export async function getPostBySlugWithFallback(
     }
   }
 
+  // Not found in any locale
   return null;
 }

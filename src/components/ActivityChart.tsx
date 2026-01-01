@@ -1,57 +1,181 @@
+/**
+ * ACTIVITY CHART - src/components/ActivityChart.tsx
+ * ==================================================
+ * 
+ * A GitHub-style contribution/activity chart showing writing activity.
+ * Each cell represents a day, with color intensity showing post count.
+ * 
+ * WHY CLIENT COMPONENT?
+ * ---------------------
+ * Needs interactivity:
+ * - useState for hover/selection state
+ * - useRef for DOM measurement
+ * - useEffect for resize listener
+ * - Click handlers for date selection
+ * 
+ * FEATURES:
+ * - Full calendar year display (Jan 1 - Dec 31)
+ * - Year navigation (previous/next buttons)
+ * - Responsive cell sizing
+ * - Hover tooltips
+ * - Click to filter posts by date
+ * - Localized month/day labels
+ * 
+ * DATA FLOW:
+ * - Receives ALL posts (across locales) from Server Component
+ * - Builds date → post count map
+ * - Renders grid of cells with appropriate colors
+ * - Notifies parent when date is selected
+ */
 "use client";
 
 import { useState, useMemo, useRef, useEffect } from "react";
-import { format, startOfWeek, endOfWeek, addDays, isSameDay, parseISO, subYears, addYears, getYear, differenceInWeeks } from "date-fns";
+
+// date-fns for date calculations
+import { 
+  format,           // Format date to string
+  startOfWeek,      // Get Sunday of a week
+  endOfWeek,        // Get Saturday of a week
+  addDays,          // Add days to a date
+  isSameDay,        // Compare two dates
+  parseISO,         // Parse ISO date string
+  subYears,         // Subtract years
+  addYears,         // Add years
+  getYear,          // Get year from date
+  differenceInWeeks // Calculate weeks between dates
+} from "date-fns";
+
+// Localized date formatting
 import { fr, enUS, ja } from "date-fns/locale";
+
+// UI Components
 import { Button } from "@/components/ui/button";
+
+// Types (from types.ts, NOT blog.ts)
 import type { PostMeta } from "@/lib/types";
 import { type Locale, type Dictionary } from "@/lib/i18n-config";
 
+// ============================================================================
+// TYPES
+// ============================================================================
+
 interface ActivityChartProps {
+  /** All posts from all locales */
   posts: PostMeta[];
+  
+  /** Callback when user clicks a date (null = cleared) */
   onDateSelect: (date: Date | null) => void;
+  
+  /** Current locale for formatting */
   locale: Locale;
+  
+  /** Translations */
   dict: Dictionary;
 }
 
+// ============================================================================
+// CONSTANTS
+// ============================================================================
+
+/** Days in a week (Sunday = 0) */
 const DAYS_IN_WEEK = 7;
+
+/** Width of day labels column (Mon, Wed, Fri) */
 const DAY_LABEL_WIDTH = 28;
+
+/** Gap between cells in pixels */
 const GAP = 3;
 
+/** Map locale to date-fns locale object */
 const dateLocales = {
   fr: fr,
   en: enUS,
   ja: ja,
 };
 
+// ============================================================================
+// COMPONENT
+// ============================================================================
+
 export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityChartProps) {
+  // ---------------------------------------------------------------------------
+  // STATE
+  // ---------------------------------------------------------------------------
+  
+  /** Currently selected date (for highlighting and filtering) */
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  
+  /** Currently hovered date (for tooltip) */
   const [hoveredDate, setHoveredDate] = useState<Date | null>(null);
+  
+  /** Dynamic cell size based on container width */
   const [cellSize, setCellSize] = useState(10);
+  
+  /** Year being viewed (can navigate to previous years) */
   const [viewingYear, setViewingYear] = useState(new Date());
+  
+  /** Ref to container for measuring width */
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // ---------------------------------------------------------------------------
+  // COMPUTED VALUES
+  // ---------------------------------------------------------------------------
+  
   const currentYear = getYear(new Date());
   const displayedYear = getYear(viewingYear);
   const isCurrentYear = displayedYear === currentYear;
 
+  // ---------------------------------------------------------------------------
+  // EFFECTS
+  // ---------------------------------------------------------------------------
+
+  /**
+   * RESIZE HANDLER
+   * 
+   * Calculates optimal cell size based on container width.
+   * Runs on mount and window resize.
+   * 
+   * useEffect with [] dependency runs once on mount.
+   * The resize listener is cleaned up on unmount.
+   */
   useEffect(() => {
     const calculateCellSize = () => {
       if (containerRef.current) {
+        // Get available width (minus day labels)
         const containerWidth = containerRef.current.offsetWidth;
         const availableWidth = containerWidth - DAY_LABEL_WIDTH;
+        
+        // Calculate cell size to fit ~53 weeks
         const weeksForCalculation = 53;
         const totalGaps = (weeksForCalculation - 1) * GAP;
         const calculatedSize = Math.floor((availableWidth - totalGaps) / weeksForCalculation);
+        
+        // Clamp between 8-14px
         setCellSize(Math.max(8, Math.min(14, calculatedSize)));
       }
     };
 
     calculateCellSize();
+    
+    // Add resize listener
     window.addEventListener("resize", calculateCellSize);
+    
+    // Cleanup function (runs on unmount)
     return () => window.removeEventListener("resize", calculateCellSize);
-  }, []);
+  }, []); // Empty deps = run once
 
+  // ---------------------------------------------------------------------------
+  // MEMOIZED COMPUTATIONS
+  // ---------------------------------------------------------------------------
+
+  /**
+   * POSTS BY DATE MAP
+   * 
+   * Creates a Map: dateString → PostMeta[]
+   * Used for O(1) lookup of posts on any date.
+   * 
+   * useMemo only recalculates when `posts` changes.
+   */
   const postsByDate = useMemo(() => {
     const map = new Map<string, PostMeta[]>();
     posts.forEach((post) => {
@@ -62,38 +186,62 @@ export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityCha
     return map;
   }, [posts]);
 
+  /**
+   * CALENDAR GRID DATA
+   * 
+   * Generates:
+   * - weeks: 2D array of dates (weeks × days)
+   * - monthLabels: positions for month names
+   * 
+   * The grid shows a full calendar year:
+   * - Starts from the Sunday before Jan 1
+   * - Ends on the Saturday after Dec 31
+   */
   const { weeks, monthLabels } = useMemo(() => {
-    const yearStart = new Date(displayedYear, 0, 1);
-    const yearEnd = new Date(displayedYear, 11, 31);
+    // Define year boundaries
+    const yearStart = new Date(displayedYear, 0, 1);  // Jan 1
+    const yearEnd = new Date(displayedYear, 11, 31); // Dec 31
 
-    const startDate = startOfWeek(yearStart, { weekStartsOn: 0 });
-    const endDate = endOfWeek(yearEnd, { weekStartsOn: 0 });
+    // Expand to full weeks (for clean grid)
+    const startDate = startOfWeek(yearStart, { weekStartsOn: 0 }); // Sunday
+    const endDate = endOfWeek(yearEnd, { weekStartsOn: 0 });       // Saturday
 
+    // Calculate total weeks
     const weeksCount = differenceInWeeks(endDate, startDate) + 1;
 
+    // Build the grid
     const weeks: Date[][] = [];
     const monthLabels: { label: string; weekIndex: number }[] = [];
     let lastMonth = -1;
 
     for (let week = 0; week < weeksCount; week++) {
       const weekDays: Date[] = [];
+      
       for (let day = 0; day < DAYS_IN_WEEK; day++) {
         const date = addDays(startDate, week * 7 + day);
         weekDays.push(date);
 
+        // Track month changes for labels
         const month = date.getMonth();
         const dateYear = getYear(date);
         if (month !== lastMonth && day === 0 && dateYear === displayedYear) {
-          monthLabels.push({ label: format(date, "MMM", { locale: dateLocales[locale] }), weekIndex: week });
+          monthLabels.push({ 
+            label: format(date, "MMM", { locale: dateLocales[locale] }), 
+            weekIndex: week 
+          });
           lastMonth = month;
         }
       }
+      
       weeks.push(weekDays);
     }
 
     return { weeks, monthLabels };
   }, [displayedYear, locale]);
 
+  /**
+   * POSTS COUNT FOR DISPLAYED YEAR
+   */
   const postsInYear = useMemo(() => {
     return posts.filter(post => {
       const postYear = getYear(parseISO(post.date));
@@ -101,54 +249,93 @@ export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityCha
     }).length;
   }, [posts, displayedYear]);
 
+  /**
+   * EARLIEST YEAR WITH POSTS
+   * 
+   * Used to disable "previous" button when there's no more history.
+   */
   const earliestPostYear = useMemo(() => {
     if (posts.length === 0) return currentYear;
     const years = posts.map(post => getYear(parseISO(post.date)));
     return Math.min(...years);
   }, [posts, currentYear]);
 
+  // ---------------------------------------------------------------------------
+  // EVENT HANDLERS
+  // ---------------------------------------------------------------------------
+
+  /** Navigate to previous year */
   const handlePreviousYear = () => {
     setViewingYear(prev => subYears(prev, 1));
     setSelectedDate(null);
     onDateSelect(null);
   };
 
+  /** Navigate to next year */
   const handleNextYear = () => {
     setViewingYear(prev => addYears(prev, 1));
     setSelectedDate(null);
     onDateSelect(null);
   };
 
+  /** Handle cell click - toggle selection */
   const handleCellClick = (date: Date) => {
     if (selectedDate && isSameDay(selectedDate, date)) {
+      // Clicking same date = deselect
       setSelectedDate(null);
       onDateSelect(null);
     } else {
+      // Select new date
       setSelectedDate(date);
       onDateSelect(date);
     }
   };
 
+  // ---------------------------------------------------------------------------
+  // HELPER FUNCTIONS
+  // ---------------------------------------------------------------------------
+
+  /**
+   * getIntensity
+   * 
+   * Returns color intensity level (0-3) based on post count.
+   * Returns -1 for dates outside the displayed year.
+   * 
+   * @param date - Date to check
+   * @returns -1 (hidden), 0 (no posts), 1-3 (post count intensity)
+   */
   const getIntensity = (date: Date): number => {
+    // Hide dates from other years
     if (getYear(date) !== displayedYear) return -1;
+    
     const dateKey = format(date, "yyyy-MM-dd");
     const count = postsByDate.get(dateKey)?.length || 0;
+    
     if (count === 0) return 0;
     if (count === 1) return 1;
     if (count === 2) return 2;
-    return 3;
+    return 3; // 3+ posts
   };
 
-  const dayLabels = locale === 'ja'
+  // Localized day labels (only show Mon, Wed, Fri for space)
+  const dayLabels = locale === 'ja' 
     ? ["", "月", "", "水", "", "金", ""]
     : locale === 'fr'
     ? ["", "Lun", "", "Mer", "", "Ven", ""]
     : ["", "Mon", "", "Wed", "", "Fri", ""];
-
+    
+  // Cell size including gap
   const cellWithGap = cellSize + GAP;
+
+  // ---------------------------------------------------------------------------
+  // RENDER
+  // ---------------------------------------------------------------------------
 
   return (
     <div className="w-full" ref={containerRef}>
+      {/* 
+        HEADER: Title + Year + Navigation 
+      */}
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <h2 className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
@@ -157,10 +344,13 @@ export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityCha
           <span className="text-lg font-semibold text-primary">{displayedYear}</span>
         </div>
 
+        {/* Year navigation */}
         <div className="flex items-center gap-2">
           <span className="text-sm text-muted-foreground mr-2">
             {postsInYear} {postsInYear === 1 ? dict.activity.postCount : dict.activity.postsCount}
           </span>
+          
+          {/* Previous year button */}
           <Button
             variant="ghost"
             size="sm"
@@ -168,10 +358,13 @@ export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityCha
             disabled={displayedYear <= earliestPostYear - 1}
             className="h-8 w-8 p-0 text-muted-foreground hover:text-foreground"
           >
+            {/* Left chevron icon */}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="m15 18-6-6 6-6"/>
             </svg>
           </Button>
+          
+          {/* Next year button */}
           <Button
             variant="ghost"
             size="sm"
@@ -179,6 +372,7 @@ export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityCha
             disabled={isCurrentYear}
             className="h-8 w-8 p-0 text-muted-foreground hover:text-foreground"
           >
+            {/* Right chevron icon */}
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="m9 18 6-6-6-6"/>
             </svg>
@@ -186,13 +380,21 @@ export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityCha
         </div>
       </div>
 
+      {/* 
+        MONTH LABELS
+        
+        Positioned above the grid columns.
+        Each label is positioned at the week where the month starts.
+      */}
       <div className="flex mb-2" style={{ marginLeft: DAY_LABEL_WIDTH }}>
         {monthLabels.map(({ label, weekIndex }, i) => (
           <div
             key={i}
             className="text-xs text-muted-foreground"
             style={{
+              // First label is positioned by marginLeft
               marginLeft: i === 0 ? `${weekIndex * cellWithGap}px` : undefined,
+              // Width spans to next month label
               width: i < monthLabels.length - 1
                 ? `${(monthLabels[i + 1].weekIndex - weekIndex) * cellWithGap}px`
                 : undefined
@@ -203,7 +405,15 @@ export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityCha
         ))}
       </div>
 
+      {/* 
+        MAIN GRID
+        
+        Structure:
+        - Day labels column (Mon, Wed, Fri)
+        - Weeks as columns (each column = 7 day cells)
+      */}
       <div className="flex">
+        {/* Day labels column */}
         <div className="flex flex-col" style={{ width: DAY_LABEL_WIDTH, gap: GAP }}>
           {dayLabels.map((day, i) => (
             <div
@@ -216,6 +426,7 @@ export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityCha
           ))}
         </div>
 
+        {/* Weeks grid */}
         <div className="flex flex-1" style={{ gap: GAP }}>
           {weeks.map((week, weekIndex) => (
             <div key={weekIndex} className="flex flex-col" style={{ gap: GAP }}>
@@ -257,7 +468,13 @@ export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityCha
         </div>
       </div>
 
+      {/* 
+        FOOTER: Hover info + Legend
+        
+        h-5 = fixed height prevents layout shift when tooltip appears/disappears
+      */}
       <div className="flex items-center justify-between mt-3">
+        {/* Hover tooltip - shows date and post count */}
         <div className="h-5 text-sm text-muted-foreground">
           {hoveredDate ? (
             <>
@@ -269,10 +486,12 @@ export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityCha
               ) : null}
             </>
           ) : (
+            // Invisible placeholder maintains height
             <span className="opacity-0">Placeholder</span>
           )}
         </div>
 
+        {/* Legend: Less → More */}
         <div className="flex items-center gap-2 text-xs text-muted-foreground">
           <span>{dict.activity.less}</span>
           <div className="flex" style={{ gap: 2 }}>
