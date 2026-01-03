@@ -36,6 +36,7 @@ This is a **Server-Side Rendered (SSR)** blog using Next.js App Router. It suppo
 | **date-fns** | Date formatting | Lightweight, tree-shakeable date library |
 | **@formatjs/intl-localematcher** | Locale detection | Match browser language to supported locales |
 | **negotiator** | HTTP parsing | Parse `Accept-Language` headers |
+| **[Buttondown](https://buttondown.com)** | Newsletter | Simple, privacy-focused newsletter service |
 
 ---
 
@@ -443,6 +444,28 @@ Your content here...
 
 ---
 
+## 📬 Newsletter Integration
+
+This blog uses [Buttondown](https://buttondown.com) for newsletter subscriptions.
+
+### How it works:
+1. **Subscribe form** on the home page submits directly to Buttondown's API
+2. **Header button** links to the public Buttondown subscription page
+3. Subscribers are managed in the Buttondown dashboard
+
+### Configuration:
+The newsletter form submits to:
+```
+https://buttondown.email/api/emails/embed-subscribe/tonystrawberry
+```
+
+To use your own Buttondown account:
+1. Create an account at [buttondown.com](https://buttondown.com)
+2. Update the form action URL in `src/app/[locale]/page.tsx`
+3. Update the header button link in `src/components/Header.tsx`
+
+---
+
 ## 📖 Further Reading
 
 - [Next.js Documentation](https://nextjs.org/docs)
@@ -450,6 +473,7 @@ Your content here...
 - [Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
 - [Tailwind CSS](https://tailwindcss.com/docs)
 - [shadcn/ui](https://ui.shadcn.com)
+- [Buttondown](https://buttondown.com) - Newsletter service
 
 ---
 
