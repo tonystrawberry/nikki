@@ -11,19 +11,19 @@ export function Footer({ locale, dict }: FooterProps) {
 
   return (
     <footer className="mt-auto border-t border-border/40">
-      <div className="mx-auto max-w-4xl px-6 py-12">
-        <div className="flex flex-col items-center gap-6">
-          <div className="text-2xl font-semibold tracking-tight">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 py-8 sm:py-12">
+        <div className="flex flex-col items-center gap-4 sm:gap-6">
+          <div className="text-xl sm:text-2xl font-semibold tracking-tight">
             <span className="text-gradient">nikki</span>
           </div>
 
-          <p className="text-center text-muted-foreground max-w-md">
+          <p className="text-center text-sm sm:text-base text-muted-foreground max-w-md px-4">
             {dict.footer.tagline}
           </p>
 
-          <Separator className="w-24 bg-border/50" />
+          <Separator className="w-16 sm:w-24 bg-border/50" />
 
-          <div className="flex items-center gap-6 text-sm text-muted-foreground">
+          <div className="flex items-center gap-4 sm:gap-6 text-sm text-muted-foreground">
             <a
               href="https://twitter.com"
               target="_blank"
@@ -48,7 +48,7 @@ export function Footer({ locale, dict }: FooterProps) {
             </a>
           </div>
 
-          <p className="text-sm text-muted-foreground/60">
+          <p className="text-xs sm:text-sm text-muted-foreground/60">
             © {currentYear} nikki. {dict.footer.rights}
           </p>
         </div>

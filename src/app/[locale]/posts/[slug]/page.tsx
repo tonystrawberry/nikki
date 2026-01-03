@@ -71,11 +71,11 @@ export default async function PostPage({ params }: PageProps) {
   const availableLocales = getPostAvailableLocales(slug);
 
   return (
-    <article className="mx-auto max-w-3xl px-6 py-16">
+    <article className="mx-auto max-w-3xl px-4 sm:px-6 py-8 sm:py-16">
       {/* Back Button */}
-      <div className="mb-8 opacity-0 animate-fade-in-up">
+      <div className="mb-6 sm:mb-8 opacity-0 animate-fade-in-up">
         <Link href={`/${locale}`}>
-          <Button variant="ghost" className="gap-2 text-muted-foreground hover:text-foreground -ml-4">
+          <Button variant="ghost" className="gap-2 text-muted-foreground hover:text-foreground -ml-2 sm:-ml-4 text-sm sm:text-base">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -96,11 +96,11 @@ export default async function PostPage({ params }: PageProps) {
 
       {/* Fallback Language Notice */}
       {isShowingFallback && (
-        <div className="mb-8 p-4 rounded-xl bg-amber-500/10 border border-amber-500/20 opacity-0 animate-fade-in-up">
+        <div className="mb-6 sm:mb-8 p-3 sm:p-4 rounded-lg sm:rounded-xl bg-amber-500/10 border border-amber-500/20 opacity-0 animate-fade-in-up">
           <div className="flex items-center gap-3">
-            <span className="text-2xl">{localeFlags[actualLocale]}</span>
+            <span className="text-xl sm:text-2xl">{localeFlags[actualLocale]}</span>
             <div>
-              <p className="font-medium text-amber-200">
+              <p className="font-medium text-amber-200 text-sm sm:text-base">
                 {locale === 'en'
                   ? 'This article is not yet available in English'
                   : locale === 'ja'
@@ -108,7 +108,7 @@ export default async function PostPage({ params }: PageProps) {
                   : "Cet article n'est pas encore disponible en français"
                 }
               </p>
-              <p className="text-sm text-amber-200/70">
+              <p className="text-xs sm:text-sm text-amber-200/70">
                 {locale === 'en'
                   ? `Showing the ${localeNames[actualLocale]} version`
                   : locale === 'ja'
@@ -122,24 +122,24 @@ export default async function PostPage({ params }: PageProps) {
       )}
 
       {/* Header */}
-      <header className="mb-12 opacity-0 animate-fade-in-up animation-delay-100">
+      <header className="mb-8 sm:mb-12 opacity-0 animate-fade-in-up animation-delay-100">
         {/* Category */}
-        <Badge className="mb-4 bg-secondary/80 text-secondary-foreground hover:bg-secondary border-0">
+        <Badge className="mb-3 sm:mb-4 bg-secondary/80 text-secondary-foreground hover:bg-secondary border-0 text-xs sm:text-sm">
           <span className="mr-1.5">{category.icon}</span>
           {dict.categories[post.category as keyof typeof dict.categories]}
         </Badge>
 
-        <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight">
           {post.title}
         </h1>
 
-        <div className="flex items-center gap-4 text-muted-foreground">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-muted-foreground">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-full bg-gradient-to-br from-primary to-accent" />
+            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0" />
             <div>
-              <p className="font-medium text-foreground">{post.author}</p>
-              <p className="text-sm">
-                {format(new Date(post.date), "MMMM d, yyyy", { locale: dateLocales[actualLocale] })} · {post.readingTime} {dict.post.minRead}
+              <p className="font-medium text-foreground text-sm sm:text-base">{post.author}</p>
+              <p className="text-xs sm:text-sm">
+                {format(new Date(post.date), "MMM d, yyyy", { locale: dateLocales[actualLocale] })} · {post.readingTime} {dict.post.minRead}
               </p>
             </div>
           </div>
@@ -148,7 +148,7 @@ export default async function PostPage({ params }: PageProps) {
         {/* Available translations */}
         {availableLocales.length > 1 && (
           <div className="flex items-center gap-2 mt-4">
-            <span className="text-sm text-muted-foreground">
+            <span className="text-xs sm:text-sm text-muted-foreground">
               {locale === 'fr' ? 'Aussi disponible en' : locale === 'ja' ? '他の言語' : 'Also available in'}:
             </span>
             {availableLocales
@@ -157,7 +157,7 @@ export default async function PostPage({ params }: PageProps) {
                 <Link
                   key={l}
                   href={`/${l}/posts/${slug}`}
-                  className="text-lg hover:scale-110 transition-transform"
+                  className="text-base sm:text-lg hover:scale-110 transition-transform"
                   title={localeNames[l]}
                 >
                   {localeFlags[l]}
@@ -168,7 +168,7 @@ export default async function PostPage({ params }: PageProps) {
 
         {/* Tags */}
         {post.tags.length > 0 && (
-          <div className="flex flex-wrap gap-2 mt-6">
+          <div className="flex flex-wrap gap-2 mt-4 sm:mt-6">
             {post.tags.map((tag) => (
               <Badge
                 key={tag}
@@ -184,30 +184,30 @@ export default async function PostPage({ params }: PageProps) {
 
       {/* Cover Image */}
       {post.coverImage && (
-        <div className="mb-12 -mx-6 md:-mx-12 opacity-0 animate-fade-in-up animation-delay-200">
+        <div className="mb-8 sm:mb-12 -mx-4 sm:-mx-6 md:-mx-12 opacity-0 animate-fade-in-up animation-delay-200">
           <img
             src={post.coverImage}
             alt={post.title}
-            className="w-full h-auto rounded-xl md:rounded-2xl"
+            className="w-full h-auto sm:rounded-xl md:rounded-2xl"
           />
         </div>
       )}
 
       {/* Content */}
       <div
-        className="prose opacity-0 animate-fade-in-up animation-delay-300"
+        className="prose prose-mobile opacity-0 animate-fade-in-up animation-delay-300"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
-      <Separator className="my-12" />
+      <Separator className="my-8 sm:my-12" />
 
       {/* Author Bio */}
-      <div className="p-6 rounded-xl bg-card/50 border border-border/50 opacity-0 animate-fade-in-up animation-delay-400">
-        <div className="flex items-start gap-4">
-          <div className="h-16 w-16 rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0" />
-          <div>
-            <h3 className="font-semibold text-lg mb-1">{dict.post.writtenBy} {post.author}</h3>
-            <p className="text-muted-foreground mb-3">
+      <div className="p-4 sm:p-6 rounded-lg sm:rounded-xl bg-card/50 border border-border/50 opacity-0 animate-fade-in-up animation-delay-400">
+        <div className="flex items-start gap-3 sm:gap-4">
+          <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0" />
+          <div className="min-w-0">
+            <h3 className="font-semibold text-base sm:text-lg mb-1">{dict.post.writtenBy} {post.author}</h3>
+            <p className="text-sm sm:text-base text-muted-foreground mb-2 sm:mb-3">
               {dict.footer.tagline}
             </p>
             <div className="flex gap-3">
@@ -215,7 +215,7 @@ export default async function PostPage({ params }: PageProps) {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-primary hover:underline"
+                className="text-xs sm:text-sm text-primary hover:underline"
               >
                 Twitter
               </a>
@@ -223,7 +223,7 @@ export default async function PostPage({ params }: PageProps) {
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-primary hover:underline"
+                className="text-xs sm:text-sm text-primary hover:underline"
               >
                 GitHub
               </a>
@@ -233,9 +233,9 @@ export default async function PostPage({ params }: PageProps) {
       </div>
 
       {/* Back to Posts */}
-      <div className="mt-12 text-center opacity-0 animate-fade-in-up animation-delay-500">
+      <div className="mt-8 sm:mt-12 text-center opacity-0 animate-fade-in-up animation-delay-500">
         <Link href={`/${locale}`}>
-          <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground">
+          <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground text-sm sm:text-base">
             {dict.post.viewAllPosts}
           </Button>
         </Link>
