@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
-import { locales, defaultLocale, type Locale } from '@/lib/i18n';
+// Import from i18n-config (NOT i18n) because middleware runs on Edge runtime
+// and i18n.ts has 'server-only' which isn't compatible with Edge
+import { locales, defaultLocale, type Locale } from '@/lib/i18n-config';
 
 function getLocaleFromHeaders(request: NextRequest): Locale {
   const acceptLanguage = request.headers.get('accept-language');
