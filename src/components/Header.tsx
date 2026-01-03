@@ -40,13 +40,19 @@ export function Header({ locale, dict }: HeaderProps) {
               {dict.nav.about}
             </Link>
             <LanguageSwitcher currentLocale={locale} />
-            <Button
-              variant="outline"
-              size="sm"
-              className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground"
+            <a
+              href="https://buttondown.email/tonystrawberry"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              {dict.nav.subscribe}
-            </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground"
+              >
+                {dict.nav.subscribe}
+              </Button>
+            </a>
           </div>
 
           {/* Mobile: Language + Menu Button */}
@@ -91,13 +97,20 @@ export function Header({ locale, dict }: HeaderProps) {
               >
                 {dict.nav.about}
               </Link>
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground"
+              <a
+                href="https://buttondown.email/tonystrawberry"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full"
               >
-                {dict.nav.subscribe}
-              </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground"
+                >
+                  {dict.nav.subscribe}
+                </Button>
+              </a>
             </div>
           </div>
         )}

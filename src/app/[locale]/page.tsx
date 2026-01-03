@@ -214,8 +214,8 @@ export default async function Home({ params }: PageProps) {
       {/*
         NEWSLETTER SECTION
 
-        Again, 100% server-rendered HTML.
-        The form doesn't do anything yet (would need API route or action).
+        Powered by Buttondown - a simple newsletter service.
+        Form submits directly to Buttondown's API.
 
         animation-delay-500: Staggered entrance animation
       */}
@@ -225,9 +225,16 @@ export default async function Home({ params }: PageProps) {
           <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6">
             {dict.home.stayUpdatedDesc}
           </p>
-          <form className="flex flex-col sm:flex-row gap-3">
+          <form
+            action="https://buttondown.email/api/emails/embed-subscribe/tonystrawberry"
+            method="post"
+            target="_blank"
+            className="flex flex-col sm:flex-row gap-3"
+          >
             <input
               type="email"
+              name="email"
+              required
               placeholder={dict.home.emailPlaceholder}
               className="flex-1 px-4 py-2.5 sm:py-2 rounded-lg bg-input border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-base"
             />

@@ -159,21 +159,9 @@ export default async function AboutPage({ params }: PageProps) {
         <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
           <span className="text-primary">03.</span> {dict.about.connect}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
           <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-card transition-all group flex sm:flex-col items-center sm:items-start gap-3 sm:gap-0"
-          >
-            <div className="text-2xl sm:mb-2">𝕏</div>
-            <div>
-              <div className="font-medium group-hover:text-primary transition-colors">Twitter</div>
-              <div className="text-sm text-muted-foreground">@tonyduong</div>
-            </div>
-          </a>
-          <a
-            href="https://github.com"
+            href="https://github.com/tonystrawberry"
             target="_blank"
             rel="noopener noreferrer"
             className="p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-card transition-all group flex sm:flex-col items-center sm:items-start gap-3 sm:gap-0"
@@ -181,11 +169,11 @@ export default async function AboutPage({ params }: PageProps) {
             <div className="text-2xl sm:mb-2">🐙</div>
             <div>
               <div className="font-medium group-hover:text-primary transition-colors">GitHub</div>
-              <div className="text-sm text-muted-foreground">@tonyduong</div>
+              <div className="text-sm text-muted-foreground">@tonystrawberry</div>
             </div>
           </a>
           <a
-            href="mailto:hello@example.com"
+            href="mailto:tony.duong.102@gmail.com"
             className="p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-card transition-all group flex sm:flex-col items-center sm:items-start gap-3 sm:gap-0"
           >
             <div className="text-2xl sm:mb-2">✉️</div>

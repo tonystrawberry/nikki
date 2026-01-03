@@ -25,15 +25,13 @@ export function Footer({ locale, dict }: FooterProps) {
 
           <div className="flex items-center gap-4 sm:gap-6 text-sm text-muted-foreground">
             <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:tony.duong.102@gmail.com"
               className="hover:text-primary transition-colors"
             >
-              Twitter
+              Email
             </a>
             <a
-              href="https://github.com"
+              href="https://github.com/tonystrawberry"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary transition-colors"

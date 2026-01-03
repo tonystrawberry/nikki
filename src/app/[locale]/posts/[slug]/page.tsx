@@ -212,20 +212,18 @@ export default async function PostPage({ params }: PageProps) {
             </p>
             <div className="flex gap-3">
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs sm:text-sm text-primary hover:underline"
-              >
-                Twitter
-              </a>
-              <a
-                href="https://github.com"
+                href="https://github.com/tonystrawberry"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs sm:text-sm text-primary hover:underline"
               >
                 GitHub
+              </a>
+              <a
+                href="mailto:tony.duong.102@gmail.com"
+                className="text-xs sm:text-sm text-primary hover:underline"
+              >
+                Email
               </a>
             </div>
           </div>
