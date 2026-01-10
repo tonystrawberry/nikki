@@ -265,3 +265,4 @@ export interface Dictionary {
     viewAllPosts: string;      // View all link
   };
 }
+
