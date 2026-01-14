@@ -1,6 +1,6 @@
 ---
 title: "Ma préparation pour l'entretien développeur avec TokyoDev"
-date: "2026-01-11"
+date: "2026-01-12"
 excerpt: "Demain, je passe un entretien avec TokyoDev pour me présenter et parler de mon travail chez Spacely."
 author: "Tony Duong"
 category: "daily"
@@ -8,69 +8,71 @@ tags: ["tokyo", "interview", "spacely"]
 coverImage: "/images/posts/2026-01-12/cover.jpeg"
 ---
 
-Demain, je passe un entretien avec TokyoDev pour me présenter et parler de mon travail chez Spacely.
-Je ne suis pas très doué pour les interviews, alors j'ai besoin de préparer quelques questions à l'avance lol.
-
 # Pourquoi suis-je venu au Japon ?
 
-Mon arrivée au Japon n'était en fait pas du tout prévue. En 2018, j'étais sur le point d'obtenir mon diplôme universitaire au Canada et j'ai trouvé par hasard sur Facebook une offre d'emploi pour une entreprise française basée à Tokyo.
+- Je cherchais un emploi à Montréal, mais j'ai décidé de tenter ma chance et de venir ici !
+- J'ai toujours été fan du Japon (anime, manga, culture, nourriture, etc.), mais je n'avais pas de plan précis pour y vivre.
+- C'était le destin (God's plan). Je suis tombé sur l'offre d'emploi sur Facebook par hasard.
+- Je suis ici depuis, j'y ai rencontré ma partenaire de vie et je me plais vraiment ici !
 
-À la base, je cherchais un emploi à Montréal, mais j'ai décidé de tenter ma chance et de venir ici ! J'ai toujours été fan du Japon, mais je n'avais pas de projet précis d'y vivre. J'imagine que c'était le destin (ou le plan de Dieu). Je suis ici depuis et j'apprécie vraiment la vie ici !
+# Pourquoi avez-vous décidé de rejoindre Spacely ?
 
-# Pourquoi as-tu décidé de rejoindre Spacely ?
+- Je voulais revenir au développement en interne (in-house) pour pouvoir me concentrer sur la construction d'un produit avec plus de profondeur et d'ownership.
+- En tant que Tech Lead dans mon emploi précédent, mon rôle consistait à diriger les projets à un niveau supérieur, ce qui signifiait beaucoup de réunions, de revues de code et de mentorat.
+- Mais je voulais me rapprocher du code, construire le produit et « mettre les mains dans le cambouis » davantage.
+- Le produit semblait très intéressant et unique (utilisation de la VR pour l'immobilier, home staging virtuel, etc.).
+- L'équilibre ici est parfait pour moi entre les tâches liées aux fonctionnalités et les tâches de maintenance ("health tasks").
+- Le télétravail. Je me sens beaucoup plus productif et concentré à la maison.
+- L'équilibre vie pro/vie perso est très bon ici. J'aime mon travail, mais j'apprécie aussi mon temps en dehors. J'accorde beaucoup d'importance à cet équilibre.
+- Je trouve que Spacely offre un environnement de travail très amusant. J'aime le fait qu'on puisse tout faire (tant que cela profite à l'entreprise). Il y a très peu de contraintes et c'est un environnement très ouvert où l'on peut proposer de nouvelles idées et projets.
+- Mais tout cela, c'est grâce aux personnes qui travaillent ici. Depuis que j'ai rejoint l'équipe, tout le monde est si amical et solidaire. Même si nous travaillons tous à distance, je sens que les membres sont très proches et nous nous entendons tous bien.
 
-Avant Spacely, je travaillais comme Backend Tech Lead dans un grand cabinet de conseil. Même si j'y ai beaucoup appris, le travail pour des clients impliquait souvent des délais serrés où nous devions privilégier la vitesse de livraison à la qualité du code.
+# Pouvez-vous m'en dire plus sur votre rôle ? (Intitulé, ce sur quoi vous travaillez et comment fonctionne votre équipe ?)
 
-J'ai fini par atteindre un point où je voulais retourner au développement interne (chez l'annonceur) pour pouvoir me concentrer sur la construction d'un produit avec plus de profondeur et d'ownership. De plus, en tant que tech lead, mon rôle était de me concentrer sur la direction des projets à un niveau plus élevé, ce qui signifie beaucoup de réunions, beaucoup de revues de code et de mentorat, même si je me portais volontaire pour participer aussi au développement. Mais je voulais "mettre les mains dans le cambouis" davantage. J'aime coder. C'est pour ça que j'ai rejoint Spacely. Le produit m'a fasciné, surtout le lecteur VR et le home staging virtuel.
+- Je suis Team Lead Backend Engineer. Je suis passé du statut de membre à celui de leader.
+- Je me concentre sur le backend Ruby on Rails de notre application web (développement de nouvelles fonctionnalités, maintenance de la base de code, surveillance des performances, correction de bugs). Je fais aussi un peu de frontend et de tâches d'infrastructure (AWS) quand c'est nécessaire.
+- Je développe de nouvelles fonctionnalités en étroite collaboration avec les PMs et les autres équipes (Frontend, Mobile, R&D, Infra).
+- Depuis que je suis devenu chef d'équipe, je gère aussi des tâches managériales comme l'animation des réunions d'équipe (daily standups, sprint planning, sprint reviews, etc.), le reporting aux chefs de projet, ainsi que le recrutement (entretiens et revues des tests techniques) et l'intégration des nouveaux membres.
+- Nous essayons d'avoir le moins de réunions possible et de nous concentrer sur la création de valeur pour l'entreprise.
+- L'originalité du produit VR m'a attiré ici, mais en réalité, je ne travaille pas du tout sur la partie VR.
+- Cependant, Spacely est une entreprise très flexible et vous pouvez demander à être affecté à d'autres équipes si vous le souhaitez vraiment.
+- Récemment, un ingénieur iOS a demandé à passer dans l'équipe backend et nous avons pu l'accueillir. Nous étions à un stade où nous manquions d'ingénieurs backend, c'était donc une situation gagnant-gagnant.
+- Tous les ingénieurs (BE, FE, Mobile, R&D) sont affectés à des "projets". Nous avons par exemple le "projet lecteur VR", le "projet fonctionnalités app mobile", le "projet data analytics", etc. Chaque projet a un PM et un chef d'équipe ainsi que des membres.
+- Les ingénieurs sont assez autonomes chez Spacely. Personne ne vous donnera d'instructions sur quoi faire ou comment le faire.
 
-Le produit principal de Spacely est une plateforme pour les agents immobiliers leur permettant de gérer leurs propriétés et leurs clients. Les biens peuvent être visualisés dans une visionneuse 3D sur le site web ou en utilisant des casques VR. Un cas d'utilisation, par exemple, est de permettre aux acheteurs ou locataires potentiels de visiter une propriété en 3D avant de décider de s'y rendre physiquement. Il est aussi possible de visualiser des propriétés non construites (modèles 3D), d'ajouter des meubles virtuels, de gérer les clients avec un CRM, etc.
+# Parlez-moi du processus de développement chez Spacely. Comment décidez-vous sur quoi travailler et quel est le processus de mise en production ?
 
-J'apprécie aussi beaucoup l'équilibre ici. On avance vite, mais on a aussi cette règle des 30% où l'on consacre du temps dans chaque sprint au refactoring et à la correction de bugs. Cet engagement envers la qualité, combiné à la culture du travail à distance et à la petite taille de l'équipe, en a fait le choix parfait pour moi.
+- Les PMs décident des fonctionnalités sur lesquelles nous devons travailler ensuite. Nous avons une roadmap et nous savons déjà quelles fonctionnalités nous allons développer pour les 6 prochains mois.
+- Nous avons une réunion par projet toutes les deux semaines pour discuter des idées, de l'avancement, des points bloquants, des prochaines étapes...
+- Les ingénieurs sont responsables du découpage des tâches, de leur estimation, de l'évaluation de la complexité, etc.
+- Nous utilisons Notion pour rédiger les spécifications avant de commencer à travailler sur une fonctionnalité. Cela nous aide à avoir une compréhension claire de la fonctionnalité et à la partager avec l'équipe, ainsi qu'à l'utiliser comme entrée pour l'agent de codage IA (nous essayons d'utiliser le serveur Notion MCP pour accélérer le processus de développement).
+- Il y a des mises en production tous les jours. Nous utilisons les environnements classiques dev/staging/production.
 
-# Peux-tu m'en dire plus sur ton rôle ? Titre, missions et fonctionnement de l'équipe ?
+# Quelle est la partie la plus amusante ou créative de votre travail ?
 
-Je suis Team Lead Backend Engineer chez Spacely. Comme le titre l'indique, je me concentre sur le backend de notre application web. Cela implique le développement de nouvelles fonctionnalités en étroite collaboration avec les PMs et les autres équipes (Frontend, Mobile, R&D), ainsi que la maintenance de la base de code via le monitoring des performances et la correction de bugs.
-
-Au-delà du code, je gère des tâches managériales comme animer les réunions d'équipe, faire le reporting aux chefs de projet, et gérer le recrutement et l'onboarding. Travailler dans une startup demande de la polyvalence, il faut être présent sur tous les fronts. Je me suis senti soutenu par mon équipe dès le premier jour, ce qui a été une énorme motivation pour grandir et faire du bon travail.
-
-Pour notre processus, nous suivons la méthode Scrum avec des sprints de deux semaines. Nous allouons strictement 70% de notre temps au développement de fonctionnalités et 30% aux "tâches de santé" (refactoring et dette technique). Nous avons de courts daily standups pour nous aligner sur les progrès, et bien que les membres individuels soient responsables de projets spécifiques, nous mettons l'accent sur la revue croisée du code. Cela garantit que la connaissance est partagée dans toute l'équipe plutôt que d'être cloisonnée chez une seule personne.
-
-# Parle-moi du processus de développement chez Spacely. Comment décidez-vous sur quoi travailler et comment le livrez-vous ?
-
-Chez Spacely, ce sont les PMs qui décident des prochains chantiers. Ils proposent les idées et nous avons une réunion toutes les deux semaines pour en discuter (faisabilité, priorité, planning, etc.). Nous avons une roadmap et nous savons déjà sur quelles fonctionnalités nous allons travailler pour les 6 prochains mois.
-
-Ensuite, quand nous commençons vraiment à travailler sur une fonctionnalité, nous découpons les tâches et les définissons dans Jira. Nous créons donc la tâche EPIC et ensuite des sous-tâches assignées aux membres de l'équipe (FE, BE, Mobile, R&D).
-
-Nous utilisons aussi Notion pour rédiger les spécifications avant de commencer à coder. Cela nous aide à avoir une compréhension claire de la fonctionnalité et de la partager avec l'équipe, pour que tout le monde soit sur la même longueur d'onde et demande des ajustements si besoin. Nous prévoyons d'utiliser un serveur MCP couplé à un agent de codage pour accélérer le processus de développement.
-
-Après ça, on met les mains dans le code. On utilise beaucoup Slack pour communiquer, partager nos progrès, demander de l'aide. Tout le monde est très réactif chez Spacely, donc quand on a une question, on peut la poser directement et on obtient une réponse rapidement.
-
-Quand on veut livrer une fonctionnalité, elle doit être testée par le Customer Success et le Product Manager sur l'environnement de staging. Ce sont eux les garants de la satisfaction client, donc ce sont eux qui testent et nous font les retours.
-
-Une fois la fonctionnalité testée et approuvée, on peut la déployer en production. Nous utilisons GitHub Actions pour déployer le code sur l'environnement de production qui est hébergé sur AWS.
-
-# Quelle est la partie la plus amusante ou créative de ton travail ?
-
-Eh bien, ce que j'aime ici, c'est qu'on peut tout faire (tant que ça profite à l'entreprise). On a très peu de contraintes et c'est un environnement très ouvert où l'on peut proposer de nouvelles idées et projets.
-
-Si tu veux travailler sur un serveur MCP, tu peux. Tu veux améliorer certaines parties de l'application non liées à tes fonctionnalités assignées ? C'est bon ! Tu veux proposer une nouvelle façon d'écrire la base de connaissances ? Demande juste et tu auras le soutien nécessaire. En fait, depuis mon arrivée l'année dernière, j'ai essayé de proposer des améliorations (au niveau technique mais aussi organisationnel) et la plupart ont été adoptées. Tout le monde a été très encourageant et flexible. Tu veux bosser sur l'infra aussi ? Consulte l'équipe infra et ils t'aideront à démarrer.
-
-J'aime le fait de pouvoir coder concrètement et travailler au plus près du produit, en développant de nouvelles fonctionnalités. J'adore aussi refactoriser le code pour le rendre plus maintenable et lisible pour tous (surtout pour les nouveaux arrivants). Spacely a maintenant 8 ans et comme toute base de code, elle a des défauts, donc je suis très motivé pour l'améliorer.
+- Ce qui est bien, c'est qu'il n'y a pas qu'UNE seule chose que je trouve amusante ici. Pour moi, le développement en soi et imaginer comment construire une nouvelle fonctionnalité est amusant. Mais refactoriser le code pour le rendre plus propre et plus maintenable l'est tout autant. Je me sens très bien après l'avoir fait.
+- Spacely a une règle selon laquelle nous consacrons 30 % de notre temps aux "tâches de santé" (refactoring et dette technique). C'est une très bonne chose car cela nous permet de garder la base de code propre et maintenable.
+- Mais depuis que j'ai pris en charge certaines tâches managériales, même si je pensais ne pas aimer ça au début, j'y prends finalement plaisir. Je trouve que c'est une bonne compétence à avoir : gérer des personnes, être bon en communication, animer des réunions et savoir quoi/à qui déléguer les tâches. Je mentore quelques nouveaux arrivants récemment et j'aime ça.
+- Chez Spacely, vous pouvez simplement vous concentrer sur vos tâches immédiates, mais vous pouvez aussi sortir un peu des sentiers battus et proposer de nouvelles idées (améliorer la base de connaissances, ajouter des directives de codage, automatiser certaines tâches, etc.). Vous pouvez demander des challenges.
 
 # Quelle a été la chose la plus difficile ?
 
-Rattraper le niveau sur la base de code et comprendre la logique métier. Comme je l'ai dit, Spacely a 8 ans et ce n'est pas si facile de comprendre le code quand on est nouveau. Certaines parties n'étaient pas très bien documentées, donc on n'est parfois pas très sûr de l'intention réelle derrière le code MAIS cela s'améliore à bon rythme. Nous adoptons l'amélioration continue donc nous essayons de laisser le code dans un meilleur état que nous l'avons trouvé.
+- Se mettre à niveau avec la base de code en tant que nouvel arrivant. La quantité de code est assez importante et pour une startup (de maintenant 8 ans) avec peu de membres, il est nécessaire d'avoir une vue d'ensemble et une compréhension globale de son fonctionnement.
 
-Et équilibrer le temps entre les tâches de fonctionnalités et les tâches de santé. Nous avons une règle 70/30, mais ce n'est jamais exactement 70/30. Nous avons tendance à avoir plus de tâches de fonctionnalités bien sûr, car c'est ce dont le business a besoin, mais nous finissons par retarder les tâches de santé quand nous manquons de temps.
+# Selon vous, qu'est-ce qui distingue Spacely des autres entreprises ?
 
-# Qu'est-ce qui, selon toi, distingue Spacely des autres entreprises ?
+- Une culture très ouverte et amicale. Les gens.
+- Une culture sans blâme (no blame culture). Nous nous soutenons mutuellement, même en cas d'échec.
+- Même si c'est une entreprise japonaise, l'équipe d'ingénierie est très internationale. Nous avons des membres venant de Corée du Sud, de Chine, de Suisse, de Suède, des États-Unis, de France, des Philippines et du Royaume-Uni. Nous faisons des quiz de kanji quotidiennement sur Slack où nous partageons des kanjis difficiles entre nous.
+- Un environnement de travail très flexible. Nous ne sommes pas liés à un horaire fixe. Vous pouvez travailler de chez vous ou au bureau (à Shibuya) et vous pouvez commencer tôt et finir tôt (ou l'inverse).
+- Un très bon équilibre vie pro/vie perso. Très peu d'heures supplémentaires en ce qui me concerne. L'important est que le travail soit fait.
+- Certaines personnes ont des emplois à temps partiel (副業) avec d'autres entreprises. C'est autorisé ici.
+- Personnellement, je passe beaucoup de mon temps à travailler sur une application d'apprentissage du japonais (shirimono.fun) après le travail ou le week-end. C'est pour dire que je ne me sens pas du tout en burn-out.
+- Aussi, certaines personnes dans l'entreprise ont pris leur congé paternité pendant environ 6 mois et nous avons pu couvrir leurs tâches sans aucun problème. Donc oui, si vous avez un bébé ici, ne vous inquiétez pas, nous prendrons soin de vous.
+- L'utilisation intensive de l'IA dans les fonctionnalités du produit et dans le processus de développement, ainsi qu'un grand soutien financier (pour l'équipement de télétravail, les cours/livres de japonais, les frais de certification, les événements tech, etc.).
+- Je peux dire que Spacely est capable de vous offrir des défis et des opportunités de croissance si vous êtes prêt à les saisir.
+- Mon CTO John a dit : "Soyez audacieux et prenez des risques. Mieux vaut essayer de faire quelque chose et échouer que de ne pas essayer du tout".
 
-Une culture très ouverte. Tout le monde est très amical et solidaire, pour de vrai. Je ne parle que pour moi, mais j'ai l'impression qu'on s'entend tous plutôt bien.
-Un environnement de travail très flexible. Nous ne sommes pas liés à un horaire fixe. On peut travailler de chez soi, du bureau, de n'importe où.
-Un très bon équilibre vie pro/vie perso. On ne travaille pas 12 heures par jour, la plupart du temps on ne fait pas d'heures sup. Il est même possible de faire du travail secondaire (副業) si on veut, pour une autre entreprise.
+# Pourquoi recommanderiez-vous à un autre développeur de rejoindre Spacely ?
 
-Et nous essayons d'utiliser beaucoup l'IA dans les fonctionnalités du produit (certaines de nos fonctionnalités récentes impliquent l'utilisation de l'IA pour générer des meubles sur des images immobilières par exemple, ou pour générer des légendes basées sur les informations de la base de données) et dans le processus de développement.
-
-# Pourquoi recommanderais-tu à un autre développeur de rejoindre Spacely ?
-
-Eh bien, j'ai décrit beaucoup de bonnes choses sur Spacely dans les questions précédentes. Je dirais que la raison principale de rejoindre Spacely est la culture ouverte et la flexibilité de l'environnement de travail.
+- Voir ci-dessus :)
