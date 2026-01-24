@@ -262,6 +262,31 @@
   padding-left: 1.25rem;
 }
 
+.prose ul {
+  list-style-type: none;
+}
+
+.prose ul li {
+  position: relative;
+  padding-left: 1.25rem;
+}
+
+.prose ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+.prose ol li::marker {
+  color: var(--primary);
+}
+
 @media (min-width: 640px) {
   .prose ul, .prose ol {
     margin: 1.5rem 0;
@@ -352,5 +377,3 @@
 .animation-delay-300 { animation-delay: 300ms; }
 .animation-delay-400 { animation-delay: 400ms; }
 .animation-delay-500 { animation-delay: 500ms; }
-
-
