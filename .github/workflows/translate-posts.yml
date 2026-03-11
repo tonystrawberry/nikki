@@ -1,0 +1,77 @@
+name: Translate New Posts
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "posts/en/**/*.md"
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Find new English posts missing translations
+        id: find_posts
+        run: |
+          # Get list of added/modified en posts in this push
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'posts/en/**/*.md' 2>/dev/null || git show --name-only --format='' HEAD -- 'posts/en/**/*.md')
+
+          MISSING=""
+          for FILE in $CHANGED; do
+            # Extract the date folder and filename
+            # e.g. posts/en/2026-03-11/hello-world.md
+            RELATIVE="${FILE#posts/en/}"   # 2026-03-11/hello-world.md
+            FR_PATH="posts/fr/$RELATIVE"
+            JA_PATH="posts/ja/$RELATIVE"
+
+            NEEDS_FR=false
+            NEEDS_JA=false
+            [ ! -f "$FR_PATH" ] && NEEDS_FR=true
+            [ ! -f "$JA_PATH" ] && NEEDS_JA=true
+
+            if $NEEDS_FR || $NEEDS_JA; then
+              MISSING="$MISSING $FILE"
+            fi
+          done
+
+          MISSING="${MISSING# }"  # trim leading space
+          echo "posts=$MISSING" >> "$GITHUB_OUTPUT"
+          echo "Found posts needing translation: $MISSING"
+
+      - name: Translate posts with Claude Code
+        if: steps.find_posts.outputs.posts != ''
+        uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are a professional translator. Your task is to translate English blog posts into French and Japanese.
+
+            For each file listed below, do the following:
+            1. Read the English source file.
+            2. Check if the French translation exists at `posts/fr/<date>/<filename>`. If it does NOT exist, create it.
+            3. Check if the Japanese translation exists at `posts/ja/<date>/<filename>`. If it does NOT exist, create it.
+            4. When creating a translation:
+               - Translate the frontmatter fields: `title`, `excerpt`. Keep all other fields identical (date, author, category, tags, coverImage).
+               - Translate the full body content naturally and fluently into the target language.
+               - Add a final line at the bottom (after a `---` separator): `*Traduit par Claude*` for French, `*Claudeによる翻訳*` for Japanese.
+
+            Files to process:
+            ${{ steps.find_posts.outputs.posts }}
+
+      - name: Commit translations
+        if: steps.find_posts.outputs.posts != ''
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add posts/fr/ posts/ja/
+          git diff --cached --quiet || git commit -m "chore: auto-translate new posts to fr and ja [skip ci]"
+          git push
