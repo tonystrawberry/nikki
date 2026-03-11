@@ -1,7 +1,7 @@
 name: Translate New Posts
 
 on:
-  pull_request:
+  push:
     branches:
       - main
     paths:
@@ -19,7 +19,6 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
-      id-token: write
 
     steps:
       - name: Checkout repository
@@ -60,22 +59,96 @@ jobs:
           echo "posts=$MISSING" >> "$GITHUB_OUTPUT"
           echo "Found posts needing translation: $MISSING"
 
-      - name: Translate posts with Claude Code
+      - name: Set up Node.js
         if: steps.find_posts.outputs.posts != ''
-        uses: anthropics/claude-code-action@v1
+        uses: actions/setup-node@v4
         with:
-          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          prompt: |
-            You are a professional translator. Your task is to translate English blog posts into French and Japanese.
+          node-version: "20"
 
-            For each file listed below, do the following:
-            1. Read the English source file.
-            2. Check if the French translation exists at `posts/fr/<date>/<filename>`. If it does NOT exist, create it.
-            3. Check if the Japanese translation exists at `posts/ja/<date>/<filename>`. If it does NOT exist, create it.
-            4. When creating a translation:
-               - Translate the frontmatter fields: `title`, `excerpt`. Keep all other fields identical (date, author, category, tags, coverImage).
-               - Translate the full body content naturally and fluently into the target language.
-               - Add a final line at the bottom (after a `---` separator): `*Traduit par Claude*` for French, `*Claudeによる翻訳*` for Japanese.
+      - name: Install Anthropic SDK
+        if: steps.find_posts.outputs.posts != ''
+        run: npm install @anthropic-ai/sdk
 
-            Files to process:
-            ${{ steps.find_posts.outputs.posts }}
+      - name: Translate posts via Claude API
+        if: steps.find_posts.outputs.posts != ''
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          POSTS: ${{ steps.find_posts.outputs.posts }}
+        run: |
+          node << 'EOF'
+          const Anthropic = require("@anthropic-ai/sdk");
+          const fs = require("fs");
+          const path = require("path");
+
+          const client = new Anthropic();
+          const posts = process.env.POSTS.trim().split(/\s+/).filter(Boolean);
+
+          async function translate(content, lang) {
+            const langLabel = lang === "fr" ? "French" : "Japanese";
+            const credit = lang === "fr" ? "*Traduit par Claude*" : "*Claudeによる翻訳*";
+
+            const message = await client.messages.create({
+              model: "claude-opus-4-6",
+              max_tokens: 4096,
+              messages: [
+                {
+                  role: "user",
+                  content: `Translate the following markdown blog post into ${langLabel}.
+          Rules:
+          - Translate the frontmatter fields "title" and "excerpt" only. Keep all other frontmatter fields identical.
+          - Translate the body content naturally and fluently.
+          - If the post does not already end with a "---" separator and a credit line, append exactly this at the end:
+
+          ---
+          ${credit}
+
+          Return only the translated markdown, no explanation.
+
+          ${content}`,
+                },
+              ],
+            });
+
+            return message.content[0].text;
+          }
+
+          async function run() {
+            for (const enPath of posts) {
+              const relative = enPath.replace(/^posts\/en\//, "");
+              const content = fs.readFileSync(enPath, "utf8");
+
+              for (const lang of ["fr", "ja"]) {
+                const outPath = `posts/${lang}/${relative}`;
+                if (fs.existsSync(outPath)) {
+                  console.log(`Skipping ${outPath} (already exists)`);
+                  continue;
+                }
+                console.log(`Translating ${enPath} → ${outPath}`);
+                const translated = await translate(content, lang);
+                fs.mkdirSync(path.dirname(outPath), { recursive: true });
+                fs.writeFileSync(outPath, translated);
+                console.log(`Written: ${outPath}`);
+              }
+            }
+          }
+
+          run().catch((err) => { console.error(err); process.exit(1); });
+          EOF
+
+      - name: Open PR with translations
+        if: steps.find_posts.outputs.posts != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="translate/$(date +%Y%m%d-%H%M%S)"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add posts/fr/ posts/ja/
+          git commit -m "chore: add fr and ja translations"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "chore: translate new posts to fr and ja" \
+            --body "Automatically translated by Claude $(echo '${{ steps.find_posts.outputs.posts }}' | tr ' ' '\n' | sed 's/^/- /')" \
+            --base main \
+            --head "$BRANCH"
