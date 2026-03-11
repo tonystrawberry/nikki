@@ -85,7 +85,7 @@ export function PostCard({ post, featured = false, locale, dict, showUntranslate
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 text-xs sm:text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
-              <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0" />
+              <img src="/images/avatar.png" alt={post.author} className="h-5 w-5 sm:h-6 sm:w-6 rounded-full object-cover flex-shrink-0" />
               <span className="font-medium truncate">{post.author}</span>
             </div>
             <div className="flex items-center gap-2 sm:gap-3">

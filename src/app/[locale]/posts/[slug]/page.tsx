@@ -135,7 +135,7 @@ export default async function PostPage({ params }: PageProps) {
 
         <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-muted-foreground">
           <div className="flex items-center gap-3">
-            <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0" />
+            <img src="/images/avatar.png" alt={post.author} className="h-8 w-8 sm:h-10 sm:w-10 rounded-full object-cover flex-shrink-0" />
             <div>
               <p className="font-medium text-foreground text-sm sm:text-base">{post.author}</p>
               <p className="text-xs sm:text-sm">
@@ -204,7 +204,7 @@ export default async function PostPage({ params }: PageProps) {
       {/* Author Bio */}
       <div className="p-4 sm:p-6 rounded-lg sm:rounded-xl bg-card/50 border border-border/50 opacity-0 animate-fade-in-up animation-delay-400">
         <div className="flex items-start gap-3 sm:gap-4">
-          <div className="h-12 w-12 sm:h-16 sm:w-16 rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0" />
+          <img src="/images/avatar.png" alt={post.author} className="h-12 w-12 sm:h-16 sm:w-16 rounded-full object-cover flex-shrink-0" />
           <div className="min-w-0">
             <h3 className="font-semibold text-base sm:text-lg mb-1">{dict.post.writtenBy} {post.author}</h3>
             <p className="text-sm sm:text-base text-muted-foreground mb-2 sm:mb-3">

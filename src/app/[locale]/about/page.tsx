@@ -68,11 +68,7 @@ export default async function AboutPage({ params }: PageProps) {
       {/* Hero Section with Avatar */}
       <section className="text-center mb-10 sm:mb-16 opacity-0 animate-fade-in-up">
         <div className="relative inline-block mb-4 sm:mb-6">
-          <div className="h-24 w-24 sm:h-32 sm:w-32 rounded-full bg-gradient-to-br from-primary via-accent to-primary p-1">
-            <div className="h-full w-full rounded-full bg-card flex items-center justify-center text-4xl sm:text-5xl">
-              ✍️
-            </div>
-          </div>
+          <img src="/images/avatar.png" alt="Tony" className="h-24 w-24 sm:h-32 sm:w-32 rounded-full object-cover" />
         </div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3 sm:mb-4">
           {locale === 'fr' ? 'Salut, moi c\'est' : locale === 'ja' ? 'こんにちは、' : "Hey, I'm"}{" "}
