@@ -16,3 +16,4 @@ coverImage: "https://images.unsplash.com/photo-1483736762161-1d107f3c78e1?q=80&w
 - learned that Claude Code Actions is so powerful! We already set up a Github Action to use it to run on every dependabot PR and make it publish a comment explaining the changes, if it's safe to merge or not, etc. Thanks Hikawa-san!
 - was hype about AI Spec-Driven Development (SDD). I can see how that can greatly improve the development workflow and the quality of the code.
 - continue Shirimono. Just making progress on the admin panel.
+- set up an automatic translation system for this blog using Claude Code Actions and GitHub Actions! New posts written in English will now be automatically translated into French and Japanese.
