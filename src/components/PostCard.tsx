@@ -10,6 +10,7 @@ interface PostCardProps {
   post: PostMeta;
   featured?: boolean;
   locale: Locale;
+  linkLocale?: Locale;
   dict: Dictionary;
   showUntranslatedNotice?: boolean;
 }
@@ -26,11 +27,11 @@ const untranslatedMessages: Record<Locale, string> = {
   ja: "日本語への翻訳はまだありません",
 };
 
-export function PostCard({ post, featured = false, locale, dict, showUntranslatedNotice = false }: PostCardProps) {
+export function PostCard({ post, featured = false, locale, linkLocale, dict, showUntranslatedNotice = false }: PostCardProps) {
   const category = CATEGORIES[post.category];
 
   return (
-    <Link href={`/${locale}/posts/${post.slug}`}>
+    <Link href={`/${linkLocale ?? locale}/posts/${post.slug}`}>
       <Card className={`card-hover group border-border/50 bg-card/50 backdrop-blur-sm overflow-hidden ${featured ? 'md:col-span-2' : ''} ${showUntranslatedNotice ? 'border-amber-500/30' : ''}`}>
         {post.coverImage && (
           <div className="relative aspect-[2/1] overflow-hidden">

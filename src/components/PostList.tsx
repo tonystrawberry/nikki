@@ -71,6 +71,9 @@ interface PostListProps {
   /** All posts across all locales - for the activity chart */
   allPostsForChart: PostMeta[];
 
+  /** Map of slug → canonical locale, used to link untranslated posts correctly */
+  postCanonicalLocales: Record<string, Locale>;
+
   /** Current locale for date formatting */
   locale: Locale;
 
@@ -106,7 +109,7 @@ const dateLocales = {
  * @param locale - Current language
  * @param dict - Translations
  */
-export function PostList({ posts, allPostsForChart, locale, dict }: PostListProps) {
+export function PostList({ posts, allPostsForChart, postCanonicalLocales, locale, dict }: PostListProps) {
   /**
    * STATE: Active Category
    *
@@ -390,8 +393,9 @@ export function PostList({ posts, allPostsForChart, locale, dict }: PostListProp
                   post={post}
                   featured={index === 0 && activeCategory === "all" && !selectedDate}
                   locale={locale}
+                  linkLocale={isTranslated(post.slug) ? locale : (postCanonicalLocales[post.slug] ?? locale)}
                   dict={dict}
-                  showUntranslatedNotice={!isTranslated(post.slug)} // Show "Original" badge
+                  showUntranslatedNotice={!isTranslated(post.slug)}
                 />
               </div>
             ))}

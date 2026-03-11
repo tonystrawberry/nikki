@@ -41,7 +41,7 @@ import { notFound } from "next/navigation";
 
 // These functions read from the file system - SERVER ONLY
 // They CANNOT be imported in Client Components
-import { getAllPosts, getAllPostsAcrossLocales } from "@/lib/blog";
+import { getAllPosts, getAllPostsAcrossLocales, getPostCanonicalLocaleMap } from "@/lib/blog";
 
 // Client Component - will be hydrated on the browser
 import { PostList } from "@/components/PostList";
@@ -126,6 +126,7 @@ export default async function Home({ params }: PageProps) {
    */
   const posts = getAllPosts(locale);
   const allPosts = getAllPostsAcrossLocales();
+  const postCanonicalLocales = getPostCanonicalLocaleMap();
 
   /**
    * LOAD TRANSLATIONS
@@ -207,6 +208,7 @@ export default async function Home({ params }: PageProps) {
       <PostList
         posts={posts}
         allPostsForChart={allPosts}
+        postCanonicalLocales={postCanonicalLocales}
         locale={locale}
         dict={dict}
       />

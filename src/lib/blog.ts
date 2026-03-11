@@ -448,6 +448,26 @@ export function getPostAvailableLocales(slug: string): Locale[] {
  *
  * @returns Array of unique posts from all locales
  */
+/**
+ * getPostCanonicalLocaleMap
+ * =========================
+ *
+ * Returns a map of slug → the first locale that has this post.
+ * Used to build correct links for untranslated posts in the UI.
+ * Locale priority: fr first (canonical), then en, then ja.
+ */
+export function getPostCanonicalLocaleMap(): Record<string, Locale> {
+  const map: Record<string, Locale> = {};
+  for (const locale of locales) {
+    for (const { slug } of getAllMarkdownFiles(getPostsDirectoryForLocale(locale))) {
+      if (!map[slug]) {
+        map[slug] = locale;
+      }
+    }
+  }
+  return map;
+}
+
 export function getAllPostsAcrossLocales(): PostMeta[] {
   // French posts are the canonical source
   const frenchPosts = getAllPosts('fr');
