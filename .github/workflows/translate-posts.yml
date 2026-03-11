@@ -6,6 +6,12 @@ on:
       - main
     paths:
       - "posts/en/**/*.md"
+  workflow_dispatch:
+    inputs:
+      post_path:
+        description: "Path to the English post (e.g. posts/en/2026-03-11/hello-world.md). Leave empty to process all missing translations."
+        required: false
+        type: string
 
 jobs:
   translate:
@@ -20,17 +26,25 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Find new English posts missing translations
+      - name: Find English posts missing translations
         id: find_posts
         run: |
-          # Get list of added/modified en posts in this push
-          CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'posts/en/**/*.md' 2>/dev/null || git show --name-only --format='' HEAD -- 'posts/en/**/*.md')
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ -n "${{ inputs.post_path }}" ]; then
+              # Single file specified manually
+              CANDIDATES="${{ inputs.post_path }}"
+            else
+              # No file specified — scan all en posts
+              CANDIDATES=$(find posts/en -name "*.md" | sort)
+            fi
+          else
+            # Triggered by push — only look at changed files
+            CANDIDATES=$(git diff --name-only HEAD~1 HEAD -- 'posts/en/**/*.md' 2>/dev/null || git show --name-only --format='' HEAD -- 'posts/en/**/*.md')
+          fi
 
           MISSING=""
-          for FILE in $CHANGED; do
-            # Extract the date folder and filename
-            # e.g. posts/en/2026-03-11/hello-world.md
-            RELATIVE="${FILE#posts/en/}"   # 2026-03-11/hello-world.md
+          for FILE in $CANDIDATES; do
+            RELATIVE="${FILE#posts/en/}"
             FR_PATH="posts/fr/$RELATIVE"
             JA_PATH="posts/ja/$RELATIVE"
 
@@ -44,7 +58,7 @@ jobs:
             fi
           done
 
-          MISSING="${MISSING# }"  # trim leading space
+          MISSING="${MISSING# }"
           echo "posts=$MISSING" >> "$GITHUB_OUTPUT"
           echo "Found posts needing translation: $MISSING"
 
