@@ -33,7 +33,7 @@ function postCollection(label: string, path: `posts/${'fr' | 'en' | 'ja'}/**`) {
         { label: 'Tags', itemLabel: (props) => props.value ?? 'Tag' }
       ),
       coverImage: fields.text({ label: 'Cover Image URL' }),
-      content: fields.markdoc({ label: 'Content' }),
+      content: fields.mdx({ label: 'Content', extension: 'md' }),
     },
   });
 }
