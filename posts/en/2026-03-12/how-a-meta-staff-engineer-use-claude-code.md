@@ -5,6 +5,7 @@ excerpt: "John Kim's comprehensive guide to moving from manual coding to agentic
 author: "Tony Duong"
 category: "note"
 tags: ["claude-code", "ai", "productivity", "engineering", "workflow"]
+youtubeUrl: "https://www.youtube.com/watch?v=mZzhfPle9QU"
 ---
 
 John Kim, a Staff Engineer at Meta, shared a comprehensive guide with 50 tips on how to move from manually writing code to fully leveraging Claude Code as an **agentic orchestrator**. Here are all the tips, organized by topic.
