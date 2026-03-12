@@ -47,7 +47,7 @@ import { getAllPosts, getAllPostsAcrossLocales, getPostCanonicalLocaleMap } from
 import { PostList } from "@/components/PostList";
 
 // i18n utilities - server-only (has 'import server-only')
-import { type Locale, hasLocale, getDictionary } from "@/lib/i18n";
+import { hasLocale, getDictionary } from "@/lib/i18n";
 
 // ============================================================================
 // TYPES

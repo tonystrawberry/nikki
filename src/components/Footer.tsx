@@ -1,12 +1,11 @@
 import { Separator } from "@/components/ui/separator";
-import { type Locale, type Dictionary } from "@/lib/i18n-config";
+import { type Dictionary } from "@/lib/i18n-config";
 
 interface FooterProps {
-  locale: Locale;
   dict: Dictionary;
 }
 
-export function Footer({ locale, dict }: FooterProps) {
+export function Footer({ dict }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
