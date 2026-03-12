@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { format } from "date-fns";
 import { fr, enUS, ja } from "date-fns/locale";
 import { getAllPostSlugs, getPostBySlugWithFallback, getPostAvailableLocales } from "@/lib/blog";
@@ -7,7 +8,7 @@ import { CATEGORIES } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { type Locale, locales, hasLocale, getDictionary, localeFlags, localeNames } from "@/lib/i18n";
+import { locales, hasLocale, getDictionary, localeFlags, localeNames } from "@/lib/i18n";
 
 interface PageProps {
   params: Promise<{ slug: string; locale: string }>;
@@ -135,7 +136,7 @@ export default async function PostPage({ params }: PageProps) {
 
         <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 text-muted-foreground">
           <div className="flex items-center gap-3">
-            <img src="/images/avatar.png" alt={post.author} className="h-8 w-8 sm:h-10 sm:w-10 rounded-full object-cover flex-shrink-0" />
+            <Image src="/images/avatar.png" alt={post.author} width={40} height={40} className="rounded-full object-cover flex-shrink-0" />
             <div>
               <p className="font-medium text-foreground text-sm sm:text-base">{post.author}</p>
               <p className="text-xs sm:text-sm">
@@ -185,9 +186,11 @@ export default async function PostPage({ params }: PageProps) {
       {/* Cover Image */}
       {post.coverImage && (
         <div className="mb-8 sm:mb-12 -mx-4 sm:-mx-6 md:-mx-12 opacity-0 animate-fade-in-up animation-delay-200">
-          <img
+          <Image
             src={post.coverImage}
             alt={post.title}
+            width={1200}
+            height={630}
             className="w-full h-auto sm:rounded-xl md:rounded-2xl"
           />
         </div>
@@ -204,7 +207,7 @@ export default async function PostPage({ params }: PageProps) {
       {/* Author Bio */}
       <div className="p-4 sm:p-6 rounded-lg sm:rounded-xl bg-card/50 border border-border/50 opacity-0 animate-fade-in-up animation-delay-400">
         <div className="flex items-start gap-3 sm:gap-4">
-          <img src="/images/avatar.png" alt={post.author} className="h-12 w-12 sm:h-16 sm:w-16 rounded-full object-cover flex-shrink-0" />
+          <Image src="/images/avatar.png" alt={post.author} width={64} height={64} className="rounded-full object-cover flex-shrink-0" />
           <div className="min-w-0">
             <h3 className="font-semibold text-base sm:text-lg mb-1">{dict.post.writtenBy} {post.author}</h3>
             <p className="text-sm sm:text-base text-muted-foreground mb-2 sm:mb-3">

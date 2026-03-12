@@ -42,7 +42,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 // i18n utilities - these use 'server-only' so can ONLY be imported in Server Components
-import { locales, hasLocale, getDictionary, type Locale } from "@/lib/i18n";
+import { locales, hasLocale, getDictionary } from "@/lib/i18n";
 
 /**
  * FONT CONFIGURATION
@@ -236,7 +236,7 @@ export default async function LocaleLayout({
         </main>
 
         {/* Footer receives same props as Header */}
-        <Footer locale={locale} dict={dict} />
+        <Footer dict={dict} />
       </body>
     </html>
   );

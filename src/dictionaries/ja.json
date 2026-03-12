@@ -48,9 +48,7 @@
   },
   "categories": {
     "all": "すべて",
-    "reflections": "考え",
-    "experiences": "体験",
-    "culture": "文化",
+    "note": "ノート",
     "work": "仕事",
     "tech": "テック",
     "daily": "日常"

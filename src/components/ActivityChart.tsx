@@ -324,9 +324,6 @@ export function ActivityChart({ posts, onDateSelect, locale, dict }: ActivityCha
     ? ["", "Lun", "", "Mer", "", "Ven", ""]
     : ["", "Mon", "", "Wed", "", "Fri", ""];
 
-  // Cell size including gap
-  const cellWithGap = cellSize + GAP;
-
   // ---------------------------------------------------------------------------
   // RENDER
   // ---------------------------------------------------------------------------

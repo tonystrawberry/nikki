@@ -77,6 +77,7 @@ import path from 'path';
  * ```
  */
 import matter from 'gray-matter';
+import { z } from 'zod';
 
 /**
  * remark & remark-html
@@ -96,6 +97,26 @@ import { CATEGORIES, type Category, type PostMeta, type Post } from './types';
 
 // Import i18n config (NOT i18n.ts which is server-only)
 import { type Locale, defaultLocale, locales } from './i18n-config';
+
+// ============================================================================
+// FRONTMATTER SCHEMA
+// ============================================================================
+
+const PostFrontmatterSchema = z.object({
+  title: z.string().default('Untitled'),
+  date: z.string().default(() => new Date().toISOString().slice(0, 10)),
+  excerpt: z.string().default(''),
+  author: z.string().default('Anonymous'),
+  category: z.enum(Object.keys(CATEGORIES) as [Category, ...Category[]]).default('daily'),
+  tags: z.array(z.string()).default([]),
+  coverImage: z.string().optional(),
+  youtubeUrl: z.string().optional(),
+});
+
+function extractYoutubeId(url: string): string | null {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
+  return match?.[1] ?? null;
+}
 
 // ============================================================================
 // RE-EXPORTS
@@ -227,17 +248,17 @@ export function getAllPosts(locale: Locale = defaultLocale): PostMeta[] {
 
     // Parse frontmatter
     const { data, content } = matter(fileContents);
+    const frontmatter = PostFrontmatterSchema.parse(data);
+
+    // Derive coverImage from youtubeUrl if not explicitly set
+    const youtubeId = frontmatter.youtubeUrl ? extractYoutubeId(frontmatter.youtubeUrl) : null;
+    const coverImage = frontmatter.coverImage ?? (youtubeId ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg` : undefined);
 
     // Build PostMeta object
     return {
       slug,
-      title: data.title || 'Untitled',
-      date: data.date || new Date().toISOString(),
-      excerpt: data.excerpt || '',
-      author: data.author || 'Anonymous',
-      category: (data.category as Category) || 'daily',
-      tags: data.tags || [],
-      coverImage: data.coverImage,
+      ...frontmatter,
+      coverImage,
       readingTime: calculateReadingTime(content),
     } as PostMeta;
   });
@@ -324,6 +345,7 @@ export async function getPostBySlug(slug: string, locale: Locale = defaultLocale
   // Read and parse the file
   const fileContents = fs.readFileSync(postFile.filePath, 'utf8');
   const { data, content } = matter(fileContents);
+  const frontmatter = PostFrontmatterSchema.parse(data);
 
   /**
    * MARKDOWN TO HTML CONVERSION
@@ -343,17 +365,15 @@ export async function getPostBySlug(slug: string, locale: Locale = defaultLocale
     .process(content);
   const contentHtml = processedContent.toString();
 
+  const youtubeId = frontmatter.youtubeUrl ? extractYoutubeId(frontmatter.youtubeUrl) : null;
+  const coverImage = frontmatter.coverImage ?? (youtubeId ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg` : undefined);
+
   return {
     slug,
-    title: data.title || 'Untitled',
-    date: data.date || new Date().toISOString(),
-    excerpt: data.excerpt || '',
-    author: data.author || 'Anonymous',
-    category: (data.category as Category) || 'daily',
-    tags: data.tags || [],
-    coverImage: data.coverImage,
+    ...frontmatter,
+    coverImage,
     readingTime: calculateReadingTime(content),
-    content: contentHtml, // The full HTML content
+    content: contentHtml,
   };
 }
 

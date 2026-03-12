@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
-import { type Locale, hasLocale, getDictionary } from "@/lib/i18n";
+import { hasLocale, getDictionary } from "@/lib/i18n";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -68,7 +68,7 @@ export default async function AboutPage({ params }: PageProps) {
       {/* Hero Section with Avatar */}
       <section className="text-center mb-10 sm:mb-16 opacity-0 animate-fade-in-up">
         <div className="relative inline-block mb-4 sm:mb-6">
-          <img src="/images/avatar.png" alt="Tony" className="h-24 w-24 sm:h-32 sm:w-32 rounded-full object-cover" />
+          <Image src="/images/avatar.png" alt="Tony" width={128} height={128} className="h-24 w-24 sm:h-32 sm:w-32 rounded-full object-cover" />
         </div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-3 sm:mb-4">
           {locale === 'fr' ? 'Salut, moi c\'est' : locale === 'ja' ? 'こんにちは、' : "Hey, I'm"}{" "}

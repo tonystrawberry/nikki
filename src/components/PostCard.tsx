@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { format } from "date-fns";
 import { fr, enUS, ja } from "date-fns/locale";
 import { Card, CardContent } from "@/components/ui/card";
@@ -35,10 +36,12 @@ export function PostCard({ post, featured = false, locale, linkLocale, dict, sho
       <Card className={`card-hover group border-border/50 bg-card/50 backdrop-blur-sm overflow-hidden ${featured ? 'md:col-span-2' : ''} ${showUntranslatedNotice ? 'border-amber-500/30' : ''}`}>
         {post.coverImage && (
           <div className="relative aspect-[2/1] overflow-hidden">
-            <img
+            <Image
               src={post.coverImage}
               alt={post.title}
-              className={`h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 ${showUntranslatedNotice ? 'opacity-70' : ''}`}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className={`object-cover transition-transform duration-500 group-hover:scale-105 ${showUntranslatedNotice ? 'opacity-70' : ''}`}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
             <div className="absolute top-2 left-2 sm:top-4 sm:left-4 flex flex-wrap gap-1 sm:gap-2">
@@ -86,7 +89,7 @@ export function PostCard({ post, featured = false, locale, linkLocale, dict, sho
 
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-0 text-xs sm:text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
-              <img src="/images/avatar.png" alt={post.author} className="h-5 w-5 sm:h-6 sm:w-6 rounded-full object-cover flex-shrink-0" />
+              <Image src="/images/avatar.png" alt={post.author} width={24} height={24} className="rounded-full object-cover flex-shrink-0" />
               <span className="font-medium truncate">{post.author}</span>
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
