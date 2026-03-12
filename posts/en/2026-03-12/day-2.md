@@ -13,3 +13,4 @@ coverImage: "https://images.unsplash.com/photo-1483736762161-1d107f3c78e1?q=80&w
 - added Keystatic to the project to manage the blog posts. It's a headless CMS that allows us to manage the blog posts from a central location. Not sure if I am going to use it because there is no AI integration yet.
 - fix a redirection problem when visiting a post in a different language than the one it's written in.
 - learned about **compound engineering** — the practice of making small, consistent improvements that accumulate into significant gains over time, like compound interest. Each improvement builds on the last, so the value grows exponentially rather than linearly.
+- watched [How a Meta Staff Engineer Uses Claude Code](https://www.youtube.com/watch?v=mZzhfPle9QU) by John Kim — 50 tips on moving from manual coding to agentic orchestration with Claude Code. I wrote [my notes](/en/posts/how-a-meta-staff-engineer-use-claude-code) on it.
