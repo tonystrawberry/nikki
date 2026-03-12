@@ -434,9 +434,10 @@ title: "Your Title"
 date: "2026-01-15"
 excerpt: "Short description"
 author: "Your Name"
-category: "tech"  # reflections | experiences | culture | work | tech | daily
+category: "tech"  # note | work | tech | daily
 tags: ["tag1", "tag2"]
-coverImage: "https://..."
+coverImage: "https://..."  # optional, auto-derived from youtubeUrl if omitted
+youtubeUrl: "https://youtube.com/watch?v=..."  # optional
 ---
 
 Your content here...

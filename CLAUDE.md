@@ -42,9 +42,10 @@ title: "Post Title"
 date: "YYYY-MM-DD"
 excerpt: "Short preview"
 author: "Tony Duong"
-category: reflections|experiences|culture|work|tech|daily
+category: note|work|tech|daily
 tags: [tag1, tag2]
-coverImage: "URL"  # optional
+coverImage: "URL"  # optional, auto-derived from youtubeUrl if omitted
+youtubeUrl: "URL"  # optional
 ---
 ```
 

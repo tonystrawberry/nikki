@@ -244,9 +244,7 @@ export interface Dictionary {
    */
   categories: {
     all: string;          // "All" filter option
-    reflections: string;  // Category name
-    experiences: string;  // Category name
-    culture: string;      // Category name
+    note: string;         // Category name
     work: string;         // Category name
     tech: string;         // Category name
     daily: string;        // Category name

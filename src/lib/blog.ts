@@ -110,7 +110,13 @@ const PostFrontmatterSchema = z.object({
   category: z.enum(Object.keys(CATEGORIES) as [Category, ...Category[]]).default('daily'),
   tags: z.array(z.string()).default([]),
   coverImage: z.string().optional(),
+  youtubeUrl: z.string().optional(),
 });
+
+function extractYoutubeId(url: string): string | null {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
+  return match?.[1] ?? null;
+}
 
 // ============================================================================
 // RE-EXPORTS
@@ -244,10 +250,15 @@ export function getAllPosts(locale: Locale = defaultLocale): PostMeta[] {
     const { data, content } = matter(fileContents);
     const frontmatter = PostFrontmatterSchema.parse(data);
 
+    // Derive coverImage from youtubeUrl if not explicitly set
+    const youtubeId = frontmatter.youtubeUrl ? extractYoutubeId(frontmatter.youtubeUrl) : null;
+    const coverImage = frontmatter.coverImage ?? (youtubeId ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg` : undefined);
+
     // Build PostMeta object
     return {
       slug,
       ...frontmatter,
+      coverImage,
       readingTime: calculateReadingTime(content),
     } as PostMeta;
   });
@@ -354,9 +365,13 @@ export async function getPostBySlug(slug: string, locale: Locale = defaultLocale
     .process(content);
   const contentHtml = processedContent.toString();
 
+  const youtubeId = frontmatter.youtubeUrl ? extractYoutubeId(frontmatter.youtubeUrl) : null;
+  const coverImage = frontmatter.coverImage ?? (youtubeId ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg` : undefined);
+
   return {
     slug,
     ...frontmatter,
+    coverImage,
     readingTime: calculateReadingTime(content),
     content: contentHtml,
   };

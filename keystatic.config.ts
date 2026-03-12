@@ -1,9 +1,7 @@
 import { config, collection, fields } from '@keystatic/core';
 
 const categoryOptions = [
-  { label: 'Reflections 💭', value: 'reflections' },
-  { label: 'Experiences 🌟', value: 'experiences' },
-  { label: 'Culture 🎬', value: 'culture' },
+  { label: 'Note 📝', value: 'note' },
   { label: 'Work 💼', value: 'work' },
   { label: 'Tech 💻', value: 'tech' },
   { label: 'Daily 📝', value: 'daily' },
@@ -33,6 +31,7 @@ function postCollection(label: string, path: `posts/${'fr' | 'en' | 'ja'}/**`) {
         { label: 'Tags', itemLabel: (props) => props.value ?? 'Tag' }
       ),
       coverImage: fields.text({ label: 'Cover Image URL' }),
+      youtubeUrl: fields.text({ label: 'YouTube URL' }),
       content: fields.mdx({ label: 'Content', extension: 'md' }),
     },
   });
