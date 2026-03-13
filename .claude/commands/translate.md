@@ -1,53 +1,37 @@
 ---
-description: Translate an English blog post to French and Japanese
-argument-hint: [slug] [date?]
-allowed-tools: Read, Write, Glob, Bash(date:*)
+description: Translate missing EN posts to FR and JA
+argument-hint: [optional: specific file or date to translate]
+allowed-tools: Read, Write, Bash, Glob, Agent
 ---
 
-Translate an English blog post into French (`fr`) and Japanese (`ja`).
+Find and translate all English posts that are missing French or Japanese translations.
 
 ## Arguments
 
-- `$1` — slug of the post (e.g. `day-2`, `ddia-chapter-2-data-models-and-query-languages`). Required.
-- `$2` — date folder in `YYYY-MM-DD` format. Optional — defaults to today's date.
+- `$ARGUMENTS` — optional. A specific file path, date, or slug to translate. If empty, find ALL missing translations.
 
 ## Steps
 
-1. Determine the date:
-   - If `$2` is provided and non-empty, use it.
-   - Otherwise, get today's date: !`date +%Y-%m-%d`
+1. **Find missing translations:**
+   - List all files under `posts/en/` using Glob.
+   - For each EN file, check if corresponding files exist under `posts/fr/` and `posts/ja/` (same date folder and filename).
+   - If `$ARGUMENTS` is provided, filter to only matching files.
+   - Print a summary of what's missing before starting.
 
-2. Read the source file at `posts/en/{date}/{slug}.md`.
+2. **Translate each missing file** by launching parallel Agent tasks (one per file per locale). For each translation:
 
-3. For each target locale (`fr`, `ja`), create a translated file at `posts/{locale}/{date}/{slug}.md`:
+   a. Read the EN source file.
 
-   ### What to translate
+   b. Create `posts/{locale}/{date}/{slug}.md` with:
+      - **Frontmatter:** Keep `date`, `author`, `category`, `tags`, `coverImage`, `youtubeUrl` unchanged. Translate `title` and `excerpt`.
+      - **Body:** Translate all prose to the target language. Preserve:
+        - Markdown formatting, headings, bullet points, tables
+        - Code in backticks (inline and blocks)
+        - URLs (but update internal links from `/en/posts/` to `/{locale}/posts/`)
+        - Technical terms, tool names, library names
+      - **Heading style for daily posts:** Use `## Aujourd'hui, j'ai :` (FR) or `## 今日やったこと：` (JA) instead of `## Today, I:`
+      - **Footer:** Append `---\n*Traduit par Claude*` (FR) or `---\n*Claudeによる翻訳*` (JA)
 
-   - `title` — translate naturally (e.g. "Day 2" → "Jour 2" / "2日目")
-   - `excerpt` — translate the excerpt
-   - The full markdown body — translate all prose while preserving:
-     - Markdown formatting (headings, bold, links, code blocks, tables)
-     - Code snippets and technical terms inside backticks (keep as-is)
-     - URLs (keep as-is)
-     - Internal links like `/en/posts/...` — update the locale prefix to match (e.g. `/fr/posts/...`, `/ja/posts/...`)
+3. **Maximize parallelism:** Launch up to 6 Agent tasks at once (one per file×locale combination).
 
-   ### What to keep as-is
-
-   - `date`, `author`, `category`, `tags`, `coverImage`, `youtubeUrl` — copy unchanged
-   - Code blocks, inline code, and technical identifiers
-
-   ### Footer
-
-   Add a footer at the end of the translated post:
-
-   - French: `---\n*Traduit par Claude*`
-   - Japanese: `---\n*Claudeによる翻訳*`
-
-   ### Section header translations
-
-   For daily reports, translate the section header:
-   - "## Today, I:" → "## Aujourd'hui, j'ai :" (fr) / "## 今日やったこと：" (ja)
-
-4. Check if the translated files already exist. If they do, overwrite them (the translation should reflect the latest English version).
-
-5. Print the paths of the created/updated files.
+4. Print a summary table of all translations created.
