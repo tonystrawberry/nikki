@@ -1,7 +1,7 @@
 ---
 description: Add a point to today's daily report
 argument-hint: [summary of what you did]
-allowed-tools: Read, Edit, Write, Bash(date:*), Glob
+allowed-tools: Read, Edit, Write, Bash, Glob, WebFetch
 ---
 
 Add a bullet point to today's daily report.
@@ -49,4 +49,25 @@ coverImage: ""
    - `excerpt`: rewrite to summarize all bullet points in one sentence (keep it short).
    - `tags`: add any new relevant tags from the new point (don't remove existing ones).
 
-7. Print the updated/created file path and the point that was added.
+7. **If the point references a YouTube video or a book chapter**, create a memo article:
+
+   a. **YouTube video:**
+      - Fetch the video title using noembed API: `curl -s "https://noembed.com/embed?url={url}" | python3 -c "import sys,json; print(json.load(sys.stdin).get('title',''))"`
+      - Download subtitles using yt-dlp: `yt-dlp --write-auto-sub --sub-lang en --skip-download --sub-format vtt -o "/tmp/yt-sub" "{url}"`
+      - Parse the VTT file into plain text (strip timestamps, tags, and deduplicate lines).
+      - Use the subtitle text to write a structured summary of the video.
+      - Create a slug from the video title (lowercase, hyphens, no special chars).
+      - Create `posts/en/{date}/{slug}.md` with:
+        - `category: "note"`, relevant `tags`, `youtubeUrl` set to the video URL
+        - Content: a structured summary of the video's key points based on the subtitles, organized into sections with `##` headings and bullet points for takeaways.
+
+   b. **Book chapter:**
+      - Create a slug like `{book-short-name}-chapter-{N}-{chapter-title}` (e.g. `ddia-chapter-3-storage-and-retrieval`).
+      - Create `posts/en/{date}/{slug}.md` with:
+        - `category: "note"`, relevant `tags`
+        - Content: a structured summary of the chapter organized into sections with `##` headings, key concepts explained, and a `## Key Takeaways` section at the end.
+      - Use your own knowledge of the book to write the summary. If you're unsure of the content, note that in the article.
+
+   c. In the daily report bullet point, link to the memo article: `[Title](/en/posts/{date}/{slug})`.
+
+8. Print the updated/created file path(s) and the point that was added.
