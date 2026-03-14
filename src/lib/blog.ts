@@ -118,6 +118,27 @@ function extractYoutubeId(url: string): string | null {
   return match?.[1] ?? null;
 }
 
+/** Unsplash images used as default cover when post has no coverImage. Same slug => same image. */
+const UNSPLASH_COVERS = [
+  'https://images.unsplash.com/photo-1483736762161-1d107f3c78e1?w=1074&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1034&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1074&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1074&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1504639725590-34d0984388bd?w=1074&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=1074&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1534972195531-d756b9bfa9f2?w=1074&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1547658719-da2b51169166?w=1074&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=1074&q=80&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1074&q=80&auto=format&fit=crop',
+];
+
+function getDefaultCoverImage(slug: string): string {
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) hash = (hash << 5) - hash + slug.charCodeAt(i);
+  const index = Math.abs(hash) % UNSPLASH_COVERS.length;
+  return UNSPLASH_COVERS[index];
+}
+
 // ============================================================================
 // RE-EXPORTS
 // ============================================================================
@@ -250,9 +271,11 @@ export function getAllPosts(locale: Locale = defaultLocale): PostMeta[] {
     const { data, content } = matter(fileContents);
     const frontmatter = PostFrontmatterSchema.parse(data);
 
-    // Derive coverImage from youtubeUrl if not explicitly set
+    // Derive coverImage: explicit > youtube thumbnail > random Unsplash by slug
     const youtubeId = frontmatter.youtubeUrl ? extractYoutubeId(frontmatter.youtubeUrl) : null;
-    const coverImage = frontmatter.coverImage ?? (youtubeId ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg` : undefined);
+    const coverImage =
+      frontmatter.coverImage?.trim() ||
+      (youtubeId ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg` : getDefaultCoverImage(slug));
 
     // Build PostMeta object
     return {
@@ -366,7 +389,9 @@ export async function getPostBySlug(slug: string, locale: Locale = defaultLocale
   const contentHtml = processedContent.toString();
 
   const youtubeId = frontmatter.youtubeUrl ? extractYoutubeId(frontmatter.youtubeUrl) : null;
-  const coverImage = frontmatter.coverImage ?? (youtubeId ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg` : undefined);
+  const coverImage =
+    frontmatter.coverImage?.trim() ||
+    (youtubeId ? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg` : getDefaultCoverImage(slug));
 
   return {
     slug,
