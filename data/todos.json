@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "text": "Learn how to use LocalStack",
+      "done": false,
+      "createdAt": "2026-03-14"
+    },
+    {
+      "id": 2,
+      "text": "Pass the AWS CloudOps Engineer certification",
+      "done": false,
+      "createdAt": "2026-03-14"
+    },
+    {
+      "id": 3,
+      "text": "Finish reading DDIA",
+      "done": false,
+      "createdAt": "2026-03-14"
+    },
+    {
+      "id": 4,
+      "text": "Finish Spacely Tech Blog (article migrations only?)",
+      "done": false,
+      "createdAt": "2026-03-14"
+    },
+    {
+      "id": 5,
+      "text": "Publish Shirimono",
+      "done": false,
+      "createdAt": "2026-03-14"
+    }
+  ]
+}

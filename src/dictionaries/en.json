@@ -2,6 +2,7 @@
   "nav": {
     "posts": "Journal",
     "about": "About me",
+    "todo": "Todo",
     "subscribe": "Subscribe"
   },
   "home": {
@@ -60,6 +61,15 @@
     "clearFilter": "Clear ✕",
     "noPostsOnDay": "No entry on this day.",
     "viewAllPosts": "View all entries"
+  },
+  "todo": {
+    "title": "Todo",
+    "subtitle": "Things I want to do later — learning, books, side projects.",
+    "toDo": "To do",
+    "done": "Done",
+    "emptyPending": "Nothing pending. Add items via the add-todo command.",
+    "emptyDone": "No completed items yet.",
+    "hint": "Add items with the add-todo command; mark done with finish-todo and the number ID."
   }
 }
 

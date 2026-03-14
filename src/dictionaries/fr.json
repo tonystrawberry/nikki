@@ -2,6 +2,7 @@
   "nav": {
     "posts": "Journal",
     "about": "Qui suis-je",
+    "todo": "À faire",
     "subscribe": "S'abonner"
   },
   "home": {
@@ -60,6 +61,15 @@
     "clearFilter": "Effacer ✕",
     "noPostsOnDay": "Pas d'entrée ce jour.",
     "viewAllPosts": "Voir tout le journal"
+  },
+  "todo": {
+    "title": "À faire",
+    "subtitle": "Choses que je veux faire plus tard — apprentissage, livres, side projects.",
+    "toDo": "À faire",
+    "done": "Fait",
+    "emptyPending": "Rien en attente. Ajoute des éléments via la commande add-todo.",
+    "emptyDone": "Pas encore d'éléments terminés.",
+    "hint": "Ajoute des éléments avec la commande add-todo ; marque comme fait avec finish-todo et le numéro ID."
   }
 }
 

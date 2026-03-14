@@ -2,6 +2,7 @@
   "nav": {
     "posts": "日記",
     "about": "私について",
+    "todo": "やりたいこと",
     "subscribe": "購読"
   },
   "home": {
@@ -60,6 +61,15 @@
     "clearFilter": "解除 ✕",
     "noPostsOnDay": "この日の日記はありません。",
     "viewAllPosts": "すべての日記を見る"
+  },
+  "todo": {
+    "title": "やりたいこと",
+    "subtitle": "あとでやりたいこと — 学習、読書、サイドプロジェクト。",
+    "toDo": "これから",
+    "done": "完了",
+    "emptyPending": "未完了はありません。add-todo コマンドで追加できます。",
+    "emptyDone": "まだ完了した項目はありません。",
+    "hint": "add-todo で追加、finish-todo と番号で完了にできます。"
   }
 }
 

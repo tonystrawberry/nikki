@@ -166,6 +166,7 @@ export interface Dictionary {
   nav: {
     posts: string;      // "Journal" / "Journal" / "日記"
     about: string;      // "Qui suis-je" / "About me" / "私について"
+    todo: string;      // "À faire" / "Todo" / "やりたいこと"
     subscribe: string;  // "S'abonner" / "Subscribe" / "購読"
   };
 
@@ -261,6 +262,20 @@ export interface Dictionary {
     clearFilter: string;       // Clear button
     noPostsOnDay: string;      // Empty state
     viewAllPosts: string;      // View all link
+  };
+
+  /**
+   * Todo page translations
+   * Used in: src/app/[locale]/todo/page.tsx
+   */
+  todo: {
+    title: string;
+    subtitle: string;
+    toDo: string;
+    done: string;
+    emptyPending: string;
+    emptyDone: string;
+    hint: string;
   };
 }
 
