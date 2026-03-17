@@ -35,6 +35,12 @@
       "text": "Watch: Watch Me Build a Claude Code Clone (Full Code) — https://www.youtube.com/watch?v=kU8Tg1_PYJE",
       "done": false,
       "createdAt": "2026-03-14"
+    },
+    {
+      "id": 7,
+      "text": "Try spec-driven development on a new project",
+      "done": false,
+      "createdAt": "2026-03-17"
     }
   ]
 }
