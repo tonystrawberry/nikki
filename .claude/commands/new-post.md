@@ -13,13 +13,15 @@ Create a new English blog post.
 ## Steps
 
 1. Parse arguments:
-   - First word = slug
+   - First word = slug (e.g. `day`, `day-8`, `my-first-post`)
    - Second word (if present and matches `YYYY-MM-DD`) = date
    - Otherwise, get today's date: !`date +%Y-%m-%d`
 
-2. If no slug is provided, ask the user for one using AskUserQuestion.
+2. **If slug is `day`:** Resolve slug to `day-{N}` where N is the next day number: find all `posts/en/*/day-*.md` files, take the highest N (e.g. day-7 → 7), set slug = `day-{N+1}` (e.g. `day-8`). If no day-*.md exists, use `day-1`.
 
-3. Create the file at `posts/en/{date}/{slug}.md` with this template:
+3. If no slug is provided, ask the user for one using AskUserQuestion.
+
+4. Create the file at `posts/en/{date}/{slug}.md` with this template:
 
 ```markdown
 ---
@@ -33,6 +35,6 @@ tags: []
 
 ```
 
-Replace `{date}` with the resolved date.
+Replace `{date}` with the resolved date. If slug is `day-{N}`, set `title` to `"Day {N}"` and `category` to `"daily"` (optional but consistent with daily posts).
 
-4. Confirm the file was created and print its path.
+5. Confirm the file was created and print its path.

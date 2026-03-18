@@ -5,6 +5,9 @@ excerpt: "データベースがどのようにデータを保存・取得する�
 author: "Tony Duong"
 category: "note"
 tags: ["databases", "ddia", "architecture"]
+collection: "ddia"
+collectionOrder: 3
+collectionTitle: "Designing Data-Intensive Applications"
 ---
 
 ## 概要

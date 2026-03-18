@@ -5,6 +5,9 @@ excerpt: "Résumé du chapitre de Kleppmann sur la réplication : pourquoi répl
 author: "Tony Duong"
 category: "note"
 tags: ["ddia", "databases", "replication", "distributed-systems", "consistency"]
+collection: "ddia"
+collectionOrder: 5
+collectionTitle: "Designing Data-Intensive Applications"
 ---
 
 ## Vue d’ensemble

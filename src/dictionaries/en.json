@@ -1,6 +1,8 @@
 {
   "nav": {
     "posts": "Journal",
+    "search": "Search",
+    "collections": "Collections",
     "about": "About me",
     "todo": "Todo",
     "subscribe": "Subscribe"
@@ -30,7 +32,8 @@
     "backToPosts": "Back to diary",
     "writtenBy": "By",
     "viewAllPosts": "← Back to diary",
-    "minRead": "min"
+    "minRead": "min",
+    "partOfCollection": "Part of"
   },
   "about": {
     "title": "About me",
@@ -70,6 +73,23 @@
     "emptyPending": "Nothing pending. Add items via the add-todo command.",
     "emptyDone": "No completed items yet.",
     "hint": "Add items with the add-todo command; mark done with finish-todo and the number ID."
+  },
+  "search": {
+    "title": "Search",
+    "subtitle": "Find entries by free text, category, or tags.",
+    "queryPlaceholder": "Search in title, excerpt, tags…",
+    "categoryLabel": "Category",
+    "tagsLabel": "Tags",
+    "noResults": "No entries match your search."
+  },
+  "collections": {
+    "title": "Collections",
+    "subtitle": "Posts grouped as books and series — notes, summaries, and reading progress.",
+    "backToPosts": "Back to journal",
+    "backToCollections": "Back to collections",
+    "noCollections": "No collections yet.",
+    "chapters": "chapters",
+    "chapter": "chapter"
   }
 }
 

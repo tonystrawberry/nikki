@@ -6,6 +6,9 @@ author: "Tony Duong"
 category: "note"
 tags: ["databases", "ddia", "storage-engines", "b-trees", "lsm-trees"]
 youtubeUrl: "https://www.youtube.com/watch?v=LHWgQn8F7tU"
+collection: "ddia"
+collectionOrder: 3
+collectionTitle: "Designing Data-Intensive Applications"
 ---
 
 ## 概要

@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { format } from "date-fns";
 import { fr, enUS, ja } from "date-fns/locale";
-import { getAllPostSlugs, getPostBySlugWithFallback, getPostAvailableLocales } from "@/lib/blog";
+import { getAllPostSlugs, getPostBySlugWithFallback, getPostAvailableLocales, getCollectionInfo } from "@/lib/blog";
 import { CATEGORIES } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -70,6 +70,9 @@ export default async function PostPage({ params }: PageProps) {
   const isShowingFallback = actualLocale !== locale;
   const category = CATEGORIES[post.category];
   const availableLocales = getPostAvailableLocales(slug);
+  const collectionInfo = post.collection
+    ? getCollectionInfo(post.collection, locale)
+    : null;
 
   return (
     <article className="mx-auto max-w-3xl px-4 sm:px-6 py-8 sm:py-16">
@@ -124,11 +127,22 @@ export default async function PostPage({ params }: PageProps) {
 
       {/* Header */}
       <header className="mb-8 sm:mb-12 opacity-0 animate-fade-in-up animation-delay-100">
-        {/* Category */}
-        <Badge className="mb-3 sm:mb-4 bg-secondary/80 text-secondary-foreground hover:bg-secondary border-0 text-xs sm:text-sm">
-          <span className="mr-1.5">{category.icon}</span>
-          {dict.categories[post.category as keyof typeof dict.categories]}
-        </Badge>
+        {/* Category + Collection */}
+        <div className="flex flex-wrap items-center gap-2 mb-3 sm:mb-4">
+          <Badge className="bg-secondary/80 text-secondary-foreground hover:bg-secondary border-0 text-xs sm:text-sm">
+            <span className="mr-1.5">{category.icon}</span>
+            {dict.categories[post.category as keyof typeof dict.categories]}
+          </Badge>
+          {collectionInfo && (
+            <Link
+              href={`/${locale}/collection/${post.collection}`}
+              className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <span>📚</span>
+              <span>{dict.post.partOfCollection} {collectionInfo.title}</span>
+            </Link>
+          )}
+        </div>
 
         <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight">
           {post.title}

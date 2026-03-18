@@ -6,6 +6,9 @@ author: "Tony Duong"
 category: "note"
 tags: ["ddia", "databases", "data-modeling", "sql", "nosql", "graph-databases"]
 coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1034&auto=format&fit=crop&ixlib=rb-4.1.0"
+collection: "ddia"
+collectionOrder: 2
+collectionTitle: "Designing Data-Intensive Applications"
 ---
 
 ## Overview

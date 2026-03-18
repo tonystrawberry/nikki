@@ -5,6 +5,9 @@ excerpt: "Comment les bases de données stockent et récupèrent les données �
 author: "Tony Duong"
 category: "note"
 tags: ["databases", "ddia", "architecture"]
+collection: "ddia"
+collectionOrder: 3
+collectionTitle: "Designing Data-Intensive Applications"
 ---
 
 ## Vue d'ensemble

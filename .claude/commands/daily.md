@@ -10,6 +10,18 @@ Add a bullet point to today's daily report.
 
 - `$ARGUMENTS` — a summary of what the user did. Required.
 
+## Known collections
+
+When creating a **book chapter** or **video** memo, if the slug matches a known collection, add these frontmatter fields so the post appears in the collection page (`/[locale]/collection/{slug}`):
+
+| Collection slug | Slug pattern(s) | collectionTitle | How to get collectionOrder |
+|-----------------|-----------------|-----------------|----------------------------|
+| `ddia` | `ddia-chapter-(\d+)-*`, `designing-data-intensive-applications-chapter-(\d+)` | "Designing Data-Intensive Applications" | First captured number from slug (chapter number) |
+
+- **Slug patterns** are regex-style: `ddia-chapter-(\d+)-*` means slugs like `ddia-chapter-7-partitioning`; the `(\d+)` is the chapter number.
+- Add to **every** memo that matches: `collection: "{slug}"`, `collectionOrder: {N}`, `collectionTitle: "{title}"`.
+- To add a new collection, update this table and (optionally) use the `collection` command to add frontmatter to existing posts.
+
 ## Steps
 
 1. Get today's date: !`date +%Y-%m-%d`
@@ -67,7 +79,10 @@ coverImage: ""
         - `category: "note"`, relevant `tags`
         - Content: a structured summary of the chapter organized into sections with `##` headings, key concepts explained, and a `## Key Takeaways` section at the end.
       - Use your own knowledge of the book to write the summary. If you're unsure of the content, note that in the article.
+      - **Collection:** If the slug matches a known collection (see table above), add to the frontmatter immediately after the other fields (before the closing `---`): `collection: "{slug}"`, `collectionOrder: {N}` (chapter number from slug), `collectionTitle: "{title}"`. Example: for `ddia-chapter-7-something` add `collection: "ddia"`, `collectionOrder: 7`, `collectionTitle: "Designing Data-Intensive Applications"`.
 
-   c. In the daily report bullet point, link to the memo article: `[Title](/en/posts/{date}/{slug})`.
+   c. **YouTube video + collection:** If the memo slug you chose matches a known collection (e.g. `ddia-chapter-7-...` for a DDIA chapter video), add `collection`, `collectionOrder`, and `collectionTitle` to the created post's frontmatter.
+
+   d. In the daily report bullet point, link to the memo article: `[Title](/en/posts/{slug})` (the app uses slug-only URLs, e.g. `/en/posts/ddia-chapter-6-partitioning`).
 
 8. Print the updated/created file path(s) and the point that was added.

@@ -137,6 +137,15 @@ export interface PostMeta {
   /** Optional YouTube video URL */
   youtubeUrl?: string;
 
+  /** Optional collection slug (e.g. "ddia") – groups posts into a book/story */
+  collection?: string;
+
+  /** Optional order within the collection (e.g. chapter number) */
+  collectionOrder?: number;
+
+  /** Optional display title for the collection (e.g. "Designing Data-Intensive Applications") – typically set on one post */
+  collectionTitle?: string;
+
   /** Estimated reading time in minutes (as string, e.g., "5") */
   readingTime: string;
 }

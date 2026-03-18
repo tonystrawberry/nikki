@@ -6,6 +6,9 @@ author: "Tony Duong"
 category: "note"
 tags: ["ddia", "databases", "replication", "distributed-systems", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=lYCFreB8w_w"
+collection: "ddia"
+collectionOrder: 5
+collectionTitle: "Designing Data-Intensive Applications"
 ---
 
 ## Vue d'ensemble

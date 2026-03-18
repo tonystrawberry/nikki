@@ -6,6 +6,9 @@ author: "Tony Duong"
 category: "note"
 tags: ["ddia", "databases", "encoding", "schema", "evolution"]
 coverImage: ""
+collection: "ddia"
+collectionOrder: 4
+collectionTitle: "Designing Data-Intensive Applications"
 ---
 
 ## Overview

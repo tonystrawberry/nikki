@@ -34,6 +34,18 @@ export function Header({ locale, dict }: HeaderProps) {
               {dict.nav.posts}
             </Link>
             <Link
+              href={`/${locale}/search`}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {dict.nav.search}
+            </Link>
+            <Link
+              href={`/${locale}/collections`}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {dict.nav.collections}
+            </Link>
+            <Link
               href={`/${locale}/about`}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
@@ -95,6 +107,20 @@ export function Header({ locale, dict }: HeaderProps) {
                 className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
               >
                 {dict.nav.posts}
+              </Link>
+              <Link
+                href={`/${locale}/search`}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
+              >
+                {dict.nav.search}
+              </Link>
+              <Link
+                href={`/${locale}/collections`}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
+              >
+                {dict.nav.collections}
               </Link>
               <Link
                 href={`/${locale}/about`}

@@ -5,6 +5,9 @@ excerpt: "How databases store and retrieve data — from log-structured engines 
 author: "Tony Duong"
 category: "note"
 tags: ["databases", "ddia", "architecture"]
+collection: "ddia"
+collectionOrder: 3
+collectionTitle: "Designing Data-Intensive Applications"
 ---
 
 ## Overview

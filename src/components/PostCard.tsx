@@ -14,6 +14,8 @@ interface PostCardProps {
   linkLocale?: Locale;
   dict: Dictionary;
   showUntranslatedNotice?: boolean;
+  /** When false, card border is not amber for untranslated posts (e.g. on search page). Default true. */
+  showUntranslatedBorder?: boolean;
 }
 
 const dateLocales = {
@@ -28,12 +30,13 @@ const untranslatedMessages: Record<Locale, string> = {
   ja: "日本語への翻訳はまだありません",
 };
 
-export function PostCard({ post, featured = false, locale, linkLocale, dict, showUntranslatedNotice = false }: PostCardProps) {
+export function PostCard({ post, featured = false, locale, linkLocale, dict, showUntranslatedNotice = false, showUntranslatedBorder = true }: PostCardProps) {
   const category = CATEGORIES[post.category];
+  const showBorder = showUntranslatedNotice && showUntranslatedBorder;
 
   return (
     <Link href={`/${linkLocale ?? locale}/posts/${post.slug}`}>
-      <Card className={`card-hover group border-border/50 bg-card/50 backdrop-blur-sm overflow-hidden ${featured ? 'md:col-span-2' : ''} ${showUntranslatedNotice ? 'border-amber-500/30' : ''}`}>
+      <Card className={`card-hover group border-border/50 bg-card/50 backdrop-blur-sm overflow-hidden py-0 ${featured ? 'md:col-span-2' : ''} ${showBorder ? 'border-amber-500/30' : ''}`}>
         {post.coverImage && (
           <div className="relative aspect-[2/1] overflow-hidden">
             <Image
@@ -57,7 +60,7 @@ export function PostCard({ post, featured = false, locale, linkLocale, dict, sho
             </div>
           </div>
         )}
-        <CardContent className={`${post.coverImage ? 'pt-2' : 'pt-4 sm:pt-6'} pb-4 sm:pb-6 px-3 sm:px-6`}>
+        <CardContent className="px-3 sm:px-6 pt-0 pb-4 sm:pb-6">
           {!post.coverImage && (
             <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
               <Badge className="bg-secondary/80 text-secondary-foreground hover:bg-secondary border-0 text-xs sm:text-sm">

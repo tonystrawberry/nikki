@@ -32,6 +32,18 @@ function postCollection(label: string, path: `posts/${'fr' | 'en' | 'ja'}/**`) {
       ),
       coverImage: fields.text({ label: 'Cover Image URL' }),
       youtubeUrl: fields.text({ label: 'YouTube URL' }),
+      collection: fields.text({
+        label: 'Collection (slug)',
+        description: 'Group posts into a book/series (e.g. "ddia"). Leave empty for standalone posts.',
+      }),
+      collectionOrder: fields.number({
+        label: 'Collection order',
+        description: 'Chapter/part order within the collection (e.g. 1, 2, 3).',
+      }),
+      collectionTitle: fields.text({
+        label: 'Collection title',
+        description: 'Display name for the collection (e.g. "Designing Data-Intensive Applications"). Set on one post.',
+      }),
       content: fields.mdx({ label: 'Content', extension: 'md' }),
     },
   });

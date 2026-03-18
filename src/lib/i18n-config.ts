@@ -164,10 +164,12 @@ export interface Dictionary {
    * Used in: Header.tsx, mobile menu
    */
   nav: {
-    posts: string;      // "Journal" / "Journal" / "日記"
-    about: string;      // "Qui suis-je" / "About me" / "私について"
-    todo: string;      // "À faire" / "Todo" / "やりたいこと"
-    subscribe: string;  // "S'abonner" / "Subscribe" / "購読"
+    posts: string;       // "Journal" / "Journal" / "日記"
+    search: string;      // "Search" / "Recherche" / "検索"
+    collections: string; // "Collections" / "Collections" / "コレクション"
+    about: string;       // "Qui suis-je" / "About me" / "私について"
+    todo: string;        // "À faire" / "Todo" / "やりたいこと"
+    subscribe: string;   // "S'abonner" / "Subscribe" / "購読"
   };
 
   /**
@@ -206,10 +208,11 @@ export interface Dictionary {
    * Used in: src/app/[locale]/posts/[slug]/page.tsx
    */
   post: {
-    backToPosts: string;   // Back button text
-    writtenBy: string;     // Author prefix
-    viewAllPosts: string;  // Bottom CTA
-    minRead: string;       // Reading time suffix
+    backToPosts: string;      // Back button text
+    writtenBy: string;        // Author prefix
+    viewAllPosts: string;     // Bottom CTA
+    minRead: string;          // Reading time suffix
+    partOfCollection: string; // "Part of" label for collection link
   };
 
   /**
@@ -276,6 +279,33 @@ export interface Dictionary {
     emptyPending: string;
     emptyDone: string;
     hint: string;
+  };
+
+  /**
+   * Search page translations
+   * Used in: src/app/[locale]/search/page.tsx, SearchPage.tsx
+   */
+  search: {
+    title: string;
+    subtitle: string;
+    queryPlaceholder: string;
+    categoryLabel: string;
+    tagsLabel: string;
+    noResults: string;
+  };
+
+  /**
+   * Collections (books/series) page translations
+   * Used in: src/app/[locale]/collections, collection/[slug]
+   */
+  collections: {
+    title: string;
+    subtitle: string;
+    backToPosts: string;
+    backToCollections: string;
+    noCollections: string;
+    chapters: string;
+    chapter: string;
   };
 }
 

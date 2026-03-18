@@ -1,6 +1,8 @@
 {
   "nav": {
     "posts": "Journal",
+    "search": "Recherche",
+    "collections": "Collections",
     "about": "Qui suis-je",
     "todo": "À faire",
     "subscribe": "S'abonner"
@@ -30,7 +32,8 @@
     "backToPosts": "Retour au journal",
     "writtenBy": "Par",
     "viewAllPosts": "← Retour au journal",
-    "minRead": "min"
+    "minRead": "min",
+    "partOfCollection": "Fait partie de"
   },
   "about": {
     "title": "Qui suis-je",
@@ -70,6 +73,23 @@
     "emptyPending": "Rien en attente. Ajoute des éléments via la commande add-todo.",
     "emptyDone": "Pas encore d'éléments terminés.",
     "hint": "Ajoute des éléments avec la commande add-todo ; marque comme fait avec finish-todo et le numéro ID."
+  },
+  "search": {
+    "title": "Recherche",
+    "subtitle": "Trouver des entrées par texte, catégorie ou tags.",
+    "queryPlaceholder": "Rechercher dans le titre, l’extrait, les tags…",
+    "categoryLabel": "Catégorie",
+    "tagsLabel": "Tags",
+    "noResults": "Aucune entrée ne correspond à votre recherche."
+  },
+  "collections": {
+    "title": "Collections",
+    "subtitle": "Entrées regroupées en livres et séries — notes, résumés et suivi de lecture.",
+    "backToPosts": "Retour au journal",
+    "backToCollections": "Retour aux collections",
+    "noCollections": "Pas encore de collections.",
+    "chapters": "chapitres",
+    "chapter": "chapitre"
   }
 }
 

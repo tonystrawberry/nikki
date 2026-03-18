@@ -5,6 +5,9 @@ excerpt: "Kleppmannのレプリケーションの章の要約：なぜレプリ�
 author: "Tony Duong"
 category: "note"
 tags: ["ddia", "databases", "replication", "distributed-systems", "consistency"]
+collection: "ddia"
+collectionOrder: 5
+collectionTitle: "Designing Data-Intensive Applications"
 ---
 
 ## 概要

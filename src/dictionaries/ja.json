@@ -1,6 +1,8 @@
 {
   "nav": {
     "posts": "日記",
+    "search": "検索",
+    "collections": "コレクション",
     "about": "私について",
     "todo": "やりたいこと",
     "subscribe": "購読"
@@ -30,7 +32,8 @@
     "backToPosts": "日記に戻る",
     "writtenBy": "著者：",
     "viewAllPosts": "← 日記に戻る",
-    "minRead": "分"
+    "minRead": "分",
+    "partOfCollection": "シリーズ"
   },
   "about": {
     "title": "私について",
@@ -70,6 +73,23 @@
     "emptyPending": "未完了はありません。add-todo コマンドで追加できます。",
     "emptyDone": "まだ完了した項目はありません。",
     "hint": "add-todo で追加、finish-todo と番号で完了にできます。"
+  },
+  "search": {
+    "title": "検索",
+    "subtitle": "テキスト、カテゴリー、タグで日記を検索。",
+    "queryPlaceholder": "タイトル・抜粋・タグで検索…",
+    "categoryLabel": "カテゴリー",
+    "tagsLabel": "タグ",
+    "noResults": "条件に一致する日記はありません。"
+  },
+  "collections": {
+    "title": "コレクション",
+    "subtitle": "本やシリーズごとにまとめた日記 — ノート、要約、読書メモ。",
+    "backToPosts": "日記に戻る",
+    "backToCollections": "コレクション一覧へ",
+    "noCollections": "まだコレクションはありません。",
+    "chapters": "章",
+    "chapter": "章"
   }
 }
 

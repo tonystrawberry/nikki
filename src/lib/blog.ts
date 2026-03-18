@@ -111,6 +111,9 @@ const PostFrontmatterSchema = z.object({
   tags: z.array(z.string()).default([]),
   coverImage: z.string().optional(),
   youtubeUrl: z.string().optional(),
+  collection: z.string().optional(),
+  collectionOrder: z.number().optional(),
+  collectionTitle: z.string().optional(),
 });
 
 function extractYoutubeId(url: string): string | null {
@@ -283,6 +286,9 @@ export function getAllPosts(locale: Locale = defaultLocale): PostMeta[] {
       ...frontmatter,
       coverImage,
       readingTime: calculateReadingTime(content),
+      collection: frontmatter.collection,
+      collectionOrder: frontmatter.collectionOrder,
+      collectionTitle: frontmatter.collectionTitle,
     } as PostMeta;
   });
 
@@ -399,6 +405,9 @@ export async function getPostBySlug(slug: string, locale: Locale = defaultLocale
     coverImage,
     readingTime: calculateReadingTime(content),
     content: contentHtml,
+    collection: frontmatter.collection,
+    collectionOrder: frontmatter.collectionOrder,
+    collectionTitle: frontmatter.collectionTitle,
   };
 }
 
@@ -450,6 +459,63 @@ export function getAllTags(locale: Locale = defaultLocale): string[] {
 export function getPostsByTag(tag: string, locale: Locale = defaultLocale): PostMeta[] {
   const posts = getAllPosts(locale);
   return posts.filter((post) => post.tags.includes(tag));
+}
+
+// ============================================================================
+// COLLECTION (BOOK / STORY) FUNCTIONS
+// ============================================================================
+
+/**
+ * getAllCollectionSlugs
+ * =====================
+ *
+ * Returns all unique collection slugs that have at least one post in the locale.
+ */
+export function getAllCollectionSlugs(locale: Locale = defaultLocale): string[] {
+  const posts = getAllPosts(locale);
+  const slugs = new Set<string>();
+  posts.forEach((post) => {
+    if (post.collection) slugs.add(post.collection);
+  });
+  return Array.from(slugs).sort();
+}
+
+/**
+ * getPostsByCollection
+ * ====================
+ *
+ * Returns posts in a collection, sorted by collectionOrder (asc) then date (newest first).
+ * Posts without collectionOrder are placed after ordered ones, then by date.
+ */
+export function getPostsByCollection(
+  collectionSlug: string,
+  locale: Locale = defaultLocale
+): PostMeta[] {
+  const posts = getAllPosts(locale);
+  const inCollection = posts.filter((p) => p.collection === collectionSlug);
+  return inCollection.sort((a, b) => {
+    const orderA = a.collectionOrder ?? Number.MAX_SAFE_INTEGER;
+    const orderB = b.collectionOrder ?? Number.MAX_SAFE_INTEGER;
+    if (orderA !== orderB) return orderA - orderB;
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  });
+}
+
+/**
+ * getCollectionInfo
+ * =================
+ *
+ * Returns the collection display title and its posts.
+ * Title: first post's collectionTitle (by collectionOrder) or slug.
+ */
+export function getCollectionInfo(
+  collectionSlug: string,
+  locale: Locale = defaultLocale
+): { title: string; posts: PostMeta[] } {
+  const posts = getPostsByCollection(collectionSlug, locale);
+  const withTitle = posts.find((p) => p.collectionTitle?.trim());
+  const title = withTitle?.collectionTitle?.trim() ?? collectionSlug;
+  return { title, posts };
 }
 
 // ============================================================================
