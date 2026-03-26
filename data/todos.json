@@ -41,6 +41,12 @@
       "text": "Try spec-driven development on a new project",
       "done": false,
       "createdAt": "2026-03-17"
+    },
+    {
+      "id": 8,
+      "text": "Read Practical Object-Oriented Design: An Agile Primer Using Ruby (POODR) by Sandi Metz",
+      "done": false,
+      "createdAt": "2026-03-26"
     }
   ]
 }
