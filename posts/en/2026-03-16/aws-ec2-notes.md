@@ -5,6 +5,9 @@ excerpt: "Condensed notes on EC2: launch, resize, placement, SSH/Instance Connec
 author: "Tony Duong"
 category: "note"
 tags: ["aws", "ec2", "cloudops", "certification", "cloudwatch", "security", "ssm", "ami", "image-builder"]
+collection: "aws-cloudops-engineer-associate"
+collectionOrder: 1
+collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 
 ## Launching an instance

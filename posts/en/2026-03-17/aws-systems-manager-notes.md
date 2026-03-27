@@ -5,6 +5,9 @@ excerpt: "Condensed notes on AWS Systems Manager: agent, Fleet Manager, DHMC, do
 author: "Tony Duong"
 category: "note"
 tags: ["aws", "systems-manager", "ssm", "cloudops", "certification", "ec2", "fleet-manager", "run-command", "session-manager", "automation", "parameter-store", "inventory", "state-manager", "distributor", "patch-manager", "maintenance-windows", "opscenter"]
+collection: "aws-cloudops-engineer-associate"
+collectionOrder: 2
+collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 
 ## Overview

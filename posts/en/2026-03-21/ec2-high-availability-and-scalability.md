@@ -5,6 +5,9 @@ excerpt: "Consolidated AWS notes on EC2 scalability, high availability, ELB/ALB/
 author: "Tony Duong"
 category: "note"
 tags: ["aws", "ec2", "scalability", "high-availability", "load-balancer", "elb", "alb", "nlb", "gwlb", "zcloudops", "cloud"]
+collection: "aws-cloudops-engineer-associate"
+collectionOrder: 3
+collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 
 ## Overview
