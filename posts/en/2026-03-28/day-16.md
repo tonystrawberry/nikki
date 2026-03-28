@@ -1,10 +1,10 @@
 ---
 title: "Day 16"
 date: "2026-03-28"
-excerpt: "I expanded observability and governance notes (Config, CloudTrail digest and org trails, EventBridge API patterns) alongside S3, CloudFront, and RDS/Aurora/ElastiCache material"
+excerpt: "I covered S3 through observability and account management, including service catalog, budgets, and cost tooling for CloudOps prep"
 author: "Tony Duong"
 category: "daily"
-tags: ["engineering", "aws", "s3", "storage", "cloudfront", "cdn", "global-accelerator", "rds", "databases", "cloudwatch", "eventbridge", "cloudtrail", "aws-config", "service-quotas", "logs", "alarms", "synthetics", "monitoring", "cloudops", "certification"]
+tags: ["engineering", "aws", "s3", "storage", "cloudfront", "cdn", "global-accelerator", "rds", "databases", "cloudwatch", "eventbridge", "cloudtrail", "aws-config", "service-quotas", "health", "organizations", "control-tower", "service-catalog", "budgets", "cost-explorer", "logs", "alarms", "synthetics", "monitoring", "cloudops", "certification"]
 ---
 
 ## Today, I:
@@ -17,3 +17,5 @@ tags: ["engineering", "aws", "s3", "storage", "cloudfront", "cdn", "global-accel
 - continued that note with internet monitor, network synthetic monitor for direct connect and vpn paths, and eventbridge (default/partner/custom buses, rules and schedules, archive and replay, schema registry, cross-account bus policies, content filtering, input transformers, pipes, and api destinations) ([same post](/en/posts/aws-cloudwatch-metrics-namespaces-and-custom-metrics))
 - added eventbridge pipes and enrichment, retries and sqs dlq, ssm automation targets, two-way cross-account permissions, service quotas alarms vs trusted advisor, and cloudtrail trails management vs data events and insights ([same post](/en/posts/aws-cloudwatch-metrics-namespaces-and-custom-metrics))
 - added eventbridge rules on cloudtrail api names, cloudtrail log digest and sha-256 integrity, org trails and member restrictions, aws config recorder and rules, aggregators vs stacksets for rule rollout, ssm remediation examples, and a cloudwatch vs cloudtrail vs config comparison ([same post](/en/posts/aws-cloudwatch-metrics-namespaces-and-custom-metrics))
+- moved into aws account management and wrote [AWS Account Management: Health Dashboard, Organizations, SCPs, and Control Tower](/en/posts/aws-health-dashboard-organizations-control-tower) for service vs account vs org health, health to eventbridge automations, organizations ou invites consolidated billing ri sharing scps and exam-style denies, principalorgid and tag policies, and control tower landing zones guardrails and identity center
+- added [AWS Service Catalog, Billing Alarms, Cost Explorer, Budgets, and Cost Tools](/en/posts/aws-service-catalog-billing-cost-management) for service catalog portfolios sharing and tagoptions, us-east-1 billing metrics and sns alarms, cost explorer forecasts and savings plan hints, budgets templates filters sns chatbot actions on ec2 rds iam and scp, cost allocation tags and cur to s3 athena, usage reports csv, compute optimizer supported resources and 30 hour ec2 caveat, and billing conductor showback
