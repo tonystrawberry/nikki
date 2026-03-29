@@ -318,6 +318,27 @@
   }
 }
 
+/* GFM tables (remark-gfm) */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9em;
+}
+
+.prose th,
+.prose td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.prose th {
+  background: var(--muted);
+  font-weight: 600;
+}
+
 .prose hr {
   border: none;
   border-top: 1px solid var(--border);

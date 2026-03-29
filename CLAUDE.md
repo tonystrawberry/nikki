@@ -49,7 +49,9 @@ youtubeUrl: "URL"  # optional
 ---
 ```
 
-Posts are parsed server-side in `src/lib/blog.ts` using `gray-matter` (frontmatter) and `remark` (markdown → HTML). The rendered HTML is injected via `dangerouslySetInnerHTML`.
+**Post images** (screenshots, figures): store under `public/images/blog/{YYYY-MM-DD}/` (same date as the post folder), e.g. `/images/blog/2026-03-29/my-screenshot.png` in frontmatter and markdown.
+
+Posts are parsed server-side in `src/lib/blog.ts` using `gray-matter` (frontmatter) and `remark` with **`remark-gfm`** (GitHub Flavored Markdown: **pipe tables**, task lists, strikethrough, …) plus `remark-html` (markdown → HTML). The rendered HTML is injected via `dangerouslySetInnerHTML`.
 
 **Keystatic CMS** is available at `/keystatic` for managing posts through a UI. Collections: `posts_fr`, `posts_en`, `posts_ja`.
 

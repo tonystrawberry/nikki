@@ -1,10 +1,10 @@
 ---
 title: "Day 16"
 date: "2026-03-28"
-excerpt: "I covered S3 through observability and account management, including service catalog, budgets, and cost tooling for CloudOps prep"
+excerpt: "I mixed AWS CloudOps notes, a Vertex AI eval side project, and French localization work on Shirimono"
 author: "Tony Duong"
 category: "daily"
-tags: ["engineering", "aws", "s3", "storage", "cloudfront", "cdn", "global-accelerator", "rds", "databases", "cloudwatch", "eventbridge", "cloudtrail", "aws-config", "service-quotas", "health", "organizations", "control-tower", "service-catalog", "budgets", "cost-explorer", "logs", "alarms", "synthetics", "monitoring", "cloudops", "certification"]
+tags: ["engineering", "aws", "s3", "storage", "cloudfront", "cdn", "global-accelerator", "rds", "databases", "cloudwatch", "eventbridge", "cloudtrail", "aws-config", "service-quotas", "health", "organizations", "control-tower", "service-catalog", "budgets", "cost-explorer", "logs", "alarms", "synthetics", "monitoring", "cloudops", "certification", "gcp", "vertex-ai", "ruby", "prompts", "llm", "shirimono", "i18n", "french", "translation"]
 ---
 
 ## Today, I:
@@ -19,3 +19,5 @@ tags: ["engineering", "aws", "s3", "storage", "cloudfront", "cdn", "global-accel
 - added eventbridge rules on cloudtrail api names, cloudtrail log digest and sha-256 integrity, org trails and member restrictions, aws config recorder and rules, aggregators vs stacksets for rule rollout, ssm remediation examples, and a cloudwatch vs cloudtrail vs config comparison ([same post](/en/posts/aws-cloudwatch-metrics-namespaces-and-custom-metrics))
 - moved into aws account management and wrote [AWS Account Management: Health Dashboard, Organizations, SCPs, and Control Tower](/en/posts/aws-health-dashboard-organizations-control-tower) for service vs account vs org health, health to eventbridge automations, organizations ou invites consolidated billing ri sharing scps and exam-style denies, principalorgid and tag policies, and control tower landing zones guardrails and identity center
 - added [AWS Service Catalog, Billing Alarms, Cost Explorer, Budgets, and Cost Tools](/en/posts/aws-service-catalog-billing-cost-management) for service catalog portfolios sharing and tagoptions, us-east-1 billing metrics and sns alarms, cost explorer forecasts and savings plan hints, budgets templates filters sns chatbot actions on ec2 rds iam and scp, cost allocation tags and cur to s3 athena, usage reports csv, compute optimizer supported resources and 30 hour ec2 caveat, and billing conductor showback
+- read [Gen AI evaluation service overview](https://docs.cloud.google.com/vertex-ai/generative-ai/docs/models/evaluation-overview) on vertex ai (rubrics, datasets, console vs sdk workflow) to learn how to evaluate prompts, shipped a tiny ruby harness [tonystrawberry/ruby-vertex-eval](https://github.com/tonystrawberry/ruby-vertex-eval) that mirrors yaml-driven generate-then-evaluateinstances against managed metrics, and wrote [Vertex AI Gen AI evaluation in the Google Cloud console](/en/posts/vertex-ai-gen-ai-evaluation-console) with a screenshot of general quality scoring on gemini-1.5-flash for a recipe-to-shopping-list dataset
+- started translating shirimono resources into french so in-app copy and learning content stay aligned now that the app ships a french locale

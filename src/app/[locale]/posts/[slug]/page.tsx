@@ -212,7 +212,7 @@ export default async function PostPage({ params }: PageProps) {
 
       {/* Content */}
       <div
-        className="prose prose-mobile opacity-0 animate-fade-in-up animation-delay-300"
+        className="prose prose-mobile overflow-x-auto opacity-0 animate-fade-in-up animation-delay-300"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 

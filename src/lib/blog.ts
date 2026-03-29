@@ -80,16 +80,18 @@ import matter from 'gray-matter';
 import { z } from 'zod';
 
 /**
- * remark & remark-html
+ * remark, remark-gfm & remark-html
  *
  * Converts markdown to HTML.
  *
  * remark = markdown parser (creates AST)
+ * remark-gfm = GitHub Flavored Markdown (tables, strikethrough, task lists, …)
  * remark-html = converts AST to HTML string
  *
  * Pipeline: Markdown → AST → HTML
  */
 import { remark } from 'remark';
+import remarkGfm from 'remark-gfm';
 import html from 'remark-html';
 
 // Import shared types (these CAN be used in Client Components)
@@ -379,17 +381,19 @@ export async function getPostBySlug(slug: string, locale: Locale = defaultLocale
   /**
    * MARKDOWN TO HTML CONVERSION
    *
-   * remark().use(html).process(content)
+   * remark().use(remarkGfm).use(html).process(content)
    *
    * 1. remark() creates a processor
-   * 2. .use(html) adds HTML output capability
-   * 3. .process(content) runs the conversion
-   * 4. .toString() gets the HTML string
+   * 2. .use(remarkGfm) enables GFM (pipe tables, etc.)
+   * 3. .use(html) adds HTML output capability
+   * 4. .process(content) runs the conversion
+   * 5. .toString() gets the HTML string
    *
    * Input: "# Hello\n\nWorld"
    * Output: "<h1>Hello</h1>\n<p>World</p>"
    */
   const processedContent = await remark()
+    .use(remarkGfm)
     .use(html)
     .process(content);
   const contentHtml = processedContent.toString();
