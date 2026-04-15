@@ -1,11 +1,13 @@
 ---
-title: ""
+title: "Aujourd'hui"
 date: "2026-04-14"
-excerpt: ""
+excerpt: "Une courte note d'aujourd'hui."
 author: "Tony Duong"
-category: ""
-tags: []
+category: "note"
+tags: ["note"]
 ---
+
+Une courte note d'aujourd'hui.
 
 ---
 *Traduit par Claude*

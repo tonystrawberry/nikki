@@ -1,9 +1,10 @@
 ---
-title: ""
+title: "Today"
 date: "2026-04-14"
-excerpt: ""
+excerpt: "A short note from today."
 author: "Tony Duong"
-category: ""
-tags: []
+category: "note"
+tags: ["note"]
 ---
 
+A short note from today.
