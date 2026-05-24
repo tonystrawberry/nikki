@@ -59,6 +59,12 @@
       "text": "Learn the basics of Apache Spark",
       "done": false,
       "createdAt": "2026-05-24"
+    },
+    {
+      "id": 11,
+      "text": "Improve the chat by enriching the persona files, and maybe build an actual RAG with pgvector to learn how it works",
+      "done": false,
+      "createdAt": "2026-05-24"
     }
   ]
 }
