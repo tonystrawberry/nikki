@@ -20,6 +20,8 @@ This is a **Server-Side Rendered (SSR)** blog using Next.js App Router. It suppo
 6. [Server vs Client Components](#-server-vs-client-components)
 7. [Styling Architecture](#-styling-architecture)
 8. [Common Interview Questions](#-common-interview-questions)
+9. [Digital Clone Chatbot](#-digital-clone-chatbot)
+10. [Environment Variables](#-environment-variables)
 
 ---
 
@@ -412,6 +414,10 @@ import { cn } from "@/lib/utils";
 # Install dependencies
 npm install
 
+# Set up environment variables (only needed for the chatbot — see below)
+cp .env.local.example .env.local
+# then paste your ANTHROPIC_API_KEY into .env.local
+
 # Run development server
 npm run dev -- -p 3050
 
@@ -442,6 +448,77 @@ youtubeUrl: "https://youtube.com/watch?v=..."  # optional
 
 Your content here...
 ```
+
+---
+
+## 🤖 Digital Clone Chatbot
+
+A recruiter-facing chat page at `/[locale]/chat` that talks like Tony. It streams responses from **Claude Sonnet 4.6** via the Anthropic API, with the blog itself as context.
+
+### What it does
+
+- Recruiters open `/fr/chat`, `/en/chat`, or `/ja/chat` and ask questions like "What roles are you looking for?" or "What's your tech stack?"
+- The bot answers in the current locale, in first person, using two sources of truth:
+  1. **Persona files** — `content/persona/{locale}.md`. Curated, recruiter-facing facts: skills, languages, looking-for, contact info.
+  2. **Blog post digest** — title, date, category, tags, and excerpt for every post in the locale. Gives the bot a sense of *what* Tony writes about and *when*, without dumping full post bodies into the prompt.
+- The bot refuses to invent employment history, salaries, or commitments — when in doubt it points the recruiter to email.
+
+### How it works
+
+```
+Browser (CloneChat.tsx)
+    │  POST /api/chat  { locale, messages }
+    ▼
+Next.js API route (src/app/api/chat/route.ts)
+    │  buildSystemPrompt(locale)  ← reads persona + posts
+    │  client.messages.stream(...) with cache_control on the system prompt
+    ▼
+Anthropic API  ──► text deltas streamed back to the browser as text/plain
+```
+
+| File | Role |
+|------|------|
+| `content/persona/{fr,en,ja}.md` | Editable recruiter brief — **this is where you put your CV facts** |
+| `src/lib/clone-context.ts` | Builds the system prompt (persona + post digest + style rules) |
+| `src/app/api/chat/route.ts` | Streaming POST endpoint; validates input with Zod, calls Claude Sonnet 4.6, streams deltas |
+| `src/components/CloneChat.tsx` | Client chat UI — message bubbles, example prompts, stream reader |
+| `src/app/[locale]/chat/page.tsx` | Page wrapper at `/fr/chat`, `/en/chat`, `/ja/chat` |
+
+### Customizing the bot
+
+- **Update the facts:** edit `content/persona/{locale}.md`. Changes show up on the next request (no rebuild needed in dev).
+- **Change the model:** edit the `model:` field in `src/app/api/chat/route.ts`. Sonnet 4.6 is the default — Haiku 4.5 is cheaper, Opus 4.7 is smarter.
+- **Tune the system prompt:** edit `src/lib/clone-context.ts` — the style rules (tone, length, what to refuse) live at the top of `buildSystemPrompt`.
+- **Edit the UI strings:** the `chat` block in `src/dictionaries/{fr,en,ja}.json` controls placeholder text, example prompts, and the disclaimer.
+
+### Cost shape
+
+The system prompt is roughly 15–20K tokens (persona + ~80 post excerpts per locale). It carries `cache_control: { type: "ephemeral" }`, so:
+
+- **First message** of a session pays the full prompt-cache **write** (1.25× input cost).
+- **Subsequent turns** hit the cache (~0.1× input cost).
+- **5-minute TTL** — idle sessions re-write the cache on their next message.
+
+For a personal blog with low recruiter traffic this is essentially free; for higher traffic, switching to Haiku 4.5 drops cost further.
+
+---
+
+## 🔐 Environment Variables
+
+| Variable | Required for | What it's for |
+|---|---|---|
+| `ANTHROPIC_API_KEY` | `/chat` page | Anthropic API key used by the chatbot route. Get one at [console.anthropic.com](https://console.anthropic.com/). |
+
+**Setup:**
+
+```bash
+cp .env.local.example .env.local
+# then edit .env.local and paste your real key
+```
+
+`.env.local` is gitignored. Without `ANTHROPIC_API_KEY` set, the `/chat` page still renders but the API route returns `500 ANTHROPIC_API_KEY is not configured` — the rest of the site is unaffected.
+
+For production (Vercel, etc.), add `ANTHROPIC_API_KEY` to the project's environment variables in the hosting dashboard.
 
 ---
 

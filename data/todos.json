@@ -9,7 +9,7 @@
     {
       "id": 2,
       "text": "Pass the AWS CloudOps Engineer certification",
-      "done": false,
+      "done": true,
       "createdAt": "2026-03-14"
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": 5,
       "text": "Publish Shirimono",
-      "done": false,
+      "done": true,
       "createdAt": "2026-03-14"
     },
     {
@@ -53,6 +53,12 @@
       "text": "Become comfortable using Hotwire, Turbo, and Stimulus.",
       "done": false,
       "createdAt": "2026-04-12"
+    },
+    {
+      "id": 10,
+      "text": "Learn the basics of Apache Spark",
+      "done": false,
+      "createdAt": "2026-05-24"
     }
   ]
 }
