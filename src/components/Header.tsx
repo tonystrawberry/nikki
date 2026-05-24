@@ -57,6 +57,12 @@ export function Header({ locale, dict }: HeaderProps) {
             >
               {dict.nav.todo}
             </Link>
+            <Link
+              href={`/${locale}/chat`}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {dict.nav.chat}
+            </Link>
             <LanguageSwitcher currentLocale={locale} />
             <a
               href="https://buttondown.email/tonystrawberry"
@@ -135,6 +141,13 @@ export function Header({ locale, dict }: HeaderProps) {
                 className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
               >
                 {dict.nav.todo}
+              </Link>
+              <Link
+                href={`/${locale}/chat`}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
+              >
+                {dict.nav.chat}
               </Link>
               <a
                 href="https://buttondown.email/tonystrawberry"

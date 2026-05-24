@@ -5,7 +5,24 @@
     "collections": "Collections",
     "about": "About me",
     "todo": "Todo",
+    "chat": "Chat with me",
     "subscribe": "Subscribe"
+  },
+  "chat": {
+    "title": "Chat with my digital clone",
+    "subtitle": "Ask anything about my work, skills, or what I'm building. Powered by Claude with my blog as context.",
+    "intro": "Hey — I'm Tony's digital clone. Ask me anything about his work or experience. A few ideas:",
+    "examples": [
+      "What kind of roles are you looking for?",
+      "What's your strongest tech stack?",
+      "What have you been working on lately?",
+      "How can I reach the real Tony?"
+    ],
+    "placeholder": "Type your question…",
+    "send": "Send",
+    "sending": "Sending…",
+    "disclaimer": "This is an AI clone — for anything important, please email tony.duong.102@gmail.com.",
+    "error": "Something went wrong"
   },
   "home": {
     "welcome": "Welcome to my",

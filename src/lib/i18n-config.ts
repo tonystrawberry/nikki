@@ -169,7 +169,24 @@ export interface Dictionary {
     collections: string; // "Collections" / "Collections" / "コレクション"
     about: string;       // "Qui suis-je" / "About me" / "私について"
     todo: string;        // "À faire" / "Todo" / "やりたいこと"
+    chat: string;        // "Chat" link
     subscribe: string;   // "S'abonner" / "Subscribe" / "購読"
+  };
+
+  /**
+   * Chat ("digital clone") page translations
+   * Used in: src/app/[locale]/chat/page.tsx, CloneChat.tsx
+   */
+  chat: {
+    title: string;
+    subtitle: string;
+    intro: string;
+    examples: string[];
+    placeholder: string;
+    send: string;
+    sending: string;
+    disclaimer: string;
+    error: string;
   };
 
   /**

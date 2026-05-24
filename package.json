@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.98.0",
     "@formatjs/intl-localematcher": "^0.7.3",
     "@keystatic/core": "^0.5.48",
     "@keystatic/next": "^5.0.4",
@@ -24,6 +25,7 @@
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
+    "react-markdown": "^10.1.0",
     "remark": "^15.0.1",
     "remark-gfm": "^4.0.1",
     "remark-html": "^16.0.1",

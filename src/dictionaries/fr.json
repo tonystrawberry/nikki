@@ -5,7 +5,24 @@
     "collections": "Collections",
     "about": "Qui suis-je",
     "todo": "À faire",
+    "chat": "Discuter avec moi",
     "subscribe": "S'abonner"
+  },
+  "chat": {
+    "title": "Discute avec mon clone numérique",
+    "subtitle": "Pose-moi tes questions sur mon parcours, mes compétences ou ce que je construis. Propulsé par Claude, avec mon blog comme contexte.",
+    "intro": "Salut — je suis le clone numérique de Tony. Pose-moi tes questions sur son parcours ou son expérience. Quelques pistes :",
+    "examples": [
+      "Quel type de poste tu cherches ?",
+      "Quelle est ta stack technique principale ?",
+      "Sur quoi tu travailles en ce moment ?",
+      "Comment contacter le vrai Tony ?"
+    ],
+    "placeholder": "Écris ta question…",
+    "send": "Envoyer",
+    "sending": "Envoi…",
+    "disclaimer": "C'est un clone IA — pour tout sujet sérieux, écris à tony.duong.102@gmail.com.",
+    "error": "Une erreur est survenue"
   },
   "home": {
     "welcome": "Bienvenue dans mon",

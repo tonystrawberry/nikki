@@ -104,12 +104,22 @@ import { type Locale, defaultLocale, locales } from './i18n-config';
 // FRONTMATTER SCHEMA
 // ============================================================================
 
+// Treat empty strings as missing so `.default(...)` applies — lets drafts
+// with blank fields (e.g. category: "") still parse instead of throwing.
+const emptyToUndefined = (v: unknown) => (v === '' ? undefined : v);
+
 const PostFrontmatterSchema = z.object({
-  title: z.string().default('Untitled'),
-  date: z.string().default(() => new Date().toISOString().slice(0, 10)),
+  title: z.preprocess(emptyToUndefined, z.string().default('Untitled')),
+  date: z.preprocess(
+    emptyToUndefined,
+    z.string().default(() => new Date().toISOString().slice(0, 10))
+  ),
   excerpt: z.string().default(''),
-  author: z.string().default('Anonymous'),
-  category: z.enum(Object.keys(CATEGORIES) as [Category, ...Category[]]).default('daily'),
+  author: z.preprocess(emptyToUndefined, z.string().default('Anonymous')),
+  category: z.preprocess(
+    emptyToUndefined,
+    z.enum(Object.keys(CATEGORIES) as [Category, ...Category[]]).default('daily')
+  ),
   tags: z.array(z.string()).default([]),
   coverImage: z.string().optional(),
   youtubeUrl: z.string().optional(),
