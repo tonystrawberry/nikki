@@ -2,10 +2,12 @@ import 'server-only';
 
 import fs from 'fs';
 import path from 'path';
-import { getAllPosts } from './blog';
+import { getAllPosts, getCollectionInfo, getRawPostBody } from './blog';
 import { type Locale, defaultLocale, localeNames } from './i18n-config';
 
 const personaDir = path.join(process.cwd(), 'content', 'persona');
+
+const FULL_BODY_COLLECTIONS = ['career-story'] as const;
 
 function readPersona(locale: Locale): string {
   const file = path.join(personaDir, `${locale}.md`);
@@ -23,6 +25,25 @@ function formatPostsDigest(locale: Locale): string {
       return `- ${p.date} · ${p.category} · ${p.title}${tags}${excerpt}`;
     })
     .join('\n');
+}
+
+function formatFullBodyCollections(locale: Locale): string {
+  return FULL_BODY_COLLECTIONS
+    .map((slug) => {
+      const { title, posts } = getCollectionInfo(slug, locale);
+      if (posts.length === 0) return null;
+      const chapters = posts
+        .map((p) => {
+          const body = getRawPostBody(p.slug, locale);
+          if (!body) return null;
+          return `### ${p.title}\n\n${body.trim()}`;
+        })
+        .filter((s): s is string => s !== null)
+        .join('\n\n---\n\n');
+      return `## ${title}\n\n${chapters}`;
+    })
+    .filter((s): s is string => s !== null)
+    .join('\n\n');
 }
 
 const PERSONA_BY_LOCALE: Record<Locale, { roleLine: string; replyLanguage: string }> = {
@@ -46,6 +67,7 @@ const PERSONA_BY_LOCALE: Record<Locale, { roleLine: string; replyLanguage: strin
 export function buildSystemPrompt(locale: Locale): string {
   const persona = readPersona(locale);
   const digest = formatPostsDigest(locale);
+  const fullChapters = formatFullBodyCollections(locale);
   const { roleLine, replyLanguage } = PERSONA_BY_LOCALE[locale];
 
   return `${roleLine}
@@ -64,5 +86,5 @@ ${persona}
 
 # Blog posts index (titles, dates, tags, excerpts)
 ${digest}
-`;
+${fullChapters ? `\n# Full chapters\n\n${fullChapters}\n` : ''}`;
 }

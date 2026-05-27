@@ -425,6 +425,14 @@ export async function getPostBySlug(slug: string, locale: Locale = defaultLocale
   };
 }
 
+export function getRawPostBody(slug: string, locale: Locale = defaultLocale): string | null {
+  const localizedDir = getPostsDirectoryForLocale(locale);
+  const postFile = getAllMarkdownFiles(localizedDir).find((file) => file.slug === slug);
+  if (!postFile) return null;
+  const { content } = matter(fs.readFileSync(postFile.filePath, 'utf8'));
+  return content;
+}
+
 /**
  * getAllCategories
  * ================
