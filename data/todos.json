@@ -65,6 +65,12 @@
       "text": "Improve the chat by enriching the persona files, and maybe build an actual RAG with pgvector to learn how it works",
       "done": false,
       "createdAt": "2026-05-24"
+    },
+    {
+      "id": 12,
+      "text": "Learn ukulele",
+      "done": false,
+      "createdAt": "2026-05-28"
     }
   ]
 }
