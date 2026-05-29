@@ -43,3 +43,8 @@ next-env.d.ts
 
 # vscode
 .vscode
+
+# chat-server (Rails)
+chat-server/storage/
+chat-server/tmp/
+chat-server/log/

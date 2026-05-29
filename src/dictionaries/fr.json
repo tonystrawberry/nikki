@@ -107,9 +107,16 @@
     "noCollections": "Pas encore de collections.",
     "chapters": "chapitres",
     "chapter": "chapitre"
+  },
+  "chatWidget": {
+    "chatWithMe": "Discuter avec moi",
+    "placeholder": "Écrivez un message...",
+    "send": "Envoyer",
+    "connecting": "Connexion...",
+    "connectionError": "Connexion perdue. Reconnexion...",
+    "closeChat": "Fermer le chat",
+    "typeMessage": "Tapez votre message",
+    "namePlaceholder": "Votre nom",
+    "startChat": "Commencer"
   }
 }
-
-
-
-

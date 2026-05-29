@@ -324,6 +324,18 @@ export interface Dictionary {
     chapters: string;
     chapter: string;
   };
+
+  chatWidget: {
+    chatWithMe: string;
+    placeholder: string;
+    send: string;
+    connecting: string;
+    connectionError: string;
+    closeChat: string;
+    typeMessage: string;
+    namePlaceholder: string;
+    startChat: string;
+  };
 }
 
 
