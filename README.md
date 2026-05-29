@@ -21,7 +21,8 @@ This is a **Server-Side Rendered (SSR)** blog using Next.js App Router. It suppo
 7. [Styling Architecture](#-styling-architecture)
 8. [Common Interview Questions](#-common-interview-questions)
 9. [Digital Clone Chatbot](#-digital-clone-chatbot)
-10. [Environment Variables](#-environment-variables)
+10. [Realtime Visitor Chat](#-realtime-visitor-chat)
+11. [Environment Variables](#-environment-variables)
 
 ---
 
@@ -38,6 +39,7 @@ This is a **Server-Side Rendered (SSR)** blog using Next.js App Router. It suppo
 | **date-fns** | Date formatting | Lightweight, tree-shakeable date library |
 | **@formatjs/intl-localematcher** | Locale detection | Match browser language to supported locales |
 | **negotiator** | HTTP parsing | Parse `Accept-Language` headers |
+| **@rails/actioncable** | WebSocket client | Real-time chat with Rails ActionCable backend |
 | **[Buttondown](https://buttondown.com)** | Newsletter | Simple, developer-friendly newsletter service |
 
 ---
@@ -50,14 +52,23 @@ nikki/
 │   ├── app/                      # Next.js App Router (pages & layouts)
 │   │   ├── layout.tsx            # Root layout (minimal, passes children)
 │   │   ├── globals.css           # Global styles & Tailwind imports
-│   │   └── [locale]/             # Dynamic route for i18n
-│   │       ├── layout.tsx        # Locale layout (Header, Footer, fonts)
-│   │       ├── page.tsx          # Home page (/)
-│   │       ├── about/
-│   │       │   └── page.tsx      # About page (/about)
-│   │       └── posts/
-│   │           └── [slug]/
-│   │               └── page.tsx  # Individual post page (/posts/hello-world)
+│   │   ├── [locale]/             # Dynamic route for i18n
+│   │   │   ├── layout.tsx        # Locale layout (Header, Footer, fonts)
+│   │   │   ├── page.tsx          # Home page (/)
+│   │   │   ├── about/
+│   │   │   │   └── page.tsx      # About page (/about)
+│   │   │   ├── chat/
+│   │   │   │   └── page.tsx      # Digital clone chatbot (/chat)
+│   │   │   └── posts/
+│   │   │       └── [slug]/
+│   │   │           └── page.tsx  # Individual post page (/posts/hello-world)
+│   │   └── admin/                # Admin panel (outside i18n)
+│   │       ├── layout.tsx        # Admin root layout (HTML/body tags)
+│   │       ├── login/
+│   │       │   └── page.tsx      # Admin login page
+│   │       └── chats/
+│   │           ├── layout.tsx    # Chats layout
+│   │           └── page.tsx      # Chat dashboard (all conversations)
 │   │
 │   ├── components/               # React components
 │   │   ├── ui/                   # shadcn/ui base components
@@ -66,7 +77,11 @@ nikki/
 │   │   ├── PostCard.tsx          # Blog post preview card
 │   │   ├── PostList.tsx          # Posts grid with filtering (client)
 │   │   ├── ActivityChart.tsx     # GitHub-style activity chart (client)
-│   │   └── LanguageSwitcher.tsx  # Language toggle (client)
+│   │   ├── LanguageSwitcher.tsx  # Language toggle (client)
+│   │   ├── ChatWidget.tsx        # Floating chat bubble for visitors (client)
+│   │   ├── ChatPanel.tsx         # Shared message panel for chat (client)
+│   │   ├── AdminChat.tsx         # Admin chat dashboard (client)
+│   │   └── ChatContactCard.tsx   # Chat link on About page (client)
 │   │
 │   ├── lib/                      # Utility functions & business logic
 │   │   ├── blog.ts               # Markdown reading & parsing (server-only)
@@ -75,12 +90,17 @@ nikki/
 │   │   ├── i18n-config.ts        # i18n types & constants (shared)
 │   │   └── utils.ts              # General utilities (cn function)
 │   │
+│   ├── types/
+│   │   └── actioncable.d.ts      # Type declarations for @rails/actioncable
+│   │
 │   ├── dictionaries/             # Translation JSON files
 │   │   ├── fr.json               # French translations
 │   │   ├── en.json               # English translations
 │   │   └── ja.json               # Japanese translations
 │   │
 │   └── proxy.ts                  # Request proxy (replaces middleware.ts)
+│
+├── chat-server/                  # Rails 8 WebSocket backend (see chat-server/README.md)
 │
 ├── posts/                        # Markdown blog posts
 │   ├── fr/                       # French posts (canonical)
@@ -310,6 +330,10 @@ Ceci est mon article...
 | `PostList.tsx` | Client | Has category filter state |
 | `ActivityChart.tsx` | Client | Has hover state, click handlers |
 | `LanguageSwitcher.tsx` | Client | Handles navigation, uses router |
+| `ChatWidget.tsx` | Client | WebSocket connection, message state |
+| `ChatPanel.tsx` | Client | Message display, input handling |
+| `AdminChat.tsx` | Client | WebSocket, conversation management |
+| `ChatContactCard.tsx` | Client | Click handler to open chat widget |
 
 ---
 
@@ -411,15 +435,15 @@ import { cn } from "@/lib/utils";
 ## 🚀 Getting Started
 
 ```bash
-# Install dependencies
+# Install frontend dependencies
 npm install
 
-# Set up environment variables (only needed for the chatbot — see below)
+# Set up environment variables
 cp .env.local.example .env.local
-# then paste your ANTHROPIC_API_KEY into .env.local
+# then edit .env.local (see Environment Variables below)
 
-# Run development server
-npm run dev -- -p 3050
+# Run frontend development server
+npm run dev
 
 # Build for production
 npm run build
@@ -427,6 +451,20 @@ npm run build
 # Start production server
 npm start
 ```
+
+### Running with the chat server (optional)
+
+The visitor chat feature requires the Rails backend. In a second terminal:
+
+```bash
+cd chat-server
+bundle install
+bin/rails db:prepare
+cp .env.example .env
+ADMIN_USER=tony ADMIN_PASSWORD=secret bin/rails server -p 3100
+```
+
+The frontend connects automatically when `NEXT_PUBLIC_CHAT_WS_URL` is set in `.env.local`.
 
 ## 📝 Adding a New Blog Post
 
@@ -503,22 +541,110 @@ For a personal blog with low recruiter traffic this is essentially free; for hig
 
 ---
 
+## 💬 Realtime Visitor Chat
+
+A floating chat widget lets visitors talk to Tony in real time. Messages are delivered over WebSockets via a **Rails 8 ActionCable** backend, so both sides see new messages instantly.
+
+### How it works
+
+```
+Visitor browser                  Rails 8 (chat-server)              Admin browser
+──────────────                   ─────────────────────              ─────────────
+ChatWidget.tsx                                                     AdminChat.tsx
+      │                                                                  │
+      ├── ws://chat-server/cable ──► VisitorChannel                      │
+      │   send_message({ content })     │                                │
+      │                                 ├── saves Message to SQLite      │
+      │                                 ├── broadcasts to AdminChannel ──┤
+      │                                 └── triggers push notification   │
+      │                                                                  │
+      │                            AdminChannel ◄── ws://chat-server/cable
+      │                                 │
+      │   ◄── broadcast ───────────────┘ send_message({ content })
+```
+
+### Key features
+
+- **No Redis** — Solid Cable uses SQLite as the pub/sub adapter
+- **Session-based identity** — visitors are identified by a UUID stored in `localStorage`; admin uses session cookies
+- **Visitor name input** — first-time visitors are prompted for their name
+- **Push notifications** — the admin receives browser push notifications for new messages via VAPID / Web Push
+- **Unread counters** — the admin dashboard shows unread message counts per conversation
+- **Chat on About page** — a "Chat" contact card on the About page opens the floating widget
+
+### Frontend components
+
+| Component | Description |
+|---|---|
+| `ChatWidget.tsx` | Floating bubble (bottom-right) with name prompt and message panel |
+| `ChatPanel.tsx` | Shared message display and input, used by both visitor and admin |
+| `AdminChat.tsx` | Conversation list + selected chat view for the admin |
+| `ChatContactCard.tsx` | "Chat" card on the About page that opens the widget |
+
+### Backend (chat-server)
+
+The WebSocket backend is a **Rails 8 API-only** app in the `chat-server/` directory. See [`chat-server/README.md`](./chat-server/README.md) for full setup and deployment docs.
+
+Quick start:
+
+```bash
+cd chat-server
+bundle install
+bin/rails db:prepare
+ADMIN_USER=tony ADMIN_PASSWORD=secret bin/rails server -p 3100
+```
+
+### Deployment
+
+| Component | Host | Cost |
+|---|---|---|
+| Next.js frontend | [Vercel](https://vercel.com) | Free tier |
+| Rails chat-server | [Hetzner Cloud CX22](https://www.hetzner.com/cloud/) via [Kamal 2](https://kamal-deploy.org) | ~€3.49/mo |
+
+Full step-by-step walkthrough: [`docs/deploy-chat-server.md`](./docs/deploy-chat-server.md)
+
+---
+
 ## 🔐 Environment Variables
 
-| Variable | Required for | What it's for |
+### Next.js frontend (`.env.local`)
+
+| Variable | Required for | Description |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | `/chat` page | Anthropic API key used by the chatbot route. Get one at [console.anthropic.com](https://console.anthropic.com/). |
+| `ANTHROPIC_API_KEY` | Digital clone chatbot | Anthropic API key. Get one at [console.anthropic.com](https://console.anthropic.com/). |
+| `NEXT_PUBLIC_CHAT_WS_URL` | Visitor chat | WebSocket URL of the chat-server (e.g. `ws://localhost:3100/cable`) |
+| `NEXT_PUBLIC_CHAT_HTTP_URL` | Visitor chat | HTTP URL of the chat-server (e.g. `http://localhost:3100`) |
+| `NEXT_PUBLIC_VAPID_PUBLIC_KEY` | Push notifications | VAPID public key (must match the chat-server's key) |
+
+### Rails chat-server (`.env` or Kamal secrets)
+
+| Variable | Required | Description |
+|---|---|---|
+| `ADMIN_USER` | Yes | Admin login username |
+| `ADMIN_PASSWORD` | Yes | Admin login password |
+| `ALLOWED_ORIGINS` | Yes | Comma-separated CORS origins |
+| `VAPID_PUBLIC_KEY` | For push | VAPID public key for Web Push |
+| `VAPID_PRIVATE_KEY` | For push | VAPID private key for Web Push |
+| `VAPID_SUBJECT` | For push | Contact URI (e.g. `mailto:you@example.com`) |
+| `RAILS_MASTER_KEY` | Production | Decrypts Rails credentials |
+| `SECRET_KEY_BASE` | Production | Rails secret (`bin/rails secret`) |
 
 **Setup:**
 
 ```bash
+# Frontend
 cp .env.local.example .env.local
-# then edit .env.local and paste your real key
+# then edit .env.local and fill in your values
+
+# Chat server
+cd chat-server
+cp .env.example .env
+# then edit .env and fill in your values
 ```
 
-`.env.local` is gitignored. Without `ANTHROPIC_API_KEY` set, the `/chat` page still renders but the API route returns `500 ANTHROPIC_API_KEY is not configured` — the rest of the site is unaffected.
+`.env.local` and `chat-server/.env` are gitignored.
 
-For production (Vercel, etc.), add `ANTHROPIC_API_KEY` to the project's environment variables in the hosting dashboard.
+For production, add the frontend variables to Vercel's environment settings and the chat-server variables to `.kamal/secrets`.
 
 ---
 
@@ -529,7 +655,11 @@ For production (Vercel, etc.), add `ANTHROPIC_API_KEY` to the project's environm
 - [Server Components](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
 - [Tailwind CSS](https://tailwindcss.com/docs)
 - [shadcn/ui](https://ui.shadcn.com)
+- [ActionCable Overview](https://guides.rubyonrails.org/action_cable_overview.html)
+- [Kamal Deployment](https://kamal-deploy.org)
+- [Solid Cable](https://github.com/rails/solid_cable)
+- [Hetzner Cloud](https://www.hetzner.com/cloud/)
 
 ---
 
-Built with ❤️ using Next.js 16
+Built with ❤️ using Next.js 16 + Rails 8

@@ -40,6 +40,7 @@ import "../globals.css";
 // Our components
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import ChatWidget from "@/components/ChatWidget";
 
 // i18n utilities - these use 'server-only' so can ONLY be imported in Server Components
 import { locales, hasLocale, getDictionary } from "@/lib/i18n";
@@ -237,6 +238,8 @@ export default async function LocaleLayout({
 
         {/* Footer receives same props as Header */}
         <Footer dict={dict} />
+
+        <ChatWidget dict={dict.chatWidget} />
       </body>
     </html>
   );

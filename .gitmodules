@@ -1,0 +1,3 @@
+[submodule "chat-server"]
+	path = chat-server
+	url = git@github.com:tonystrawberry/nikki-chat-server.git

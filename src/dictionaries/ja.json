@@ -107,9 +107,16 @@
     "noCollections": "まだコレクションはありません。",
     "chapters": "章",
     "chapter": "章"
+  },
+  "chatWidget": {
+    "chatWithMe": "チャットする",
+    "placeholder": "メッセージを入力...",
+    "send": "送信",
+    "connecting": "接続中...",
+    "connectionError": "接続が切れました。再接続中...",
+    "closeChat": "チャットを閉じる",
+    "typeMessage": "メッセージを入力してください",
+    "namePlaceholder": "お名前",
+    "startChat": "チャットを始める"
   }
 }
-
-
-
-

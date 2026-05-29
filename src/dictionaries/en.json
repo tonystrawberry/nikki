@@ -107,9 +107,16 @@
     "noCollections": "No collections yet.",
     "chapters": "chapters",
     "chapter": "chapter"
+  },
+  "chatWidget": {
+    "chatWithMe": "Chat with me",
+    "placeholder": "Type a message...",
+    "send": "Send",
+    "connecting": "Connecting...",
+    "connectionError": "Connection lost. Reconnecting...",
+    "closeChat": "Close chat",
+    "typeMessage": "Type your message",
+    "namePlaceholder": "Your name",
+    "startChat": "Start chatting"
   }
 }
-
-
-
-

@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
 import { hasLocale, getDictionary } from "@/lib/i18n";
+import ChatContactCard from "@/components/ChatContactCard";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -155,7 +156,7 @@ export default async function AboutPage({ params }: PageProps) {
         <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
           <span className="text-primary">03.</span> {dict.about.connect}
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           <a
             href="https://github.com/tonystrawberry"
             target="_blank"
@@ -176,10 +177,11 @@ export default async function AboutPage({ params }: PageProps) {
             <div>
               <div className="font-medium group-hover:text-primary transition-colors">Email</div>
               <div className="text-sm text-muted-foreground">
-                {locale === 'fr' ? 'Me contacter' : locale === 'ja' ? 'お問い合わせ' : 'Say hello'}
+                {locale === 'fr' ? 'Pour les sujets sérieux' : locale === 'ja' ? '正式なお問い合わせ' : 'For serious matters'}
               </div>
             </div>
           </a>
+          <ChatContactCard locale={locale} />
         </div>
       </section>
 
