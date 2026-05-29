@@ -1,9 +1,18 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { subscribeAdminChannel, disconnectAdmin, getChatHttpUrl } from "@/lib/chat-client";
 import type { ChatMessage, ChatConversation, AdminChannelData } from "@/lib/chat-types";
 import type { Subscription } from "@rails/actioncable";
+
+function urlBase64ToUint8Array(base64String: string): Uint8Array {
+  const padding = "=".repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding).replace(/-/g, "+").replace(/_/g, "/");
+  const raw = window.atob(base64);
+  const arr = new Uint8Array(raw.length);
+  for (let i = 0; i < raw.length; ++i) arr[i] = raw.charCodeAt(i);
+  return arr;
+}
 
 function formatRelativeTime(dateStr: string): string {
   const d = new Date(dateStr);
@@ -102,6 +111,40 @@ export default function AdminChat() {
       disconnectAdmin();
     };
   }, []);
+
+  const registerPushNotifications = useCallback(async () => {
+    const vapidKey = process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY;
+    if (!vapidKey || !("serviceWorker" in navigator) || !("PushManager" in window)) return;
+
+    try {
+      const registration = await navigator.serviceWorker.register("/sw-chat.js");
+      const permission = await Notification.requestPermission();
+      if (permission !== "granted") return;
+
+      const subscription = await registration.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapidKey) as BufferSource,
+      });
+
+      const json = subscription.toJSON();
+      await fetch(`${getChatHttpUrl()}/push_subscriptions`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          endpoint: json.endpoint,
+          p256dh: json.keys?.p256dh,
+          auth: json.keys?.auth,
+        }),
+      });
+    } catch (err) {
+      console.error("Push registration failed:", err);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isConnected) registerPushNotifications();
+  }, [isConnected, registerPushNotifications]);
 
   const selectConversation = (id: number) => {
     setSelectedId(id);
