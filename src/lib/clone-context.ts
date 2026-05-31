@@ -2,12 +2,11 @@ import 'server-only';
 
 import fs from 'fs';
 import path from 'path';
-import { getAllPosts, getCollectionInfo, getRawPostBody } from './blog';
+import { getAllPosts } from './blog';
 import { type Locale, defaultLocale, localeNames } from './i18n-config';
+import type { RetrievedChunk } from './rag';
 
 const personaDir = path.join(process.cwd(), 'content', 'persona');
-
-const FULL_BODY_COLLECTIONS = ['career-story'] as const;
 
 function readPersona(locale: Locale): string {
   const file = path.join(personaDir, `${locale}.md`);
@@ -27,23 +26,26 @@ function formatPostsDigest(locale: Locale): string {
     .join('\n');
 }
 
-function formatFullBodyCollections(locale: Locale): string {
-  return FULL_BODY_COLLECTIONS
-    .map((slug) => {
-      const { title, posts } = getCollectionInfo(slug, locale);
-      if (posts.length === 0) return null;
-      const chapters = posts
-        .map((p) => {
-          const body = getRawPostBody(p.slug, locale);
-          if (!body) return null;
-          return `### ${p.title}\n\n${body.trim()}`;
-        })
-        .filter((s): s is string => s !== null)
-        .join('\n\n---\n\n');
-      return `## ${title}\n\n${chapters}`;
+/**
+ * Format the chunks retrieved by RAG into a system-prompt block. This is the
+ * per-query "depth" layer: full text of the most relevant post sections, each
+ * tagged with its source slug so the clone can cite a link.
+ *
+ * Returns '' when retrieval found nothing (or the index isn't built yet), in
+ * which case the prompt is just persona + digest — today's behavior.
+ */
+export function formatRetrievedContext(chunks: RetrievedChunk[]): string {
+  if (chunks.length === 0) return '';
+  const sections = chunks
+    .map((c) => {
+      const head = c.heading ? `${c.title} — ${c.heading}` : c.title;
+      return `### ${head}\n(source: /posts/${c.slug})\n\n${c.text.trim()}`;
     })
-    .filter((s): s is string => s !== null)
-    .join('\n\n');
+    .join('\n\n---\n\n');
+  return `# Relevant excerpts (full text, retrieved for this question)
+These are the most relevant passages from Tony's blog for the current question. Prefer them over the index above when answering, and cite the source link when you use one.
+
+${sections}`;
 }
 
 const PERSONA_BY_LOCALE: Record<Locale, { roleLine: string; replyLanguage: string }> = {
@@ -64,10 +66,15 @@ const PERSONA_BY_LOCALE: Record<Locale, { roleLine: string; replyLanguage: strin
   },
 };
 
+/**
+ * Build the STABLE part of the system prompt — persona + the lightweight
+ * blog index. It does not depend on the user's question, so the API route
+ * marks it with `cache_control: ephemeral`. The per-query RAG excerpts are a
+ * separate block (see formatRetrievedContext) appended after this one.
+ */
 export function buildSystemPrompt(locale: Locale): string {
   const persona = readPersona(locale);
   const digest = formatPostsDigest(locale);
-  const fullChapters = formatFullBodyCollections(locale);
   const { roleLine, replyLanguage } = PERSONA_BY_LOCALE[locale];
 
   return `${roleLine}
@@ -85,6 +92,6 @@ ${replyLanguage}
 ${persona}
 
 # Blog posts index (titles, dates, tags, excerpts)
-${digest}
-${fullChapters ? `\n# Full chapters\n\n${fullChapters}\n` : ''}`;
+The index below is for breadth — knowing what Tony has written about. For depth on a specific topic, use the "Relevant excerpts" block that may follow (retrieved per question).
+${digest}`;
 }
