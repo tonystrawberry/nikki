@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "s3", "storage", "iam", "security", "versioning", "replication", "lifecycle", "object-lock", "vpc", "athena", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 6
+collectionOrder: 9
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

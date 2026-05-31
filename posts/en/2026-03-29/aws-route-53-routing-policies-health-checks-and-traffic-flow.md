@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "route-53", "dns", "health-check", "failover", "latency-routing", "geolocation", "traffic-flow", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 16
+collectionOrder: 19
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

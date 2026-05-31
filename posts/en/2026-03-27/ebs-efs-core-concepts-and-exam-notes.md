@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "ec2", "ebs", "efs", "storage", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 5
+collectionOrder: 8
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

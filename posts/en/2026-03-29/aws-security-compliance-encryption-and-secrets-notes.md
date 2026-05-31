@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "waf", "shield", "firewall-manager", "kms", "acm", "tls", "secrets-manager", "security-hub", "guardduty", "inspector", "macie", "cloudops", "certification", "compliance", "encryption"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 13
+collectionOrder: 16
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "datasync", "aws-backup", "disaster-recovery", "snowcone", "s3", "efs", "fsx", "worm", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 12
+collectionOrder: 15
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

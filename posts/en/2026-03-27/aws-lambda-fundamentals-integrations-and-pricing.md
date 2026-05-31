@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "lambda", "serverless", "eventbridge", "s3", "cloudwatch", "certification"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 4
+collectionOrder: 7
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

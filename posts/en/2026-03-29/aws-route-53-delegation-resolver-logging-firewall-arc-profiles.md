@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "route-53", "dns", "resolver", "s3", "hybrid-dns", "dns-firewall", "arc", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 17
+collectionOrder: 20
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

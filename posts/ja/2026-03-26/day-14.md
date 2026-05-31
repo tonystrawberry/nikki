@@ -11,7 +11,7 @@ tags: ["engineering", "testing", "sleep", "stubbing", "ios", "app-store", "shiri
 
 - テスト環境で `sleep` がスタブされていなかったことに気づいた — テストが本来より約1分長くなっていた、@toshichanapp に感謝！
 - 日本語学習アプリ Shirimono を App Store で公開した — これから多くの改善を追加していく予定で、とても誇らしい
-- AWS CloudOps Developer コースの [EC2 High Availability and Scalability](/ja/posts/ec2-high-availability-and-scalability) セクションを完了した
+- AWS CloudOps Developer コースの [スケーラビリティとロードバランシング](/ja/collection/aws-cloudops-engineer-associate) セクションを完了した
 
 ---
 *Claudeによる翻訳*

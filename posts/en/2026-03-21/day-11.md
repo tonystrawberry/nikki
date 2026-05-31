@@ -9,4 +9,4 @@ tags: ["aws", "zcloudops", "scalability", "high-availability", "load-balancer", 
 
 ## Today, I:
 
-- continued studying for AWS Certified ZCloudOps: consolidated [EC2 High Availability and Scalability](/en/posts/ec2-high-availability-and-scalability) — vertical vs horizontal scaling, HA across AZs, ELB/ALB concepts, routing rules, security groups, and ALB hands-on with health checks
+- continued studying for AWS Certified ZCloudOps: wrote [scalability, ELB/ALB, and hands-on notes](/en/collection/aws-cloudops-engineer-associate) — vertical vs horizontal scaling, HA across AZs, ELB/ALB concepts, routing rules, security groups, and ALB hands-on with health checks

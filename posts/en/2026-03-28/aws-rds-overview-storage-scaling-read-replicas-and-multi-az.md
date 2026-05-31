@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "rds", "aurora", "elasticache", "redis", "rds-proxy", "mysql", "postgresql", "sql", "cloudwatch", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 8
+collectionOrder: 11
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

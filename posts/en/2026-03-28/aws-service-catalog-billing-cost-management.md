@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "service-catalog", "billing", "cost-explorer", "budgets", "cur", "compute-optimizer", "cloudformation", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 11
+collectionOrder: 14
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

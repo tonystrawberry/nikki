@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "route-53", "dns", "alias", "cname", "ttl", "mx", "spf", "dkim", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 15
+collectionOrder: 18
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

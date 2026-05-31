@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "cloudwatch", "eventbridge", "cloudtrail", "aws-config", "service-quotas", "monitoring", "logs", "alarms", "synthetics", "containers", "ec2", "observability", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 9
+collectionOrder: 12
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

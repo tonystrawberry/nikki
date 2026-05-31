@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "health", "organizations", "scp", "control-tower", "multi-account", "billing", "sysops", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 10
+collectionOrder: 13
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

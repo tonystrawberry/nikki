@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "cloudfront", "cdn", "global-accelerator", "s3", "alb", "caching", "edge", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 7
+collectionOrder: 10
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 

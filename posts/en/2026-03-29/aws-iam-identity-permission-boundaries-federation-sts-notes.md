@@ -6,7 +6,7 @@ author: "Tony Duong"
 category: "note"
 tags: ["aws", "iam", "sts", "saml", "cognito", "permission-boundary", "access-analyzer", "federation", "cloudops", "certification", "security"]
 collection: "aws-cloudops-engineer-associate"
-collectionOrder: 14
+collectionOrder: 17
 collectionTitle: "AWS CloudOps Engineer - Associate"
 ---
 
