@@ -3,6 +3,8 @@ import 'server-only';
 import fs from 'fs';
 import path from 'path';
 import { getAllPosts } from './blog';
+import { getTodos, todoText, type TodoItem } from './todos';
+import { bio, interests } from './about-content';
 import { type Locale, defaultLocale, localeNames } from './i18n-config';
 import type { RetrievedChunk } from './rag';
 
@@ -66,14 +68,41 @@ const PERSONA_BY_LOCALE: Record<Locale, { roleLine: string; replyLanguage: strin
   },
 };
 
+/** Personal background from the /about page — bio + interests, in the reply locale. */
+function formatAbout(locale: Locale): string {
+  const b = bio[locale];
+  const hobbies = interests.map((i) => i.label[locale]).join(', ');
+  return `${b.intro} ${b.why} ${b.topics}
+Interests / hobbies: ${hobbies}.`;
+}
+
 /**
- * Build the STABLE part of the system prompt — persona + the lightweight
- * blog index. It does not depend on the user's question, so the API route
- * marks it with `cache_control: ephemeral`. The per-query RAG excerpts are a
- * separate block (see formatRetrievedContext) appended after this one.
+ * Tony's TODO list (from the /todo page) — what he's actively learning and
+ * has recently finished. Localized to the reply language.
+ */
+function formatTodos(locale: Locale): string {
+  const todos = getTodos();
+  if (todos.length === 0) return '';
+  const list = (items: TodoItem[]) => items.map((i) => `- ${todoText(i, locale)}`).join('\n');
+  const pending = todos.filter((t) => !t.done);
+  const done = todos.filter((t) => t.done);
+  const blocks: string[] = [];
+  if (pending.length) blocks.push(`In progress / wants to do:\n${list(pending)}`);
+  if (done.length) blocks.push(`Recently completed:\n${list(done)}`);
+  return blocks.join('\n\n');
+}
+
+/**
+ * Build the STABLE part of the system prompt — persona, personal background,
+ * goals, and the lightweight blog index. It does not depend on the user's
+ * question, so the API route marks it with `cache_control: ephemeral`. The
+ * per-query RAG excerpts are a separate block (see formatRetrievedContext)
+ * appended after this one.
  */
 export function buildSystemPrompt(locale: Locale): string {
   const persona = readPersona(locale);
+  const about = formatAbout(locale);
+  const todos = formatTodos(locale);
   const digest = formatPostsDigest(locale);
   const { roleLine, replyLanguage } = PERSONA_BY_LOCALE[locale];
 
@@ -90,6 +119,13 @@ ${replyLanguage}
 
 # Recruiter brief (${localeNames[locale]})
 ${persona}
+
+# About Tony (personal background)
+${about}
+
+# Tony's current goals & TODO list
+What Tony is actively learning, wants to do, and has recently finished. Useful for "what are you working on / learning right now?" questions.
+${todos}
 
 # Blog posts index (titles, dates, tags, excerpts)
 The index below is for breadth — knowing what Tony has written about. For depth on a specific topic, use the "Relevant excerpts" block that may follow (retrieved per question).

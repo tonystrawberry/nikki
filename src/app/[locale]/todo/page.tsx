@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { hasLocale, getDictionary } from "@/lib/i18n";
-import { getTodos } from "@/lib/todos";
+import { getTodos, todoText } from "@/lib/todos";
+import type { Locale } from "@/lib/i18n-config";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 interface PageProps {
@@ -70,7 +71,7 @@ export default async function TodoPage({ params }: PageProps) {
                     <span className="text-xs font-mono text-muted-foreground tabular-nums w-6">
                       #{item.id}
                     </span>
-                    <span>{item.text}</span>
+                    <span>{todoText(item, locale as Locale)}</span>
                     <span className="text-xs text-muted-foreground ml-auto">
                       {item.createdAt}
                     </span>
@@ -107,7 +108,7 @@ export default async function TodoPage({ params }: PageProps) {
                     <span className="text-xs font-mono text-muted-foreground tabular-nums w-6">
                       #{item.id}
                     </span>
-                    <span className="line-through text-muted-foreground">{item.text}</span>
+                    <span className="line-through text-muted-foreground">{todoText(item, locale as Locale)}</span>
                     <span className="text-xs text-muted-foreground ml-auto">
                       {item.completedAt ?? item.createdAt}
                     </span>

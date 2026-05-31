@@ -2,73 +2,121 @@
   "items": [
     {
       "id": 1,
-      "text": "Learn how to use LocalStack",
+      "text": {
+        "en": "Learn how to use LocalStack",
+        "fr": "Apprendre à utiliser LocalStack",
+        "ja": "LocalStack の使い方を学ぶ"
+      },
       "done": false,
       "createdAt": "2026-03-14"
     },
     {
       "id": 2,
-      "text": "Pass the AWS CloudOps Engineer certification",
+      "text": {
+        "en": "Pass the AWS CloudOps Engineer certification",
+        "fr": "Obtenir la certification AWS CloudOps Engineer",
+        "ja": "AWS CloudOps Engineer 認定を取得する"
+      },
       "done": true,
       "createdAt": "2026-03-14"
     },
     {
       "id": 3,
-      "text": "Finish reading DDIA",
+      "text": {
+        "en": "Finish reading DDIA",
+        "fr": "Finir de lire DDIA",
+        "ja": "DDIA を読み終える"
+      },
       "done": false,
       "createdAt": "2026-03-14"
     },
     {
       "id": 4,
-      "text": "Finish Spacely Tech Blog (article migrations only?)",
+      "text": {
+        "en": "Finish Spacely Tech Blog (article migrations only?)",
+        "fr": "Terminer le blog technique Spacely (migrations d'articles uniquement ?)",
+        "ja": "Spacely 技術ブログを完成させる（記事の移行だけ？）"
+      },
       "done": false,
       "createdAt": "2026-03-14"
     },
     {
       "id": 5,
-      "text": "Publish Shirimono",
+      "text": {
+        "en": "Publish Shirimono",
+        "fr": "Publier Shirimono",
+        "ja": "Shirimono を公開する"
+      },
       "done": true,
       "createdAt": "2026-03-14"
     },
     {
       "id": 6,
-      "text": "Watch: Watch Me Build a Claude Code Clone (Full Code) — https://www.youtube.com/watch?v=kU8Tg1_PYJE",
+      "text": {
+        "en": "Watch: Watch Me Build a Claude Code Clone (Full Code) — https://www.youtube.com/watch?v=kU8Tg1_PYJE",
+        "fr": "Regarder : Watch Me Build a Claude Code Clone (Full Code) — https://www.youtube.com/watch?v=kU8Tg1_PYJE",
+        "ja": "視聴する：Watch Me Build a Claude Code Clone (Full Code) — https://www.youtube.com/watch?v=kU8Tg1_PYJE"
+      },
       "done": false,
       "createdAt": "2026-03-14"
     },
     {
       "id": 7,
-      "text": "Try spec-driven development on a new project",
+      "text": {
+        "en": "Try spec-driven development on a new project",
+        "fr": "Essayer le développement piloté par les spécifications sur un nouveau projet",
+        "ja": "新しいプロジェクトで仕様駆動開発を試す"
+      },
       "done": false,
       "createdAt": "2026-03-17"
     },
     {
       "id": 8,
-      "text": "Read Practical Object-Oriented Design: An Agile Primer Using Ruby (POODR) by Sandi Metz",
+      "text": {
+        "en": "Read Practical Object-Oriented Design: An Agile Primer Using Ruby (POODR) by Sandi Metz",
+        "fr": "Lire Practical Object-Oriented Design: An Agile Primer Using Ruby (POODR) de Sandi Metz",
+        "ja": "Sandi Metz 著『Practical Object-Oriented Design: An Agile Primer Using Ruby (POODR)』を読む"
+      },
       "done": false,
       "createdAt": "2026-03-26"
     },
     {
       "id": 9,
-      "text": "Become comfortable using Hotwire, Turbo, and Stimulus.",
+      "text": {
+        "en": "Become comfortable using Hotwire, Turbo, and Stimulus.",
+        "fr": "Être à l'aise avec Hotwire, Turbo et Stimulus.",
+        "ja": "Hotwire、Turbo、Stimulus を使いこなせるようになる。"
+      },
       "done": false,
       "createdAt": "2026-04-12"
     },
     {
       "id": 10,
-      "text": "Learn the basics of Apache Spark",
+      "text": {
+        "en": "Learn the basics of Apache Spark",
+        "fr": "Apprendre les bases d'Apache Spark",
+        "ja": "Apache Spark の基礎を学ぶ"
+      },
       "done": false,
       "createdAt": "2026-05-24"
     },
     {
       "id": 11,
-      "text": "Improve the chat by enriching the persona files, and maybe build an actual RAG with pgvector to learn how it works",
+      "text": {
+        "en": "Improve the chat by enriching the persona files, and maybe build an actual RAG with pgvector to learn how it works",
+        "fr": "Améliorer le chat en enrichissant les fichiers de persona, et peut-être construire un vrai RAG avec pgvector pour comprendre son fonctionnement",
+        "ja": "ペルソナファイルを充実させてチャットを改善し、仕組みを学ぶために pgvector で実際の RAG を構築するかもしれない"
+      },
       "done": false,
       "createdAt": "2026-05-24"
     },
     {
       "id": 12,
-      "text": "Learn ukulele",
+      "text": {
+        "en": "Learn ukulele",
+        "fr": "Apprendre le ukulélé",
+        "ja": "ウクレレを学ぶ"
+      },
       "done": false,
       "createdAt": "2026-05-28"
     }

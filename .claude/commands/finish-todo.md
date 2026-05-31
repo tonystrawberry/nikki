@@ -16,7 +16,7 @@ Mark a TODO as finished by its ID. The list is stored in `data/todos.json` and d
 
 2. **Read the store:**
    - If `data/todos.json` does not exist or is invalid, tell the user the TODO list is empty or missing and stop.
-   - Parse the JSON. Structure: `{ "items": [ { "id": number, "text": string, "done": boolean, "createdAt": string } ] }`.
+   - Parse the JSON. Structure: `{ "items": [ { "id": number, "text": { "en": string, "fr": string, "ja": string }, "done": boolean, "createdAt": string } ] }`.
 
 3. **Find the item** with `id` equal to the number from `$ARGUMENTS` (parse as integer). If no item has that ID, tell the user "No TODO with ID {id}" and stop.
 
@@ -24,4 +24,4 @@ Mark a TODO as finished by its ID. The list is stored in `data/todos.json` and d
 
 5. **Write** `data/todos.json` with the updated `items` (pretty-printed JSON, e.g. 2-space indent).
 
-6. **Confirm** to the user: e.g. "Marked TODO #{id} as done: {item.text}"
+6. **Confirm** to the user: e.g. "Marked TODO #{id} as done: {item.text.en}"
