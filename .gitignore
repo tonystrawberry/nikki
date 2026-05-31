@@ -48,3 +48,6 @@ next-env.d.ts
 chat-server/storage/
 chat-server/tmp/
 chat-server/log/
+
+# RAG embeddings: incremental build cache (the index .json/.bin ARE committed)
+data/embeddings/.cache.json

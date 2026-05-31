@@ -1,7 +1,8 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { z } from 'zod';
-import { buildSystemPrompt } from '@/lib/clone-context';
-import { hasLocale } from '@/lib/i18n-config';
+import { buildSystemPrompt, formatRetrievedContext } from '@/lib/clone-context';
+import { retrieve } from '@/lib/rag';
+import { hasLocale, type Locale } from '@/lib/i18n-config';
 
 const MessageSchema = z.object({
   role: z.enum(['user', 'assistant']),
@@ -36,7 +37,23 @@ export async function POST(req: Request) {
   }
 
   const client = new Anthropic({ apiKey });
-  const system = buildSystemPrompt(body.locale as Parameters<typeof buildSystemPrompt>[0]);
+  const locale = body.locale as Locale;
+
+  // RAG: retrieve the most relevant post sections for the latest user turn.
+  // Best-effort — `retrieve` returns [] if the index is missing or embedding
+  // fails, and we fall back to the digest-only prompt.
+  const lastUser = [...body.messages].reverse().find((m) => m.role === 'user');
+  const retrieved = lastUser ? await retrieve(locale, lastUser.content) : [];
+
+  const stableSystem = buildSystemPrompt(locale);
+  const retrievedContext = formatRetrievedContext(retrieved);
+
+  // Two system blocks: the stable one is cached across turns; the retrieved
+  // one varies per question, so it sits after the cache breakpoint.
+  const system: Anthropic.TextBlockParam[] = [
+    { type: 'text', text: stableSystem, cache_control: { type: 'ephemeral' } },
+    ...(retrievedContext ? [{ type: 'text' as const, text: retrievedContext }] : []),
+  ];
 
   const encoder = new TextEncoder();
   const stream = new ReadableStream<Uint8Array>({
@@ -45,13 +62,7 @@ export async function POST(req: Request) {
         const messageStream = client.messages.stream({
           model: 'claude-sonnet-4-6',
           max_tokens: 1024,
-          system: [
-            {
-              type: 'text',
-              text: system,
-              cache_control: { type: 'ephemeral' },
-            },
-          ],
+          system,
           messages: body.messages,
         });
 
