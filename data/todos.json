@@ -71,6 +71,12 @@
       "text": "Learn ukulele",
       "done": false,
       "createdAt": "2026-05-28"
+    },
+    {
+      "id": 13,
+      "text": "Build my own wooden cabin",
+      "done": false,
+      "createdAt": "2026-06-02"
     }
   ]
 }
