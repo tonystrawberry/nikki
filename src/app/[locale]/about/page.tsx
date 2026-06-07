@@ -25,12 +25,20 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 const interests = [
-  { emoji: "📖", label: { fr: "Lecture", en: "Reading", ja: "読書" } },
-  { emoji: "🎮", label: { fr: "Jeux vidéo", en: "Gaming", ja: "ゲーム" } },
-  { emoji: "🎬", label: { fr: "Cinéma", en: "Movies", ja: "映画" } },
-  { emoji: "✈️", label: { fr: "Voyages", en: "Travel", ja: "旅行" } },
-  { emoji: "🍜", label: { fr: "Cuisine", en: "Food", ja: "グルメ" } },
-  { emoji: "🎵", label: { fr: "Musique", en: "Music", ja: "音楽" } },
+  { emoji: "🌧️", label: { fr: "Le bruit de la pluie qui tombe", en: "The sound of falling rain", ja: "雨の降る音" } },
+  { emoji: "🍝", label: { fr: "Mes pâtes à la sauce tomate maison", en: "My own tomato pasta", ja: "自分で作るトマトパスタ" } },
+  { emoji: "🎮", label: { fr: "Jouer à Pokémon après une journée fatigante", en: "Playing Pokémon after a tiring day", ja: "疲れた日のあとに遊ぶポケモン" } },
+  { emoji: "⚽", label: { fr: "Jouer au foot le week-end", en: "Playing soccer on weekends", ja: "週末にサッカーをすること" } },
+  { emoji: "📚", label: { fr: "Une salle d'étude calme à la bibliothèque", en: "A quiet library study room", ja: "図書館の静かな自習室" } },
+  { emoji: "☕", label: { fr: "Un chocolat chaud quand il fait froid", en: "Hot chocolate on a cold day", ja: "寒い日のホットチョコレート" } },
+  { emoji: "🚶", label: { fr: "Les balades sans but dans les villes ou villages que je visite", en: "Aimless walks around the cities or villages I'm visiting", ja: "訪れる街や村を目的もなく歩くこと" } },
+  { emoji: "🌙", label: { fr: "Réfléchir à la vie et à moi-même avant de dormir", en: "Reflecting on life and myself before bed", ja: "寝る前に人生や自分について考えること" } },
+  { emoji: "🧹", label: { fr: "Refactoriser et organiser le code", en: "Refactoring and organizing code", ja: "コードをリファクタリングして整理すること" } },
+  { emoji: "🎙️", label: { fr: "Regarder des podcasts sur la vie", en: "Watching podcasts about life", ja: "人生についてのポッドキャストを見ること" } },
+  { emoji: "🌿", label: { fr: "Rêver d'une vie simple, au plus près de la nature", en: "Dreaming of a simple life close to nature", ja: "自然の中でシンプルに暮らす生活を夢見ること" } },
+  { emoji: "🏝️", label: { fr: "Les vacances d'été à Okinawa", en: "Summer vacations in Okinawa", ja: "沖縄での夏休み" } },
+  { emoji: "🧠", label: { fr: "Apprendre sur tout (le plus dur, c'est de retenir)", en: "Learning about anything (retaining it is the hard part though)", ja: "何でも学ぶこと（難しいのは、それを覚えておくことだけど）" } },
+  { emoji: "🐛", label: { fr: "La satisfaction de corriger un bug après une longue session de debug bien méritée", en: "The feeling of fixing a bug after a long, rewarding debugging session", ja: "長く実りあるデバッグの末にバグを直したときの達成感" } },
 ];
 
 const bio = {
@@ -105,7 +113,7 @@ export default async function AboutPage({ params }: PageProps) {
                 <div className="text-xs sm:text-sm text-muted-foreground">
                   {locale === 'fr' ? 'Basé à' : locale === 'ja' ? '拠点' : 'Based in'}
                 </div>
-                <div className="font-semibold text-sm sm:text-base">Tokyo</div>
+                <div className="font-semibold text-sm sm:text-base">Toulouse</div>
               </CardContent>
             </Card>
             <Card className="bg-card/50 border-border/50 text-center">
@@ -121,12 +129,12 @@ export default async function AboutPage({ params }: PageProps) {
             </Card>
             <Card className="bg-card/50 border-border/50 text-center">
               <CardContent className="p-3 sm:pt-6 sm:px-6 sm:pb-6">
-                <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">☕</div>
+                <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">🍫</div>
                 <div className="text-xs sm:text-sm text-muted-foreground">
                   {locale === 'fr' ? 'Carburant' : locale === 'ja' ? '燃料' : 'Fuel'}
                 </div>
                 <div className="font-semibold text-sm sm:text-base">
-                  {locale === 'fr' ? 'Café' : locale === 'ja' ? 'コーヒー' : 'Coffee'}
+                  {locale === 'fr' ? 'Chocolat chaud' : locale === 'ja' ? 'ホットチョコレート' : 'Hot chocolate'}
                 </div>
               </CardContent>
             </Card>
@@ -152,17 +160,17 @@ export default async function AboutPage({ params }: PageProps) {
               <span className="text-primary">02.</span>
               {locale === 'fr' ? 'Ce qui m\'intéresse' : locale === 'ja' ? '興味があること' : 'Things I like'}
             </h2>
-            <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-4">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
               {interests.map((interest) => (
-                <div
-                  key={interest.emoji}
-                  className="text-center p-2 sm:p-4 rounded-lg sm:rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors"
+                <li
+                  key={interest.label.en}
+                  className="flex items-center gap-3 p-3 rounded-lg sm:rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors"
                 >
-                  <div className="text-xl sm:text-2xl mb-1 sm:mb-2">{interest.emoji}</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground">{interest.label[locale]}</div>
-                </div>
+                  <span className="text-xl sm:text-2xl shrink-0">{interest.emoji}</span>
+                  <span className="text-sm sm:text-base">{interest.label[locale]}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </section>
 
           {/* Connect Section */}
@@ -170,7 +178,7 @@ export default async function AboutPage({ params }: PageProps) {
             <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
               <span className="text-primary">03.</span> {dict.about.connect}
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <a
                 href="https://github.com/tonystrawberry"
                 target="_blank"
@@ -181,6 +189,18 @@ export default async function AboutPage({ params }: PageProps) {
                 <div>
                   <div className="font-medium group-hover:text-primary transition-colors">GitHub</div>
                   <div className="text-sm text-muted-foreground">@tonystrawberry</div>
+                </div>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tony-duong-tokyo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-card transition-all group flex sm:flex-col items-center sm:items-start gap-3 sm:gap-0"
+              >
+                <div className="text-2xl sm:mb-2">💼</div>
+                <div>
+                  <div className="font-medium group-hover:text-primary transition-colors">LinkedIn</div>
+                  <div className="text-sm text-muted-foreground">in/tony-duong-tokyo</div>
                 </div>
               </a>
               <a

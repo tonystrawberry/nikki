@@ -24,6 +24,8 @@ export interface ResumeProfile {
   email: string;
   github: string;
   githubLabel: string;
+  linkedin: string;
+  linkedinLabel: string;
   website: string;
   websiteLabel: string;
   summary: string;
@@ -64,6 +66,8 @@ export interface ResumeCertification {
   issuer: string;
   date: string;
   url?: string;
+  /** True for lapsed certifications (still listed, visually marked). */
+  expired?: boolean;
 }
 
 export interface ResumeLanguageEntry {
@@ -89,14 +93,16 @@ const en: ResumeData = {
   profile: {
     name: "Tony Duong",
     title: "Software Engineer ・ Backend / Full-Stack",
-    location: "Tokyo, Japan",
+    location: "Toulouse, France",
     email: "tony.duong.102@gmail.com",
     github: "https://github.com/tonystrawberry",
     githubLabel: "github.com/tonystrawberry",
+    linkedin: "https://www.linkedin.com/in/tony-duong-tokyo/",
+    linkedinLabel: "linkedin.com/in/tony-duong-tokyo",
     website: "https://shirimono.fun",
     websiteLabel: "shirimono.fun",
     summary:
-      "Full-stack engineer based in Tokyo with ~8 years building web applications end-to-end — Ruby on Rails backends, React/Next.js frontends, and the AWS infrastructure underneath. I like owning features from API to deploy, paying down the boring parts (observability, cost, test speed), and learning deeply — currently working through Designing Data-Intensive Applications and AWS certifications. Comfortable shipping in three languages, English, French, and Japanese.",
+      'Full-stack engineer with <strong class="text-primary">~8 years</strong> building web applications end-to-end — <strong class="text-primary">Ruby on Rails</strong> backends, <strong class="text-primary">React/Next.js</strong> frontends, and the <strong class="text-primary">AWS</strong> infrastructure underneath. Comfortable shipping in <strong class="text-primary">English, French, and Japanese</strong>.',
   },
   experience: [
     {
@@ -108,12 +114,16 @@ const en: ResumeData = {
         "Backend team for an AI-driven image-processing product (panorama enhancement, generative editing for real-estate imagery).",
       highlights: [
         "Owned several AI image features end-to-end — generative content removal/placement and an AI contextual chat — building the CRUD APIs, file-attachment handling, and technical specs.",
-        "Re-architected the panorama-enhancement pipeline from a Lambda CPU setup to an ECS GPU setup to meet response-time requirements, documenting the decision in an ADR.",
-        "Cut a slow image endpoint from ~2 minutes to ~20 seconds for 50 images by optimizing the save flow, and resolved a production deadlock affecting the main web app.",
+        "Re-architected the panorama-enhancement pipeline from a Lambda CPU setup to an ECS GPU setup to meet response-time requirements.",
+        "Cut a slow cubemap-conversion job from ~2 minutes to ~10 seconds by optimizing the save flow and reworking the existing architecture — which brought overall processing of 50 images down from ~12 minutes to under 2 minutes.",
+        "Resolved a production deadlock affecting the main web app.",
         "Organized ~120 Datadog monitors (consistent naming, ownership tags, ANOMALY/LATENCY categories) and added per-job error alerting; revamped SLO/SLI dashboards for accurate health reporting.",
-        "Contributed to driving Honeybadger alerts down from ~9k to ~3.2k in two months by clearing a backlog of recurring exceptions.",
+        "Contributed to driving Honeybadger alerts down from ~9k to ~200 (window of two weeks) in four months by clearing a backlog of recurring exceptions.",
         "Built funnel/observability analytics on BigQuery and set up Claude Code GitHub Actions to auto-review Dependabot PRs.",
-        "Improved team process: introduced ADRs, a round-robin PR-review rotation, and onboarding paths; mentored teammates through pairing and code review.",
+        "Perform safe weekly dependency upgrades — including the Rails 7.1 → 7.2 migration — resolving breaking changes, consulting changelogs, and running regression tests.",
+        "Develop features day to day using spec-driven development (SDD).",
+        "Initiated the migration and centralization of technical documentation from Qiita to Notion — where it's far more searchable and live collaboration became possible.",
+        "Improved team process: introduced a round-robin PR-review rotation and onboarding paths; mentored teammates through pairing and code review.",
       ],
       stack: [
         "Ruby on Rails",
@@ -204,20 +214,6 @@ const en: ResumeData = {
       stack: ["Ruby", "Rails", "OpenAPI"],
     },
     {
-      name: "tonystrawberry-mcp-server",
-      url: "https://github.com/tonystrawberry/tonystrawberry-mcp-server",
-      description:
-        "A Ruby MCP (Model Context Protocol) server exposing tools that answer questions about me from Markdown profile files.",
-      stack: ["Ruby", "MCP"],
-    },
-    {
-      name: "brag-slack-cli",
-      url: "https://github.com/tonystrawberry/brag-slack-cli",
-      description:
-        "A CLI that turns your Slack messages into accomplishment summaries for performance reviews.",
-      stack: ["Ruby", "Slack API", "LLM"],
-    },
-    {
       name: "Axie Infinity gene overlay (earlier)",
       description:
         "A Tampermonkey extension that pulled each Axie's genes from the API and overlaid them on marketplace listings the site didn't expose. Shared in the game's Discord, it hit hundreds of downloads a day and ~$30/day at peak via a one-time Stripe unlock.",
@@ -234,7 +230,7 @@ const en: ResumeData = {
     },
     { label: "Observability", items: ["Datadog", "New Relic", "Honeybadger"] },
     { label: "AI & Tooling", items: ["Claude / Claude Code", "MCP", "Vertex AI", "RAG", "Spec-driven development"] },
-    { label: "Practices", items: ["CI/CD (GitHub Actions)", "TDD / RSpec", "ADRs", "Code review", "i18n"] },
+    { label: "Practices", items: ["CI/CD (GitHub Actions)", "TDD / RSpec", "Code review", "i18n"] },
   ],
   education: [
     {
@@ -245,17 +241,21 @@ const en: ResumeData = {
     },
   ],
   certifications: [
-    {
-      name: "AWS Certified CloudOps Engineer – Associate",
-      issuer: "Amazon Web Services",
-      date: "2026",
-      url: "https://www.credly.com/badges/c0552a82-3353-437f-816d-dd1200690026/public_url",
-    },
+    { name: "AWS Certified Solutions Architect – Professional", issuer: "Amazon Web Services", date: "Aug 2023", url: "https://www.credly.com/badges/78b0a1d5-fd0e-4bb4-a111-e94977cc4649/public_url" },
+    { name: "AWS Certified DevOps Engineer – Professional", issuer: "Amazon Web Services", date: "Nov 2023", url: "https://www.credly.com/badges/ec94c0fe-075f-4be2-a289-1fc42dfe2cf7/public_url" },
+    { name: "AWS Certified CloudOps Engineer – Associate", issuer: "Amazon Web Services", date: "Apr 2026", url: "https://www.credly.com/badges/c0552a82-3353-437f-816d-dd1200690026/public_url" },
+    { name: "AWS Certified Data Engineer – Associate", issuer: "Amazon Web Services", date: "Aug 2024", url: "https://www.credly.com/badges/b2fe9b9a-7d30-47d5-ad06-d6a13d76ad59/public_url" },
+    { name: "AWS Certified AI Practitioner (Early Adopter)", issuer: "Amazon Web Services", date: "Aug 2024", url: "https://www.credly.com/badges/d400ddf2-d889-4d55-87ce-7d1967cb2d63/public_url" },
+    { name: "AWS Certified SysOps Administrator – Associate", issuer: "Amazon Web Services", date: "Apr 2023", url: "https://www.credly.com/badges/c6d76950-27c5-4f66-8be2-4e1db8f044b3/public_url", expired: true },
+    { name: "AWS Certified Developer – Associate", issuer: "Amazon Web Services", date: "Mar 2023", url: "https://www.credly.com/badges/285ae003-e487-4175-b1b2-f86e6e2386cc/public_url", expired: true },
+    { name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: "Feb 2023", url: "https://www.credly.com/badges/cbd4778c-044f-4b84-a1b8-9e3bebabcbec/public_url", expired: true },
+    { name: "HashiCorp Certified: Terraform Associate (003)", issuer: "HashiCorp", date: "Aug 2023", url: "https://www.credly.com/badges/768429a5-a6fe-4ba6-b82b-91ff97e8dc14/public_url", expired: true },
+    { name: "AWS Certified Cloud Practitioner (CLF-C01)", issuer: "Amazon Web Services", date: "Dec 2022", url: "https://www.credly.com/badges/6f52dbc7-f604-483a-9e48-510114d0955c/public_url", expired: true },
   ],
   languages: [
     { language: "French", level: "Native" },
     { language: "English", level: "Fluent" },
-    { language: "Japanese", level: "Conversational (works in Japanese daily)" },
+    { language: "Japanese", level: "Business (working in Japanese daily since 2018)" },
   ],
 };
 
@@ -267,14 +267,16 @@ const fr: ResumeData = {
   profile: {
     name: "Tony Duong",
     title: "Ingénieur logiciel ・ Back-end / Full-stack",
-    location: "Tokyo, Japon",
+    location: "Toulouse, France",
     email: "tony.duong.102@gmail.com",
     github: "https://github.com/tonystrawberry",
     githubLabel: "github.com/tonystrawberry",
+    linkedin: "https://www.linkedin.com/in/tony-duong-tokyo/",
+    linkedinLabel: "linkedin.com/in/tony-duong-tokyo",
     website: "https://shirimono.fun",
     websiteLabel: "shirimono.fun",
     summary:
-      "Ingénieur full-stack basé à Tokyo, ~8 ans à construire des applications web de bout en bout — back-ends Ruby on Rails, front-ends React/Next.js et l'infrastructure AWS sous-jacente. J'aime porter une fonctionnalité de l'API au déploiement, m'occuper des parties ingrates (observabilité, coûts, vitesse des tests) et apprendre en profondeur — en ce moment Designing Data-Intensive Applications et les certifications AWS. À l'aise pour livrer en trois langues : anglais, français et japonais.",
+      'Ingénieur full-stack, <strong class="text-primary">~8 ans</strong> à construire des applications web de bout en bout — back-ends <strong class="text-primary">Ruby on Rails</strong>, front-ends <strong class="text-primary">React/Next.js</strong> et l\'infrastructure <strong class="text-primary">AWS</strong> sous-jacente. À l\'aise pour livrer en <strong class="text-primary">anglais, français et japonais</strong>.',
   },
   experience: [
     {
@@ -286,12 +288,16 @@ const fr: ResumeData = {
         "Équipe back-end d'un produit de traitement d'images par IA (amélioration de panoramas, édition générative pour l'immobilier).",
       highlights: [
         "Pris en charge de bout en bout plusieurs fonctionnalités IA — suppression/placement de contenu génératif et un chat contextuel IA — en construisant les APIs CRUD, la gestion des pièces jointes et les spécifications techniques.",
-        "Refonte du pipeline d'amélioration de panoramas d'une architecture Lambda CPU vers ECS GPU pour respecter les exigences de temps de réponse, décision documentée via un ADR.",
-        "Réduit un endpoint lent de ~2 minutes à ~20 secondes pour 50 images en optimisant le flux de sauvegarde, et résolu un deadlock en production sur l'application principale.",
+        "Refonte du pipeline d'amélioration de panoramas d'une architecture Lambda CPU vers ECS GPU pour respecter les exigences de temps de réponse.",
+        "Réduit un job de conversion en cubemap de ~2 minutes à ~10 secondes en optimisant le flux de sauvegarde et en revoyant l'architecture existante — ce qui a fait passer le traitement global de 50 images de ~12 minutes à moins de 2 minutes.",
+        "Résolu un deadlock en production sur l'application principale.",
         "Organisé ~120 monitors Datadog (nommage cohérent, tags de responsabilité, catégories ANOMALY/LATENCY) et ajouté des alertes d'erreur par job ; refonte des dashboards SLO/SLI pour un suivi de santé fiable.",
-        "Contribué à faire passer les alertes Honeybadger de ~9k à ~3,2k en deux mois en traitant un backlog d'exceptions récurrentes.",
+        "Contribué à faire passer les alertes Honeybadger de ~9k à ~200 (sur une fenêtre de deux semaines) en quatre mois en traitant un backlog d'exceptions récurrentes.",
         "Construit des analyses de funnel/observabilité sur BigQuery et mis en place des GitHub Actions Claude Code pour relire automatiquement les PR Dependabot.",
-        "Amélioré les process de l'équipe : introduction des ADR, d'une rotation round-robin pour les revues de PR et de parcours d'onboarding ; mentorat via pair programming et revues de code.",
+        "Effectue des mises à jour de dépendances hebdomadaires en toute sécurité — dont la migration de Rails 7.1 vers 7.2 — en résolvant les changements cassants, en consultant les changelogs et en lançant des tests de régression.",
+        "Développe des fonctionnalités au quotidien en spec-driven development (SDD).",
+        "Initié la migration et la centralisation de la documentation technique de Qiita vers Notion — où l'information est bien plus facile à rechercher et la collaboration en direct est devenue possible.",
+        "Amélioré les process de l'équipe : mise en place d'une rotation round-robin pour les revues de PR et de parcours d'onboarding ; mentorat via pair programming et revues de code.",
       ],
       stack: [
         "Ruby on Rails",
@@ -382,20 +388,6 @@ const fr: ResumeData = {
       stack: ["Ruby", "Rails", "OpenAPI"],
     },
     {
-      name: "tonystrawberry-mcp-server",
-      url: "https://github.com/tonystrawberry/tonystrawberry-mcp-server",
-      description:
-        "Un serveur MCP (Model Context Protocol) en Ruby exposant des outils qui répondent aux questions me concernant à partir de fichiers de profil Markdown.",
-      stack: ["Ruby", "MCP"],
-    },
-    {
-      name: "brag-slack-cli",
-      url: "https://github.com/tonystrawberry/brag-slack-cli",
-      description:
-        "Un CLI qui transforme vos messages Slack en résumés d'accomplissements pour les entretiens d'évaluation.",
-      stack: ["Ruby", "API Slack", "LLM"],
-    },
-    {
       name: "Overlay de gènes Axie Infinity (plus tôt)",
       description:
         "Une extension Tampermonkey récupérant les gènes de chaque Axie via l'API pour les afficher sur les annonces du marketplace, données que le site n'exposait pas. Partagée sur le Discord du jeu, elle atteignait des centaines de téléchargements par jour et ~30 $/jour au pic via un déblocage Stripe unique.",
@@ -412,7 +404,7 @@ const fr: ResumeData = {
     },
     { label: "Observabilité", items: ["Datadog", "New Relic", "Honeybadger"] },
     { label: "IA & Outillage", items: ["Claude / Claude Code", "MCP", "Vertex AI", "RAG", "Spec-driven development"] },
-    { label: "Pratiques", items: ["CI/CD (GitHub Actions)", "TDD / RSpec", "ADR", "Revue de code", "i18n"] },
+    { label: "Pratiques", items: ["CI/CD (GitHub Actions)", "TDD / RSpec", "Revue de code", "i18n"] },
   ],
   education: [
     {
@@ -423,17 +415,21 @@ const fr: ResumeData = {
     },
   ],
   certifications: [
-    {
-      name: "AWS Certified CloudOps Engineer – Associate",
-      issuer: "Amazon Web Services",
-      date: "2026",
-      url: "https://www.credly.com/badges/c0552a82-3353-437f-816d-dd1200690026/public_url",
-    },
+    { name: "AWS Certified Solutions Architect – Professional", issuer: "Amazon Web Services", date: "août 2023", url: "https://www.credly.com/badges/78b0a1d5-fd0e-4bb4-a111-e94977cc4649/public_url" },
+    { name: "AWS Certified DevOps Engineer – Professional", issuer: "Amazon Web Services", date: "novembre 2023", url: "https://www.credly.com/badges/ec94c0fe-075f-4be2-a289-1fc42dfe2cf7/public_url" },
+    { name: "AWS Certified CloudOps Engineer – Associate", issuer: "Amazon Web Services", date: "avril 2026", url: "https://www.credly.com/badges/c0552a82-3353-437f-816d-dd1200690026/public_url" },
+    { name: "AWS Certified Data Engineer – Associate", issuer: "Amazon Web Services", date: "août 2024", url: "https://www.credly.com/badges/b2fe9b9a-7d30-47d5-ad06-d6a13d76ad59/public_url" },
+    { name: "AWS Certified AI Practitioner (Early Adopter)", issuer: "Amazon Web Services", date: "août 2024", url: "https://www.credly.com/badges/d400ddf2-d889-4d55-87ce-7d1967cb2d63/public_url" },
+    { name: "AWS Certified SysOps Administrator – Associate", issuer: "Amazon Web Services", date: "avril 2023", url: "https://www.credly.com/badges/c6d76950-27c5-4f66-8be2-4e1db8f044b3/public_url", expired: true },
+    { name: "AWS Certified Developer – Associate", issuer: "Amazon Web Services", date: "mars 2023", url: "https://www.credly.com/badges/285ae003-e487-4175-b1b2-f86e6e2386cc/public_url", expired: true },
+    { name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: "février 2023", url: "https://www.credly.com/badges/cbd4778c-044f-4b84-a1b8-9e3bebabcbec/public_url", expired: true },
+    { name: "HashiCorp Certified: Terraform Associate (003)", issuer: "HashiCorp", date: "août 2023", url: "https://www.credly.com/badges/768429a5-a6fe-4ba6-b82b-91ff97e8dc14/public_url", expired: true },
+    { name: "AWS Certified Cloud Practitioner (CLF-C01)", issuer: "Amazon Web Services", date: "décembre 2022", url: "https://www.credly.com/badges/6f52dbc7-f604-483a-9e48-510114d0955c/public_url", expired: true },
   ],
   languages: [
     { language: "Français", level: "Langue maternelle" },
     { language: "Anglais", level: "Courant" },
-    { language: "Japonais", level: "Conversationnel (travail quotidien en japonais)" },
+    { language: "Japonais", level: "Professionnel (travail quotidien en japonais depuis 2018)" },
   ],
 };
 
@@ -445,14 +441,16 @@ const ja: ResumeData = {
   profile: {
     name: "Tony Duong",
     title: "ソフトウェアエンジニア ・ バックエンド / フルスタック",
-    location: "東京、日本",
+    location: "フランス・トゥールーズ",
     email: "tony.duong.102@gmail.com",
     github: "https://github.com/tonystrawberry",
     githubLabel: "github.com/tonystrawberry",
+    linkedin: "https://www.linkedin.com/in/tony-duong-tokyo/",
+    linkedinLabel: "linkedin.com/in/tony-duong-tokyo",
     website: "https://shirimono.fun",
     websiteLabel: "shirimono.fun",
     summary:
-      "東京を拠点とするフルスタックエンジニア。約8年にわたり、Ruby on Rails のバックエンド、React/Next.js のフロントエンド、その下の AWS インフラまで含めて Web アプリケーションを一気通貫で開発してきました。API から本番デプロイまで機能を一人称で担当し、地味だが重要な部分（オブザーバビリティ、コスト、テスト速度）を整え、深く学ぶことを好みます（現在は Designing Data-Intensive Applications と AWS 認定に取り組み中）。英語・フランス語・日本語の3言語で開発できます。",
+      'フルスタックエンジニア。<strong class="text-primary">約8年</strong>にわたり Web アプリケーションを一気通貫で開発——<strong class="text-primary">Ruby on Rails</strong> のバックエンド、<strong class="text-primary">React/Next.js</strong> のフロントエンド、その下の <strong class="text-primary">AWS</strong> インフラまで。<strong class="text-primary">英語・フランス語・日本語</strong>で開発できます。',
   },
   experience: [
     {
@@ -464,12 +462,16 @@ const ja: ResumeData = {
         "AI による画像処理プロダクト（パノラマ補正、不動産画像の生成系編集）のバックエンドチーム。",
       highlights: [
         "生成系の不要物除去・配置や AI コンテキストチャットなど、複数の AI 機能を CRUD API・添付ファイル処理・技術仕様まで含めて一気通貫で担当。",
-        "応答時間の要件を満たすため、パノラマ補正パイプラインを Lambda（CPU）構成から ECS（GPU）構成へ再設計し、ADR で意思決定を記録。",
-        "保存処理を最適化し、画像50枚で約2分かかっていた遅いエンドポイントを約20秒に短縮。メインの Web アプリで発生していた本番のデッドロックも解消。",
+        "応答時間の要件を満たすため、パノラマ補正パイプラインを Lambda（CPU）構成から ECS（GPU）構成へ再設計。",
+        "保存処理を最適化し既存のアーキテクチャを見直すことで、遅いキューブマップ変換ジョブを約2分から約10秒に短縮——これにより画像50枚全体の処理時間も約12分から2分未満に改善。",
+        "メインの Web アプリで発生していた本番のデッドロックを解消。",
         "約120個の Datadog モニターを整理（命名の統一、担当者タグ、ANOMALY/LATENCY などのカテゴリ付け）し、ジョブ単位のエラーアラートを追加。SLO/SLI ダッシュボードを刷新し、健全性を正確に可視化。",
-        "再発する例外のバックログを解消し、Honeybadger のアラートを2か月で約9,000件から約3,200件まで削減することに貢献。",
+        "再発する例外のバックログを解消し、Honeybadger のアラートを4か月で約9,000件から約200件（2週間のウィンドウ）まで削減することに貢献。",
         "BigQuery でファネル/オブザーバビリティ分析を構築し、Dependabot の PR を自動レビューする Claude Code の GitHub Actions を整備。",
-        "チームのプロセスを改善：ADR の導入、PR レビューのラウンドロビン割り当て、オンボーディング手順の整備。ペアプロやコードレビューを通じてメンバーをメンタリング。",
+        "毎週、安全に依存ライブラリを更新（Rails 7.1 から 7.2 へのアップグレードを含む）。破壊的変更に対応し、変更履歴を確認し、回帰テストを実施。",
+        "日々の機能開発をスペック駆動開発（SDD）で実施。",
+        "技術ドキュメントを Qiita から Notion へ移行・集約する取り組みを主導——検索性が大きく向上し、リアルタイムでの共同編集も可能に。",
+        "チームのプロセスを改善：PR レビューのラウンドロビン割り当てとオンボーディング手順を整備。ペアプロやコードレビューを通じてメンバーをメンタリング。",
       ],
       stack: [
         "Ruby on Rails",
@@ -560,20 +562,6 @@ const ja: ResumeData = {
       stack: ["Ruby", "Rails", "OpenAPI"],
     },
     {
-      name: "tonystrawberry-mcp-server",
-      url: "https://github.com/tonystrawberry/tonystrawberry-mcp-server",
-      description:
-        "Markdown のプロフィールファイルをもとに私に関する質問へ回答するツールを公開する Ruby 製の MCP（Model Context Protocol）サーバー。",
-      stack: ["Ruby", "MCP"],
-    },
-    {
-      name: "brag-slack-cli",
-      url: "https://github.com/tonystrawberry/brag-slack-cli",
-      description:
-        "Slack のメッセージを人事評価向けの成果サマリーに変換する CLI。",
-      stack: ["Ruby", "Slack API", "LLM"],
-    },
-    {
       name: "Axie Infinity 遺伝子オーバーレイ（以前）",
       description:
         "各 Axie の遺伝子情報を API から取得し、サイトが表示していなかったマーケットプレイスの一覧に重ねて表示する Tampermonkey 拡張。ゲームの Discord で共有し、1日あたり数百ダウンロード、ピーク時には Stripe の買い切り解除で1日約30ドルを記録。",
@@ -590,7 +578,7 @@ const ja: ResumeData = {
     },
     { label: "オブザーバビリティ", items: ["Datadog", "New Relic", "Honeybadger"] },
     { label: "AI & ツール", items: ["Claude / Claude Code", "MCP", "Vertex AI", "RAG", "スペック駆動開発"] },
-    { label: "プラクティス", items: ["CI/CD (GitHub Actions)", "TDD / RSpec", "ADR", "コードレビュー", "i18n"] },
+    { label: "プラクティス", items: ["CI/CD (GitHub Actions)", "TDD / RSpec", "コードレビュー", "i18n"] },
   ],
   education: [
     {
@@ -601,17 +589,21 @@ const ja: ResumeData = {
     },
   ],
   certifications: [
-    {
-      name: "AWS Certified CloudOps Engineer – Associate",
-      issuer: "Amazon Web Services",
-      date: "2026年",
-      url: "https://www.credly.com/badges/c0552a82-3353-437f-816d-dd1200690026/public_url",
-    },
+    { name: "AWS Certified Solutions Architect – Professional", issuer: "Amazon Web Services", date: "2023年8月", url: "https://www.credly.com/badges/78b0a1d5-fd0e-4bb4-a111-e94977cc4649/public_url" },
+    { name: "AWS Certified DevOps Engineer – Professional", issuer: "Amazon Web Services", date: "2023年11月", url: "https://www.credly.com/badges/ec94c0fe-075f-4be2-a289-1fc42dfe2cf7/public_url" },
+    { name: "AWS Certified CloudOps Engineer – Associate", issuer: "Amazon Web Services", date: "2026年4月", url: "https://www.credly.com/badges/c0552a82-3353-437f-816d-dd1200690026/public_url" },
+    { name: "AWS Certified Data Engineer – Associate", issuer: "Amazon Web Services", date: "2024年8月", url: "https://www.credly.com/badges/b2fe9b9a-7d30-47d5-ad06-d6a13d76ad59/public_url" },
+    { name: "AWS Certified AI Practitioner (Early Adopter)", issuer: "Amazon Web Services", date: "2024年8月", url: "https://www.credly.com/badges/d400ddf2-d889-4d55-87ce-7d1967cb2d63/public_url" },
+    { name: "AWS Certified SysOps Administrator – Associate", issuer: "Amazon Web Services", date: "2023年4月", url: "https://www.credly.com/badges/c6d76950-27c5-4f66-8be2-4e1db8f044b3/public_url", expired: true },
+    { name: "AWS Certified Developer – Associate", issuer: "Amazon Web Services", date: "2023年3月", url: "https://www.credly.com/badges/285ae003-e487-4175-b1b2-f86e6e2386cc/public_url", expired: true },
+    { name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: "2023年2月", url: "https://www.credly.com/badges/cbd4778c-044f-4b84-a1b8-9e3bebabcbec/public_url", expired: true },
+    { name: "HashiCorp Certified: Terraform Associate (003)", issuer: "HashiCorp", date: "2023年8月", url: "https://www.credly.com/badges/768429a5-a6fe-4ba6-b82b-91ff97e8dc14/public_url", expired: true },
+    { name: "AWS Certified Cloud Practitioner (CLF-C01)", issuer: "Amazon Web Services", date: "2022年12月", url: "https://www.credly.com/badges/6f52dbc7-f604-483a-9e48-510114d0955c/public_url", expired: true },
   ],
   languages: [
     { language: "フランス語", level: "母語" },
     { language: "英語", level: "流暢" },
-    { language: "日本語", level: "日常会話（業務は日本語で対応）" },
+    { language: "日本語", level: "ビジネスレベル（2018年から日常的に業務で使用）" },
   ],
 };
 

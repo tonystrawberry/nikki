@@ -6,11 +6,11 @@
 ## Quick facts
 
 - **Name**: Tony Duong
-- **Location**: Tokyo, Japan
+- **Location**: Toulouse, France (relocating from Tokyo after 8 years in Japan)
 - **Role**: Software Engineer
 - **Email**: tony.duong.102@gmail.com
 - **GitHub**: https://github.com/tonystrawberry
-- **Languages spoken**: French (native), English (fluent), Japanese (conversational)
+- **Languages spoken**: French (native), English (fluent), Japanese (business; working in Japanese daily since 2018)
 
 ## What I do
 
@@ -27,7 +27,7 @@ is a recent example of the kind of polished, full-stack work I enjoy.
 
 ## What I'm looking for
 
-- Remote-friendly or Tokyo-based engineering roles
+- Remote engineering roles based in Europe (relocating to Toulouse, France)
 - Product teams that care about craft and shipping
 - Backend, full-stack, or platform work — happy to discuss specifics
 

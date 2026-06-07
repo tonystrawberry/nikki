@@ -3,6 +3,7 @@ import { Separator } from "@/components/ui/separator";
 import { hasLocale, getDictionary } from "@/lib/i18n";
 import { resumeData } from "@/lib/resume-data";
 import ResumeActions from "@/components/ResumeActions";
+import { CredlyIcon } from "@/components/CredlyIcon";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -46,9 +47,9 @@ export default async function ResumePage({ params }: PageProps) {
         </h1>
         <p className="resume-title text-base sm:text-xl text-primary font-medium mb-4">{profile.title}</p>
         <div className="resume-contact flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
-          <span>📍 {profile.location}</span>
+          <span><span className="mr-1.5">📍</span>{profile.location}</span>
           <a href={`mailto:${profile.email}`} className="hover:text-foreground transition-colors">
-            ✉️ {profile.email}
+            <span className="mr-1.5">✉️</span>{profile.email}
           </a>
           <a
             href={profile.github}
@@ -56,20 +57,21 @@ export default async function ResumePage({ params }: PageProps) {
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
           >
-            🐙 {profile.githubLabel}
+            <span className="mr-1.5">🐙</span>{profile.githubLabel}
           </a>
           <a
-            href={profile.website}
+            href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground transition-colors"
           >
-            🌐 {profile.websiteLabel}
+            <span className="mr-1.5">💼</span>{profile.linkedinLabel}
           </a>
         </div>
-        <p className="resume-summary mt-5 text-base sm:text-lg leading-relaxed text-foreground/90">
-          {profile.summary}
-        </p>
+        <p
+          className="resume-summary mt-5 text-base sm:text-lg leading-relaxed text-foreground/90"
+          dangerouslySetInnerHTML={{ __html: profile.summary }}
+        />
       </header>
 
       {/* Actions (hidden when printing) */}
@@ -225,8 +227,9 @@ export default async function ResumePage({ params }: PageProps) {
                     href={cert.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-primary hover:underline"
+                    className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
                   >
+                    <CredlyIcon className="h-3.5 w-3.5" />
                     {dict.resume.viewCredential}
                   </a>
                 )}

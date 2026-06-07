@@ -26,7 +26,8 @@
     "education": "Education",
     "certifications": "Certifications",
     "languages": "Languages",
-    "viewCredential": "View credential →"
+    "viewCredential": "View credential →",
+    "expired": "Expired"
   },
   "chat": {
     "title": "Ask my AI clone ✨",

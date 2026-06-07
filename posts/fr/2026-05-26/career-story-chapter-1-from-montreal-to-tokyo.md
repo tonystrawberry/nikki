@@ -50,6 +50,7 @@ Un récapitulatif plus concret de ce que j'ai construit et livré pendant les an
 
 - **Suivi un double diplôme d'ingénieur** entre l'UTBM (France) et l'ÉTS (Montréal) en génie informatique/logiciel, en terminant major de promo dans plusieurs cours.
 - **Livré six ou sept jeux lors de gamejams le week-end** — un jeu de quiz, un platformer à la Mario, un jeu d'infiltration autour des cônes de lumière des gardes et un Tetris-sur-une-sphère — jusqu'à un Tetris soigné avec un vrai design sonore et des effets visuels.
+- **Reçu la Reconnaissance de l'engagement étudiant de l'ÉTS (2016-2017, activités scientifiques et technologiques)** pour ma participation constante et active au club de développement de jeux vidéo Conjure ETS — notamment en représentant l'école lors d'événements de game dev.
 - **Construit un prototype de jeu VR chez Summit Tech** lors de mon stage de master, en intégrant les APIs internes de visioconférence de l'entreprise sous Unity et en le livrant comme démo client aux côtés de leur plateforme télécoms.
 - **Sorti de ma zone de confort** — équipe de football, direction d'équipes projet au sein du club de jeux vidéo — transformant un naturel timide et introverti en l'habitude de simplement être présent.
 

@@ -202,6 +202,7 @@ export interface Dictionary {
     certifications: string;
     languages: string;
     viewCredential: string; // Link text for a certification badge
+    expired: string;        // Tag shown on lapsed certifications
   };
 
   /**

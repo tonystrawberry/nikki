@@ -26,7 +26,8 @@
     "education": "学歴",
     "certifications": "資格",
     "languages": "言語",
-    "viewCredential": "認定を見る →"
+    "viewCredential": "認定を見る →",
+    "expired": "失効"
   },
   "chat": {
     "title": "AIクローンに聞く ✨",

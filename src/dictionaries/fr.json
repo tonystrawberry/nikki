@@ -26,7 +26,8 @@
     "education": "Formation",
     "certifications": "Certifications",
     "languages": "Langues",
-    "viewCredential": "Voir le badge →"
+    "viewCredential": "Voir le badge →",
+    "expired": "Expiré"
   },
   "chat": {
     "title": "Demande à mon clone IA ✨",

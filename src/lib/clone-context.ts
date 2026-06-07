@@ -7,12 +7,40 @@ import { type Locale, defaultLocale, localeNames } from './i18n-config';
 import type { RetrievedChunk } from './rag';
 
 const personaDir = path.join(process.cwd(), 'content', 'persona');
+const todosFile = path.join(process.cwd(), 'data', 'todos.json');
 
 function readPersona(locale: Locale): string {
   const file = path.join(personaDir, `${locale}.md`);
   if (fs.existsSync(file)) return fs.readFileSync(file, 'utf8');
   const fallback = path.join(personaDir, `${defaultLocale}.md`);
   return fs.readFileSync(fallback, 'utf8');
+}
+
+/**
+ * Format Tony's TODO list (data/todos.json) — what he wants to do/learn and
+ * what he recently finished. Gives the clone material for questions about his
+ * goals, learning direction, and what's next. Best-effort: returns '' if the
+ * file is missing or unreadable, so the prompt simply omits the section.
+ */
+function formatTodos(): string {
+  let raw: string;
+  try {
+    raw = fs.readFileSync(todosFile, 'utf8');
+  } catch {
+    return '';
+  }
+  let items: { text: string; done: boolean }[];
+  try {
+    items = (JSON.parse(raw)?.items ?? []) as { text: string; done: boolean }[];
+  } catch {
+    return '';
+  }
+  const todo = items.filter((i) => !i.done).map((i) => `- ${i.text}`);
+  const done = items.filter((i) => i.done).map((i) => `- ${i.text}`);
+  const parts: string[] = [];
+  if (todo.length) parts.push(`Wants to do / learn next:\n${todo.join('\n')}`);
+  if (done.length) parts.push(`Recently completed:\n${done.join('\n')}`);
+  return parts.join('\n\n');
 }
 
 function formatPostsDigest(locale: Locale): string {
@@ -75,7 +103,14 @@ const PERSONA_BY_LOCALE: Record<Locale, { roleLine: string; replyLanguage: strin
 export function buildSystemPrompt(locale: Locale): string {
   const persona = readPersona(locale);
   const digest = formatPostsDigest(locale);
+  const todos = formatTodos();
   const { roleLine, replyLanguage } = PERSONA_BY_LOCALE[locale];
+
+  const todosBlock = todos
+    ? `\n\n# Goals & learning list (Tony's TODOs)
+These are things Tony wants to do or learn next, plus some he recently finished. Use them to answer questions about his goals, what he wants to learn, or where he's headed. Some are personal aspirations — mention them warmly but briefly, and for deeply personal topics suggest emailing him.
+${todos}`
+    : '';
 
   return `${roleLine}
 
@@ -89,7 +124,7 @@ ${replyLanguage}
 - Stay on topic: career, skills, experience, what Tony's working on, what he writes about. Politely decline unrelated requests.
 
 # Recruiter brief (${localeNames[locale]})
-${persona}
+${persona}${todosBlock}
 
 # Blog posts index (titles, dates, tags, excerpts)
 The index below is for breadth — knowing what Tony has written about. For depth on a specific topic, use the "Relevant excerpts" block that may follow (retrieved per question).

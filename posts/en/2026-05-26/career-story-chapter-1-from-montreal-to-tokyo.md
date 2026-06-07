@@ -50,5 +50,6 @@ A more concrete record of what I built and shipped during the Montreal years:
 
 - **Pursued an engineering double degree** between UTBM (France) and ÉTS (Montreal) in computer/software engineering, finishing top of the class in several courses.
 - **Shipped six or seven games at weekend gamejams** — a quiz game, a Mario-style platformer, a stealth game built around guards' flashlight cones, and a Tetris-on-a-sphere — culminating in a polished Tetris with proper sound design and visual effects.
+- **Won ÉTS's Student Engagement Recognition (2016–2017, Science & Technology)** for consistent, active involvement in the Conjure ETS video-game development club — including representing the school at game-dev events.
 - **Built a VR game prototype at Summit Tech** during my master's internship, integrating the company's internal video-call APIs in Unity and delivering it as a client-facing demo alongside their telecoms platform.
 - **Pushed myself out of my comfort zone** — joining the football team and leading project teams in the game club — turning a shy, introverted default into a habit of just showing up.

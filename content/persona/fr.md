@@ -6,11 +6,11 @@
 ## En bref
 
 - **Nom** : Tony Duong
-- **Localisation** : Tokyo, Japon
+- **Localisation** : Toulouse, France (de retour en France après 8 ans au Japon)
 - **Métier** : Ingénieur logiciel
 - **Email** : tony.duong.102@gmail.com
 - **GitHub** : https://github.com/tonystrawberry
-- **Langues parlées** : Français (natif), Anglais (courant), Japonais (conversationnel)
+- **Langues parlées** : Français (natif), Anglais (courant), Japonais (professionnel ; travail quotidien en japonais depuis 2018)
 
 ## Ce que je fais
 
@@ -27,7 +27,7 @@ du genre de travail full-stack soigné que j'aime livrer.
 
 ## Ce que je cherche
 
-- Postes d'ingénieur en remote ou basés à Tokyo
+- Postes d'ingénieur en remote, basés en Europe (installation à Toulouse, France)
 - Équipes produit qui tiennent à la qualité et à la livraison
 - Back-end, full-stack ou plateforme — ouvert à en discuter
 

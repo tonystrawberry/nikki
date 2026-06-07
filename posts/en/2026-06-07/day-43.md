@@ -1,10 +1,10 @@
 ---
 title: "Day 43"
 date: "2026-06-07"
-excerpt: "Organized ~120 Datadog monitors (naming, tagging, categories) and added per-job error alerts, finally finished the last chapter of DDIA, and watched videos on deliberate success and minimalist living."
+excerpt: "Organized ~120 Datadog monitors, finished the last chapter of DDIA, watched videos on success and minimalism — and made a big decision: moving back to Toulouse after 8 years in Japan."
 author: "Tony Duong"
 category: "daily"
-tags: ["engineering", "learning", "productivity", "minimalism", "philosophy", "datadog", "monitoring", "observability", "ddia", "reading", "distributed-systems"]
+tags: ["engineering", "learning", "productivity", "minimalism", "philosophy", "datadog", "monitoring", "observability", "ddia", "reading", "distributed-systems", "personal", "toulouse", "japan", "relocation", "career"]
 coverImage: "/images/blog/daily-cover.jpg"
 ---
 
@@ -14,3 +14,4 @@ coverImage: "/images/blog/daily-cover.jpg"
 - watched [Why I Live a Simple Minimalist Life](/en/posts/why-i-live-a-simple-minimalist-life) — Theo, a former jeweller who now owns 9.6 kg of possessions and lives by volunteering in gardens for board and keep, on how shedding things (and his heavy keyring) brought him hope, joy, and being at peace with his own integrity
 - at work, organized all ~120 existing Datadog monitors — fixed inconsistent naming (mix of English/Japanese, some overly verbose), added tagging to flag which ones the BE team should watch, and introduced categories (ANOMALY, LATENCY, etc.); also added new monitors, including one that alerts when the error count *per job* exceeds a threshold so we can immediately pinpoint the failing job — learned a lot about Datadog monitoring along the way
 - finally finished reading the last chapter of *Designing Data-Intensive Applications* — [DDIA Chapter 12: The Future of Data Systems](/en/posts/ddia-chapter-12-the-future-of-data-systems) — which wraps up the entire book; a huge milestone after months of working through it
+- made a big decision: after 8 years in Japan, my partner and I will move back to Toulouse to see if life is better for us there — I'll keep working for Spacely part-time, but I may need to find a remote job in Europe
