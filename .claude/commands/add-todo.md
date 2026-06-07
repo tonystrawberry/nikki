@@ -17,20 +17,22 @@ Add a new TODO to the list. The list is stored in `data/todos.json` and displaye
 2. **Read or create the store:**
    - If `data/todos.json` exists, read it and parse the JSON.
    - If it does not exist or is invalid, treat the store as `{ "items": [] }`.
-   - Ensure the structure is `{ "items": [ { "id": number, "text": string, "done": boolean, "createdAt": string } ] }`.
+   - Ensure the structure is `{ "items": [ { "id": number, "text": { "en": string, "fr": string, "ja": string }, "done": boolean, "createdAt": string } ] }`. Note `text` is a localized object with all three locales at the same level.
 
 3. **Compute the next ID:**
    - If `items` is empty, use `1`.
    - Otherwise use `max(items[].id) + 1`.
 
-4. **Format the text:** Do not copy `$ARGUMENTS` verbatim. Correct English and formatting: sentence case (first letter capitalized), capitalize proper nouns (product names like LocalStack, AWS, certification names), fix typos (e.g. "cloudops" → "CloudOps"). Store the formatted string as the item's `text`.
+4. **Format the English text:** Do not copy `$ARGUMENTS` verbatim. Correct English and formatting: sentence case (first letter capitalized), capitalize proper nouns (product names like LocalStack, AWS, certification names), fix typos (e.g. "cloudops" → "CloudOps"). This is the `en` text.
 
-5. **Append the new item:**
+5. **Translate** the formatted text into French (`fr`) and Japanese (`ja`). Keep proper nouns, product names, book/video titles, and URLs as-is; translate only the surrounding wording (e.g. "Watch:" → "Regarder :" / "視聴する：", "Read X" → "Lire X" / "X を読む"). Natural, concise phrasing matching the existing entries.
+
+6. **Append the new item:**
    - `id`: from step 3.
-   - `text`: the formatted text from step 4.
+   - `text`: `{ "en": ..., "fr": ..., "ja": ... }` from steps 4–5.
    - `done`: `false`.
    - `createdAt`: today in `YYYY-MM-DD` (use current date).
 
-6. **Write** `data/todos.json` with the updated `items` array (pretty-printed JSON, e.g. 2-space indent).
+7. **Write** `data/todos.json` with the updated `items` array (pretty-printed JSON, e.g. 2-space indent).
 
-7. **Confirm** to the user: e.g. "Added TODO #N: {text}"
+8. **Confirm** to the user: e.g. "Added TODO #N: {text.en}"

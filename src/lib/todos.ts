@@ -9,10 +9,12 @@
 import "server-only";
 import fs from "fs";
 import path from "path";
+import type { Locale } from "./i18n-config";
 
 export interface TodoItem {
   id: number;
-  text: string;
+  /** Localized text — all locales at the same level. `en` is the fallback. */
+  text: Record<Locale, string>;
   done: boolean;
   createdAt: string;
   completedAt?: string;
@@ -46,4 +48,12 @@ export function getTodos(): TodoItem[] {
     return bAt.localeCompare(aAt);
   });
   return [...pending, ...completed];
+}
+
+/**
+ * Returns a TODO's text in the requested locale, falling back to the
+ * canonical English `text` when no translation exists.
+ */
+export function todoText(item: TodoItem, locale: Locale): string {
+  return item.text[locale]?.trim() || item.text.en;
 }

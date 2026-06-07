@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
 import { hasLocale, getDictionary } from "@/lib/i18n";
+import { bio, interests } from "@/lib/about-content";
 import ChatContactCard from "@/components/ChatContactCard";
 
 interface PageProps {
@@ -23,36 +24,6 @@ export async function generateMetadata({ params }: PageProps) {
     description: dict.about.subtitle,
   };
 }
-
-const interests = [
-  { emoji: "📖", label: { fr: "Lecture", en: "Reading", ja: "読書" } },
-  { emoji: "🎮", label: { fr: "Jeux vidéo", en: "Gaming", ja: "ゲーム" } },
-  { emoji: "🎬", label: { fr: "Cinéma", en: "Movies", ja: "映画" } },
-  { emoji: "✈️", label: { fr: "Voyages", en: "Travel", ja: "旅行" } },
-  { emoji: "🍜", label: { fr: "Cuisine", en: "Food", ja: "グルメ" } },
-  { emoji: "🎵", label: { fr: "Musique", en: "Music", ja: "音楽" } },
-];
-
-const bio = {
-  fr: {
-    intro: "Je m'appelle Tony. Je vis à Tokyo et je travaille comme développeur.",
-    why: "J'ai créé ce journal pour documenter ma vie, mes pensées et mes expériences. C'est un espace personnel où je peux écrire librement sur tout ce qui me passe par la tête.",
-    topics: "Tu y trouveras des réflexions sur la vie, des reviews de films que j'ai aimés, des notes sur mon travail, et parfois juste des pensées random de mon quotidien.",
-    hope: "J'espère que ces écrits pourront parfois te parler, ou au moins te divertir.",
-  },
-  en: {
-    intro: "My name is Tony. I live in Tokyo and work as a developer.",
-    why: "I created this diary to document my life, thoughts, and experiences. It's a personal space where I can freely write about anything that comes to mind.",
-    topics: "You'll find reflections on life, reviews of movies I loved, notes about my work, and sometimes just random thoughts from my daily life.",
-    hope: "I hope these writings can sometimes speak to you, or at least entertain you.",
-  },
-  ja: {
-    intro: "私の名前はTonyです。東京に住んでいて、開発者として働いています。",
-    why: "この日記を作ったのは、自分の人生、考え、経験を記録するためです。頭に浮かぶことを自由に書ける個人的な空間です。",
-    topics: "人生についての考え、好きだった映画のレビュー、仕事についてのメモ、そして時には日常のランダムな思考が見つかります。",
-    hope: "これらの文章があなたに響くことがあれば、少なくとも楽しんでもらえれば嬉しいです。",
-  },
-};
 
 export default async function AboutPage({ params }: PageProps) {
   const { locale } = await params;
