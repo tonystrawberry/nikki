@@ -5,7 +5,7 @@ excerpt: "Watched Hello Interview's Twitter system design walkthrough — straig
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "system-design", "nosql", "twitter", "interview"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

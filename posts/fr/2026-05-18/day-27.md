@@ -5,7 +5,7 @@ excerpt: "Création d'une app Jira Forge pour les graphiques de sprint, ajout de
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "jira", "forge", "atlassian", "sprint", "aws", "cloudfront", "shirimono"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -14,4 +14,4 @@ coverImage: ""
 - ajouté CloudFront pour servir et mettre en cache les assets publics de Shirimono, et publié des pages publiques pour toutes les ressources en langue japonaise dans Shirimono
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

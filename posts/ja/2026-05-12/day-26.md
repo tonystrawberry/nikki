@@ -5,7 +5,7 @@ excerpt: "Markdown プロファイルからの質問に答える最初の Ruby M
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ruby", "mcp", "ai", "learning"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -13,4 +13,4 @@ coverImage: ""
 - 最初の Ruby MCP サーバー [tonystrawberry-mcp-server](https://github.com/tonystrawberry/tonystrawberry-mcp-server) を作り、Markdown のプロファイルファイルから自分についての質問に答えるツールを追加した。そのあとリポジトリの `teach-me` フォルダを AI が書いた本として使い、コードベースの各部分を理解した — 最初の 2 章の時点で詳しさに驚いた
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

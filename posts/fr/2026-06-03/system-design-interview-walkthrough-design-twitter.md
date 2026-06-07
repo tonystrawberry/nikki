@@ -112,4 +112,4 @@ Pour des chemins **read/write intensifs** à **très faible latence** et des acc
 - Adapter le stockage au pattern d'accès
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

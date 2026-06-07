@@ -190,4 +190,4 @@ Systems Manager の機能は多く、試験に関連する領域は次のとお�
 - **オペレーション：** Explorer、OpsCenter、CloudWatch ダッシュボード  
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

@@ -5,7 +5,7 @@ excerpt: "wrote an article about a lost update bug in spacely_web that had been 
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "rails", "concurrency", "mysql", "rspec"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

@@ -5,7 +5,7 @@ excerpt: "Ansh Lambaの6時間Apache Spark徹底解説の後半を視聴し終�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "spark", "big-data"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -14,4 +14,4 @@ coverImage: ""
 
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

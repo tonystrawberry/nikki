@@ -30,7 +30,7 @@ Find and translate all English posts that are missing French or Japanese transla
         - URLs (but update internal links from `/en/posts/` to `/{locale}/posts/`)
         - Technical terms, tool names, library names
       - **Heading style for daily posts:** Use `## Aujourd'hui, j'ai :` (FR) or `## 今日やったこと：` (JA) instead of `## Today, I:`
-      - **Footer:** Append `---\n*Traduit par Claude*` (FR) or `---\n*Claudeによる翻訳*` (JA)
+      - **Footer:** Append a translation callout: `---\n\n> 🌐 *Traduit par Claude*` (FR) or `---\n\n> 🌐 *Claudeによる翻訳*` (JA)
 
 3. **Maximize parallelism:** Launch up to 6 Agent tasks at once (one per file×locale combination).
 

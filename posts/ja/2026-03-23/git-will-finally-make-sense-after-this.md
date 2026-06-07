@@ -74,4 +74,4 @@ Git の履歴は **DAG**。
 - このモデルを理解すると checkout/reset/revert/merge/rebase が分かりやすくなる
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

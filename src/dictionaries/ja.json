@@ -9,6 +9,11 @@
     "resume": "履歴書",
     "subscribe": "購読"
   },
+  "journalTabs": {
+    "articles": "記事",
+    "collections": "コレクション",
+    "search": "検索"
+  },
   "resume": {
     "title": "履歴書",
     "subtitle": "東京を拠点とするソフトウェアエンジニア — 経歴・プロジェクト・スキル。",
@@ -24,7 +29,7 @@
     "viewCredential": "認定を見る →"
   },
   "chat": {
-    "title": "デジタルクローンと話す",
+    "title": "AIクローンに聞く ✨",
     "subtitle": "仕事、スキル、今作っているものについて何でも聞いてください。Claude とブログをコンテキストとして使っています。",
     "intro": "こんにちは — Tony のデジタルクローンです。彼の仕事や経歴について何でも聞いてください。例えば：",
     "examples": [

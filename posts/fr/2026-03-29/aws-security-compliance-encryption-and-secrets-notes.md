@@ -189,4 +189,4 @@ Sources de logs **sécurité et audit** courantes :
 *Article associé : [AWS DataSync and AWS Backup: Disaster Recovery Notes](/fr/posts/aws-datasync-and-backup-disaster-recovery-notes).*
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

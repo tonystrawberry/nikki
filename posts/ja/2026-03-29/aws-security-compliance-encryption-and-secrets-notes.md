@@ -189,4 +189,4 @@ collectionTitle: "AWS CloudOps Engineer - Associate"
 *関連記事：[AWS DataSync and AWS Backup: Disaster Recovery Notes](/ja/posts/aws-datasync-and-backup-disaster-recovery-notes)。*
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

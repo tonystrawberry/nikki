@@ -165,4 +165,4 @@ Spark 3.0以降、デフォルトで有効です（`spark.sql.adaptive.enabled =
 
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

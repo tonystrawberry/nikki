@@ -431,4 +431,4 @@ EventBridge がバス上のイベントの**スキーマ**を**検出**/登録�
 - **CloudWatch** vs **CloudTrail** vs **Config** — **メトリクス**/運用 vs **監査** vs **設定コンプライアンス**（比較表参照）。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

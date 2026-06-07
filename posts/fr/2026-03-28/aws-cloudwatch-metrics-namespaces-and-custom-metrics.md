@@ -431,4 +431,4 @@ Les trois sont **complémentaires** : **CloudWatch** pour la **santé** et la **
 - **CloudWatch** vs **CloudTrail** vs **Config** — **métriques**/ops vs **audit** vs **conformité de configuration** (voir tableau comparatif).
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

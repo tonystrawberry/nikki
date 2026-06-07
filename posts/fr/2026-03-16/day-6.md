@@ -5,6 +5,7 @@ excerpt: "Vu le stream DDIA Ch5, poursuivi AWS CloudOps (EC2 + AMI, Image Builde
 author: "Tony Duong"
 category: "daily"
 tags: ["daily", "youtube", "ddia", "databases", "replication", "aws", "certification", "cloudops"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -15,4 +16,4 @@ tags: ["daily", "youtube", "ddia", "databases", "replication", "aws", "certifica
 - poursuivi l’étude AWS CloudOps avec l’AMI — AMI personnalisées, No-Reboot vs intégrité, partage/copie cross-account, EC2 Image Builder, tagging en prod avec IAM et Config
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

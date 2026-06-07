@@ -375,4 +375,4 @@ AWS **独自**エンジン；**PostgreSQL** または **MySQL** と**ワイヤ�
 - **セキュリティ：** **作成時**の **KMS** 保存時暗号化；暗号化は **snapshot-restore**；転送は **TLS**；**IAM DB auth**；**SG**；**RDS Custom** を除き **SSH なし**；**監査ログ** → 保持/分析は **CloudWatch Logs**。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

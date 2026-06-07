@@ -241,4 +241,4 @@ Rails側の`ALLOWED_ORIGINS`も更新する必要があります（ただし、�
 </details>
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

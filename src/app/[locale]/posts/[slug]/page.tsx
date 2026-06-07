@@ -7,7 +7,6 @@ import { getAllPostSlugs, getPostBySlugWithFallback, getPostAvailableLocales, ge
 import { CATEGORIES } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { locales, hasLocale, getDictionary, localeFlags, localeNames } from "@/lib/i18n";
 
 interface PageProps {
@@ -155,7 +154,7 @@ export default async function PostPage({ params }: PageProps) {
             <div>
               <p className="font-medium text-foreground text-sm sm:text-base">{post.author}</p>
               <p className="text-xs sm:text-sm">
-                {format(new Date(post.date), "MMM d, yyyy", { locale: dateLocales[actualLocale] })} · {post.readingTime} {dict.post.minRead}
+                {format(new Date(post.date), "MMM d, yyyy", { locale: dateLocales[actualLocale] })} ・ {post.readingTime} {dict.post.minRead}
               </p>
             </div>
           </div>
@@ -217,8 +216,6 @@ export default async function PostPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
-      <Separator className="my-8 sm:my-12" />
-
       {/* Author Bio */}
       <div className="p-4 sm:p-6 rounded-lg sm:rounded-xl bg-card/50 border border-border/50 opacity-0 animate-fade-in-up animation-delay-400">
         <div className="flex items-start gap-3 sm:gap-4">
@@ -251,7 +248,7 @@ export default async function PostPage({ params }: PageProps) {
       {/* Back to Posts */}
       <div className="mt-8 sm:mt-12 text-center opacity-0 animate-fade-in-up animation-delay-500">
         <Link href={`/${locale}`}>
-          <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground text-sm sm:text-base">
+          <Button variant="outline" className="border-primary/30 text-primary hover:!bg-primary hover:!text-primary-foreground text-sm sm:text-base">
             {dict.post.viewAllPosts}
           </Button>
         </Link>

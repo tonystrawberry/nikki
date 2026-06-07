@@ -40,4 +40,4 @@ Ces notes sont en cours pendant la lecture du chapitre. Je terminerai le chapitr
 - La fiabilite vient de patterns defensifs (idempotence, retries, observabilite), pas d'hypotheses optimistes.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

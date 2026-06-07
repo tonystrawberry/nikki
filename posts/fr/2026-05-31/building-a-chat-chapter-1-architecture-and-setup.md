@@ -241,4 +241,4 @@ Le type est consommé dans le callback `received` passé à `subscribeVisitorCha
 </details>
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

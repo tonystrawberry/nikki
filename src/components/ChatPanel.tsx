@@ -74,7 +74,7 @@ export default function ChatPanel({
               className={`flex flex-col ${isVisitor ? "items-end" : "items-start"}`}
             >
               <span className="text-[10px] text-muted-foreground mb-0.5 px-1">
-                {isVisitor ? (visitorName || "You") : "Tony"} · {formatTime(msg.created_at)}
+                {isVisitor ? (visitorName || "You") : "Tony"} ・ {formatTime(msg.created_at)}
               </span>
               <div
                 className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm leading-relaxed ${

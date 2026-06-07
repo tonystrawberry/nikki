@@ -5,7 +5,7 @@ excerpt: "RailsアップグレードのためのClaude Codeスキル、6時間�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "rails", "spark", "big-data", "ai", "claude", "nextjs"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -15,4 +15,4 @@ coverImage: ""
 - [/ja/chat](/ja/chat)にチャット機能をリリース — Next.jsのストリーミングAPIルートで、Claude Sonnet 4.6のデルタを`ReadableStream`経由でブラウザに直接流す仕組み。システムプロンプトはリクエストごとに、キュレーションされたペルソナのMarkdownファイルとアクティブなロケールの全投稿のダイジェスト（タイトル、日付、カテゴリ、タグ、抜粋）から再構築し、すべて`cache_control: ephemeral`で包んでいるので、続くターンはプロンプトキャッシュにヒットする。ユーザーメッセージはZodでバリデーションし、react-markdownでストリーミングされた吹き出しをレンダリング。これは本当の*デジタルクローン*というよりは、このサイトのコンテンツで強化されたLLMという感じ。同じUIはfrとjaでも提供中
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

@@ -5,7 +5,7 @@ excerpt: "A Claude Code skill for Rails upgrades, the first half of a 6-hour Apa
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "rails", "spark", "big-data", "ai", "claude", "nextjs"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

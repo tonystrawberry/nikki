@@ -5,7 +5,7 @@ excerpt: "Terminé la seconde moitié du deep-dive de 6 heures sur Apache Spark 
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "spark", "big-data"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -14,4 +14,4 @@ coverImage: ""
 
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

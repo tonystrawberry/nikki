@@ -49,4 +49,4 @@ tags: ["aws", "scalability", "high-availability", "ec2", "rds", "zcloudops", "cl
 - HA はパッシブ（standby）かアクティブ（全ノードがトラフィックを処理）のいずれか。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

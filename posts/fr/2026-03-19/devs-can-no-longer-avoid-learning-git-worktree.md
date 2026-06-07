@@ -35,4 +35,4 @@ Une vidéo qui affirme que **git worktree** n'est plus optionnel pour les dével
 - Création via `git worktree add` ou lazygit ; merge des branches quand c'est prêt.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

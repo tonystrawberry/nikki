@@ -5,6 +5,7 @@ excerpt: "DDIA第4章を読み、Shirimono用Claude SKILLSとSlackベースの�
 author: "Tony Duong"
 category: "daily"
 tags: ["ddia", "databases", "claude", "skills", "japanese", "shirimono", "cli", "slack"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -66,4 +67,4 @@ Throughout this period, I have consistently demonstrated a proactive and ownersh
 ```
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

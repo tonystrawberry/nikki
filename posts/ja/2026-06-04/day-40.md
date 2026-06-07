@@ -5,7 +5,7 @@ excerpt: "Manningのソフトウェアアーキテクチャのトレードオフ
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "software-architecture", "tradeoffs", "book", "ddia", "distributed-systems"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -14,4 +14,4 @@ coverImage: ""
 - DDIA最終章（第12章：The Future of Data Systems）の読書を開始 — まだ終わっていない、明日続ける — [DDIA Chapter 12: The Future of Data Systems](/ja/posts/ddia-chapter-12-the-future-of-data-systems)
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

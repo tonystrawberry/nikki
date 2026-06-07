@@ -5,6 +5,7 @@ excerpt: "DDIA Ch.6 シャーディング視聴；面接対策；バックエン
 author: "Tony Duong"
 category: "daily"
 tags: ["ddia", "databases", "partitioning", "sharding", "video", "career", "interviews", "leetcode", "books", "backend", "ssh", "devops", "git", "worktree"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -16,4 +17,4 @@ tags: ["ddia", "databases", "partitioning", "sharding", "video", "career", "inte
 - [Devs can no longer avoid learning Git worktree](/ja/posts/devs-can-no-longer-avoid-learning-git-worktree) を視聴 — 1リポジトリから複数ワーキングディレクトリでホットフィックス、PRレビュー、AIエージェントを別worktreeで実行
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

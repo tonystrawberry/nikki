@@ -154,4 +154,4 @@ DNS 木の**ルート**は**暗黙**（技術図では末尾の **`.`** と描�
 *次へ：[Amazon Route 53: Routing Policies, Health Checks, and Traffic Flow](/ja/posts/aws-route-53-routing-policies-health-checks-and-traffic-flow)。*
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

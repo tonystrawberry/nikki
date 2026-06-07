@@ -68,4 +68,4 @@ youtubeUrl: "https://www.youtube.com/watch?v=hgiqiVnYXjc"
 *フランス語の会話の要点をまとめたものです。*
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

@@ -5,6 +5,7 @@ excerpt: "CloudOps の DR、セキュリティ／コンプライアンス、IAM 
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "disaster-recovery", "cloudops", "certification", "security", "kms", "waf", "compliance", "iam", "sts", "federation", "route-53", "dns"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -17,4 +18,4 @@ tags: ["engineering", "aws", "disaster-recovery", "cloudops", "certification", "
 - multi-value と simple の違い、レジストラと dns デリゲーション、s3 ウェブサイトの alias、ハイブリッド resolver、クエリログ、dns ファイアウォール、arc、profiles までまとめ、[Amazon Route 53: Registrar Delegation, Resolver, Logging, and Governance](/ja/posts/aws-route-53-delegation-resolver-logging-firewall-arc-profiles) を cloudops コレクション用に書いた
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

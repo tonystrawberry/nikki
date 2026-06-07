@@ -52,4 +52,4 @@ collectionTitle: "Designing Data-Intensive Applications"
 - **運用の追従** が重要。**vacuum/autovacuum**、**長時間トランザクション**、**書き込み量** は、**ディスク増加と性能** に直接影響する。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

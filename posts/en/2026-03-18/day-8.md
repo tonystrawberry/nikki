@@ -5,6 +5,7 @@ excerpt: "Watched MIT/Anthropic on AI coding limits; read DDIA chapter 6 on part
 author: "Tony Duong"
 category: "daily"
 tags: ["ai", "coding", "benchmarks", "mit", "anthropic", "ddia", "databases", "partitioning", "collections"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 **Watched:** [MIT, Anthropic, and New Benchmarks Just Revealed AI's Biggest Coding Limits](https://www.youtube.com/watch?v=BAlSzHFmmwU) (from ~3:26).

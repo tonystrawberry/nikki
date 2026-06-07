@@ -154,4 +154,4 @@ En formation on déploie souvent des instances **EC2** dans **plusieurs Régions
 *Suivant : [Amazon Route 53: Routing Policies, Health Checks, and Traffic Flow](/fr/posts/aws-route-53-routing-policies-health-checks-and-traffic-flow).*
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

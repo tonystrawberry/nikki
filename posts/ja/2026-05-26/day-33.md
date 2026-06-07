@@ -5,7 +5,7 @@ excerpt: "roadmap.shを発見して、体系的に学ぶために購読を決め
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "learning", "career-story", "writing"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -16,4 +16,4 @@ coverImage: ""
 
 ---
 
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

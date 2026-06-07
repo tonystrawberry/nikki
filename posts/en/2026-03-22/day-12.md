@@ -5,7 +5,7 @@ excerpt: "Finishing touches for Shirimono app store submission — refactoring a
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ios", "app-store", "shirimono", "refactoring"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

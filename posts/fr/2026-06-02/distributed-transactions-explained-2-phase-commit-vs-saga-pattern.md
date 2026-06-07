@@ -149,4 +149,4 @@ Utilisez une **Saga**.
 - Meilleure réponse quand possible : **ne pas distribuer la transaction**
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

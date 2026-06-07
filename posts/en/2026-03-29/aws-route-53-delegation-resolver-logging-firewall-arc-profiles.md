@@ -13,7 +13,7 @@ collectionTitle: "AWS CloudOps Engineer - Associate"
 
 This note covers **who serves DNS** vs **where you bought the domain**, **S3 static websites** behind **custom** names, **hybrid** **DNS** with **Route 53 Resolver**, **cross-account** **private hosted zones**, **logging**, **DNS Firewall**, **Application Recovery Controller**, **Route 53 Profiles**, and **pricing**/**cleanup** after labs.
 
-**Earlier parts:** **[DNS fundamentals](/en/posts/aws-route-53-dns-fundamentals-records-ttl-and-aliases)** · **[Routing policies and health checks](/en/posts/aws-route-53-routing-policies-health-checks-and-traffic-flow)**.
+**Earlier parts:** **[DNS fundamentals](/en/posts/aws-route-53-dns-fundamentals-records-ttl-and-aliases)** ・ **[Routing policies and health checks](/en/posts/aws-route-53-routing-policies-health-checks-and-traffic-flow)**.
 
 ## Domain registrar vs DNS service
 

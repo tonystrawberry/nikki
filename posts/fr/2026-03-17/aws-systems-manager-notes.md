@@ -190,4 +190,4 @@ Systems Manager offre de nombreuses capacités ; pour l'examen, les domaines per
 - **Operations :** Explorer, OpsCenter, tableaux de bord CloudWatch  
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

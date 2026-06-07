@@ -240,4 +240,4 @@ self.registration.showNotification(data.title || "New message", {
 </details>
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

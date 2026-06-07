@@ -5,7 +5,7 @@ excerpt: "Watched Hello Interview's Ticketmaster system design walkthrough — e
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "system-design", "interview", "ddia", "ticketmaster"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

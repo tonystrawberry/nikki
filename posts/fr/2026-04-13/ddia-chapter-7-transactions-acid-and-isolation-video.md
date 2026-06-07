@@ -52,4 +52,4 @@ Une presentation **en direct** du **chapitre 7 (Transactions)** de *Designing Da
 - Le **suivi operationnel** est essentiel : **vacuum/autovacuum**, **transactions longues** et **volume d'ecriture** interagissent avec la **croissance disque et les performances**.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

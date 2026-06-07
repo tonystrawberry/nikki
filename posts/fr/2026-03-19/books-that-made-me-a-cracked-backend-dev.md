@@ -38,4 +38,4 @@ Une vidéo qui soutient que **les livres sont la ressource la plus sous-utilisé
 - Release It traite de la résilience en prod et des modes de défaillance.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

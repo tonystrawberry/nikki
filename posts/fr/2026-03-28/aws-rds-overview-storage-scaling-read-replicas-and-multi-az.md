@@ -375,4 +375,4 @@ Activer les **journaux d’audit** moteur ; pour longue rétention et recherche,
 - **Sécurité :** **KMS** au repos à la **création** ; **snapshot-restore** pour chiffrer ; **TLS** en transit ; **IAM DB auth** ; **SGs** ; pas de SSH sauf **RDS Custom** ; **journaux d’audit** → **CloudWatch Logs** pour rétention/analyse.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

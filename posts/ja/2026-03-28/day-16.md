@@ -5,6 +5,7 @@ excerpt: "AWS CloudOps のメモ、Vertex AI 評価の小さな実験、Shirimon
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "s3", "storage", "cloudfront", "cdn", "global-accelerator", "rds", "databases", "cloudwatch", "eventbridge", "cloudtrail", "aws-config", "service-quotas", "health", "organizations", "control-tower", "service-catalog", "budgets", "cost-explorer", "logs", "alarms", "synthetics", "monitoring", "cloudops", "certification", "gcp", "vertex-ai", "ruby", "prompts", "llm", "shirimono", "i18n", "french", "translation"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -23,4 +24,4 @@ tags: ["engineering", "aws", "s3", "storage", "cloudfront", "cdn", "global-accel
 - アプリがフランス語ロケールを出したので、shirimono のリソースをフランス語に翻訳し始め、アプリ内文言と学習コンテンツを揃えた
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

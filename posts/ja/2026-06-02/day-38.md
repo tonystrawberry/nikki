@@ -5,7 +5,7 @@ excerpt: "Hello Interviewの分散トランザクション（2PC vs Saga）を�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "system-design", "distributed-systems", "saga", "interview", "ddia", "stream-processing"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -14,4 +14,4 @@ coverImage: ""
 - DDIA第11章のストリーム処理を読んだ — [DDIA Chapter 11: Stream Processing](/ja/posts/ddia-chapter-11-stream-processing)
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

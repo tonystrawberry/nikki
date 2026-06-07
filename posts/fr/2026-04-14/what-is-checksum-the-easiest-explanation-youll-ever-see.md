@@ -61,4 +61,4 @@ Les checksums servent à la **détection**, pas à la **correction**.
 - les checksums rendent visibles des pannes cachées, ce qui est critique pour les systèmes fiables
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

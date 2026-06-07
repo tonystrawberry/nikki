@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: PageProps) {
   const dict = await getDictionary(locale);
 
   return {
-    title: `${dict.resume.title} · Tony Duong`,
+    title: `${dict.resume.title} ・ Tony Duong`,
     description: dict.resume.subtitle,
   };
 }
@@ -98,7 +98,7 @@ export default async function ResumePage({ params }: PageProps) {
             <article key={`${job.company}-${job.period}`} className="resume-item">
               <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5">
                 <h3 className="text-lg font-semibold">
-                  {job.role} <span className="text-primary">· {job.company}</span>
+                  {job.role} <span className="text-primary">・ {job.company}</span>
                 </h3>
                 <span className="text-sm text-muted-foreground whitespace-nowrap">{job.period}</span>
               </div>
@@ -182,7 +182,7 @@ export default async function ResumePage({ params }: PageProps) {
           {data.skills.map((group) => (
             <div key={group.label} className="resume-item">
               <h3 className="text-sm font-semibold text-muted-foreground mb-1.5">{group.label}</h3>
-              <p className="text-sm sm:text-base leading-relaxed">{group.items.join(" · ")}</p>
+              <p className="text-sm sm:text-base leading-relaxed">{group.items.join(" ・ ")}</p>
             </div>
           ))}
         </div>
@@ -203,7 +203,7 @@ export default async function ResumePage({ params }: PageProps) {
                 <h3 className="text-base font-semibold">{edu.school}</h3>
                 <p className="text-sm text-foreground/90">{edu.degree}</p>
                 <p className="text-sm text-muted-foreground">
-                  {edu.period} · {edu.location}
+                  {edu.period} ・ {edu.location}
                 </p>
               </div>
             ))}
@@ -218,7 +218,7 @@ export default async function ResumePage({ params }: PageProps) {
               <div key={cert.name} className="resume-item">
                 <h3 className="text-base font-semibold">{cert.name}</h3>
                 <p className="text-sm text-muted-foreground">
-                  {cert.issuer} · {cert.date}
+                  {cert.issuer} ・ {cert.date}
                 </p>
                 {cert.url && (
                   <a

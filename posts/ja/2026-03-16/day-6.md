@@ -5,6 +5,7 @@ excerpt: "DDIA Ch5ストリームを視聴、AWS CloudOps（EC2＋AMI、Image Bu
 author: "Tony Duong"
 category: "daily"
 tags: ["daily", "youtube", "ddia", "databases", "replication", "aws", "certification", "cloudops"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -15,4 +16,4 @@ tags: ["daily", "youtube", "ddia", "databases", "replication", "aws", "certifica
 - AMI で AWS CloudOps の勉強を継続 — カスタム AMI、No-Reboot と整合性、クロスアカウント共有/コピー、EC2 Image Builder、IAM と Config による本番用タグ付け
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

@@ -5,7 +5,7 @@ excerpt: "Read DDIA Chapter 10 on batch processing and built a small repo to lea
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ddia", "spark"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

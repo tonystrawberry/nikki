@@ -132,4 +132,4 @@ collectionTitle: "AWS CloudOps Engineer - Associate"
 - **ポリシーシミュレータ** = **ID**／**リソース**／**バウンダリ**／**SCP** をまたぐ安全な **what-if**。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

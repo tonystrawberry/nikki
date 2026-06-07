@@ -5,7 +5,7 @@ excerpt: "Finished the second half of Ansh Lamba's 6-hour Apache Spark deep-dive
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "spark", "big-data"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

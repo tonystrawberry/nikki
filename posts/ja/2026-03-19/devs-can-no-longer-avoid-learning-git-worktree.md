@@ -35,4 +35,4 @@ youtubeUrl: "https://www.youtube.com/watch?v=S8_AsOuAwLo"
 - `git worktree add` または lazygit で作成。完了後にブランチをマージ。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

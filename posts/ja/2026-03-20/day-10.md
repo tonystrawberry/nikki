@@ -5,7 +5,7 @@ excerpt: ""
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -13,4 +13,4 @@ coverImage: ""
 -
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

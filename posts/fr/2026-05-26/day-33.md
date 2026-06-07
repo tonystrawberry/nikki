@@ -5,7 +5,7 @@ excerpt: "Découvert roadmap.sh et souscrit pour un apprentissage structuré, en
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "learning", "career-story", "writing"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -16,4 +16,4 @@ coverImage: ""
 
 ---
 
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -163,4 +163,4 @@ config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 同じ移行を考えているなら、上の 4 つの落とし穴が私が一番時間を取られたものです。事前に知っておけば、皆さんの時間が浮くことを願っています。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

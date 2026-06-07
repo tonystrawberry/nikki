@@ -459,4 +459,4 @@ Utilisez-le pour **examiner les findings** : accès attendu vs **accidentel** in
 - **Access Analyzer** met en évidence l’accès S3 **public** et **inter-comptes** à partir des policies/ACLs/access points.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

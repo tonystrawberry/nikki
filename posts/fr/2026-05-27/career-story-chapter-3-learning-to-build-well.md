@@ -78,4 +78,4 @@ Un récapitulatif plus concret de ce sur quoi j'ai travaillé pendant ces deux a
 
 ---
 
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

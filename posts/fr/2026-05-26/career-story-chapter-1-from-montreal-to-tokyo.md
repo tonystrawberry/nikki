@@ -55,4 +55,4 @@ Un récapitulatif plus concret de ce que j'ai construit et livré pendant les an
 
 ---
 
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

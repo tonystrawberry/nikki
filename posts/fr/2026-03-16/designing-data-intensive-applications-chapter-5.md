@@ -35,4 +35,4 @@ Un live qui parcourt le **chapitre 5 (Réplication)** de *Designing Data-Intensi
 - Comprendre régions et availability zones aide pour placer primary et replicas dans le cloud.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

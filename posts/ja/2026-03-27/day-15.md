@@ -5,7 +5,7 @@ excerpt: "来週土曜日のAWS認定試験に向けて、Lambda、EBS、EFSを�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "certification", "lambda", "serverless", "ebs", "efs", "storage"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -14,4 +14,4 @@ coverImage: ""
 - 来週土曜日のaws認定試験に向けた準備を続けるために、ebsとefsをこの[EBS and EFS Core Concepts and Exam Notes](/ja/posts/ebs-efs-core-concepts-and-exam-notes)記事に要約した
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

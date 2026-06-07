@@ -113,4 +113,4 @@ CDN、HTTPS、保存時暗号化、レート制限、入力検証。Prometheus/G
 - アクセスパターンに合わせてDBを選ぶ
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

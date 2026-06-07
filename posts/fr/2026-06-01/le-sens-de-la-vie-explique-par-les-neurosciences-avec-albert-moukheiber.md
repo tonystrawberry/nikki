@@ -68,4 +68,4 @@ Une longue conversation sur le podcast **Les Lueurs** avec **Albert Moukheiber**
 *Notes prises à partir de la conversation.*
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

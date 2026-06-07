@@ -102,7 +102,7 @@ export function PostCard({ post, featured = false, locale, linkLocale, dict, sho
               <time dateTime={post.date}>
                 {format(new Date(post.date), "MMM d, yyyy", { locale: dateLocales[locale] })}
               </time>
-              <span className="text-border">·</span>
+              <span className="text-border">・</span>
               <span>{post.readingTime} {dict.post.minRead}</span>
             </div>
           </div>

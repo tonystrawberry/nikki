@@ -163,4 +163,4 @@ Pour moi, le calcul était simple : ~60 $ par mois, ça achète beaucoup de cré
 Si vous envisagez le même move, les quatre pièges ci-dessus sont ceux qui m'ont coûté le plus de temps. Les connaître à l'avance vous fera, on l'espère, gagner les vôtres.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

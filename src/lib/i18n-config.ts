@@ -175,6 +175,16 @@ export interface Dictionary {
   };
 
   /**
+   * Journal page tab labels (Articles / Collections / Search)
+   * Used in: JournalTabs.tsx (embedded on the home page)
+   */
+  journalTabs: {
+    articles: string;
+    collections: string;
+    search: string;
+  };
+
+  /**
    * Resume page UI labels (section headings + actions)
    * Used in: src/app/[locale]/resume/page.tsx
    * The actual resume content lives in src/lib/resume-data.ts

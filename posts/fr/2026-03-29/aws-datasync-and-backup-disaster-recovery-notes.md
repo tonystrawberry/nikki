@@ -108,4 +108,4 @@ Flux de lab typique :
 - Parcours console : **modèle de plan** → **plusieurs règles** → **affecter des ressources** (tags + rôle par défaut) → **jobs** → **démontage** ordonné.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

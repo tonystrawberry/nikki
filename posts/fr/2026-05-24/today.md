@@ -8,4 +8,4 @@ tags: []
 ---
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -5,7 +5,7 @@ excerpt: "Finitions pour la soumission de Shirimono à l'App Store — refactori
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ios", "app-store", "shirimono", "refactoring"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -13,4 +13,4 @@ coverImage: ""
 - ajouté les touches finales pour la soumission de Shirimono à l'App Store — beaucoup de refactoring et d'améliorations UI, ça avance bien
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

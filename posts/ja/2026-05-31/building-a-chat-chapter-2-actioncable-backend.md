@@ -229,4 +229,4 @@ end
 </details>
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

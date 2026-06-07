@@ -168,4 +168,4 @@ Patterns qui font écho à *Designing Data-Intensive Applications* :
 - Spécifier les NFR **dans le contexte du problème**, pas comme buzzwords génériques
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -109,4 +109,4 @@ collectionTitle: "AWS CloudOps Engineer - Associate"
 - **Control Tower** = **ランディングゾーン** + **ガードレール**（**SCP** + **Config**）+ **Identity Center** ポータル + **Security/Audit/Log** アカウント；**高コスト**で**時間がかかる** — **何が作られるか**を知ることが、prod でのクリックだけより重要。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

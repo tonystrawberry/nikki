@@ -34,18 +34,6 @@ export function Header({ locale, dict }: HeaderProps) {
               {dict.nav.posts}
             </Link>
             <Link
-              href={`/${locale}/search`}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {dict.nav.search}
-            </Link>
-            <Link
-              href={`/${locale}/collections`}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {dict.nav.collections}
-            </Link>
-            <Link
               href={`/${locale}/about`}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
@@ -56,12 +44,6 @@ export function Header({ locale, dict }: HeaderProps) {
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {dict.nav.todo}
-            </Link>
-            <Link
-              href={`/${locale}/chat`}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {dict.nav.chat}
             </Link>
             <Link
               href={`/${locale}/resume`}
@@ -78,7 +60,7 @@ export function Header({ locale, dict }: HeaderProps) {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground"
+                className="border-primary/30 text-primary hover:!bg-primary hover:!text-primary-foreground"
               >
                 {dict.nav.subscribe}
               </Button>
@@ -121,20 +103,6 @@ export function Header({ locale, dict }: HeaderProps) {
                 {dict.nav.posts}
               </Link>
               <Link
-                href={`/${locale}/search`}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
-              >
-                {dict.nav.search}
-              </Link>
-              <Link
-                href={`/${locale}/collections`}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
-              >
-                {dict.nav.collections}
-              </Link>
-              <Link
                 href={`/${locale}/about`}
                 onClick={() => setIsMenuOpen(false)}
                 className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
@@ -147,13 +115,6 @@ export function Header({ locale, dict }: HeaderProps) {
                 className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
               >
                 {dict.nav.todo}
-              </Link>
-              <Link
-                href={`/${locale}/chat`}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
-              >
-                {dict.nav.chat}
               </Link>
               <Link
                 href={`/${locale}/resume`}
@@ -171,7 +132,7 @@ export function Header({ locale, dict }: HeaderProps) {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="w-full border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground"
+                  className="w-full border-primary/30 text-primary hover:!bg-primary hover:!text-primary-foreground"
                 >
                   {dict.nav.subscribe}
                 </Button>

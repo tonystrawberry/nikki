@@ -5,6 +5,7 @@ excerpt: "Lu le ch.4 de DDIA, créé des Claude SKILLS pour Shirimono et un CLI 
 author: "Tony Duong"
 category: "daily"
 tags: ["ddia", "databases", "claude", "skills", "japanese", "shirimono", "cli", "slack"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -66,4 +67,4 @@ Throughout this period, I have consistently demonstrated a proactive and ownersh
 ```
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

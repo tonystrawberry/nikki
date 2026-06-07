@@ -163,4 +163,4 @@ Les LSM-trees fonctionnent bien ici : les écritures vont dans un store en mémo
 6. **Les bases de données en mémoire** gagnent non pas en évitant les lectures disque mais en évitant le surcoût de l'encodage des données orienté disque
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

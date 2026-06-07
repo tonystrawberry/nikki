@@ -201,4 +201,4 @@ Finished in 0.42 seconds (files took 2.1 seconds to load)
 Spacely ではエンジニアを募集しています。こうしたバックエンドの仕事に興味があれば、[採用ページ](https://corp.spacely.co.jp/recruit/) をご覧ください。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

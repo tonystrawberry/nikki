@@ -55,4 +55,4 @@ Pas de leader unique ; les clients envoient les écritures à plusieurs nœuds (
 - Il n’y a pas de repas gratuit : la réplication améliore la disponibilité et les perfs en lecture mais ajoute de la complexité autour de la cohérence, des conflits et des modes de défaillance.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

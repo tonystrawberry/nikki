@@ -55,4 +55,4 @@ collectionTitle: "私のキャリアの物語"
 
 ---
 
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

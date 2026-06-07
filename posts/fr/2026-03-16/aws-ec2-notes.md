@@ -138,4 +138,4 @@ Pour les **instances EC2 dans des sous-réseaux privés** (sans accès internet 
 - **AWS Config :** Définir une règle qui vérifie les instances EC2 ; signaler les instances **non conformes** (lancées depuis une AMI non approuvée/taggée). Les instances conformes restent vertes ; agir sur les non conformes.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

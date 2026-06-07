@@ -5,6 +5,7 @@ excerpt: "Git fundamentals video; continued AWS CloudOps Engineer Associate prep
 author: "Tony Duong"
 category: "daily"
 tags: ["git", "version-control", "video", "aws", "cloudops", "alb", "load-balancer"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

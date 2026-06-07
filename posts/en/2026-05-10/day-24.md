@@ -5,7 +5,7 @@ excerpt: "migrated Shirimono's backend from Render to Hetzner with Kamal — sav
 author: "Tony Duong"
 category: "daily"
 tags: ["devops", "rails", "kamal", "hetzner", "shirimono"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

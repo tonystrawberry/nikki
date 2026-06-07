@@ -5,7 +5,7 @@ excerpt: ""
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

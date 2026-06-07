@@ -55,4 +55,4 @@ Beaucoup de systèmes utilisent un **service d'annuaire** (ex. etcd, ZooKeeper) 
 - Le **routage des requêtes** nécessite une vue cohérente de quelle partition est sur quel nœud — via un annuaire, une couche de routage ou une affectation côté client.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

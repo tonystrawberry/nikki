@@ -5,7 +5,7 @@ excerpt: "Built a custom Jira Forge sprint-charts app, added CloudFront for Shir
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "jira", "forge", "atlassian", "sprint", "aws", "cloudfront", "shirimono"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

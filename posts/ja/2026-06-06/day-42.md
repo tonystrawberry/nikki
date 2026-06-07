@@ -5,7 +5,7 @@ excerpt: "バーチャル待ち行列、back-of-the-envelope見積もり、Ruby�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "system-design", "ruby", "server-side-events", "estimation"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -13,4 +13,4 @@ coverImage: ""
 - 新しい概念を学習：バーチャル待ち行列、back-of-the-envelope見積もり（この表現はどこから来たのか？）、Rubyのobservers、server-side events — 今日は実験プロジェクトでより実践的に学んでいく予定
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

@@ -77,4 +77,4 @@ Après le lancement, tester chaque IP publique pour confirmer que les deux serve
 - Utiliser ALB pour HTTP/HTTPS ; NLB pour TCP/UDP et performance ; GWLB pour appliances de sécurité.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

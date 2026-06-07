@@ -31,4 +31,4 @@ youtubeUrl: "https://www.youtube.com/watch?v=yOKMIEOCkRU"
 - トップ候補者は問題数より、**基礎となるパターンの理解** と **アプローチの説明力** で通過する。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

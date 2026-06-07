@@ -5,7 +5,7 @@ excerpt: "Regardé le walkthrough Hello Interview sur le system design de Twitte
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "system-design", "nosql", "twitter", "interview"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -13,4 +13,4 @@ coverImage: ""
 - regardé le walkthrough Hello Interview sur le system design de Twitter — très utile et direct ; pour les opérations read/write intensives qui exigent une très faible latence, les bases NoSQL semblent être le bon choix de stockage — [System Design Interview Walkthrough: Design Twitter](/fr/posts/system-design-interview-walkthrough-design-twitter)
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

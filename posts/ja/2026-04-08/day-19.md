@@ -5,6 +5,7 @@ excerpt: "AWS Certified CloudOps Engineer - Associate に合格し、Vercel が�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "cloudops", "certification", "ai", "code-review", "vercel"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -13,4 +14,4 @@ tags: ["engineering", "aws", "cloudops", "certification", "ai", "code-review", "
 - vercel が ai を活用してコードレビュー時間を短縮しているという記事を読んだ https://web.archive.org/web/20260407074749/https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

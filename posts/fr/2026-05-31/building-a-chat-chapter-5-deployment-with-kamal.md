@@ -247,4 +247,4 @@ Kamal interroge `GET /up` après avoir démarré le nouveau conteneur. Avec la r
 </details>
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

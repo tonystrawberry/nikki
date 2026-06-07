@@ -5,7 +5,7 @@ excerpt: "création de mon propre gem Rails pour générer automatiquement une d
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ruby", "rails", "openapi"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -14,4 +14,4 @@ coverImage: ""
 - utilisé spec-kit pour implémenter le gem — c'est très simple à utiliser, et le fait d'avoir des spécifications rend l'IA très précise sur ce qu'elle doit faire
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -5,7 +5,7 @@ excerpt: "Shirimono の App Store 提出に向けた仕上げ — リファク�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ios", "app-store", "shirimono", "refactoring"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -13,4 +13,4 @@ coverImage: ""
 - Shirimono の App Store 提出に向けた仕上げを進めた — リファクタリングと UI 改善、順調
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

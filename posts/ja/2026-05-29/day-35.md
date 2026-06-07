@@ -5,7 +5,7 @@ excerpt: "Rails ActionCableとWebSocketsを使って、ブログにリアルタ�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "rails", "websockets", "actioncable"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -13,4 +13,4 @@ coverImage: ""
 - このブログにチャット機能を追加した。パソコンの前にいるときに、誰でもリアルタイムで連絡できるようになった — これについての記事はまた後で書く予定
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

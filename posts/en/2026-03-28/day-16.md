@@ -5,6 +5,7 @@ excerpt: "I mixed AWS CloudOps notes, a Vertex AI eval side project, and French 
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "s3", "storage", "cloudfront", "cdn", "global-accelerator", "rds", "databases", "cloudwatch", "eventbridge", "cloudtrail", "aws-config", "service-quotas", "health", "organizations", "control-tower", "service-catalog", "budgets", "cost-explorer", "logs", "alarms", "synthetics", "monitoring", "cloudops", "certification", "gcp", "vertex-ai", "ruby", "prompts", "llm", "shirimono", "i18n", "french", "translation"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

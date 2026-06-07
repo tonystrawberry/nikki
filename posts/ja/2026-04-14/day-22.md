@@ -5,7 +5,7 @@ excerpt: "DDIA第8章を読んでメモを書き、信頼性に関する2本の�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ddia", "reading", "distributed-systems", "youtube", "video", "checksum", "data-integrity", "reliability", "fault-tolerance", "transactions", "mvcc"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -15,4 +15,4 @@ coverImage: ""
 - 分散システムで障害が避けられない理由を扱う [Failure is unavoidable! Designing Data-Intensive Apps chapter 8](/ja/posts/failure-is-unavoidable-designing-data-intensive-apps-chapter-8) を見た
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

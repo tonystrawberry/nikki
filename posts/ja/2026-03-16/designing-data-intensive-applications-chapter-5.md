@@ -35,4 +35,4 @@ collectionTitle: "Designing Data-Intensive Applications"
 - リージョンとAZを理解すると、クラウドでプライマリとレプリカを配置しやすくなる。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

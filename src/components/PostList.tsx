@@ -2,68 +2,47 @@
  * POST LIST - src/components/PostList.tsx
  * =======================================
  *
- * A CLIENT COMPONENT that displays a filterable list of blog posts.
+ * The Journal (home) page body. A CLIENT COMPONENT that renders:
+ * - the activity chart
+ * - a tab control (Articles / Collections / Search) — see JournalTabs
+ * - the active tab's panel (category chips / collections list / search controls)
+ * - the post grid, which stays visible across all three tabs
  *
- * WHY CLIENT COMPONENT?
- * ---------------------
- * This component needs:
- * - useState for active category and selected date
- * - User interaction (click handlers)
- *
- * Server Components can't use hooks or handle events.
- *
- * "use client" DIRECTIVE:
- * - MUST be at the very top of the file
- * - Tells Next.js to bundle this for the browser
- * - Enables React hooks and event handlers
- * - Children can still be Server Components
- *
- * DATA FLOW:
- * 1. Server Component (page.tsx) fetches posts with getAllPosts()
- * 2. Posts are passed as props to this Client Component
- * 3. Client handles filtering/sorting without re-fetching
- *
- * WHAT THIS COMPONENT DOES:
- * - Displays activity chart (all posts across locales)
- * - Category filter buttons
- * - Date filter (when clicking chart)
- * - Responsive post grid
- * - Empty states
+ * Collections and Search are embedded here rather than living on their own
+ * routes, so the article grid is always available no matter the active tab.
  */
 "use client";
 
-// React hooks for state management
 import { useState, useMemo } from "react";
 
-// date-fns for date parsing and formatting
 import { format, parseISO, isSameDay } from "date-fns";
-// Locale-specific date formatting (French, English, Japanese)
 import { fr, enUS, ja } from "date-fns/locale";
 
-// UI Components (from shadcn/ui)
+import Link from "next/link";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
-// Our components
 import { PostCard } from "@/components/PostCard";
 import { ActivityChart } from "@/components/ActivityChart";
+import { JournalTabs, type JournalTab } from "@/components/JournalTabs";
 
-// Types - imported from types.ts (NOT blog.ts, which has server code)
 import { CATEGORIES, type PostMeta, type Category } from "@/lib/types";
 
-// i18n types - from config file (NOT i18n.ts which is server-only)
 import { type Locale, type Dictionary } from "@/lib/i18n-config";
 
 // ============================================================================
 // TYPES
 // ============================================================================
 
-/**
- * COMPONENT PROPS
- *
- * Props are the interface between parent (Server) and child (Client).
- * Server Component fetches data, Client Component displays it.
- */
+/** Lightweight collection summary for the Collections tab. */
+export interface CollectionSummary {
+  slug: string;
+  title: string;
+  postCount: number;
+}
+
 interface PostListProps {
   /** Posts in current locale - for displaying in the list */
   posts: PostMeta[];
@@ -74,6 +53,15 @@ interface PostListProps {
   /** Map of slug → canonical locale, used to link untranslated posts correctly */
   postCanonicalLocales: Record<string, Locale>;
 
+  /** Collections (books/series) in current locale - for the Collections tab */
+  collections: CollectionSummary[];
+
+  /** All category keys - for the Search tab filter */
+  categories: Category[];
+
+  /** All tags in current locale - for the Search tab filter */
+  tags: string[];
+
   /** Current locale for date formatting */
   locale: Locale;
 
@@ -81,16 +69,6 @@ interface PostListProps {
   dict: Dictionary;
 }
 
-// ============================================================================
-// CONSTANTS
-// ============================================================================
-
-/**
- * DATE LOCALE MAP
- *
- * Maps our locale codes to date-fns locale objects.
- * Used for localized date formatting (e.g., "janvier" vs "January").
- */
 const dateLocales = {
   fr: fr,
   en: enUS,
@@ -101,107 +79,91 @@ const dateLocales = {
 // COMPONENT
 // ============================================================================
 
-/**
- * PostList Component
- *
- * @param posts - Posts in current locale
- * @param allPostsForChart - All posts for activity chart
- * @param locale - Current language
- * @param dict - Translations
- */
-export function PostList({ posts, allPostsForChart, postCanonicalLocales, locale, dict }: PostListProps) {
-  /**
-   * STATE: Active Category
-   *
-   * useState creates a reactive variable.
-   * When it changes, React re-renders the component.
-   *
-   * "all" | Category means: either "all" or one of the category keys
-   */
+export function PostList({
+  posts,
+  allPostsForChart,
+  postCanonicalLocales,
+  collections,
+  categories,
+  tags,
+  locale,
+  dict,
+}: PostListProps) {
+  const [activeTab, setActiveTab] = useState<JournalTab>("articles");
+
+  // Articles tab: category filter
   const [activeCategory, setActiveCategory] = useState<Category | "all">("all");
 
-  /**
-   * STATE: Selected Date
-   *
-   * null = no date filter
-   * Date = filter posts to this specific day
-   */
+  // Search tab: free text + category + tags
+  const [query, setQuery] = useState("");
+  const [searchCategory, setSearchCategory] = useState<Category | "all">("all");
+  const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
+
+  // Activity chart: date filter
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
-  /**
-   * MEMOIZED: Posts in current locale (as Set of slugs)
-   *
-   * useMemo caches the result of expensive computations.
-   * Only recalculates when `posts` changes.
-   *
-   * WHY? To quickly check if a post is translated to current locale.
-   */
-  const localeSlugs = useMemo(() => {
-    return new Set(posts.map(p => p.slug));
-  }, [posts]);
+  const localeSlugs = useMemo(() => new Set(posts.map((p) => p.slug)), [posts]);
 
-  /**
-   * MEMOIZED: Posts on selected date
-   *
-   * Filters allPostsForChart (all locales) by the selected date.
-   * This shows posts even if they're not translated to current locale.
-   */
   const postsOnSelectedDate = useMemo(() => {
     if (!selectedDate) return [];
-    return allPostsForChart.filter(post => isSameDay(parseISO(post.date), selectedDate));
+    return allPostsForChart.filter((post) => isSameDay(parseISO(post.date), selectedDate));
   }, [allPostsForChart, selectedDate]);
 
-  /**
-   * EVENT HANDLER: Date selected from chart
-   *
-   * When user clicks a day on the activity chart:
-   * - Set the selected date
-   * - Reset category filter to "all"
-   */
+  const searchResults = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    return posts.filter((post) => {
+      if (q) {
+        const inTitle = post.title.toLowerCase().includes(q);
+        const inExcerpt = post.excerpt.toLowerCase().includes(q);
+        const inTags = post.tags.some((t) => t.toLowerCase().includes(q));
+        if (!inTitle && !inExcerpt && !inTags) return false;
+      }
+      if (searchCategory !== "all" && !post.categories.includes(searchCategory)) return false;
+      if (selectedTags.size > 0 && !post.tags.some((t) => selectedTags.has(t))) return false;
+      return true;
+    });
+  }, [posts, query, searchCategory, selectedTags]);
+
   const handleDateSelect = (date: Date | null) => {
     setSelectedDate(date);
     if (date) {
-      setActiveCategory("all"); // Reset category when filtering by date
+      setActiveTab("articles");
+      setActiveCategory("all");
     }
   };
 
-  /**
-   * EVENT HANDLER: Clear date filter
-   */
-  const clearDateFilter = () => {
-    setSelectedDate(null);
+  const clearDateFilter = () => setSelectedDate(null);
+
+  const toggleTag = (tag: string) => {
+    setSelectedTags((prev) => {
+      const next = new Set(prev);
+      if (next.has(tag)) next.delete(tag);
+      else next.add(tag);
+      return next;
+    });
   };
 
-  /**
-   * COMPUTED: Filtered posts
-   *
-   * This is NOT memoized because it depends on multiple states.
-   * React will recalculate on every render, which is fast enough.
-   */
+  // ---- Which posts the grid shows -----------------------------------------
   let filteredPosts = posts;
-
   if (selectedDate) {
-    // Date filter takes priority - show all posts on that date
     filteredPosts = postsOnSelectedDate;
-  } else if (activeCategory !== "all") {
-    // Category filter - show posts that include this category (posts may have several)
+  } else if (activeTab === "search") {
+    filteredPosts = searchResults;
+  } else if (activeTab === "articles" && activeCategory !== "all") {
     filteredPosts = posts.filter((post) => post.categories.includes(activeCategory));
   }
 
-  /**
-   * HELPER: Check if post is translated to current locale
-   *
-   * Used to show "Original" badge on untranslated posts.
-   */
   const isTranslated = (slug: string) => localeSlugs.has(slug);
+  const isFeatured = (index: number) =>
+    index === 0 && activeTab === "articles" && activeCategory === "all" && !selectedDate;
 
-  /**
-   * CATEGORIES AS ARRAY
-   *
-   * Object.entries() converts { key: value } to [[key, value], ...]
-   * The `as` cast helps TypeScript understand the tuple types.
-   */
-  const categoryEntries = Object.entries(CATEGORIES) as [Category, typeof CATEGORIES[Category]][];
+  const categoryEntries = Object.entries(CATEGORIES) as [Category, (typeof CATEGORIES)[Category]][];
+
+  const gridHeading = selectedDate
+    ? `${dict.filter.showingPostsFrom} ${format(selectedDate, "MMM d", { locale: dateLocales[locale] })}`
+    : activeTab === "articles" && activeCategory !== "all"
+      ? dict.categories[activeCategory as keyof typeof dict.categories]
+      : dict.home.latestPosts;
 
   // ============================================================================
   // RENDER
@@ -209,38 +171,12 @@ export function PostList({ posts, allPostsForChart, postCanonicalLocales, locale
 
   return (
     <>
-      {/*
-        ACTIVITY CHART SECTION
-
-        Shows GitHub-style contribution chart.
-        Uses allPostsForChart (all locales) so chart is consistent across languages.
-
-        CSS Classes:
-        - mb-8 sm:mb-12: responsive margin-bottom (spacing)
-        - p-3 sm:p-6: responsive padding
-        - rounded-xl sm:rounded-2xl: responsive rounded corners
-        - bg-card/50: semi-transparent card background
-        - border border-border/50: subtle border
-        - backdrop-blur-sm: frosted glass effect
-        - opacity-0 animate-fade-in-up: entrance animation
-        - overflow-x-auto: allow horizontal scroll on very small screens
-      */}
+      {/* Activity chart (always visible) */}
       <section className="mb-8 sm:mb-12 p-3 sm:p-6 rounded-xl sm:rounded-2xl bg-card/50 border border-border/50 backdrop-blur-sm opacity-0 animate-fade-in-up overflow-x-auto">
-        <ActivityChart
-          posts={allPostsForChart}
-          onDateSelect={handleDateSelect}
-          locale={locale}
-          dict={dict}
-        />
+        <ActivityChart posts={allPostsForChart} onDateSelect={handleDateSelect} locale={locale} dict={dict} />
       </section>
 
-      {/*
-        DATE FILTER BANNER
-
-        Only shown when a date is selected.
-        Shows the date and how many posts were found.
-        Includes a "Clear" button.
-      */}
+      {/* Date filter banner */}
       {selectedDate && (
         <div className="mb-4 sm:mb-6 p-3 sm:p-4 rounded-lg sm:rounded-xl bg-primary/10 border border-primary/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3 opacity-0 animate-fade-in-up">
           <div className="flex items-center gap-2 sm:gap-3">
@@ -265,48 +201,39 @@ export function PostList({ posts, allPostsForChart, postCanonicalLocales, locale
         </div>
       )}
 
-      {/*
-        CATEGORY FILTER SECTION
-
-        Only shown when NOT filtering by date.
-        Displays buttons for each category.
-
-        WHY BUTTONS INSIDE BADGES?
-        - Badge provides consistent styling
-        - Button wrapper handles click events
-        - focus:outline-none removes ugly focus ring
-      */}
+      {/* Tabs: Articles / Collections / Search (above "browse by theme") */}
       {!selectedDate && (
+        <JournalTabs
+          active={activeTab}
+          onChange={setActiveTab}
+          labels={dict.journalTabs}
+        />
+      )}
+
+      {/* ---- Tab panels ------------------------------------------------------ */}
+
+      {/* Articles → browse by theme */}
+      {!selectedDate && activeTab === "articles" && (
         <section className="mb-8 sm:mb-12 opacity-0 animate-fade-in-up animation-delay-100">
           <h2 className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3 sm:mb-4">
             {dict.home.browseByCategory}
           </h2>
           <div className="flex flex-wrap gap-2 sm:gap-3">
-            {/* "All" button */}
-            <button
-              onClick={() => setActiveCategory("all")}
-              className="focus:outline-none"
-            >
+            <button onClick={() => setActiveCategory("all")} className="focus:outline-none">
               <Badge
                 variant="outline"
                 className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm transition-all cursor-pointer ${
                   activeCategory === "all"
-                    ? "border-primary bg-primary/10 text-primary" // Active state
-                    : "border-border hover:border-primary/50 hover:text-primary hover:bg-primary/5" // Hover state
+                    ? "border-primary bg-primary/10 text-primary"
+                    : "border-border hover:border-primary/50 hover:text-primary hover:bg-primary/5"
                 }`}
               >
                 <span className="mr-1.5 sm:mr-2 text-sm sm:text-base">✨</span>
                 {dict.categories.all}
               </Badge>
             </button>
-
-            {/* Category buttons */}
             {categoryEntries.map(([key, category]) => (
-              <button
-                key={key}
-                onClick={() => setActiveCategory(key)}
-                className="focus:outline-none"
-              >
+              <button key={key} onClick={() => setActiveCategory(key)} className="focus:outline-none">
                 <Badge
                   variant="outline"
                   className={`px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm transition-all cursor-pointer ${
@@ -324,74 +251,149 @@ export function PostList({ posts, allPostsForChart, postCanonicalLocales, locale
         </section>
       )}
 
-      {/*
-        POSTS GRID SECTION
+      {/* Collections → list of books/series */}
+      {!selectedDate && activeTab === "collections" && (
+        <section className="mb-8 sm:mb-12 opacity-0 animate-fade-in-up animation-delay-100">
+          <h2 className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider mb-3 sm:mb-4">
+            {dict.collections.title}
+          </h2>
+          {collections.length === 0 ? (
+            <p className="text-muted-foreground text-sm">{dict.collections.noCollections}</p>
+          ) : (
+            <ul className="space-y-3 sm:space-y-4">
+              {collections.map(({ slug, title, postCount }) => (
+                <li key={slug}>
+                  <Link href={`/${locale}/collection/${slug}`} className="group block">
+                    <Card className="card-hover border-border/50 bg-card/50 backdrop-blur-sm">
+                      <CardContent className="p-4 sm:p-6 flex items-center justify-between gap-2">
+                        <div>
+                          <h3 className="font-semibold text-base sm:text-lg tracking-tight group-hover:text-primary transition-colors">
+                            📚 {title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground mt-0.5">
+                            {postCount} {postCount === 1 ? dict.collections.chapter : dict.collections.chapters}
+                          </p>
+                        </div>
+                        <span className="text-muted-foreground text-sm">→</span>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
 
-        The main content area showing post cards.
-      */}
+      {/* Search → free text + category + tags */}
+      {!selectedDate && activeTab === "search" && (
+        <section className="mb-8 sm:mb-12 opacity-0 animate-fade-in-up animation-delay-100">
+          <div className="mb-4">
+            <label htmlFor="journal-search" className="sr-only">
+              {dict.search.queryPlaceholder}
+            </label>
+            <input
+              id="journal-search"
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder={dict.search.queryPlaceholder}
+              className="w-full px-4 py-2.5 sm:py-2 rounded-lg bg-input border border-border focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors text-base placeholder:text-muted-foreground"
+              aria-label={dict.search.queryPlaceholder}
+            />
+          </div>
+
+          <div className="mb-4">
+            <span className="text-sm font-medium text-muted-foreground block mb-2">{dict.search.categoryLabel}</span>
+            <div className="flex flex-wrap gap-2">
+              <Button
+                variant={searchCategory === "all" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSearchCategory("all")}
+              >
+                {dict.categories.all}
+              </Button>
+              {categories.map((cat) => (
+                <Button
+                  key={cat}
+                  variant={searchCategory === cat ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSearchCategory(cat)}
+                >
+                  <span className="mr-1">{CATEGORIES[cat].icon}</span>
+                  {dict.categories[cat as keyof typeof dict.categories]}
+                </Button>
+              ))}
+            </div>
+          </div>
+
+          {tags.length > 0 && (
+            <div>
+              <span className="text-sm font-medium text-muted-foreground block mb-2">{dict.search.tagsLabel}</span>
+              <div className="flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <Badge
+                    key={tag}
+                    variant={selectedTags.has(tag) ? "default" : "outline"}
+                    className="cursor-pointer hover:opacity-90 transition-opacity"
+                    onClick={() => toggleTag(tag)}
+                  >
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+      )}
+
+      {/* ---- Post grid (always visible) ------------------------------------- */}
       <section>
-        {/* Header with title and count */}
         <div className="flex items-center justify-between mb-4 sm:mb-6">
           <h2 className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-wider opacity-0 animate-fade-in-up animation-delay-200">
-            {selectedDate
-              ? `${dict.filter.showingPostsFrom} ${format(selectedDate, "MMM d", { locale: dateLocales[locale] })}`
-              : activeCategory === "all"
-                ? dict.home.latestPosts
-                : `${dict.categories[activeCategory as keyof typeof dict.categories]}`
-            }
+            {gridHeading}
           </h2>
           <span className="text-xs sm:text-sm text-muted-foreground opacity-0 animate-fade-in-up animation-delay-200">
             {filteredPosts.length} {filteredPosts.length === 1 ? dict.home.post : dict.home.posts}
           </span>
         </div>
 
-        {/*
-          EMPTY STATE
-
-          Shown when no posts match the current filter.
-          Different messages for date filter vs category filter.
-        */}
         {filteredPosts.length === 0 ? (
           <div className="text-center py-10 sm:py-16 opacity-0 animate-fade-in-up animation-delay-300">
             <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">📭</div>
             <p className="text-sm sm:text-base text-muted-foreground">
-              {selectedDate ? dict.filter.noPostsOnDay : dict.home.noPostsInCategory}
+              {selectedDate
+                ? dict.filter.noPostsOnDay
+                : activeTab === "search"
+                  ? dict.search.noResults
+                  : dict.home.noPostsInCategory}
             </p>
             {selectedDate && (
-              <Button
-                variant="link"
-                onClick={clearDateFilter}
-                className="mt-2 text-primary text-sm"
-              >
+              <Button variant="link" onClick={clearDateFilter} className="mt-2 text-primary text-sm">
                 {dict.filter.viewAllPosts}
               </Button>
             )}
           </div>
         ) : (
-          /*
-            POSTS GRID
-
-            grid gap-4 sm:gap-6: CSS Grid with responsive gap
-            md:grid-cols-2: 2 columns on medium+ screens
-
-            First post is "featured" (spans 2 columns) when showing all posts.
-          */
           <div className="grid gap-4 sm:gap-6 md:grid-cols-2">
             {filteredPosts.map((post, index) => (
               <div
                 key={post.slug}
                 className={`opacity-0 animate-fade-in-up ${
-                  // Featured post (first, all category, no date filter) spans 2 columns
-                  index === 0 && activeCategory === "all" && !selectedDate ? 'animation-delay-200 md:col-span-2' :
-                  // Staggered animation delays for entrance effect
-                  index === 0 ? 'animation-delay-200' :
-                  index === 1 ? 'animation-delay-300' :
-                  index === 2 ? 'animation-delay-400' : 'animation-delay-500'
+                  isFeatured(index)
+                    ? "animation-delay-200 md:col-span-2"
+                    : index === 0
+                      ? "animation-delay-200"
+                      : index === 1
+                        ? "animation-delay-300"
+                        : index === 2
+                          ? "animation-delay-400"
+                          : "animation-delay-500"
                 }`}
               >
                 <PostCard
                   post={post}
-                  featured={index === 0 && activeCategory === "all" && !selectedDate}
+                  featured={isFeatured(index)}
                   locale={locale}
                   linkLocale={isTranslated(post.slug) ? locale : (postCanonicalLocales[post.slug] ?? locale)}
                   dict={dict}

@@ -58,4 +58,4 @@ Un récapitulatif plus concret de ce que j'ai construit chez Seido, en tant que 
 
 ---
 
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -32,4 +32,4 @@ Une vidéo sur le **chapitre 6 (Partitionnement)** de *Designing Data-Intensive 
 - Le rebalancing doit limiter le déplacement de données et éviter les points de défaillance uniques.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

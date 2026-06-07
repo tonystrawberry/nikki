@@ -32,4 +32,4 @@ coverImage: "/images/blog/2026-03-29/vertex-ai-gen-ai-evaluation-console.png"
 - GitHub の [tonystrawberry/ruby-vertex-eval](https://github.com/tonystrawberry/ruby-vertex-eval)
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

@@ -41,7 +41,15 @@ import { notFound } from "next/navigation";
 
 // These functions read from the file system - SERVER ONLY
 // They CANNOT be imported in Client Components
-import { getAllPosts, getAllPostsAcrossLocales, getPostCanonicalLocaleMap } from "@/lib/blog";
+import {
+  getAllPosts,
+  getAllPostsAcrossLocales,
+  getPostCanonicalLocaleMap,
+  getAllCollectionSlugs,
+  getCollectionInfo,
+  getAllCategories,
+  getAllTags,
+} from "@/lib/blog";
 
 // Client Component - will be hydrated on the browser
 import { PostList } from "@/components/PostList";
@@ -128,6 +136,14 @@ export default async function Home({ params }: PageProps) {
   const allPosts = getAllPostsAcrossLocales();
   const postCanonicalLocales = getPostCanonicalLocaleMap();
 
+  // Collections, categories, and tags power the embedded Collections / Search tabs.
+  const collections = getAllCollectionSlugs(locale).map((slug) => {
+    const { title, posts: collectionPosts } = getCollectionInfo(slug, locale);
+    return { slug, title, postCount: collectionPosts.length };
+  });
+  const categories = getAllCategories();
+  const tags = getAllTags(locale);
+
   /**
    * LOAD TRANSLATIONS
    *
@@ -209,6 +225,9 @@ export default async function Home({ params }: PageProps) {
         posts={posts}
         allPostsForChart={allPosts}
         postCanonicalLocales={postCanonicalLocales}
+        collections={collections}
+        categories={categories}
+        tags={tags}
         locale={locale}
         dict={dict}
       />

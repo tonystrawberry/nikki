@@ -5,7 +5,7 @@ excerpt: "Watched Hello Interview on distributed transactions (2PC vs Saga) and 
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "system-design", "distributed-systems", "saga", "interview", "ddia", "stream-processing"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

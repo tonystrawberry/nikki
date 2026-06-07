@@ -5,7 +5,7 @@ excerpt: "Hello InterviewのTwitterシステムデザイン解説を視聴 — r
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "system-design", "nosql", "twitter", "interview"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -13,4 +13,4 @@ coverImage: ""
 - Hello InterviewのTwitterシステムデザイン解説を視聴 — とても有益で要点が明確。read/writeが重く超低レイテンシが必要な操作には、NoSQL DBが適切なストレージのようだ — [System Design Interview Walkthrough: Design Twitter](/ja/posts/system-design-interview-walkthrough-design-twitter)
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

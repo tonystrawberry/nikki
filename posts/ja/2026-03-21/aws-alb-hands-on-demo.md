@@ -77,4 +77,4 @@ tags: ["aws", "alb", "load-balancer", "ec2", "target-group", "health-check", "zc
 - HTTP/HTTPS には ALB；TCP/UDP とパフォーマンスには NLB；セキュリティアプライアンスには GWLB を使う。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

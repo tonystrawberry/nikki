@@ -223,4 +223,4 @@ EC2/ECS/DynamoDB/Aurora/Spot Fleet を横断して scaling を一元管理。
 この統合記事は、今後の AWS CloudOps 講義サマリーを継続追記する前提で構成。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

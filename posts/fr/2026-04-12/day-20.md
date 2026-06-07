@@ -5,6 +5,7 @@ excerpt: "Glacier, Vertex TTS, Pokemon Go, et lecture du ch.7 de DDIA (transacti
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "s3", "glacier", "cli", "vertex-ai", "gemini", "tts", "shirimono", "pokemon-go", "games", "ddia", "reading", "transactions"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -28,4 +29,4 @@ aws s3 sync s3://tonystrawberry-memories/ ./tonystrawberry-memories/
 - poursuivi la lecture du chapitre 7 de DDIA sur les transactions — très dense ; pas encore de mémo de chapitre car je n’ai pas terminé, je continue demain
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

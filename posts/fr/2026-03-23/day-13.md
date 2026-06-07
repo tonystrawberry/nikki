@@ -5,6 +5,7 @@ excerpt: "Vidéo sur les fondamentaux de Git ; poursuite de la prep AWS CloudOps
 author: "Tony Duong"
 category: "daily"
 tags: ["git", "version-control", "video", "aws", "cloudops", "alb", "load-balancer"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -13,4 +14,4 @@ tags: ["git", "version-control", "video", "aws", "cloudops", "alb", "load-balanc
 - poursuivi l'étude AWS CloudOps Engineer Associate : pratiqué [ALB hands-on demo](/fr/posts/aws-alb-hands-on-demo) — lancement de 2 instances EC2, création d'un ALB avec target group, validation du round-robin et des health checks (arrêt instance -> unhealthy -> trafic stoppé ; redémarrage -> healthy)
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

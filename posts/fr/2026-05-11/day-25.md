@@ -5,7 +5,7 @@ excerpt: "Lecture du chapitre 9 de DDIA sur la cohérence et le consensus, et r�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "distributed-systems", "ddia"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -13,4 +13,4 @@ coverImage: ""
 - lu le chapitre 9 de DDIA « Cohérence et Consensus » — un chapitre notoirement difficile — et rédigé [DDIA Chapitre 9 : Cohérence et Consensus (Expliqué simplement)](/fr/posts/ddia-chapter-9-consistency-and-consensus) pour l'expliquer en termes simples
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

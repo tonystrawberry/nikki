@@ -55,4 +55,4 @@ collectionTitle: "Designing Data-Intensive Applications"
 - **リクエストルーティング** にはどのパーティションがどのノードにあるかの一貫した見えが必要 — ディレクトリサービス、ルーティング層、クライアント側割り当てで実現。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

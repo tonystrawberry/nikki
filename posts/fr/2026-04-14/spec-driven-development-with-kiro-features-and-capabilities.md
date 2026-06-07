@@ -81,4 +81,4 @@ Le cours renforce l'idée de valider le comportement, pas seulement le volume de
 - l'approche de Kiro est utile non seulement pour les outils IA, mais aussi pour une communication d'ingénierie plus claire
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

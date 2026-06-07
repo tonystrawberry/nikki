@@ -31,4 +31,4 @@ Une vidéo qui soutient qu'il ne faut pas résoudre des centaines de problèmes 
 - Les meilleurs candidats réussissent non pas en résolvant plus de problèmes, mais en comprenant les patterns sous-jacents et en sachant expliquer leur approche.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

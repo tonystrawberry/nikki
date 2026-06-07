@@ -74,4 +74,4 @@ L'application doit lire ces headers pour obtenir l'IP, le port et le protocole d
 - L'ALB peut router vers EC2, ECS, Lambda et IPs privées (on-prem).
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

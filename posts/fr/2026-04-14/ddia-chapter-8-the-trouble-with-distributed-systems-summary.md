@@ -86,4 +86,4 @@ Conclusion pratique : éviter la coordination globale quand c'est possible, et g
 - la fiabilité se construit avec des patterns défensifs (idempotence, retries avec backoff, observabilité, état explicite), pas avec l'optimisme
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -88,7 +88,7 @@ export interface ResumeData {
 const en: ResumeData = {
   profile: {
     name: "Tony Duong",
-    title: "Software Engineer · Backend / Full-Stack",
+    title: "Software Engineer ・ Backend / Full-Stack",
     location: "Tokyo, Japan",
     email: "tony.duong.102@gmail.com",
     github: "https://github.com/tonystrawberry",
@@ -101,7 +101,7 @@ const en: ResumeData = {
   experience: [
     {
       company: "Spacely",
-      role: "Software Engineer · Backend",
+      role: "Software Engineer ・ Backend",
       period: "~2023 – Present",
       location: "Tokyo, Japan",
       context:
@@ -238,10 +238,10 @@ const en: ResumeData = {
   ],
   education: [
     {
-      school: "UTBM (France) · ÉTS Montréal (Canada)",
+      school: "UTBM (France) ・ ÉTS Montréal (Canada)",
       degree: "Engineering double degree — Computer / Software Engineering (Master's level)",
       period: "2016 – 2018",
-      location: "Belfort, France · Montreal, Canada",
+      location: "Belfort, France ・ Montreal, Canada",
     },
   ],
   certifications: [
@@ -266,7 +266,7 @@ const en: ResumeData = {
 const fr: ResumeData = {
   profile: {
     name: "Tony Duong",
-    title: "Ingénieur logiciel · Back-end / Full-stack",
+    title: "Ingénieur logiciel ・ Back-end / Full-stack",
     location: "Tokyo, Japon",
     email: "tony.duong.102@gmail.com",
     github: "https://github.com/tonystrawberry",
@@ -279,7 +279,7 @@ const fr: ResumeData = {
   experience: [
     {
       company: "Spacely",
-      role: "Ingénieur logiciel · Back-end",
+      role: "Ingénieur logiciel ・ Back-end",
       period: "~2023 – aujourd'hui",
       location: "Tokyo, Japon",
       context:
@@ -416,10 +416,10 @@ const fr: ResumeData = {
   ],
   education: [
     {
-      school: "UTBM (France) · ÉTS Montréal (Canada)",
+      school: "UTBM (France) ・ ÉTS Montréal (Canada)",
       degree: "Double diplôme d'ingénieur — Génie informatique / logiciel (niveau Master)",
       period: "2016 – 2018",
-      location: "Belfort, France · Montréal, Canada",
+      location: "Belfort, France ・ Montréal, Canada",
     },
   ],
   certifications: [
@@ -444,7 +444,7 @@ const fr: ResumeData = {
 const ja: ResumeData = {
   profile: {
     name: "Tony Duong",
-    title: "ソフトウェアエンジニア · バックエンド / フルスタック",
+    title: "ソフトウェアエンジニア ・ バックエンド / フルスタック",
     location: "東京、日本",
     email: "tony.duong.102@gmail.com",
     github: "https://github.com/tonystrawberry",
@@ -457,7 +457,7 @@ const ja: ResumeData = {
   experience: [
     {
       company: "Spacely",
-      role: "ソフトウェアエンジニア · バックエンド",
+      role: "ソフトウェアエンジニア ・ バックエンド",
       period: "2023年頃 – 現在",
       location: "東京、日本",
       context:
@@ -594,10 +594,10 @@ const ja: ResumeData = {
   ],
   education: [
     {
-      school: "UTBM（フランス）· ÉTS モントリオール（カナダ）",
+      school: "UTBM（フランス）・ ÉTS モントリオール（カナダ）",
       degree: "ダブルディグリー（工学）— コンピュータ / ソフトウェア工学（修士相当）",
       period: "2016年 – 2018年",
-      location: "ベルフォール（仏）· モントリオール（加）",
+      location: "ベルフォール（仏）・ モントリオール（加）",
     },
   ],
   certifications: [

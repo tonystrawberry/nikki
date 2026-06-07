@@ -118,7 +118,7 @@ export default async function CollectionPage({ params }: PageProps) {
                           locale: dateLocales[locale],
                         })}
                       </time>
-                      <span>·</span>
+                      <span>・</span>
                       <span>
                         {post.readingTime} {dict.post.minRead}
                       </span>
@@ -138,7 +138,7 @@ export default async function CollectionPage({ params }: PageProps) {
 
       <div className="mt-10 flex flex-wrap gap-3">
         <Link href={`/${locale}/collections`}>
-          <Button variant="outline" className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground">
+          <Button variant="outline" className="border-primary/30 text-primary hover:!bg-primary hover:!text-primary-foreground">
             {t.backToCollections}
           </Button>
         </Link>

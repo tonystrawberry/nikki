@@ -5,6 +5,7 @@ excerpt: "AWS Certified ZCloudOps の勉強継続：スケーラビリティ、H
 author: "Tony Duong"
 category: "daily"
 tags: ["aws", "zcloudops", "scalability", "high-availability", "load-balancer", "elb", "alb", "ecs", "cloud"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -15,4 +16,4 @@ tags: ["aws", "zcloudops", "scalability", "high-availability", "load-balancer", 
 - [ALB ハンズオンデモ](/ja/posts/aws-alb-hands-on-demo) を実践 — EC2 インスタンス2台起動、ALB とターゲットグループ作成、ラウンドロビン負荷分散とヘルスチェック確認（インスタンス停止→unhealthy→トラフィック停止；起動→再び healthy）
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

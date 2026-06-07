@@ -5,6 +5,7 @@ excerpt: "Git 基礎動画を視聴；AWS CloudOps Engineer Associate 学習継�
 author: "Tony Duong"
 category: "daily"
 tags: ["git", "version-control", "video", "aws", "cloudops", "alb", "load-balancer"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -13,4 +14,4 @@ tags: ["git", "version-control", "video", "aws", "cloudops", "alb", "load-balanc
 - AWS CloudOps Engineer Associate の学習を継続：[ALB hands-on demo](/ja/posts/aws-alb-hands-on-demo) を実践 — EC2 2台起動、ALB と target group 作成、ラウンドロビンとヘルスチェック検証（停止 -> unhealthy -> トラフィック停止；再起動 -> healthy）
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

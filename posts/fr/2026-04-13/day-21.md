@@ -5,6 +5,7 @@ excerpt: "Étude des chapitres 7/8 de DDIA, pratique de tests de concurrence, no
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ddia", "reading", "transactions", "youtube", "video", "concurrency", "testing", "distributed-systems", "aws", "iam-identity-center", "sandbox", "ai"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -67,4 +68,4 @@ end
 ![Architecture AWS Innovation Sandbox](/images/blog/2026-04-13/aws-innovation-sandbox-architecture.png)
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

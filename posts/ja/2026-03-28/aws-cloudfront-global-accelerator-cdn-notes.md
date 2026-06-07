@@ -178,4 +178,4 @@ Global Accelerator は**グローバル**コンソール（リージョン選択
 - **Global Accelerator** = 静的 **Anycast** IP、**キャッシュなし**、**TCP/UDP**、**ヘルスチェック**と**高速フェイルオーバー**；**エッジキャッシュ**モデルの **CloudFront** との対比。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

@@ -5,6 +5,7 @@ excerpt: "Glacier・Vertex TTS・Pokemon Go、DDIA 第7章（トランザクシ�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "s3", "glacier", "cli", "vertex-ai", "gemini", "tts", "shirimono", "pokemon-go", "games", "ddia", "reading", "transactions"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -28,4 +29,4 @@ aws s3 sync s3://tonystrawberry-memories/ ./tonystrawberry-memories/
 - DDIA 第 7 章（トランザクション）の続きを読んだ — かなり重い；まだ読み切っていないので章メモは書かず、明日続ける
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

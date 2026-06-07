@@ -131,4 +131,4 @@ Pourquoi utiliser le batch quand on a des bases de données sophistiquées ?
 - **Batch et systèmes en ligne sont partenaires :** le batch construit l'artefact (index, modèle, rapport) ; les systèmes en ligne le servent.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

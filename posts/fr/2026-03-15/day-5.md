@@ -5,6 +5,7 @@ excerpt: "Vu les boucles et tâches planifiées Claude 24/7, lu le ch.5 de DDIA,
 author: "Tony Duong"
 category: "daily"
 tags: ["daily", "youtube", "ai", "claude", "automation", "ddia", "migration", "blog"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -14,4 +15,4 @@ tags: ["daily", "youtube", "ai", "claude", "automation", "ddia", "migration", "b
 - commencé à migrer les articles du blog Spacely vers le nouveau site mais bloqué — le dépôt du blog n’a pas les dernières versions (Hatena fait référence), je réessaierai plus tard
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -115,4 +115,4 @@ Le plus ancien des trois, fondamental pour les langages de requêtes ultérieurs
 6. Les modèles de données convergent — les bases relationnelles ajoutent des fonctionnalités document, les bases document ajoutent des fonctionnalités relationnelles
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

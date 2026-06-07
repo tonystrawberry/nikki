@@ -55,4 +55,4 @@ collectionTitle: "Designing Data-Intensive Applications"
 - タダ飯はない：レプリケーションは可用性と読み取り性能を上げるが、一貫性・コンフリクト・障害モードの複雑さが増す。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

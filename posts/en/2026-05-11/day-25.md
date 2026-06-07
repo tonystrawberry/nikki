@@ -5,7 +5,7 @@ excerpt: "Read DDIA Chapter 9 on consistency and consensus and wrote a beginner-
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "distributed-systems", "ddia"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

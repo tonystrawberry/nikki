@@ -5,6 +5,7 @@ excerpt: "I passed the AWS Certified CloudOps Engineer - Associate and read how 
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "cloudops", "certification", "ai", "code-review", "vercel"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

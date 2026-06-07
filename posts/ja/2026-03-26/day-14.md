@@ -5,6 +5,7 @@ excerpt: "Shirimono を App Store で公開、テストで `sleep` のスタブ�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "testing", "sleep", "stubbing", "ios", "app-store", "shirimono", "japanese", "aws", "cloudops", "ec2", "high-availability", "scalability"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -14,4 +15,4 @@ tags: ["engineering", "testing", "sleep", "stubbing", "ios", "app-store", "shiri
 - AWS CloudOps Developer コースの [スケーラビリティとロードバランシング](/ja/collection/aws-cloudops-engineer-associate) セクションを完了した
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

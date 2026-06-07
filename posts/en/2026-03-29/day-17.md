@@ -5,6 +5,7 @@ excerpt: "I studied CloudOps DR, security/compliance, IAM identity, and Route 53
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "disaster-recovery", "cloudops", "certification", "security", "kms", "waf", "compliance", "iam", "sts", "federation", "route-53", "dns"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

@@ -13,7 +13,7 @@ collectionTitle: "AWS CloudOps Engineer - Associate"
 
 **誰が DNS を権威として応答するか**と**ドメインをどこで買ったか**は別、**カスタム名**の背後の **S3 静的ウェブ**、**Route 53 Resolver** による**ハイブリッド DNS**、**クロスアカウント**の**プライベートホストゾーン**、**ログ**、**DNS ファイアウォール**、**Application Recovery Controller**、**Route 53 プロファイル**、ラボ後の**料金**／**クリーンアップ**を扱う。
 
-**前編：** **[DNS の基礎](/ja/posts/aws-route-53-dns-fundamentals-records-ttl-and-aliases)** · **[ルーティングポリシーとヘルスチェック](/ja/posts/aws-route-53-routing-policies-health-checks-and-traffic-flow)**。
+**前編：** **[DNS の基礎](/ja/posts/aws-route-53-dns-fundamentals-records-ttl-and-aliases)** ・ **[ルーティングポリシーとヘルスチェック](/ja/posts/aws-route-53-routing-policies-health-checks-and-traffic-flow)**。
 
 ## ドメインレジストラと DNS サービス
 
@@ -111,4 +111,4 @@ collectionTitle: "AWS CloudOps Engineer - Associate"
 *関連：[Amazon Route 53: Routing Policies, Health Checks, and Traffic Flow](/ja/posts/aws-route-53-routing-policies-health-checks-and-traffic-flow)。*
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

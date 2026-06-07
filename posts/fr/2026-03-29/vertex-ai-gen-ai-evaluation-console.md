@@ -32,4 +32,4 @@ Pour un flux minimal **YAML → génération → évaluation** hors console, voi
 - [tonystrawberry/ruby-vertex-eval](https://github.com/tonystrawberry/ruby-vertex-eval) sur GitHub
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

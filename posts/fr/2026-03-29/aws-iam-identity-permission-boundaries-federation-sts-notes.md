@@ -133,4 +133,4 @@ La **fédération** signifie que les utilisateurs **n’ont pas** besoin d’**u
 - **Simulateur de politiques** = **what-if** sûr sur les couches **identité**, **ressource**, **boundary** et **SCP**.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

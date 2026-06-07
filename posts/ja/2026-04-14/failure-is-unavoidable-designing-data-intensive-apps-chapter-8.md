@@ -62,4 +62,4 @@ youtubeUrl: "https://www.youtube.com/watch?v=hQKzmYUh774"
 - idempotency、backoff付きretry、明示的障害処理は最低限の要件
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

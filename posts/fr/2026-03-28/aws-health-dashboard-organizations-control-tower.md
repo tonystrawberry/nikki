@@ -109,4 +109,4 @@ Dans les **politiques de ressource** (ex. politique de bucket **S3**), **`aws:Pr
 - **Control Tower** = **landing zone** + **guardrails** (**SCP** + **Config**) + portail **Identity Center** + comptes **Security/Audit/Log** ; **coûteux** et **long** à mettre en place — il faut savoir **ce que ça crée**, pas seulement cliquer en prod les yeux fermés.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

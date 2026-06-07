@@ -13,7 +13,7 @@ collectionTitle: "AWS CloudOps Engineer - Associate"
 
 Cette note traite **qui sert le DNS** vs **où vous avez acheté le domaine**, les **sites web statiques S3** derrière des noms **personnalisés**, le DNS **hybride** avec **Route 53 Resolver**, les zones hébergées **privées cross-account**, la **journalisation**, le **pare-feu DNS**, **Application Recovery Controller**, les **profils Route 53**, et le **tarif** / **nettoyage** après les labs.
 
-**Parties précédentes :** **[Fondamentaux DNS](/fr/posts/aws-route-53-dns-fundamentals-records-ttl-and-aliases)** · **[Politiques de routage et health checks](/fr/posts/aws-route-53-routing-policies-health-checks-and-traffic-flow)**.
+**Parties précédentes :** **[Fondamentaux DNS](/fr/posts/aws-route-53-dns-fundamentals-records-ttl-and-aliases)** ・ **[Politiques de routage et health checks](/fr/posts/aws-route-53-routing-policies-health-checks-and-traffic-flow)**.
 
 ## Bureau d’enregistrement vs service DNS
 
@@ -111,4 +111,4 @@ Sans l’**autorisation**, l’association **cross-account** **échoue**.
 *Voir aussi : [Amazon Route 53: Routing Policies, Health Checks, and Traffic Flow](/fr/posts/aws-route-53-routing-policies-health-checks-and-traffic-flow).*
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

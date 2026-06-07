@@ -106,4 +106,4 @@ Les conseils que j'applique immediatement :
 - Sauvegarder les resumes de session localement pour reprendre un travail sur plusieurs jours sans perdre le contexte
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

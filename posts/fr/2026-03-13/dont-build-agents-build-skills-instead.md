@@ -126,4 +126,4 @@ Quelques entreprises construisent des processeurs et des systemes d'exploitation
 6. **Les skills permettent l'apprentissage continu** -- des agents qui s'ameliorent au fil de l'utilisation
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

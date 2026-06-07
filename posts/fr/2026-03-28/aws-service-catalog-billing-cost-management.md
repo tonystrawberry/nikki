@@ -121,4 +121,4 @@ Guidage de **rightsizing** via **ML** sur la **configuration** + utilisation **C
 - **Billing Conductor** = **représentation** de refacturation / **showback**, pas la **réalité** du **prix catalogue** AWS.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

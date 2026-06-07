@@ -10,4 +10,4 @@ tags: ["note"]
 Une courte note d'aujourd'hui.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -44,4 +44,4 @@ Deux méthodes principales :
 - Modèle client/serveur : votre machine = client, machine distante = serveur.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

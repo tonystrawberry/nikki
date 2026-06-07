@@ -5,7 +5,7 @@ excerpt: "building my own Rails gem to auto-generate OpenAPI documentation, impl
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ruby", "rails", "openapi"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

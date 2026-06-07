@@ -76,4 +76,4 @@ Flux : modifier fichier -> `git add` -> `git commit`.
 - Comprendre ce modèle rend checkout/reset/revert/merge/rebase beaucoup plus simples
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

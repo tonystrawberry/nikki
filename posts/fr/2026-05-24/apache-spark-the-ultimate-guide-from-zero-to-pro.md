@@ -165,4 +165,4 @@ Spark 3.0+ et activé par défaut (`spark.sql.adaptive.enabled = true`). Le plan
 
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

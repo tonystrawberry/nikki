@@ -21,7 +21,7 @@ function formatPostsDigest(locale: Locale): string {
     .map((p) => {
       const tags = p.tags.length ? ` [${p.tags.join(', ')}]` : '';
       const excerpt = p.excerpt?.trim() ? ` — ${p.excerpt.trim()}` : '';
-      return `- ${p.date} · ${p.categories.join('/')} · ${p.title}${tags}${excerpt}`;
+      return `- ${p.date} ・ ${p.categories.join('/')} ・ ${p.title}${tags}${excerpt}`;
     })
     .join('\n');
 }

@@ -123,4 +123,4 @@ end
 - Un comportement **serializable** peut etre obtenu par **execution serie**, **2PL** (avec predicate locking pour les phantoms) ou **SSI** — chaque approche ayant des compromis operationnels differents.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

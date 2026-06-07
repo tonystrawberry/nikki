@@ -5,7 +5,7 @@ excerpt: "Organized ~120 Datadog monitors (naming, tagging, categories) and adde
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "learning", "productivity", "minimalism", "philosophy", "datadog", "monitoring", "observability", "ddia", "reading", "distributed-systems"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

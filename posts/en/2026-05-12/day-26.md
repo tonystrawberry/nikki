@@ -5,7 +5,7 @@ excerpt: "Built a first Ruby MCP server for answering profile questions from Mar
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ruby", "mcp", "ai", "learning"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

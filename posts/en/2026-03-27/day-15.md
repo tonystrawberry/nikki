@@ -5,7 +5,7 @@ excerpt: "I continued preparing for next Saturday's AWS certification exam by re
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "certification", "lambda", "serverless", "ebs", "efs", "storage"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

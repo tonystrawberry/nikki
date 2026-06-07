@@ -5,7 +5,7 @@ excerpt: ""
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -13,4 +13,4 @@ coverImage: ""
 -
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

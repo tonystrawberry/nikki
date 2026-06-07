@@ -5,7 +5,7 @@ excerpt: "Ajout d'une fonctionnalité de chat en temps réel au blog avec Rails 
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "rails", "websockets", "actioncable"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -13,4 +13,4 @@ coverImage: ""
 - ajouté une fonctionnalité de chat à ce blog, permettant à n'importe qui de me contacter en temps réel quand je suis devant l'ordinateur — j'écrirai un article à ce sujet plus tard
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -15,14 +15,16 @@
     {
       "id": 3,
       "text": "Finish reading DDIA",
-      "done": false,
-      "createdAt": "2026-03-14"
+      "done": true,
+      "createdAt": "2026-03-14",
+      "completedAt": "2026-06-07"
     },
     {
       "id": 4,
-      "text": "Finish Spacely Tech Blog (article migrations only?)",
-      "done": false,
-      "createdAt": "2026-03-14"
+      "text": "Finish Spacely Tech Blog only",
+      "done": true,
+      "createdAt": "2026-03-14",
+      "completedAt": "2026-06-07"
     },
     {
       "id": 5,
@@ -31,16 +33,11 @@
       "createdAt": "2026-03-14"
     },
     {
-      "id": 6,
-      "text": "Watch: Watch Me Build a Claude Code Clone (Full Code) — https://www.youtube.com/watch?v=kU8Tg1_PYJE",
-      "done": false,
-      "createdAt": "2026-03-14"
-    },
-    {
       "id": 7,
       "text": "Try spec-driven development on a new project",
-      "done": false,
-      "createdAt": "2026-03-17"
+      "done": true,
+      "createdAt": "2026-03-17",
+      "completedAt": "2026-06-07"
     },
     {
       "id": 8,
@@ -57,14 +54,16 @@
     {
       "id": 10,
       "text": "Learn the basics of Apache Spark",
-      "done": false,
-      "createdAt": "2026-05-24"
+      "done": true,
+      "createdAt": "2026-05-24",
+      "completedAt": "2026-06-07"
     },
     {
       "id": 11,
       "text": "Improve the chat by enriching the persona files, and maybe build an actual RAG with pgvector to learn how it works",
-      "done": false,
-      "createdAt": "2026-05-24"
+      "done": true,
+      "createdAt": "2026-05-24",
+      "completedAt": "2026-06-07"
     },
     {
       "id": 12,
@@ -77,6 +76,12 @@
       "text": "Build my own wooden cabin",
       "done": false,
       "createdAt": "2026-06-02"
+    },
+    {
+      "id": 14,
+      "text": "Rescue a dog and raise it",
+      "done": false,
+      "createdAt": "2026-06-07"
     }
   ]
 }

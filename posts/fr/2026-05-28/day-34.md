@@ -5,7 +5,7 @@ excerpt: "Refonte des pages publiques de Shirimono pour un rendu beaucoup plus s
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "shirimono", "design", "frontend"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -14,4 +14,4 @@ coverImage: ""
 
 ---
 
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -5,6 +5,7 @@ excerpt: "Glacier, Vertex TTS, Pokemon Go, and more DDIA ch.7 (transactions) —
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "s3", "glacier", "cli", "vertex-ai", "gemini", "tts", "shirimono", "pokemon-go", "games", "ddia", "reading", "transactions"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

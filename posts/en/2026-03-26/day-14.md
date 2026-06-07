@@ -5,6 +5,7 @@ excerpt: "Shirimono shipped on the App Store, fixed unstubbed `sleep` in tests, 
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "testing", "sleep", "stubbing", "ios", "app-store", "shirimono", "japanese", "aws", "cloudops", "ec2", "high-availability", "scalability"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

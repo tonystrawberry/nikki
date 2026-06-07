@@ -5,7 +5,7 @@ excerpt: "Reworked Shirimono's public pages for a much more polished, eye-catchi
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "shirimono", "design", "frontend"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

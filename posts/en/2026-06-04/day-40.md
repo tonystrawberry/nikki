@@ -5,7 +5,7 @@ excerpt: "Watched Manning on software architecture trade-offs and started (but d
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "software-architecture", "tradeoffs", "book", "ddia", "distributed-systems"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

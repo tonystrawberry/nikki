@@ -201,4 +201,4 @@ Finished in 0.42 seconds (files took 2.1 seconds to load)
 Nous recrutons des ingénieurs chez Spacely. Si ce genre de travail backend vous intéresse, jetez un œil à notre [page recrutement](https://corp.spacely.co.jp/recruit/).
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

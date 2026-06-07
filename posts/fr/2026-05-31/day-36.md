@@ -5,7 +5,7 @@ excerpt: "Terminé la roadmap Ruby sur roadmap.sh, créé un prompt IA pour ense
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ruby", "happiness", "psychology", "system-design", "message-queue", "interview"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -16,4 +16,4 @@ coverImage: ""
 - regardé la vidéo Hello Interview sur les message queues en entretien de system design — [Message Queues en entretien de system design avec un Meta Staff Engineer](/fr/posts/message-queues-in-system-design-interviews-meta-staff-engineer)
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

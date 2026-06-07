@@ -123,4 +123,4 @@ end
 - **Serializable** は **直列実行**、**2PL**（phantom 対策の predicate locking 含む）、**SSI** で実現可能。それぞれ運用上のトレードオフが異なる。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

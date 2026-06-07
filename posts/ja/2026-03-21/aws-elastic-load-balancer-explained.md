@@ -61,4 +61,4 @@ tags: ["aws", "load-balancer", "elb", "alb", "nlb", "gwlb", "ec2", "zcloudops", 
 - EC2 の SG を LB の SG に紐づけ、LB 経由のトラフィックだけインスタンスに届くようにする。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

@@ -195,4 +195,4 @@ Remplacez `localStorage` par `sessionStorage` dans les appels `getItem` et `setI
 </details>
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

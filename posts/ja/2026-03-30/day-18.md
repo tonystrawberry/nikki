@@ -5,6 +5,7 @@ excerpt: "Ruby テストをプロファイルする TestProf gem を学び、同
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ruby", "testing", "rspec", "factories", "test-prof", "profiling"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -12,4 +13,4 @@ tags: ["engineering", "ruby", "testing", "rspec", "factories", "test-prof", "pro
 - 同僚が factory の利用状況を分析してテストスイート時間を約 20%（14 分から 11 分）改善した事例をきっかけに、[test-prof](https://github.com/test-prof/test-prof) gem について学んだ
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

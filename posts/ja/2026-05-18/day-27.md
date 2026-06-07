@@ -5,7 +5,7 @@ excerpt: "カスタム Jira Forge のスプリントチャートアプリを作�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "jira", "forge", "atlassian", "sprint", "aws", "cloudfront", "shirimono"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -14,4 +14,4 @@ coverImage: ""
 - Shirimono の公開アセットの配信とキャッシュ用に CloudFront を追加し、Shirimono 内のすべての日本語リソース向けの公開ページを公開した
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

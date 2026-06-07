@@ -73,4 +73,4 @@ Un cadre pour comprendre de quoi le bien-être est composé :
 - Avec les enfants : adaptez la vérité à ce dont ils ont besoin maintenant, et ne les laissez jamais seuls devant un écran.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

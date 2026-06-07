@@ -9,6 +9,11 @@
     "resume": "Resume",
     "subscribe": "Subscribe"
   },
+  "journalTabs": {
+    "articles": "Articles",
+    "collections": "Collections",
+    "search": "Search"
+  },
   "resume": {
     "title": "Resume",
     "subtitle": "Software engineer based in Tokyo — experience, projects, and skills.",
@@ -24,7 +29,7 @@
     "viewCredential": "View credential →"
   },
   "chat": {
-    "title": "Chat with my digital clone",
+    "title": "Ask my AI clone ✨",
     "subtitle": "Ask anything about my work, skills, or what I'm building. Powered by Claude with my blog as context.",
     "intro": "Hey — I'm Tony's digital clone. Ask me anything about his work or experience. A few ideas:",
     "examples": [

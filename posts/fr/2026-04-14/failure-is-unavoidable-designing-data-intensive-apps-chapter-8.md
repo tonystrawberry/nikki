@@ -62,4 +62,4 @@ Le chapitre 8 fait passer d'un mindset « perfect execution path » à « defens
 - idempotence, retries avec backoff et gestion explicite des pannes sont des bases incontournables
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

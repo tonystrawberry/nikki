@@ -5,6 +5,7 @@ excerpt: "Watched DDIA Ch.6 sharding; interview prep; seven backend books; SSH i
 author: "Tony Duong"
 category: "daily"
 tags: ["ddia", "databases", "partitioning", "sharding", "video", "career", "interviews", "leetcode", "books", "backend", "ssh", "devops", "git", "worktree"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

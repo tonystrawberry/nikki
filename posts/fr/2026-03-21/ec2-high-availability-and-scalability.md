@@ -220,4 +220,4 @@ Profils : disponibilité, équilibré, coût, custom.
 Ce post consolidé est prévu pour recevoir les prochaines notes du cours AWS CloudOps.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

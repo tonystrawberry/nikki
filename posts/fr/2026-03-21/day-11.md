@@ -5,6 +5,7 @@ excerpt: "Suite prep AWS Certified ZCloudOps : scalabilité, HA, types ELB, ALB 
 author: "Tony Duong"
 category: "daily"
 tags: ["aws", "zcloudops", "scalability", "high-availability", "load-balancer", "elb", "alb", "ecs", "cloud"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -15,4 +16,4 @@ tags: ["aws", "zcloudops", "scalability", "high-availability", "load-balancer", 
 - pratiqué [démo ALB pratique](/fr/posts/aws-alb-hands-on-demo) — lancé 2 instances EC2, créé ALB avec target group, vérifié load balancing round-robin et health checks (arrêt instance → unhealthy → plus de trafic ; démarrage → healthy à nouveau)
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

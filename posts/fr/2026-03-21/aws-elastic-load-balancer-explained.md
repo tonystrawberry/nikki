@@ -61,4 +61,4 @@ Un **load balancer** est un serveur (ou un ensemble) qui transfère le trafic en
 - Lier les security groups des EC2 au SG du load balancer pour que seul le trafic du LB atteigne les instances.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

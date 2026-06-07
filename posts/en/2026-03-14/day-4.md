@@ -5,6 +5,7 @@ excerpt: "Read DDIA ch4, built Claude SKILLS for Shirimono, and a CLI for Slack-
 author: "Tony Duong"
 category: "daily"
 tags: ["ddia", "databases", "claude", "skills", "japanese", "shirimono", "cli", "slack"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

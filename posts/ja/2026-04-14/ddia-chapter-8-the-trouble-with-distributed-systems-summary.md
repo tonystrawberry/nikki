@@ -86,4 +86,4 @@ backoff（多くは jitter 付き指数）で同時負荷ピークを抑えら�
 - 信頼性は防御的パターン（idempotency、backoff付きretry、observability、明示的状態）で作る
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

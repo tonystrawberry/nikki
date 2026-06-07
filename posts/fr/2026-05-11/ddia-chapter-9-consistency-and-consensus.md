@@ -142,4 +142,4 @@ Vos serveurs applicatifs principaux peuvent être des centaines de nœuds, mais 
 - La leçon plus profonde : **un accord fort nécessite de la coordination, et la coordination a un coût.** Les ingénieurs conçoivent les systèmes en décidant quelles décisions valent ce coût.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

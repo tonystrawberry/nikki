@@ -158,4 +158,4 @@ L'encodage et l'évolution se jouent différemment selon le contexte :
 - La même logique de compatibilité s'applique aux **bases de données** : les changements de schéma (nouvelles colonnes, nouvelles tables) doivent être compatibles ascendants et descendants quand on ne peut pas se permettre d'arrêt ou de réécritures massives.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

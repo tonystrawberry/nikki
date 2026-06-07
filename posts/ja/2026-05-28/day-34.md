@@ -5,7 +5,7 @@ excerpt: "Shirimonoの公開ページを刷新し、見た目がぐっと洗練�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "shirimono", "design", "frontend"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -14,4 +14,4 @@ coverImage: ""
 
 ---
 
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

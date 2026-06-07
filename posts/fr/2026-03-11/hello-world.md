@@ -5,7 +5,7 @@ excerpt: "Lecture de DDIA, réduction des alertes Honeybadger, Claude Code Actio
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ai", "reading", "shirimono", "claude"]
-coverImage: "https://images.unsplash.com/photo-1483736762161-1d107f3c78e1?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -19,4 +19,4 @@ coverImage: "https://images.unsplash.com/photo-1483736762161-1d107f3c78e1?q=80&w
 - mis en place un système de traduction automatique pour ce blog grâce à Claude Code Actions et GitHub Actions ! Les nouveaux articles rédigés en anglais seront désormais automatiquement traduits en français et en japonais.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -5,7 +5,7 @@ excerpt: "Un skill Claude Code pour les mises à niveau Rails, la première moit
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "rails", "spark", "big-data", "ai", "claude", "nextjs"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -15,4 +15,4 @@ coverImage: ""
 - livré une fonctionnalité de chat sur [/fr/chat](/fr/chat) — une route API Next.js en streaming qui envoie les deltas de Claude Sonnet 4.6 directement au navigateur via un `ReadableStream`, avec le prompt système reconstruit à chaque requête à partir d'un fichier Markdown de persona soigné plus un digest de chaque article dans la locale active (titre, date, catégorie, tags, extrait), le tout enveloppé dans `cache_control: ephemeral` pour que les tours suivants tapent le cache de prompt ; les messages utilisateurs sont validés par Zod et react-markdown rend les bulles streamées ; pas vraiment un *clone numérique* — plutôt un LLM augmenté avec le contenu de ce site — et la même UI est livrée en en et ja aussi
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -116,4 +116,4 @@ Le chapitre commence par une experience de pensee amusante : on peut construire 
 - La compression de colonnes (bitmap encoding, run-length encoding) est essentielle pour les bases OLAP qui peuvent atteindre l'echelle du petaoctet
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

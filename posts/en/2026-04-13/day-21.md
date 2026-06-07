@@ -5,6 +5,7 @@ excerpt: "DDIA chapter 7/8 study, concurrency testing practice, AWS architecture
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ddia", "reading", "transactions", "youtube", "video", "concurrency", "testing", "distributed-systems", "aws", "iam-identity-center", "sandbox", "ai"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

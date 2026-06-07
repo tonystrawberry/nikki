@@ -267,7 +267,7 @@ export default function AdminChat() {
                     className={`flex flex-col ${isAdmin ? "items-end" : "items-start"}`}
                   >
                     <span className="text-[10px] text-muted-foreground mb-0.5 px-1">
-                      {isAdmin ? "You" : selectedConv.visitor_name} ·{" "}
+                      {isAdmin ? "You" : selectedConv.visitor_name} ・{" "}
                       {formatRelativeTime(msg.created_at)}
                     </span>
                     <div

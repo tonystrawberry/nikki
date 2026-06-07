@@ -5,7 +5,7 @@ excerpt: "Published the JLPT N2 course to Shirimono and watched a neuroscience c
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "shirimono", "japanese", "jlpt", "neuroscience", "philosophy"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

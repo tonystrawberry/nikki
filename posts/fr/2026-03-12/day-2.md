@@ -5,7 +5,7 @@ excerpt: "Mise en place de Keystatic CMS, correction des redirections i18n, déc
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "keystatic", "cms", "nextjs", "i18n", "rails", "claude-code", "ddia", "databases"]
-coverImage: "https://images.unsplash.com/photo-1483736762161-1d107f3c78e1?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -20,4 +20,4 @@ coverImage: "https://images.unsplash.com/photo-1483736762161-1d107f3c78e1?q=80&w
 - lu le chapitre 2 de *Designing Data-Intensive Applications* — modèles de données et langages de requêtes. J'ai rédigé [mes notes](/fr/posts/ddia-chapter-2-data-models-and-query-languages) à ce sujet
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

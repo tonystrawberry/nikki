@@ -5,6 +5,7 @@ excerpt: "I learned about the TestProf gem for profiling Ruby tests; a colleague
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ruby", "testing", "rspec", "factories", "test-prof", "profiling"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

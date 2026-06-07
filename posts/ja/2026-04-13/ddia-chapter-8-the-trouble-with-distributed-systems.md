@@ -40,4 +40,4 @@ collectionTitle: "Designing Data-Intensive Applications"
 - 信頼性は楽観的前提ではなく、防御的パターン（idempotency、retries、observability）で作る。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

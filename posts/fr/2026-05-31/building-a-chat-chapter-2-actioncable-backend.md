@@ -229,4 +229,4 @@ Le tri ne sera plus correct. Sans `touch: true`, `conversation.updated_at` n'est
 </details>
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

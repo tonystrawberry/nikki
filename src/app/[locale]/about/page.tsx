@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { Separator } from "@/components/ui/separator";
 import { Card, CardContent } from "@/components/ui/card";
 import { hasLocale, getDictionary } from "@/lib/i18n";
 import ChatContactCard from "@/components/ChatContactCard";
+import { CloneChat } from "@/components/CloneChat";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
@@ -65,9 +65,9 @@ export default async function AboutPage({ params }: PageProps) {
   const content = bio[locale];
 
   return (
-    <div className="mx-auto max-w-3xl px-4 sm:px-6 py-8 sm:py-16">
-      {/* Hero Section with Avatar */}
-      <section className="text-center mb-10 sm:mb-16 opacity-0 animate-fade-in-up">
+    <div className="mx-auto max-w-6xl px-4 sm:px-6 py-8 sm:py-16">
+      {/* Hero Section with Avatar (full width) */}
+      <section className="text-center mb-10 sm:mb-12 opacity-0 animate-fade-in-up">
         <div className="relative inline-block mb-4 sm:mb-6">
           <Image src="/images/avatar.png" alt="Tony" width={128} height={128} className="h-24 w-24 sm:h-32 sm:w-32 rounded-full object-cover" />
         </div>
@@ -81,127 +81,143 @@ export default async function AboutPage({ params }: PageProps) {
         </p>
       </section>
 
-      {/* Quick Facts */}
-      <section className="grid grid-cols-3 gap-2 sm:gap-4 mb-10 sm:mb-16 opacity-0 animate-fade-in-up animation-delay-100">
-        <Card className="bg-card/50 border-border/50 text-center">
-          <CardContent className="p-3 sm:pt-6 sm:px-6 sm:pb-6">
-            <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">🗼</div>
-            <div className="text-xs sm:text-sm text-muted-foreground">
-              {locale === 'fr' ? 'Basé à' : locale === 'ja' ? '拠点' : 'Based in'}
-            </div>
-            <div className="font-semibold text-sm sm:text-base">Tokyo</div>
-          </CardContent>
-        </Card>
-        <Card className="bg-card/50 border-border/50 text-center">
-          <CardContent className="p-3 sm:pt-6 sm:px-6 sm:pb-6">
-            <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">💻</div>
-            <div className="text-xs sm:text-sm text-muted-foreground">
-              {locale === 'fr' ? 'Métier' : locale === 'ja' ? '職業' : 'Work'}
-            </div>
-            <div className="font-semibold text-sm sm:text-base">
-              {locale === 'fr' ? 'Dev' : locale === 'ja' ? '開発者' : 'Dev'}
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="bg-card/50 border-border/50 text-center">
-          <CardContent className="p-3 sm:pt-6 sm:px-6 sm:pb-6">
-            <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">☕</div>
-            <div className="text-xs sm:text-sm text-muted-foreground">
-              {locale === 'fr' ? 'Carburant' : locale === 'ja' ? '燃料' : 'Fuel'}
-            </div>
-            <div className="font-semibold text-sm sm:text-base">
-              {locale === 'fr' ? 'Café' : locale === 'ja' ? 'コーヒー' : 'Coffee'}
-            </div>
-          </CardContent>
-        </Card>
-      </section>
+      <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
+        {/* Ask my AI clone — right column on desktop, shown first on mobile */}
+        <aside id="ask-my-clone" className="lg:order-2 lg:col-span-1 opacity-0 animate-fade-in-up animation-delay-100">
+          <div className="lg:sticky lg:top-20 py-2">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-2 flex items-center gap-2">
+              {dict.chat.title}
+            </h2>
+            <p className="text-sm text-muted-foreground mb-4">
+              {dict.chat.subtitle}
+            </p>
+            <CloneChat locale={locale} dict={dict.chat} />
+          </div>
+        </aside>
 
-      <Separator className="my-8 sm:my-12 opacity-0 animate-fade-in-up animation-delay-100" />
+        {/* About content — left column */}
+        <div className="lg:order-1 lg:col-span-2 space-y-10 sm:space-y-14">
+          {/* Quick Facts */}
+          <section className="grid grid-cols-3 gap-2 sm:gap-4 opacity-0 animate-fade-in-up animation-delay-100">
+            <Card className="bg-card/50 border-border/50 text-center">
+              <CardContent className="p-3 sm:pt-6 sm:px-6 sm:pb-6">
+                <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">🗼</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">
+                  {locale === 'fr' ? 'Basé à' : locale === 'ja' ? '拠点' : 'Based in'}
+                </div>
+                <div className="font-semibold text-sm sm:text-base">Tokyo</div>
+              </CardContent>
+            </Card>
+            <Card className="bg-card/50 border-border/50 text-center">
+              <CardContent className="p-3 sm:pt-6 sm:px-6 sm:pb-6">
+                <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">💻</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">
+                  {locale === 'fr' ? 'Métier' : locale === 'ja' ? '職業' : 'Work'}
+                </div>
+                <div className="font-semibold text-sm sm:text-base">
+                  {locale === 'fr' ? 'Dev' : locale === 'ja' ? '開発者' : 'Dev'}
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="bg-card/50 border-border/50 text-center">
+              <CardContent className="p-3 sm:pt-6 sm:px-6 sm:pb-6">
+                <div className="text-2xl sm:text-3xl mb-1 sm:mb-2">☕</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">
+                  {locale === 'fr' ? 'Carburant' : locale === 'ja' ? '燃料' : 'Fuel'}
+                </div>
+                <div className="font-semibold text-sm sm:text-base">
+                  {locale === 'fr' ? 'Café' : locale === 'ja' ? 'コーヒー' : 'Coffee'}
+                </div>
+              </CardContent>
+            </Card>
+          </section>
 
-      {/* Bio Section */}
-      <section className="mb-10 sm:mb-16 opacity-0 animate-fade-in-up animation-delay-200">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
-          <span className="text-primary">01.</span>
-          {locale === 'fr' ? 'Pourquoi ce journal' : locale === 'ja' ? 'なぜこの日記を' : 'Why this diary'}
-        </h2>
-        <div className="prose prose-mobile">
-          <p>{content.intro}</p>
-          <p>{content.why}</p>
-          <p>{content.topics}</p>
-          <p className="text-muted-foreground italic">{content.hope}</p>
-        </div>
-      </section>
+          {/* Bio Section */}
+          <section className="opacity-0 animate-fade-in-up animation-delay-200">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
+              <span className="text-primary">01.</span>
+              {locale === 'fr' ? 'Pourquoi ce journal' : locale === 'ja' ? 'なぜこの日記を' : 'Why this diary'}
+            </h2>
+            <div className="prose prose-mobile">
+              <p>{content.intro}</p>
+              <p>{content.why}</p>
+              <p>{content.topics}</p>
+              <p className="text-muted-foreground italic">{content.hope}</p>
+            </div>
+          </section>
 
-      {/* Interests Section */}
-      <section className="mb-10 sm:mb-16 opacity-0 animate-fade-in-up animation-delay-300">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
-          <span className="text-primary">02.</span>
-          {locale === 'fr' ? 'Ce qui m\'intéresse' : locale === 'ja' ? '興味があること' : 'Things I like'}
-        </h2>
-        <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-4">
-          {interests.map((interest) => (
-            <div
-              key={interest.emoji}
-              className="text-center p-2 sm:p-4 rounded-lg sm:rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors"
+          {/* Interests Section */}
+          <section className="opacity-0 animate-fade-in-up animation-delay-300">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
+              <span className="text-primary">02.</span>
+              {locale === 'fr' ? 'Ce qui m\'intéresse' : locale === 'ja' ? '興味があること' : 'Things I like'}
+            </h2>
+            <div className="grid grid-cols-3 sm:grid-cols-6 gap-2 sm:gap-4">
+              {interests.map((interest) => (
+                <div
+                  key={interest.emoji}
+                  className="text-center p-2 sm:p-4 rounded-lg sm:rounded-xl bg-card/50 border border-border/50 hover:border-primary/30 transition-colors"
+                >
+                  <div className="text-xl sm:text-2xl mb-1 sm:mb-2">{interest.emoji}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground">{interest.label[locale]}</div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Connect Section */}
+          <section className="opacity-0 animate-fade-in-up animation-delay-400">
+            <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
+              <span className="text-primary">03.</span> {dict.about.connect}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+              <a
+                href="https://github.com/tonystrawberry"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-card transition-all group flex sm:flex-col items-center sm:items-start gap-3 sm:gap-0"
+              >
+                <div className="text-2xl sm:mb-2">🐙</div>
+                <div>
+                  <div className="font-medium group-hover:text-primary transition-colors">GitHub</div>
+                  <div className="text-sm text-muted-foreground">@tonystrawberry</div>
+                </div>
+              </a>
+              <a
+                href="mailto:tony.duong.102@gmail.com"
+                className="p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-card transition-all group flex sm:flex-col items-center sm:items-start gap-3 sm:gap-0"
+              >
+                <div className="text-2xl sm:mb-2">✉️</div>
+                <div>
+                  <div className="font-medium group-hover:text-primary transition-colors">Email</div>
+                  <div className="text-sm text-muted-foreground">
+                    {locale === 'fr' ? 'Pour les sujets sérieux' : locale === 'ja' ? '正式なお問い合わせ' : 'For serious matters'}
+                  </div>
+                </div>
+              </a>
+              <ChatContactCard locale={locale} />
+            </div>
+          </section>
+
+          {/* CTA */}
+          <div className="p-5 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary/10 via-card/50 to-accent/10 border border-border/50 text-center opacity-0 animate-fade-in-up animation-delay-500">
+            <h3 className="text-lg sm:text-xl font-semibold mb-2">{dict.about.thanks}</h3>
+            <p className="text-sm sm:text-base text-muted-foreground mb-4">
+              {locale === 'fr'
+                ? "N'hésite pas à parcourir mes entrées."
+                : locale === 'ja'
+                ? '日記を読んでみてください。'
+                : 'Feel free to browse my entries.'
+              }
+            </p>
+            <a
+              href={`/${locale}`}
+              className="inline-block px-5 sm:px-6 py-2 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors text-sm sm:text-base"
             >
-              <div className="text-xl sm:text-2xl mb-1 sm:mb-2">{interest.emoji}</div>
-              <div className="text-xs sm:text-sm text-muted-foreground">{interest.label[locale]}</div>
-            </div>
-          ))}
+              {dict.about.readPosts}
+            </a>
+          </div>
         </div>
-      </section>
-
-      {/* Connect Section */}
-      <section className="mb-10 sm:mb-16 opacity-0 animate-fade-in-up animation-delay-400">
-        <h2 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 flex items-center gap-2">
-          <span className="text-primary">03.</span> {dict.about.connect}
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
-          <a
-            href="https://github.com/tonystrawberry"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-card transition-all group flex sm:flex-col items-center sm:items-start gap-3 sm:gap-0"
-          >
-            <div className="text-2xl sm:mb-2">🐙</div>
-            <div>
-              <div className="font-medium group-hover:text-primary transition-colors">GitHub</div>
-              <div className="text-sm text-muted-foreground">@tonystrawberry</div>
-            </div>
-          </a>
-          <a
-            href="mailto:tony.duong.102@gmail.com"
-            className="p-4 rounded-xl bg-card/50 border border-border/50 hover:border-primary/50 hover:bg-card transition-all group flex sm:flex-col items-center sm:items-start gap-3 sm:gap-0"
-          >
-            <div className="text-2xl sm:mb-2">✉️</div>
-            <div>
-              <div className="font-medium group-hover:text-primary transition-colors">Email</div>
-              <div className="text-sm text-muted-foreground">
-                {locale === 'fr' ? 'Pour les sujets sérieux' : locale === 'ja' ? '正式なお問い合わせ' : 'For serious matters'}
-              </div>
-            </div>
-          </a>
-          <ChatContactCard locale={locale} />
-        </div>
-      </section>
-
-      {/* CTA */}
-      <div className="p-5 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-primary/10 via-card/50 to-accent/10 border border-border/50 text-center opacity-0 animate-fade-in-up animation-delay-500">
-        <h3 className="text-lg sm:text-xl font-semibold mb-2">{dict.about.thanks}</h3>
-        <p className="text-sm sm:text-base text-muted-foreground mb-4">
-          {locale === 'fr'
-            ? "N'hésite pas à parcourir mes entrées."
-            : locale === 'ja'
-            ? '日記を読んでみてください。'
-            : 'Feel free to browse my entries.'
-          }
-        </p>
-        <a
-          href={`/${locale}`}
-          className="inline-block px-5 sm:px-6 py-2 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors text-sm sm:text-base"
-        >
-          {dict.about.readPosts}
-        </a>
       </div>
     </div>
   );

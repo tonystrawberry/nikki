@@ -5,7 +5,7 @@ excerpt: "Hello InterviewのTicketmasterシステムデザイン解説を視聴 
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "system-design", "interview", "ddia", "ticketmaster"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -13,4 +13,4 @@ coverImage: ""
 - Hello InterviewのTicketmasterシステムデザイン解説を視聴 — 最近このチャンネルがとても気に入っている。説明が明確で、見た数本の動画では言っていることの大部分を予想できた。DDIAとの接点も見え始めている — [System Design Interview: Design Ticketmaster w/ a Ex-Meta Staff Engineer](/ja/posts/system-design-interview-design-ticketmaster-ex-meta-staff-engineer)
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

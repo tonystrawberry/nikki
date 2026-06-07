@@ -5,6 +5,7 @@ excerpt: "Reviewed a PR with new tech, watched talks on spec-driven development 
 author: "Tony Duong"
 category: "daily"
 tags: ["code-review", "ai", "claude", "agents", "skills", "databases", "ddia"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

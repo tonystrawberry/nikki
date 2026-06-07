@@ -123,4 +123,4 @@ Les **health checks** permettent à Route 53 de **cesser** de renvoyer des cible
 *Précédent : [Amazon Route 53: DNS Fundamentals, Records, TTL, and Alias vs CNAME](/fr/posts/aws-route-53-dns-fundamentals-records-ttl-and-aliases). Suivant : [Amazon Route 53: Registrar Delegation, Resolver, Logging, and Governance](/fr/posts/aws-route-53-delegation-resolver-logging-firewall-arc-profiles).*
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -5,6 +5,7 @@ excerpt: "J’ai découvert la gem TestProf pour profiler les tests Ruby ; un co
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ruby", "testing", "rspec", "factories", "test-prof", "profiling"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -12,4 +13,4 @@ tags: ["engineering", "ruby", "testing", "rspec", "factories", "test-prof", "pro
 - découvert la gem [test-prof](https://github.com/test-prof/test-prof) après qu’un collègue l’a utilisée pour analyser l’usage des factories et améliorer le temps de la suite de tests d’environ 20 % (de 14 minutes à 11 minutes)
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

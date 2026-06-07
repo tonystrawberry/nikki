@@ -5,6 +5,7 @@ excerpt: "J’ai validé la certification AWS Certified CloudOps Engineer - Asso
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "cloudops", "certification", "ai", "code-review", "vercel"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -13,4 +14,4 @@ tags: ["engineering", "aws", "cloudops", "certification", "ai", "code-review", "
 - lu un article intéressant sur la façon dont vercel réduit le temps de revue de code en s’appuyant sur l’ia https://web.archive.org/web/20260407074749/https://vercel.com/blog/58-percent-of-prs-in-our-largest-monorepo-merge-without-human-review
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

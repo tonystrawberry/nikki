@@ -38,4 +38,4 @@ youtubeUrl: "https://www.youtube.com/watch?v=ReNqPp3EmYk"
 - Release It は本番の耐障害性と障害モードに触れる。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

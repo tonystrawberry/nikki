@@ -5,6 +5,7 @@ excerpt: "Watched Claude 24/7 loops and scheduled tasks, read DDIA ch5, started 
 author: "Tony Duong"
 category: "daily"
 tags: ["daily", "youtube", "ai", "claude", "automation", "ddia", "migration", "blog"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

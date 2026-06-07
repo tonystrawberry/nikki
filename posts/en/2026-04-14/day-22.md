@@ -5,7 +5,7 @@ excerpt: "Read DDIA chapter 8, summarized two distributed-systems videos, and co
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ddia", "reading", "distributed-systems", "youtube", "video", "checksum", "data-integrity", "reliability", "fault-tolerance", "transactions", "mvcc", "aws", "skillbuilder", "kiro", "spec-driven-development"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

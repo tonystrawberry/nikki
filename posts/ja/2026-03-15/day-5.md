@@ -5,6 +5,7 @@ excerpt: "Claude 24/7のループとスケジュールタスクを視聴、DDIA�
 author: "Tony Duong"
 category: "daily"
 tags: ["daily", "youtube", "ai", "claude", "automation", "ddia", "migration", "blog"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -14,4 +15,4 @@ tags: ["daily", "youtube", "ai", "claude", "automation", "ddia", "migration", "b
 - Spacelyブログの記事を新サイトへ移行し始めたが、ブログリポジトリに最新版がなく（はてなが正）、また今度やり直す
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

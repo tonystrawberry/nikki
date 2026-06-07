@@ -178,4 +178,4 @@ Global Accelerator est une console **globale** (pas de sélecteur de région). C
 - **Global Accelerator** = IP statiques **Anycast**, **pas de cache**, **TCP/UDP**, **health checks** et **basculement rapide** ; contraste avec le modèle **cache edge** de **CloudFront**.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

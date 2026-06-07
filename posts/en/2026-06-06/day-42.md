@@ -5,7 +5,7 @@ excerpt: "Learned virtual waiting queues, back-of-the-envelope estimation, Ruby 
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "system-design", "ruby", "server-side-events", "estimation"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

@@ -113,4 +113,4 @@ Le chapitre 2 introduit la **boîte à outils de décision de l'architecte** —
 - Documenter les décisions pour que l'équipe sache quoi revisiter quand les priorités changent
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

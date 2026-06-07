@@ -247,4 +247,4 @@ Kamalは新しいコンテナの起動後に`GET /up`をポーリングします
 </details>
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

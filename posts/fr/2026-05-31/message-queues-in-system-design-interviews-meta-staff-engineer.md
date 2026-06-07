@@ -120,4 +120,4 @@ Kafka conserve les messages pendant une fenêtre configurable (jour, semaine, in
 - Si vous ne devez connaître qu'une technologie : **Kafka**
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

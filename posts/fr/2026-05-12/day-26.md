@@ -5,7 +5,7 @@ excerpt: "Création d'un premier serveur MCP Ruby pour répondre aux questions d
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ruby", "mcp", "ai", "learning"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -13,4 +13,4 @@ coverImage: ""
 - créé mon premier serveur MCP Ruby, [tonystrawberry-mcp-server](https://github.com/tonystrawberry/tonystrawberry-mcp-server), avec des outils qui répondent à des questions sur moi à partir de fichiers Markdown de profil, puis utilisé le dossier `teach-me` du dépôt comme un livre écrit par l'IA pour comprendre chaque partie du codebase et j'ai été impressionné par le niveau de détail après les deux premiers chapitres
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

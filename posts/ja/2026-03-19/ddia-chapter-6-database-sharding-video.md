@@ -32,4 +32,4 @@ collectionTitle: "Designing Data-Intensive Applications"
 - リバランスはデータ移動を抑え、単一障害点を避ける設計にすべき。
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

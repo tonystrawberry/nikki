@@ -195,4 +195,4 @@ VisitorChannel stopped streaming
 </details>
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

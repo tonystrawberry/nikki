@@ -5,6 +5,7 @@ excerpt: "DDIA第7章/第8章の学習、並行テストの実践、AWSアーキ
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ddia", "reading", "transactions", "youtube", "video", "concurrency", "testing", "distributed-systems", "aws", "iam-identity-center", "sandbox", "ai"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -67,4 +68,4 @@ end
 ![AWS Innovation Sandbox architecture](/images/blog/2026-04-13/aws-innovation-sandbox-architecture.png)
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

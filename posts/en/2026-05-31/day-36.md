@@ -5,7 +5,7 @@ excerpt: "Finished the roadmap.sh Ruby roadmap, built an AI prompt that teaches 
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ruby", "happiness", "psychology", "system-design", "message-queue", "interview"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

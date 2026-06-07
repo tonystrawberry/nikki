@@ -5,7 +5,7 @@ excerpt: "Regardé Manning sur les trade-offs en architecture logicielle et comm
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "software-architecture", "tradeoffs", "book", "ddia", "distributed-systems"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -14,4 +14,4 @@ coverImage: ""
 - commencé à lire le dernier chapitre de DDIA (Chapitre 12 : The Future of Data Systems) — pas terminé, je reprendrai demain — [DDIA Chapter 12: The Future of Data Systems](/fr/posts/ddia-chapter-12-the-future-of-data-systems)
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

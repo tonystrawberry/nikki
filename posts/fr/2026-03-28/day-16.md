@@ -5,6 +5,7 @@ excerpt: "J’ai mélangé des notes AWS CloudOps, un side project d’évaluati
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "s3", "storage", "cloudfront", "cdn", "global-accelerator", "rds", "databases", "cloudwatch", "eventbridge", "cloudtrail", "aws-config", "service-quotas", "health", "organizations", "control-tower", "service-catalog", "budgets", "cost-explorer", "logs", "alarms", "synthetics", "monitoring", "cloudops", "certification", "gcp", "vertex-ai", "ruby", "prompts", "llm", "shirimono", "i18n", "french", "translation"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -23,4 +24,4 @@ tags: ["engineering", "aws", "s3", "storage", "cloudfront", "cdn", "global-accel
 - commencé à traduire les ressources shirimono en français pour aligner le copy in-app et le contenu pédagogique maintenant que l’app propose une locale française
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

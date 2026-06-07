@@ -115,4 +115,4 @@ Kleppmann conclut en rappelant : les ingénieurs construisent des systèmes qui 
 *À mettre à jour après la fin du chapitre.*
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

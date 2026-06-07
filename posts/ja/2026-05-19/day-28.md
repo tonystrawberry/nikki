@@ -5,7 +5,7 @@ excerpt: "OpenAPIドキュメントを自動生成する自作のRails gemをspe
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ruby", "rails", "openapi"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -14,4 +14,4 @@ coverImage: ""
 - spec-kitを使ってこのgemを実装しました。spec-kitは非常に使いやすく、仕様を用意しておくことでAIが何をすべきかを非常に正確に把握できます
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

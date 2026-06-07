@@ -5,6 +5,7 @@ excerpt: "新しい技術を使ったPRをレビューし、仕様駆動開発�
 author: "Tony Duong"
 category: "daily"
 tags: ["code-review", "ai", "claude", "agents", "skills", "databases", "ddia"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -16,4 +17,4 @@ tags: ["code-review", "ai", "claude", "agents", "skills", "databases", "ddia"]
 - [データ指向アプリケーションデザイン：第3章](/ja/posts/2026-03-13/designing-data-intensive-applications-chapter-3)を視聴した — OLTP対OLAP、行指向対列指向ストレージ、Bツリー対LSMツリーの視覚的な図解による非常にわかりやすい説明
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

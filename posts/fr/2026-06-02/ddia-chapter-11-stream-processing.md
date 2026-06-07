@@ -115,4 +115,4 @@ Inconvénients : évolution de schéma difficile, replay lent sans snapshots, su
 - Batch et stream sont partenaires, pas opposés
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -5,7 +5,7 @@ excerpt: "Added a real-time chat feature to the blog using Rails ActionCable and
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "rails", "websockets", "actioncable"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

@@ -76,4 +76,4 @@ Le spec-driven development est essentiellement le **TDD et le BDD sous stéroïd
 5. **Le changement de compétence principal** — passer de l'écriture/révision de code à la transmission efficace de ce que vous voulez construire
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

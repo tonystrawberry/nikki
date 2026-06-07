@@ -9,6 +9,11 @@
     "resume": "CV",
     "subscribe": "S'abonner"
   },
+  "journalTabs": {
+    "articles": "Articles",
+    "collections": "Collections",
+    "search": "Recherche"
+  },
   "resume": {
     "title": "CV",
     "subtitle": "Ingénieur logiciel basé à Tokyo — expérience, projets et compétences.",
@@ -24,7 +29,7 @@
     "viewCredential": "Voir le badge →"
   },
   "chat": {
-    "title": "Discute avec mon clone numérique",
+    "title": "Demande à mon clone IA ✨",
     "subtitle": "Pose-moi tes questions sur mon parcours, mes compétences ou ce que je construis. Propulsé par Claude, avec mon blog comme contexte.",
     "intro": "Salut — je suis le clone numérique de Tony. Pose-moi tes questions sur son parcours ou son expérience. Quelques pistes :",
     "examples": [

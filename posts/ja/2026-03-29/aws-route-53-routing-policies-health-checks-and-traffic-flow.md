@@ -123,4 +123,4 @@ collectionTitle: "AWS CloudOps Engineer - Associate"
 *前へ：[Amazon Route 53: DNS Fundamentals, Records, TTL, and Alias vs CNAME](/ja/posts/aws-route-53-dns-fundamentals-records-ttl-and-aliases)。次へ：[Amazon Route 53: Registrar Delegation, Resolver, Logging, and Governance](/ja/posts/aws-route-53-delegation-resolver-logging-firewall-arc-profiles)。*
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

@@ -399,6 +399,15 @@
 .animation-delay-400 { animation-delay: 400ms; }
 .animation-delay-500 { animation-delay: 500ms; }
 
+/* Interactive elements always show a pointer cursor (buttons, links, role=button) */
+button:not(:disabled),
+a[href],
+[role="button"]:not([aria-disabled="true"]),
+summary,
+label[for] {
+  cursor: pointer;
+}
+
 /* ==========================================================================
    Print / Save-as-PDF — the /resume page
    Design rule: rely on TEXT COLOR + BORDERS only (Chrome's --print-to-pdf

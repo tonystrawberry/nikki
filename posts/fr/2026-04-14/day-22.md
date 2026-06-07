@@ -5,7 +5,7 @@ excerpt: "Lecture du chapitre 8 de DDIA et rédaction de notes, puis visionnage 
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ddia", "reading", "distributed-systems", "youtube", "video", "checksum", "data-integrity", "reliability", "fault-tolerance", "transactions", "mvcc"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -15,4 +15,4 @@ coverImage: ""
 - regardé [Failure is unavoidable! Designing Data-Intensive Apps chapter 8](/fr/posts/failure-is-unavoidable-designing-data-intensive-apps-chapter-8) sur les raisons pour lesquelles les pannes sont inévitables dans les systèmes distribués
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

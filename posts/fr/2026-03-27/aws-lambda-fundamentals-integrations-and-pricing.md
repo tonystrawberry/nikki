@@ -149,4 +149,4 @@ Ces deux modèles réduisent le coût d'inactivité et simplifient les opératio
 - comprendre les payloads des déclencheurs dans CloudWatch est essentiel pour le débogage
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

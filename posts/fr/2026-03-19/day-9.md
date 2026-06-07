@@ -5,6 +5,7 @@ excerpt: "Visionné DDIA Ch.6 sharding ; prep interview ; sept livres backend ; 
 author: "Tony Duong"
 category: "daily"
 tags: ["ddia", "databases", "partitioning", "sharding", "video", "career", "interviews", "leetcode", "books", "backend", "ssh", "devops", "git", "worktree"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -16,4 +17,4 @@ tags: ["ddia", "databases", "partitioning", "sharding", "video", "career", "inte
 - visionné [Les devs ne peuvent plus ignorer git worktree](/fr/posts/devs-can-no-longer-avoid-learning-git-worktree) — plusieurs répertoires de travail par repo pour hotfixes, relecture de PR, et exécuter une IA agentic dans un worktree séparé
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

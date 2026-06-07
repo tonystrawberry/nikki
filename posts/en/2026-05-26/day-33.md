@@ -5,7 +5,7 @@ excerpt: "Discovered roadmap.sh and subscribed for structured learning, starting
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "learning", "career-story", "writing"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

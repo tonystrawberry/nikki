@@ -5,7 +5,7 @@ excerpt: "roadmap.shのRubyロードマップを完了、コードベースを�
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "ruby", "happiness", "psychology", "system-design", "message-queue", "interview"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## 今日やったこと：
@@ -16,4 +16,4 @@ coverImage: ""
 - Hello Interviewのシステムデザイン面接向けメッセージキュー解説を視聴 — [Meta Staff Engineerによるシステムデザイン面接のMessage Queue](/ja/posts/message-queues-in-system-design-interviews-meta-staff-engineer)
 
 ---
-*Claudeによる翻訳*
+> 🌐 *Claudeによる翻訳*

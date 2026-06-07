@@ -5,7 +5,7 @@ excerpt: "Appris les files d'attente virtuelles, l'estimation back-of-the-envelo
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "system-design", "ruby", "server-side-events", "estimation"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -13,4 +13,4 @@ coverImage: ""
 - appris de nouveaux concepts : file d'attente virtuelle, estimation back-of-the-envelope (d'où vient cette expression ?), observers en Ruby et server-side events — je ferai des projets expérimentaux pour approfondir de façon plus pratique aujourd'hui
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

@@ -5,6 +5,7 @@ excerpt: "J’ai étudié la DR CloudOps, la sécurité et la conformité, l’i
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "aws", "disaster-recovery", "cloudops", "certification", "security", "kms", "waf", "compliance", "iam", "sts", "federation", "route-53", "dns"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -17,4 +18,4 @@ tags: ["engineering", "aws", "disaster-recovery", "cloudops", "certification", "
 - bouclé route 53 avec multi-valeur vs simple, registrar vs délégation dns, alias site s3, resolver hybride, logs de requêtes, pare-feu dns, arc et profiles, et rédigé [Amazon Route 53: Registrar Delegation, Resolver, Logging, and Governance](/fr/posts/aws-route-53-delegation-resolver-logging-firewall-arc-profiles) pour la collection cloudops
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

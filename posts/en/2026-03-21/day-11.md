@@ -5,6 +5,7 @@ excerpt: "Continued AWS Certified ZCloudOps prep: consolidated notes on EC2 scal
 author: "Tony Duong"
 category: "daily"
 tags: ["aws", "zcloudops", "scalability", "high-availability", "load-balancer", "elb", "alb", "ecs", "cloud"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

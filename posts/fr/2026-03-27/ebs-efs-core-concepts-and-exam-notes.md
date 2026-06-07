@@ -171,4 +171,4 @@ Utilisez **EFS** quand vous avez besoin de :
 - les questions d'examen testent souvent **la portee (instance unique vs partage)**, **le comportement AZ** et **les compromis cout/performance**
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

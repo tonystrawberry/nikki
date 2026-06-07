@@ -5,6 +5,7 @@ excerpt: "Continued AWS CloudOps study with AWS Systems Manager (overview, Fleet
 author: "Tony Duong"
 category: "daily"
 tags: ["daily", "aws", "certification", "cloudops", "systems-manager", "ssm"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

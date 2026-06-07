@@ -49,4 +49,4 @@ Un court exposé sur la **scalabilité** et la **haute disponibilité** — noti
 - HA peut être passive (standby) ou active (tous les nœuds servent le trafic).
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

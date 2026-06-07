@@ -5,6 +5,7 @@ excerpt: "Watched DDIA Ch5 stream, continued AWS CloudOps (EC2 + AMI), wrote EC2
 author: "Tony Duong"
 category: "daily"
 tags: ["daily", "youtube", "ddia", "databases", "replication", "aws", "certification", "cloudops", "shirimono", "illustration", "claude"]
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Today, I:

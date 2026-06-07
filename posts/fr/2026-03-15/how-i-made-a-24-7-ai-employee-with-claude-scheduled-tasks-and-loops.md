@@ -40,4 +40,4 @@ Claude peut agir comme **agent IA 24/7** qui exécute des tâches pendant que vo
 - **Changement de posture :** Utiliser Claude **de façon proactive** avec des plannings et des flux qui tournent 24/7, au lieu d’y aller seulement quand tu as un problème.
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*

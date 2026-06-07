@@ -5,7 +5,7 @@ excerpt: "Regardé Hello Interview sur les transactions distribuées (2PC vs Sag
 author: "Tony Duong"
 category: "daily"
 tags: ["engineering", "system-design", "distributed-systems", "saga", "interview", "ddia", "stream-processing"]
-coverImage: ""
+coverImage: "/images/blog/daily-cover.jpg"
 ---
 
 ## Aujourd'hui, j'ai :
@@ -14,4 +14,4 @@ coverImage: ""
 - lu le chapitre 11 de DDIA sur le stream processing — [DDIA Chapter 11: Stream Processing](/fr/posts/ddia-chapter-11-stream-processing)
 
 ---
-*Traduit par Claude*
+> 🌐 *Traduit par Claude*
