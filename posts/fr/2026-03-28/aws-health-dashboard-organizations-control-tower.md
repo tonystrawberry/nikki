@@ -4,6 +4,7 @@ date: "2026-03-28"
 excerpt: "Notes CloudOps sur AWS Health (vues service / compte / org, automation EventBridge), AWS Organizations (OU, facturation consolidée, SCP, partage RI, PrincipalOrgID) et les landing zones Control Tower avec guardrails."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "health", "organizations", "scp", "control-tower", "multi-account", "billing", "sysops", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 10

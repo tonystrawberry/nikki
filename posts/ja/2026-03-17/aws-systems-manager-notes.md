@@ -4,6 +4,7 @@ date: "2026-03-17"
 excerpt: "AWS Systems Manager の要約メモ：エージェント、Fleet Manager、DHMC、ドキュメント、Run Command、Session Manager、Automation、Parameter Store、Inventory、State Manager、Distributor、Patch Manager、Maintenance Windows、OpsCenter（OpsItems、runbooks）。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "systems-manager", "ssm", "cloudops", "certification", "ec2", "fleet-manager", "run-command", "session-manager", "automation", "parameter-store", "inventory", "state-manager", "distributor", "patch-manager", "maintenance-windows", "opscenter"]
 ---
 

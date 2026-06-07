@@ -4,6 +4,7 @@ date: "2026-04-15"
 excerpt: "Rails アプリで実際に起きた lost update バグ：同じ JSON カラムに別のキーをマージする 2 つのジョブが互いを上書きしてしまう問題を、with_lock とスレッド付き RSpec で再現し修正する話。"
 author: "Tony Duong"
 category: "tech"
+categories: ["tech", "work"]
 tags: ["rails", "ruby", "concurrency", "mysql", "innodb", "rspec", "spacely"]
 ---
 

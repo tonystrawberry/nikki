@@ -4,6 +4,7 @@ date: "2026-04-13"
 excerpt: "Live stream walkthrough of DDIA Chapter 7: why transactions matter, ACID, isolation levels and naming pitfalls, Postgres MVCC and vacuum, and MySQL/InnoDB undo logs."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "transactions", "acid", "isolation", "postgresql", "mysql", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=AiYvR8yBMaU"
 collection: "ddia"

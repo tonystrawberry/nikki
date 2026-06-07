@@ -4,6 +4,7 @@ date: "2026-03-14"
 excerpt: "Résumé du chapitre de Kleppmann sur les formats d'encodage des données, l'évolution des schémas et la compatibilité dans les systèmes data-intensive."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "encoding", "schema", "evolution"]
 coverImage: ""
 collection: "ddia"

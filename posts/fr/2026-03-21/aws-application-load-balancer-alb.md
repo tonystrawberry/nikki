@@ -4,6 +4,7 @@ date: "2026-03-21"
 excerpt: "Load balancer HTTP layer 7 : target groups, règles de routage (path, host, query string, headers), headers X-Forwarded-*, support EC2, ECS, Lambda, IPs privées."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "alb", "load-balancer", "ec2", "ecs", "lambda", "microservices", "zcloudops", "cloud"]
 ---
 

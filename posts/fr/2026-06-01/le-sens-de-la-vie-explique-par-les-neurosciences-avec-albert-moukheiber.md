@@ -4,6 +4,7 @@ date: "2026-06-01"
 excerpt: "Notes d'une conversation des Lueurs avec le neuroscientifique Albert Moukheiber : il n'y a pas de sens caché de la vie à trouver, nous l'inventons, et la plupart des promesses du développement personnel ne survivent pas au contact du fonctionnement réel du cerveau."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "reflections"]
 tags: ["neuroscience", "psychology", "philosophy", "meaning"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=hgiqiVnYXjc"

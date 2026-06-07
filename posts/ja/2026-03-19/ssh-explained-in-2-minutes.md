@@ -4,6 +4,7 @@ date: "2026-03-19"
 excerpt: "SSH（Secure Shell）の短い動画：セキュアリモートアクセスプロトコル、暗号化チャネル、クライアント/サーバーモデル、パスワード vs キー認証。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ssh", "devops", "security", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=P0Fk-K2eZF8"
 ---

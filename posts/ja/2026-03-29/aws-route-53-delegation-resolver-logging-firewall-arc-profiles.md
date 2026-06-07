@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "CloudOps 試験メモ：レジストラと DNS の分離、Route 53 への NS 委任、S3 静的ウェブのエイリアス、Resolver エンドポイントによるハイブリッド DNS、クロスアカウントのプライベートホストゾーン、クエリログ、Resolver DNS ファイアウォール、ARC、Route 53 プロファイル、コスト整理。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "route-53", "dns", "resolver", "s3", "hybrid-dns", "dns-firewall", "arc", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 17

@@ -4,6 +4,7 @@ date: "2026-03-21"
 excerpt: "垂直 vs 水平スケーリングと高可用性の入門解説。コールセンターの比喩と AWS 例（EC2、RDS Multi AZ、Auto Scaling）。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "scalability", "high-availability", "ec2", "rds", "zcloudops", "cloud"]
 ---
 

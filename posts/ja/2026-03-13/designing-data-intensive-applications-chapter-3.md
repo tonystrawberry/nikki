@@ -4,6 +4,7 @@ date: "2026-03-13"
 excerpt: "DDIA第3章のライブ配信解説 — 行ストレージと列ストレージ、B-treeとLSM tree、そしてOLTPデータベースとOLAPデータベースが異なる設計になっている理由を図解で説明します。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["databases", "ddia", "storage-engines", "b-trees", "lsm-trees"]
 youtubeUrl: "https://www.youtube.com/watch?v=LHWgQn8F7tU"
 collection: "ddia"

@@ -4,6 +4,7 @@ date: "2026-03-23"
 excerpt: "Git の基礎をゼロから解説する動画：コミット=スナップショット、DAG構造、ブランチ=ポインタ、HEAD、detached HEAD、3つの領域（working/staging/repo）、取り消し系コマンド。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["git", "version-control", "video", "fundamentals"]
 youtubeUrl: "https://www.youtube.com/watch?v=Ala6PHlYjmw"
 ---

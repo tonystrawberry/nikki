@@ -4,6 +4,7 @@ date: "2026-03-19"
 excerpt: "Vidéo sur DDIA Chapitre 6 (partitionnement/sharding) : explications et schémas sur key-range vs hash, index secondaires, rebalancing et routage des requêtes."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "partitioning", "sharding", "distributed-systems", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=iR07_nnzvQg"
 collection: "ddia"

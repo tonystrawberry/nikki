@@ -4,6 +4,7 @@ date: "2026-04-13"
 excerpt: "DDIA第8章の進行中メモ。部分障害、信頼できないネットワーク、時間に関する前提、分散システム向け防御的パターンを整理。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "distributed-systems", "reliability", "fault-tolerance", "reading"]
 collection: "ddia"
 collectionOrder: 8

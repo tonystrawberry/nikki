@@ -4,6 +4,7 @@ date: "2026-05-10"
 excerpt: "Shirimono の Rails 8 バックエンドを Render から Hetzner CPX21 1 台に Kamal で移行。月額が約 70 ドルから約 9 ドルへ。構成、コスト計算、そしてカットオーバー時間の大半を消費した 4 つの落とし穴。"
 author: "Tony Duong"
 category: "tech"
+categories: ["tech", "work"]
 tags: ["devops", "rails", "kamal", "hetzner", "render", "shirimono"]
 ---
 

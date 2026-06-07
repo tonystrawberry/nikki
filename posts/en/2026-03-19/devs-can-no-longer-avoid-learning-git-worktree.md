@@ -4,6 +4,7 @@ date: "2026-03-19"
 excerpt: "Video on why git worktree matters: multiple working directories from one repo for context switching, hotfixes, PR review, and especially running agentic AI in a separate worktree so you can keep working."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["git", "worktree", "workflow", "ai", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=S8_AsOuAwLo"
 ---

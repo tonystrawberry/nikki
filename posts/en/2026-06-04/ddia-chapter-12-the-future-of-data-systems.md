@@ -4,6 +4,7 @@ date: "2026-06-04"
 excerpt: "Notes on the final DDIA chapter — integrating batch and stream processing, unbundling databases, end-to-end correctness, and the ethics of data-intensive systems."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["distributed-systems", "ddia", "data-integration", "ethics"]
 collection: "ddia"
 collectionOrder: 12

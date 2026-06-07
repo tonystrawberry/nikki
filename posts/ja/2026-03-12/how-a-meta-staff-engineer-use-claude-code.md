@@ -4,6 +4,7 @@ date: "2026-03-12"
 excerpt: "John Kimが手動コーディングからClaude Codeによるエージェント型オーケストレーションへの移行について、セットアップ、パワーコマンド、高度なワークフローを網羅した包括的ガイドを紹介。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["claude-code", "ai", "productivity", "engineering", "workflow"]
 youtubeUrl: "https://www.youtube.com/watch?v=mZzhfPle9QU"
 ---

@@ -4,6 +4,7 @@ date: "2026-03-21"
 excerpt: "Layer 7 HTTP load balancer: target groups, routing rules (path, host, query string, headers), X-Forwarded-* headers, health checks, metrics, and weighted target groups."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "alb", "load-balancer", "ec2", "ecs", "lambda", "microservices", "zcloudops", "cloud"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 5

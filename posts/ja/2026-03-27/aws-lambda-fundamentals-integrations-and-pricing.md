@@ -4,6 +4,7 @@ date: "2026-03-27"
 excerpt: "AWS Lambdaの中核概念、料金モデル、EventBridgeやS3などの代表的な統合を実践的にまとめた要約。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "lambda", "serverless", "eventbridge", "s3", "cloudwatch", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 4

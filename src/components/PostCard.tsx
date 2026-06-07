@@ -31,7 +31,6 @@ const untranslatedMessages: Record<Locale, string> = {
 };
 
 export function PostCard({ post, featured = false, locale, linkLocale, dict, showUntranslatedNotice = false, showUntranslatedBorder = true }: PostCardProps) {
-  const category = CATEGORIES[post.category];
   const showBorder = showUntranslatedNotice && showUntranslatedBorder;
 
   return (
@@ -48,10 +47,12 @@ export function PostCard({ post, featured = false, locale, linkLocale, dict, sho
             />
             <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
             <div className="absolute top-2 left-2 sm:top-4 sm:left-4 flex flex-wrap gap-1 sm:gap-2">
-              <Badge className="bg-background/80 backdrop-blur-sm text-foreground hover:bg-background/90 border-0 text-xs sm:text-sm">
-                <span className="mr-1 sm:mr-1.5">{category.icon}</span>
-                {dict.categories[post.category as keyof typeof dict.categories]}
-              </Badge>
+              {post.categories.map((cat) => (
+                <Badge key={cat} className="bg-background/80 backdrop-blur-sm text-foreground hover:bg-background/90 border-0 text-xs sm:text-sm">
+                  <span className="mr-1 sm:mr-1.5">{CATEGORIES[cat].icon}</span>
+                  {dict.categories[cat as keyof typeof dict.categories]}
+                </Badge>
+              ))}
               {showUntranslatedNotice && (
                 <Badge className="bg-amber-500/80 backdrop-blur-sm text-white hover:bg-amber-500/90 border-0 text-xs sm:text-sm">
                   🌐 {locale === 'fr' ? 'Original' : locale === 'ja' ? '原文' : 'Original'}
@@ -63,10 +64,12 @@ export function PostCard({ post, featured = false, locale, linkLocale, dict, sho
         <CardContent className="px-3 sm:px-6 pt-0 pb-4 sm:pb-6">
           {!post.coverImage && (
             <div className="flex flex-wrap gap-1 sm:gap-2 mb-2 sm:mb-3">
-              <Badge className="bg-secondary/80 text-secondary-foreground hover:bg-secondary border-0 text-xs sm:text-sm">
-                <span className="mr-1 sm:mr-1.5">{category.icon}</span>
-                {dict.categories[post.category as keyof typeof dict.categories]}
-              </Badge>
+              {post.categories.map((cat) => (
+                <Badge key={cat} className="bg-secondary/80 text-secondary-foreground hover:bg-secondary border-0 text-xs sm:text-sm">
+                  <span className="mr-1 sm:mr-1.5">{CATEGORIES[cat].icon}</span>
+                  {dict.categories[cat as keyof typeof dict.categories]}
+                </Badge>
+              ))}
               {showUntranslatedNotice && (
                 <Badge className="bg-amber-500/80 text-white hover:bg-amber-500/90 border-0 text-xs sm:text-sm">
                   🌐 {locale === 'fr' ? 'Original' : locale === 'ja' ? '原文' : 'Original'}

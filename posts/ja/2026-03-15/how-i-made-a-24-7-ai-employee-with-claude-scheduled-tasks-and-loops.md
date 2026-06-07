@@ -4,6 +4,7 @@ date: "2026-03-15"
 excerpt: "Claudeを24/7で動かす二つの方法のメモ：Claude Codeの/loop（間隔ベース・技術者向け）とクラウドデスクトップのスケジュールタスク（ノーコード・セット＆フォゲット）。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ai", "claude", "agents", "automation", "scheduled-tasks", "loops"]
 youtubeUrl: "https://www.youtube.com/watch?v=Mf63K5LFivI"
 ---

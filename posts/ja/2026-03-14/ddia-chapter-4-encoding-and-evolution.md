@@ -4,6 +4,7 @@ date: "2026-03-14"
 excerpt: "Kleppmannのデータエンコーディング形式、スキーマ進化、データ集約型システムにおける互換性に関する章の要約。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "encoding", "schema", "evolution"]
 coverImage: ""
 collection: "ddia"

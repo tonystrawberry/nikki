@@ -4,6 +4,7 @@ date: "2026-03-13"
 excerpt: "Notes on Anthropic's talk about agent skills — organized folders that package composable procedural knowledge, complementing MCP servers in the emerging general agent architecture."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ai", "claude", "agents", "skills", "mcp"]
 youtubeUrl: "https://www.youtube.com/watch?v=CEvIs9y1uog"
 ---

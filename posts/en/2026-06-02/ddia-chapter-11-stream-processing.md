@@ -4,6 +4,7 @@ date: "2026-06-02"
 excerpt: "Notes on stream processing in Designing Data-Intensive Applications — event streams, message brokers, CDC, event sourcing, time semantics, stream joins, and fault tolerance."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["distributed-systems", "ddia", "stream-processing", "kafka", "event-sourcing"]
 collection: "ddia"
 collectionOrder: 11

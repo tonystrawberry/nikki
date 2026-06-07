@@ -4,6 +4,7 @@ date: "2026-05-26"
 excerpt: "Tokyo, février 2018. Une sharehouse à Kami-Itabashi, une boîte de sept personnes appelée Seido, et une page blanche à remplir en construisant tout depuis zéro — jusqu'à ce que le doute s'installe."
 author: "Tony Duong"
 category: "note"
+categories: ["work", "reflections"]
 tags: ["career-story", "career", "personal", "japan", "tokyo", "seido"]
 coverImage: ""
 collection: "career-story"

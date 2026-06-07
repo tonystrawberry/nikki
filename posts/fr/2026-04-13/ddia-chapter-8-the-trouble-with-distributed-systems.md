@@ -4,6 +4,7 @@ date: "2026-04-13"
 excerpt: "Notes en cours sur le chapitre 8 de DDIA : défaillances partielles, réseaux non fiables, hypothèses temporelles et patterns défensifs pour les systèmes distribués."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "distributed-systems", "reliability", "fault-tolerance", "reading"]
 collection: "ddia"
 collectionOrder: 8

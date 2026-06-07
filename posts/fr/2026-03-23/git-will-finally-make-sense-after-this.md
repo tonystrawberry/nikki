@@ -4,6 +4,7 @@ date: "2026-03-23"
 excerpt: "Vidéo expliquant les fondamentaux de Git depuis les bases : commits comme snapshots, structure DAG, branches comme pointeurs, HEAD, detached HEAD, trois zones (working/staging/repo), et commandes d'annulation."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["git", "version-control", "video", "fundamentals"]
 youtubeUrl: "https://www.youtube.com/watch?v=Ala6PHlYjmw"
 ---

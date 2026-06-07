@@ -4,6 +4,7 @@ date: "2026-06-05"
 excerpt: "Hello InterviewのTicketmaster設計メモ — 二重予約の防止、2フェーズのreserve/confirm、Redis TTLロック、Elasticsearch + CDC、急増時の仮想待機キュー、パスごとのCAPトレードオフ。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["system-design", "ticketmaster", "interview", "consistency", "elasticsearch", "redis"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=fhdPyoO6aXI"

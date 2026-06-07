@@ -4,6 +4,7 @@ date: "2026-03-13"
 excerpt: "Livestream walkthrough of DDIA Chapter 3 — visual explanations of row vs column storage, B-trees vs LSM trees, and why OLTP and OLAP databases are engineered differently."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["databases", "ddia", "storage-engines", "b-trees", "lsm-trees"]
 youtubeUrl: "https://www.youtube.com/watch?v=LHWgQn8F7tU"
 collection: "ddia"

@@ -4,6 +4,7 @@ date: "2026-03-28"
 excerpt: "試験向けメモ：CloudFront を CDN とみなすこと、オリジン（S3 OAC、VPC、カスタム HTTP）、キャッシュと無効化、Origin Shield、地理制限、ログとレポート、ALB スティッキーセッション、Global Accelerator と CloudFront の比較。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "cloudfront", "cdn", "global-accelerator", "s3", "alb", "caching", "edge", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 7

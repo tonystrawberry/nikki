@@ -4,6 +4,7 @@ date: "2026-06-05"
 excerpt: "Notes from Hello Interview on designing Ticketmaster — no double booking, two-phase reserve/confirm, Redis TTL locks, Elasticsearch + CDC, virtual waiting queue for surges, and CAP trade-offs per path."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["system-design", "ticketmaster", "interview", "consistency", "elasticsearch", "redis"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=fhdPyoO6aXI"

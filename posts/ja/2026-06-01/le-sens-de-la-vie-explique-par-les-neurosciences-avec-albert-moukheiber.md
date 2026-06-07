@@ -4,6 +4,7 @@ date: "2026-06-01"
 excerpt: "神経科学者アルベール・ムケベールとのポッドキャスト「Les Lueurs」での対話メモ。見つけ出すべき隠された人生の意味などというものは存在せず、意味は私たち自身が作り出すものであり、それをめぐる自己啓発の約束のほとんどは、脳が実際にどう働くかという現実の前では通用しない。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "reflections"]
 tags: ["neuroscience", "psychology", "philosophy", "meaning"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=hgiqiVnYXjc"

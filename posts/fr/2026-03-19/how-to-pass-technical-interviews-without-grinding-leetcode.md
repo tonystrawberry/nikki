@@ -4,6 +4,7 @@ date: "2026-03-19"
 excerpt: "Vidéo sur une approche plus maline de la prep technique : se concentrer sur 15–20 patterns clés au lieu de centaines de problèmes LeetCode ; l'intervenant a été recruté chez Microsoft avec cette méthode."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "work"]
 tags: ["career", "interviews", "leetcode", "algorithms", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=yOKMIEOCkRU"
 ---

@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "CloudOps 試験メモ：Route 53 のルーティングポリシー（simple、weighted、latency、failover、geolocation、geoproximity、multi-value、IP ベース）、ヘルスチェックと計算チェック、プライベートターゲット向け CloudWatch、Traffic Flow ポリシー。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "route-53", "dns", "health-check", "failover", "latency-routing", "geolocation", "traffic-flow", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 16

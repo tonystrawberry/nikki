@@ -4,12 +4,15 @@ date: "2026-05-31"
 excerpt: "2つのアプリケーション、4つの基本概念、Rails ActionCableとNext.jsをWebSocketで接続する方法。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["rails", "nextjs", "actioncable", "websockets", "architecture"]
 coverImage: ""
 collection: "building-a-chat"
 collectionOrder: 1
 collectionTitle: "リアルタイムチャットを作る"
 ---
+
+> 💬 **これは、このサイトの右下に表示されているライブチャットそのものの実装です。** このシリーズでは、それをどう作ったかを順を追って解説します。チャットの吹き出しを開いて試してから、その仕組みを読み進めてみてください。
 
 このチュートリアルでは、Next.jsブログ向けに構築されたリアルタイムチャット機能を解説します。訪問者はチャットウィジェットを開いてサイト管理者と会話します。管理者はダッシュボードですべての会話を確認できます。メッセージは双方向にリアルタイムで届きます。
 

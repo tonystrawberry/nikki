@@ -4,12 +4,15 @@ date: "2026-05-31"
 excerpt: "Build Docker multi-stage, déploiement Kamal 2 sur Hetzner, gestion des secrets, CI/CD GitHub Actions, et configuration WebSocket en production."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["kamal", "docker", "hetzner", "deployment", "github-actions"]
 coverImage: ""
 collection: "building-a-chat"
 collectionOrder: 5
 collectionTitle: "Construire un Chat en Temps Réel"
 ---
+
+> 💬 **C'est le module de chat en direct que tu vois en bas à droite de ce site.** Cette série détaille précisément comment je l'ai construit — clique sur la bulle de chat pour l'essayer, puis lis la suite pour découvrir comment ça fonctionne en coulisses.
 
 Le serveur de chat fonctionne en local. Maintenant il doit fonctionner sur Internet. Ce chapitre couvre le build Docker, le déploiement Kamal 2 sur un VPS Hetzner, la gestion des secrets, le CI/CD, et la configuration CORS/WebSocket en production.
 

@@ -4,6 +4,7 @@ date: "2026-05-23"
 excerpt: "Une visite guidée et accessible du traitement par lots dans Designing Data-Intensive Applications — les pipes Unix, MapReduce et l'essor d'Apache Spark."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["distributed-systems", "ddia", "batch-processing", "spark", "mapreduce"]
 collection: "ddia"
 collectionOrder: 10

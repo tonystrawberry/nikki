@@ -4,6 +4,7 @@ date: "2026-03-19"
 excerpt: "Vidéo sur l’importance de git worktree : plusieurs répertoires de travail par repo pour le context switching, hotfixes, relecture de PR, et surtout exécuter une IA agentic dans un worktree séparé."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["git", "worktree", "workflow", "ai", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=S8_AsOuAwLo"
 ---

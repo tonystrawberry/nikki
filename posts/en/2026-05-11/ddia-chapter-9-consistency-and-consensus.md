@@ -4,6 +4,7 @@ date: "2026-05-11"
 excerpt: "An easy-to-understand walkthrough of the hardest chapter in Designing Data-Intensive Applications — how distributed systems agree on what's true."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["distributed-systems", "ddia", "consistency", "consensus"]
 collection: "ddia"
 collectionOrder: 9

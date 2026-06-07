@@ -184,8 +184,8 @@ export function PostList({ posts, allPostsForChart, postCanonicalLocales, locale
     // Date filter takes priority - show all posts on that date
     filteredPosts = postsOnSelectedDate;
   } else if (activeCategory !== "all") {
-    // Category filter - show posts in that category
-    filteredPosts = posts.filter((post) => post.category === activeCategory);
+    // Category filter - show posts that include this category (posts may have several)
+    filteredPosts = posts.filter((post) => post.categories.includes(activeCategory));
   }
 
   /**

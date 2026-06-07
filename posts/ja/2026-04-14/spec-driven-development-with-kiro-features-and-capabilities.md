@@ -4,6 +4,7 @@ date: "2026-04-14"
 excerpt: "初めて受講したAWS Skill Builderコースのメモ。Kiroのspec-drivenワークフロー、主要機能、実務での使いどころを整理。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "skillbuilder", "kiro", "spec-driven-development", "ai", "engineering"]
 ---
 

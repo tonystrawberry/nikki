@@ -4,6 +4,7 @@ date: "2026-06-02"
 excerpt: "Hello Interviewの分散トランザクションメモ — 単一DBのACIDがサービス間で崩れるとき、2PCがスケールでブロックする理由、Saga（コレオグラフィ vs オーケストレーション）と補償・トランザクションアウトボックスの本番運用。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["system-design", "distributed-systems", "saga", "two-phase-commit", "microservices", "interview"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=DOFflggE_0Q"

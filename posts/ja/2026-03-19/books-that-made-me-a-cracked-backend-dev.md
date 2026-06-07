@@ -4,6 +4,7 @@ date: "2026-03-19"
 excerpt: "バックエンドスキルアップに役立つ7冊の紹介：Clean Code、The Pragmatic Programmer、DDIA、System Design Interview、Database Internals、Release It、Fundamentals of Software Architecture。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech", "work"]
 tags: ["books", "backend", "career", "software-engineering", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=ReNqPp3EmYk"
 ---

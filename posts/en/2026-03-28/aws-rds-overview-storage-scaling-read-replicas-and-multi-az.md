@@ -4,6 +4,7 @@ date: "2026-03-28"
 excerpt: "Managed SQL and caching for CloudOps: RDS/Aurora (including Serverless and Global Database), RDS Proxy, and ElastiCache Redis/Memcached scaling, patterns, and metrics."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "rds", "aurora", "elasticache", "redis", "rds-proxy", "mysql", "postgresql", "sql", "cloudwatch", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 11

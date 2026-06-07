@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "Captures de l’UI d’évaluation Gen AI sur Vertex AI : vue jeu de données avec taux de réussite General Quality, puis détail par critère avec motifs de réussite/échec sur une tâche recette → liste de courses."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["gcp", "vertex-ai", "gemini", "evaluation", "llm", "prompts"]
 coverImage: "/images/blog/2026-03-29/vertex-ai-gen-ai-evaluation-console.png"
 ---

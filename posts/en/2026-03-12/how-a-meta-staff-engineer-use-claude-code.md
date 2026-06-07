@@ -4,6 +4,7 @@ date: "2026-03-12"
 excerpt: "John Kim's comprehensive guide to moving from manual coding to agentic orchestration with Claude Code — covering setup, power commands, and advanced workflows."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["claude-code", "ai", "productivity", "engineering", "workflow"]
 youtubeUrl: "https://www.youtube.com/watch?v=mZzhfPle9QU"
 ---

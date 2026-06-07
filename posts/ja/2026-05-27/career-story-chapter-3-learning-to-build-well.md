@@ -4,6 +4,7 @@ date: "2026-05-27"
 excerpt: "Overflowでの2年半 — 東京のスタートアップ、Slackのcronジョブ、大谷さんというメンター、これまで持っていなかったAWSの語彙、いくつかのStripeを使ったサイドプロジェクト、そして最終的に私をモンスターラボへと導いた落ち着かなさについて。"
 author: "Tony Duong"
 category: "note"
+categories: ["work", "reflections"]
 tags: ["career-story", "career", "personal", "japan", "tokyo", "overflow", "aws"]
 coverImage: ""
 collection: "career-story"

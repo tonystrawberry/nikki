@@ -4,6 +4,7 @@ date: "2026-06-02"
 excerpt: "Designing Data-Intensive Applicationsのストリーム処理メモ — イベントストリーム、メッセージブローカー、CDC、イベントソーシング、時間セマンティクス、ストリーム結合、フォールトトレランス。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["distributed-systems", "ddia", "stream-processing", "kafka", "event-sourcing"]
 collection: "ddia"
 collectionOrder: 11

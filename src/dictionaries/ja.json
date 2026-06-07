@@ -87,7 +87,8 @@
     "note": "ノート",
     "work": "仕事",
     "tech": "テック",
-    "daily": "日常"
+    "daily": "日常",
+    "reflections": "省察"
   },
   "filter": {
     "showingPostsFrom": "表示中：",

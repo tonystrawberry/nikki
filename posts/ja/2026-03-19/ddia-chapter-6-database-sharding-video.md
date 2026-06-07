@@ -4,6 +4,7 @@ date: "2026-03-19"
 excerpt: "DDIA 第6章（パーティショニング/シャーディング）の動画解説：key-range vs hash、セカンダリインデックス、リバランス、リクエストルーティングの図解。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "partitioning", "sharding", "distributed-systems", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=iR07_nnzvQg"
 collection: "ddia"

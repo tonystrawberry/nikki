@@ -4,12 +4,15 @@ date: "2026-05-31"
 excerpt: "Client ActionCable en TypeScript, unions discriminées pour les données des channels, cycle de vie WebSocket en React, et le piège useRef qui empêche les reconnexions infinies."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["typescript", "react", "actioncable", "nextjs", "websockets"]
 coverImage: ""
 collection: "building-a-chat"
 collectionOrder: 3
 collectionTitle: "Construire un Chat en Temps Réel"
 ---
+
+> 💬 **C'est le module de chat en direct que tu vois en bas à droite de ce site.** Cette série détaille précisément comment je l'ai construit — clique sur la bulle de chat pour l'essayer, puis lis la suite pour découvrir comment ça fonctionne en coulisses.
 
 Le serveur Rails du chapitre 2 broadcast du JSON via WebSockets. Ce chapitre couvre la couche TypeScript qui le consomme : le wrapper du client ActionCable, le système de types pour les données de channel, le cycle de vie du ChatWidget, et un pattern `useRef` qui a pris un nombre embarrassant d'heures à résoudre.
 

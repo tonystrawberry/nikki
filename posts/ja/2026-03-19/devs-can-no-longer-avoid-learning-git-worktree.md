@@ -4,6 +4,7 @@ date: "2026-03-19"
 excerpt: "git worktree の重要性：1リポジトリで複数のワーキングディレクトリ、コンテキスト切り替え、ホットフィックス、PRレビュー、そしてAIエージェントを別worktreeで動かす。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["git", "worktree", "workflow", "ai", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=S8_AsOuAwLo"
 ---

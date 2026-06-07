@@ -4,12 +4,15 @@ date: "2026-05-31"
 excerpt: "管理者認証、1つのWebSocketで複数の会話を管理する方法、VAPIDキーからService Workerまでの完全なWeb Pushパイプライン。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["rails", "web-push", "vapid", "service-worker", "react"]
 coverImage: ""
 collection: "building-a-chat"
 collectionOrder: 4
 collectionTitle: "リアルタイムチャットを作る"
 ---
+
+> 💬 **これは、このサイトの右下に表示されているライブチャットそのものの実装です。** このシリーズでは、それをどう作ったかを順を追って解説します。チャットの吹き出しを開いて試してから、その仕組みを読み進めてみてください。
 
 第2章と第3章の訪問者側チャットは物語の半分です。この章ではもう半分を扱います：管理者がどう認証するか、`AdminChat.tsx`が1つのWebSocketで多数の会話をどう多重化するか、そしてWeb Push通知がブラウザタブを閉じた後も管理者にどう届くかです。
 

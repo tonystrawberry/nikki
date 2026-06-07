@@ -4,6 +4,7 @@ date: "2026-03-13"
 excerpt: "Notes sur la presentation d'Anthropic au sujet des agent skills -- des dossiers organises qui encapsulent des connaissances procedurales composables, complementant les serveurs MCP dans l'architecture emergente des agents generaux."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ai", "claude", "agents", "skills", "mcp"]
 youtubeUrl: "https://www.youtube.com/watch?v=CEvIs9y1uog"
 ---

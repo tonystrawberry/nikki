@@ -4,6 +4,7 @@ date: "2026-03-28"
 excerpt: "Notes CloudOps sur CloudWatch, EventBridge (patterns API CloudTrail, Pipes, DLQ), Service Quotas, CloudTrail (intégrité des digests, trails org, latence EventBridge) et AWS Config (règles, agrégateurs, remédiation SSM, vs CloudWatch et CloudTrail)."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "cloudwatch", "eventbridge", "cloudtrail", "aws-config", "service-quotas", "monitoring", "logs", "alarms", "synthetics", "containers", "ec2", "observability", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 9

@@ -4,6 +4,7 @@ date: "2026-03-13"
 excerpt: "Parcours en livestream du chapitre 3 de DDIA -- explications visuelles du stockage en lignes vs en colonnes, B-trees vs LSM trees, et pourquoi les bases de donnees OLTP et OLAP sont concues differemment."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["databases", "ddia", "storage-engines", "b-trees", "lsm-trees"]
 youtubeUrl: "https://www.youtube.com/watch?v=LHWgQn8F7tU"
 collection: "ddia"

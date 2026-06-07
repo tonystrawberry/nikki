@@ -4,6 +4,7 @@ date: "2026-03-15"
 excerpt: "Résumé du chapitre de Kleppmann sur la réplication : pourquoi répliquer, réplication single-leader, multi-leader et leaderless, et les compromis de cohérence."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "replication", "distributed-systems", "consistency"]
 collection: "ddia"
 collectionOrder: 5

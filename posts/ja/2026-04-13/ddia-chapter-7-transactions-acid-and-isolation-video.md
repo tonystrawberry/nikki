@@ -4,6 +4,7 @@ date: "2026-04-13"
 excerpt: "DDIA第7章のライブ解説。なぜトランザクションが重要か、ACID、分離レベルの名前と落とし穴、PostgresのMVCCとvacuum、MySQL/InnoDBのundo logを整理。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "transactions", "acid", "isolation", "postgresql", "mysql", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=AiYvR8yBMaU"
 collection: "ddia"

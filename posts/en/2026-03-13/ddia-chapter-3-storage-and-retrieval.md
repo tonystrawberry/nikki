@@ -4,6 +4,7 @@ date: "2026-03-13"
 excerpt: "How databases store and retrieve data — from log-structured engines (LSM-trees) to page-oriented engines (B-trees), plus indexing strategies, OLTP vs OLAP, and column-oriented storage."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["databases", "ddia", "architecture"]
 collection: "ddia"
 collectionOrder: 3

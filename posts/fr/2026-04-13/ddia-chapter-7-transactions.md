@@ -4,6 +4,7 @@ date: "2026-04-13"
 excerpt: "Résumé du chapitre de Kleppmann sur les transactions : ACID, anomalies d'isolation, snapshot isolation, two-phase locking et serializable snapshot isolation."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "transactions", "acid", "isolation", "distributed-systems", "mvcc"]
 collection: "ddia"
 collectionOrder: 7

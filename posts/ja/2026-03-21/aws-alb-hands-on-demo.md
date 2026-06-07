@@ -4,6 +4,7 @@ date: "2026-03-21"
 excerpt: "手順通り：EC2 インスタンス起動、ALB とターゲットグループ作成、ロードバランシングとヘルスチェックの確認（インスタンス stop/start）。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "alb", "load-balancer", "ec2", "target-group", "health-check", "zcloudops", "cloud"]
 ---
 

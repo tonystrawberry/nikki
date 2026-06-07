@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "Notes CloudOps sur séparer registrar et DNS, déléguer les NS vers Route 53, alias site web S3, DNS hybride avec endpoints Resolver, zones hébergées privées cross-account, journalisation des requêtes, pare-feu DNS Resolver, ARC, profils Route 53 et nettoyage des coûts."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "route-53", "dns", "resolver", "s3", "hybrid-dns", "dns-firewall", "arc", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 17

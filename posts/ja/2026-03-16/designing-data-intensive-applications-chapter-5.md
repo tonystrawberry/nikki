@@ -4,6 +4,7 @@ date: "2026-03-16"
 excerpt: "DDIA第5章（レプリケーション）のライブストリームメモ：シングルリーダー構成、プライマリとリードレプリカ、読み取りスケール、AZでの高可用性。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "replication", "distributed-systems", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=lYCFreB8w_w"
 collection: "ddia"

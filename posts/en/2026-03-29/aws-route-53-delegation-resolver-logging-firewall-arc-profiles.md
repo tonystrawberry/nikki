@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "CloudOps exam notes on separating registrar from DNS, delegating NS to Route 53, S3 static website aliases, hybrid DNS with Resolver endpoints, cross-account private hosted zones, query logging, Resolver DNS Firewall, ARC, Route 53 Profiles, and cost cleanup."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "route-53", "dns", "resolver", "s3", "hybrid-dns", "dns-firewall", "arc", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 20

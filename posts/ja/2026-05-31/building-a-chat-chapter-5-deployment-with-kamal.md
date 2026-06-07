@@ -4,12 +4,15 @@ date: "2026-05-31"
 excerpt: "Dockerマルチステージビルド、Kamal 2でHetznerにデプロイ、シークレット管理、GitHub Actions CI/CD、本番WebSocket設定。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["kamal", "docker", "hetzner", "deployment", "github-actions"]
 coverImage: ""
 collection: "building-a-chat"
 collectionOrder: 5
 collectionTitle: "リアルタイムチャットを作る"
 ---
+
+> 💬 **これは、このサイトの右下に表示されているライブチャットそのものの実装です。** このシリーズでは、それをどう作ったかを順を追って解説します。チャットの吹き出しを開いて試してから、その仕組みを読み進めてみてください。
 
 チャットサーバーはlocalhostで動作しています。次はインターネット上で動かす必要があります。この章ではDockerビルド、Kamal 2によるHetzner VPSへのデプロイ、シークレット管理、CI/CD、そして本番環境のCORS/WebSocket設定を扱います。
 

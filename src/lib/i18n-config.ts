@@ -290,6 +290,7 @@ export interface Dictionary {
     work: string;         // Category name
     tech: string;         // Category name
     daily: string;        // Category name
+    reflections: string;  // Category name
   };
 
   /**

@@ -4,6 +4,7 @@ date: "2026-04-14"
 excerpt: "Résumé pratique du chapitre 8 de DDIA couvrant les défaillances partielles, les réseaux non fiables, les hypothèses temporelles et les patterns de fiabilité en production."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "distributed-systems", "reliability", "fault-tolerance", "timeouts", "consensus"]
 collection: "ddia"
 collectionOrder: 8

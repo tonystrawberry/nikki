@@ -4,6 +4,7 @@ date: "2026-03-28"
 excerpt: "Notes orientées examen sur CloudFront en CDN, origines (S3 OAC, VPC, HTTP personnalisé), cache et invalidation, Origin Shield, restrictions géo, journaux et rapports, sessions persistantes ALB, et Global Accelerator vs CloudFront."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "cloudfront", "cdn", "global-accelerator", "s3", "alb", "caching", "edge", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 7

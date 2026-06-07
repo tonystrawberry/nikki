@@ -4,6 +4,7 @@ date: "2026-04-13"
 excerpt: "Parcours en direct du chapitre 7 de DDIA : pourquoi les transactions comptent, ACID, niveaux d'isolation et pièges de nommage, MVCC et vacuum dans Postgres, et undo logs dans MySQL/InnoDB."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "transactions", "acid", "isolation", "postgresql", "mysql", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=AiYvR8yBMaU"
 collection: "ddia"

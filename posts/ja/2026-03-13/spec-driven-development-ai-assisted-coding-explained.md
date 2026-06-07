@@ -4,6 +4,7 @@ date: "2026-03-13"
 excerpt: "仕様駆動開発に関するノート — コードの前に仕様を書くことで曖昧さを減らし、vibe codingと比較してAIアシストコーディングを改善する方法。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ai", "software-engineering", "spec-driven-development", "vibe-coding"]
 youtubeUrl: "https://www.youtube.com/watch?v=mViFYTwWvcM"
 ---

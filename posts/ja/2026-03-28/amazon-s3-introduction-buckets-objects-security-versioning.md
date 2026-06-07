@@ -4,6 +4,7 @@ date: "2026-03-28"
 excerpt: "セクション 10 の S3 メモから応用まで：MFA 削除、アクセスログ、Object Lock と Glacier Vault Lock、VPC エンドポイント、Access Analyzer、レプリケーション、ライフサイクル、イベント、性能、バッチ、インベントリ、Athena。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "s3", "storage", "iam", "security", "versioning", "replication", "lifecycle", "object-lock", "vpc", "athena", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 6

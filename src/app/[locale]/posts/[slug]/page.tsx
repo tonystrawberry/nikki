@@ -68,7 +68,6 @@ export default async function PostPage({ params }: PageProps) {
 
   const { post, actualLocale } = result;
   const isShowingFallback = actualLocale !== locale;
-  const category = CATEGORIES[post.category];
   const availableLocales = getPostAvailableLocales(slug);
   const collectionInfo = post.collection
     ? getCollectionInfo(post.collection, locale)
@@ -129,10 +128,12 @@ export default async function PostPage({ params }: PageProps) {
       <header className="mb-8 sm:mb-12 opacity-0 animate-fade-in-up animation-delay-100">
         {/* Category + Collection */}
         <div className="flex flex-wrap items-center gap-2 mb-3 sm:mb-4">
-          <Badge className="bg-secondary/80 text-secondary-foreground hover:bg-secondary border-0 text-xs sm:text-sm">
-            <span className="mr-1.5">{category.icon}</span>
-            {dict.categories[post.category as keyof typeof dict.categories]}
-          </Badge>
+          {post.categories.map((cat) => (
+            <Badge key={cat} className="bg-secondary/80 text-secondary-foreground hover:bg-secondary border-0 text-xs sm:text-sm">
+              <span className="mr-1.5">{CATEGORIES[cat].icon}</span>
+              {dict.categories[cat as keyof typeof dict.categories]}
+            </Badge>
+          ))}
           {collectionInfo && (
             <Link
               href={`/${locale}/collection/${post.collection}`}

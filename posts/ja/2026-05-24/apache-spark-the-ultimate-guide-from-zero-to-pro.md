@@ -4,6 +4,7 @@ date: "2026-05-24"
 excerpt: "Ansh Lambaによる6時間のApache Sparkディープダイブからのメモ — 分散コンピューティングの基礎、アーキテクチャ、DataFrame、ジョイン、メモリ管理、キャッシング、パーティションプルーニング、AQEまで。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["spark", "big-data", "data-engineering", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=FNJze2Ea780"
 ---

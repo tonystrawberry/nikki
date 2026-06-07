@@ -4,6 +4,7 @@ date: "2026-06-07"
 excerpt: "Theo, a former jeweller who now owns 9.6 kg of possessions and lives by volunteering in gardens, reflects on minimalism, integrity, hope, and joy."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "reflections"]
 tags: ["minimalism", "philosophy", "reflection", "simplicity"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=C1sAsoJVN1U"

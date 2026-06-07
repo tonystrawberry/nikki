@@ -4,6 +4,7 @@ date: "2026-04-13"
 excerpt: "In-progress notes on DDIA Chapter 8: partial failures, unreliable networks, time assumptions, and defensive patterns for distributed systems."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "distributed-systems", "reliability", "fault-tolerance", "reading"]
 collection: "ddia"
 collectionOrder: 8

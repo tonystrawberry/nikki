@@ -4,6 +4,7 @@ date: "2026-05-23"
 excerpt: "A friendly walkthrough of batch processing in Designing Data-Intensive Applications — Unix pipes, MapReduce, and the rise of Apache Spark."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["distributed-systems", "ddia", "batch-processing", "spark", "mapreduce"]
 collection: "ddia"
 collectionOrder: 10

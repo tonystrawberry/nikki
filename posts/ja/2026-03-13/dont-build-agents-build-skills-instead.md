@@ -4,6 +4,7 @@ date: "2026-03-13"
 excerpt: "Anthropicのagent skillsに関する講演メモ — MCPサーバーを補完し、汎用agentアーキテクチャにおいて構成可能な手続き的知識をパッケージ化する整理されたフォルダ。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ai", "claude", "agents", "skills", "mcp"]
 youtubeUrl: "https://www.youtube.com/watch?v=CEvIs9y1uog"
 ---

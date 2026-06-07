@@ -4,12 +4,15 @@ date: "2026-05-31"
 excerpt: "コネクション認証、ビジターとアドミンのチャンネル、データモデル、Solid CableがRedisの代わりにSQLiteを使う仕組み。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["rails", "actioncable", "solid-cable", "sqlite", "websockets"]
 coverImage: ""
 collection: "building-a-chat"
 collectionOrder: 2
 collectionTitle: "リアルタイムチャットを作る"
 ---
+
+> 💬 **これは、このサイトの右下に表示されているライブチャットそのものの実装です。** このシリーズでは、それをどう作ったかを順を追って解説します。チャットの吹き出しを開いて試してから、その仕組みを読み進めてみてください。
 
 この章では、RailsのWebSocketサーバーを解説します。接続がどのように認証されるか、各チャンネルの内部で何が起こるか、そしてデータがSolid Cableを通じてどう流れるかを見ていきます。第1章のリポジトリ構成を理解していることが前提です。
 

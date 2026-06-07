@@ -4,6 +4,7 @@ date: "2026-03-19"
 excerpt: "Video on a smarter approach to technical interview prep: focus on 15–20 core patterns instead of hundreds of random LeetCode problems; the speaker got hired at Microsoft with this method."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "work"]
 tags: ["career", "interviews", "leetcode", "algorithms", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=yOKMIEOCkRU"
 ---

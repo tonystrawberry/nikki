@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "Notes CloudOps sur la résolution DNS et la terminologie, Route 53 en DNS faisant autorité et bureau d’enregistrement, enregistrements A/AAAA/CNAME/NS, email (MX, TXT/SPF/DKIM/DMARC), compromis TTL, et enregistrements alias Route 53 pour ALB et apex de zone."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "route-53", "dns", "alias", "cname", "ttl", "mx", "spf", "dkim", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 15

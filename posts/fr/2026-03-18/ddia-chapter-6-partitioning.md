@@ -4,6 +4,7 @@ date: "2026-03-18"
 excerpt: "Résumé du chapitre de Kleppmann sur le partitionnement (sharding) : répartition des données, stratégies, index secondaires, rééquilibrage et routage des requêtes."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "partitioning", "sharding", "distributed-systems"]
 collection: "ddia"
 collectionOrder: 6

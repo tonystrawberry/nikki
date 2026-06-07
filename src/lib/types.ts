@@ -71,6 +71,11 @@ export const CATEGORIES = {
     icon: '📝',
     description: 'Everyday life and random thoughts'
   },
+  reflections: {
+    name: 'Reflections',
+    icon: '💭',
+    description: 'Philosophy, life, mindset, and personal reflections'
+  },
 } as const;
 
 // ============================================================================
@@ -125,8 +130,19 @@ export interface PostMeta {
   /** Author name */
   author: string;
 
-  /** Post category - must be a valid Category key */
+  /**
+   * Primary post category — kept for backwards-compatibility.
+   * Always equals `categories[0]`.
+   */
   category: Category;
+
+  /**
+   * All categories for this post (at least one).
+   * Derived from the frontmatter `categories` array, falling back to
+   * `[category]` for legacy posts. A post can belong to several categories
+   * (e.g. both "note" and "tech").
+   */
+  categories: Category[];
 
   /** Array of tags for filtering/searching */
   tags: string[];

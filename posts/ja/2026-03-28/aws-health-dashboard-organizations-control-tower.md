@@ -4,6 +4,7 @@ date: "2026-03-28"
 excerpt: "CloudOps メモ：AWS Health（サービス／アカウント／組織ビュー、EventBridge 自動化）、AWS Organizations（OU、一括請求、SCP、RI 共有、PrincipalOrgID）、Control Tower のランディングゾーンとガードレール。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "health", "organizations", "scp", "control-tower", "multi-account", "billing", "sysops", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 10

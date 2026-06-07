@@ -4,6 +4,7 @@ date: "2026-03-16"
 excerpt: "Notes d'un live stream sur le chapitre 5 de DDIA (Réplication) : single-leader, primary et read replicas, scaling des lectures, haute disponibilité et availability zones."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "replication", "distributed-systems", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=lYCFreB8w_w"
 collection: "ddia"

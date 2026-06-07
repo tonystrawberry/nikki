@@ -4,6 +4,7 @@ date: "2026-05-31"
 excerpt: "Notes from a Légende interview with positive-psychology specialist Florence Servan-Schreiber on the science of happiness and practical techniques to feel better day to day."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "reflections"]
 tags: ["happiness", "psychology", "wellbeing"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=DFyATIx3cP4"

@@ -4,6 +4,7 @@ date: "2026-06-03"
 excerpt: "Hello InterviewのTwitter設計メモ — マイクロサービス、ツイートCRUD用MongoDB、fan-out on writeタイムライン、グラフDB、Elasticsearch、read/write重い超低レイテンシにNoSQLが適する場面。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["system-design", "twitter", "nosql", "mongodb", "microservices", "interview", "caching"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=Nfa-uUHuFHg"

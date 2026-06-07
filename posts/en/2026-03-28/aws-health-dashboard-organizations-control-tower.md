@@ -4,6 +4,7 @@ date: "2026-03-28"
 excerpt: "CloudOps notes on AWS Health (service vs account vs org views, EventBridge automation), AWS Organizations (OUs, consolidated billing, SCPs, RI sharing, PrincipalOrgID), and Control Tower landing zones and guardrails."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "health", "organizations", "scp", "control-tower", "multi-account", "billing", "sysops", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 13

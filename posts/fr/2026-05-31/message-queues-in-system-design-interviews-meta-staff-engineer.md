@@ -4,6 +4,7 @@ date: "2026-05-31"
 excerpt: "Notes de Hello Interview sur les files de messages pour les entretiens de system design — exemple motivant, acks, garanties de livraison, scaling, back pressure, ordre, poison messages, DLQ, et Kafka vs SQS vs RabbitMQ."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["system-design", "message-queue", "kafka", "sqs", "interview", "distributed-systems"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=1ISRd0bS714"

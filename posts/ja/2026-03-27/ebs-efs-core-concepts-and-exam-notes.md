@@ -4,6 +4,7 @@ date: "2026-03-27"
 excerpt: "AWSワークロードにおいて、EBSボリューム、スナップショット、EFSファイルシステムの要点と使い分けを実践的かつ試験目線でまとめた内容。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "ec2", "ebs", "efs", "storage", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 5

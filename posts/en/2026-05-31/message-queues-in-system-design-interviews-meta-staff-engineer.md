@@ -4,6 +4,7 @@ date: "2026-05-31"
 excerpt: "Notes from Hello Interview on message queues for system design interviews — motivating example, acks, delivery guarantees, scaling, back pressure, ordering, poison messages, DLQs, and Kafka vs SQS vs RabbitMQ."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["system-design", "message-queue", "kafka", "sqs", "interview", "distributed-systems"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=1ISRd0bS714"

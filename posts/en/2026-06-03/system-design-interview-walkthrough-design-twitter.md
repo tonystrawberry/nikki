@@ -4,6 +4,7 @@ date: "2026-06-03"
 excerpt: "Notes from Hello Interview on designing Twitter — microservices, MongoDB for tweet CRUD, fan-out on write timelines, graph DB for social graph, Elasticsearch search, and when NoSQL fits read/write-heavy low-latency workloads."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["system-design", "twitter", "nosql", "mongodb", "microservices", "interview", "caching"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=Nfa-uUHuFHg"

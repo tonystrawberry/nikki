@@ -108,25 +108,48 @@ import { type Locale, defaultLocale, locales } from './i18n-config';
 // with blank fields (e.g. category: "") still parse instead of throwing.
 const emptyToUndefined = (v: unknown) => (v === '' ? undefined : v);
 
-const PostFrontmatterSchema = z.object({
-  title: z.preprocess(emptyToUndefined, z.string().default('Untitled')),
-  date: z.preprocess(
-    emptyToUndefined,
-    z.string().default(() => new Date().toISOString().slice(0, 10))
-  ),
-  excerpt: z.string().default(''),
-  author: z.preprocess(emptyToUndefined, z.string().default('Anonymous')),
-  category: z.preprocess(
-    emptyToUndefined,
-    z.enum(Object.keys(CATEGORIES) as [Category, ...Category[]]).default('daily')
-  ),
-  tags: z.array(z.string()).default([]),
-  coverImage: z.string().optional(),
-  youtubeUrl: z.string().optional(),
-  collection: z.string().optional(),
-  collectionOrder: z.number().optional(),
-  collectionTitle: z.string().optional(),
-});
+const categoryEnum = z.enum(Object.keys(CATEGORIES) as [Category, ...Category[]]);
+
+// Accept a YAML array (`categories: [note, tech]`), dropping blanks. Returns
+// undefined when absent/empty so the transform below can fall back to `category`.
+const cleanCategoriesInput = (v: unknown) => {
+  if (!Array.isArray(v)) return undefined;
+  const cleaned = v.filter((x) => x !== '' && x != null);
+  return cleaned.length ? cleaned : undefined;
+};
+
+const PostFrontmatterSchema = z
+  .object({
+    title: z.preprocess(emptyToUndefined, z.string().default('Untitled')),
+    date: z.preprocess(
+      emptyToUndefined,
+      z.string().default(() => new Date().toISOString().slice(0, 10))
+    ),
+    excerpt: z.string().default(''),
+    author: z.preprocess(emptyToUndefined, z.string().default('Anonymous')),
+    // Legacy single category (optional). The normalized `categories` array below
+    // is the source of truth; `category` is recomputed from it in the transform.
+    category: z.preprocess(emptyToUndefined, categoryEnum.optional()),
+    // New multi-category field. Wins over `category` when present.
+    categories: z.preprocess(cleanCategoriesInput, z.array(categoryEnum).optional()),
+    tags: z.array(z.string()).default([]),
+    coverImage: z.string().optional(),
+    youtubeUrl: z.string().optional(),
+    collection: z.string().optional(),
+    collectionOrder: z.number().optional(),
+    collectionTitle: z.string().optional(),
+  })
+  .transform((fm) => {
+    // Normalize: prefer `categories`, fall back to `[category]`, default to
+    // `['daily']`. Dedupe while preserving order; keep `category` = first.
+    const base = fm.categories?.length
+      ? fm.categories
+      : fm.category
+        ? [fm.category]
+        : (['daily'] as Category[]);
+    const categories = Array.from(new Set(base)) as Category[];
+    return { ...fm, category: categories[0], categories };
+  });
 
 function extractYoutubeId(url: string): string | null {
   const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/);
@@ -452,7 +475,7 @@ export function getAllCategories(): Category[] {
  */
 export function getPostsByCategory(category: Category, locale: Locale = defaultLocale): PostMeta[] {
   const posts = getAllPosts(locale);
-  return posts.filter((post) => post.category === category);
+  return posts.filter((post) => post.categories.includes(category));
 }
 
 /**

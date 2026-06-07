@@ -4,6 +4,7 @@ date: "2026-06-07"
 excerpt: "Why success comes from deliberate consistency mixed with randomness, intuition, and reflection — not brute effort — with examples from exams, gaming, and YouTube."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "reflections"]
 tags: ["learning", "productivity", "habits", "reflection"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=M7eUE5ReCVQ"

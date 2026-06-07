@@ -4,6 +4,7 @@ date: "2026-04-14"
 excerpt: "Notes de live sur le chapitre 8 de DDIA couvrant défaillances partielles, incertitude réseau, frontières transactionnelles et choix de conception orientés fiabilité."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "distributed-systems", "reliability", "fault-tolerance", "transactions", "mvcc", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=hQKzmYUh774"
 ---

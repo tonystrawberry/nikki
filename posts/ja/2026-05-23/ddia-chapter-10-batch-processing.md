@@ -4,6 +4,7 @@ date: "2026-05-23"
 excerpt: "『Designing Data-Intensive Applications』におけるバッチ処理 — Unixパイプ、MapReduce、そしてApache Sparkの台頭 — をやさしく歩く解説です。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["distributed-systems", "ddia", "batch-processing", "spark", "mapreduce"]
 collection: "ddia"
 collectionOrder: 10

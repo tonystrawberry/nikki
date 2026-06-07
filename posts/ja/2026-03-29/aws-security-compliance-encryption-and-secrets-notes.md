@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "CloudOps 試験メモ：WAF、Shield、Firewall Manager、Inspector、Athena とのログ、GuardDuty、Macie、Trusted Advisor、Security Hub、Audit Manager、KMS（ローテーション、MRK、削除）、ACM、Secrets Manager と Parameter Store の比較。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "waf", "shield", "firewall-manager", "kms", "acm", "tls", "secrets-manager", "security-hub", "guardduty", "inspector", "macie", "cloudops", "certification", "compliance", "encryption"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 13

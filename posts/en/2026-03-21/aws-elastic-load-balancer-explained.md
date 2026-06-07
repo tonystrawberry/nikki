@@ -4,6 +4,7 @@ date: "2026-03-21"
 excerpt: "Overview of AWS load balancers: role, benefits, health checks, four types (CLB, ALB, NLB, GWLB), security groups, sticky sessions, and TLS."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "load-balancer", "elb", "alb", "nlb", "gwlb", "ec2", "zcloudops", "cloud"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 4

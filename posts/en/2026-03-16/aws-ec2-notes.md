@@ -4,6 +4,7 @@ date: "2026-03-16"
 excerpt: "Condensed notes on EC2: launch, resize, placement, SSH/Instance Connect, CloudWatch and agent, status checks, Hibernate, Instance Scheduler, AMI (create, No-Reboot, cross-account), EC2 Image Builder, AMI in production."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "ec2", "cloudops", "certification", "cloudwatch", "security", "ssm", "ami", "image-builder"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 1

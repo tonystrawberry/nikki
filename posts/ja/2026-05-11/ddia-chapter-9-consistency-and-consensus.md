@@ -4,6 +4,7 @@ date: "2026-05-11"
 excerpt: "『データ指向アプリケーションデザイン』の中でも最も難しいと言われる章を、わかりやすく解説します。分散システムはどのようにして「真実」について合意するのでしょうか。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["distributed-systems", "ddia", "consistency", "consensus"]
 collection: "ddia"
 collectionOrder: 9

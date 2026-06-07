@@ -4,6 +4,7 @@ date: "2026-04-14"
 excerpt: "Résumé vidéo concis sur ce qu'est un checksum, comment fonctionne la vérification émetteur/récepteur et où les checksums sont utilisés en pratique."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["checksum", "data-integrity", "networking", "storage", "databases", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=WaPwqazon9Q"
 ---

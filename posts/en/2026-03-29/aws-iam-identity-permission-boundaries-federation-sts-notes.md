@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "CloudOps exam notes on IAM permission boundaries vs identity policies and SCPs, Credentials Report and Access Advisor, IAM Access Analyzer, STS (AssumeRole, SAML, web identity, MFA), enterprise vs app federation (SAML, custom broker, Cognito), and the IAM policy simulator."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "iam", "sts", "saml", "cognito", "permission-boundary", "access-analyzer", "federation", "cloudops", "certification", "security"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 17

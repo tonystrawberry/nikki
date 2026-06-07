@@ -4,12 +4,15 @@ date: "2026-05-31"
 excerpt: "Authentification des connexions, channels visiteur et admin, le modèle de données, et comment Solid Cable remplace Redis par SQLite."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["rails", "actioncable", "solid-cable", "sqlite", "websockets"]
 coverImage: ""
 collection: "building-a-chat"
 collectionOrder: 2
 collectionTitle: "Construire un Chat en Temps Réel"
 ---
+
+> 💬 **C'est le module de chat en direct que tu vois en bas à droite de ce site.** Cette série détaille précisément comment je l'ai construit — clique sur la bulle de chat pour l'essayer, puis lis la suite pour découvrir comment ça fonctionne en coulisses.
 
 Ce chapitre parcourt le serveur WebSocket Rails : comment les connexions sont authentifiées, ce qui se passe dans chaque channel, et comment les données circulent via Solid Cable. Vous devriez déjà connaître l'organisation du dépôt grâce au chapitre 1.
 

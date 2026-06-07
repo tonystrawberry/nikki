@@ -4,6 +4,7 @@ date: "2026-04-14"
 excerpt: "A practical summary of DDIA chapter 8 covering partial failures, unreliable networks, clock assumptions, and reliability patterns for production systems."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "distributed-systems", "reliability", "fault-tolerance", "timeouts", "consensus"]
 collection: "ddia"
 collectionOrder: 8

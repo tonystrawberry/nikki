@@ -4,6 +4,7 @@ date: "2026-05-26"
 excerpt: "2018年2月、東京。上板橋のシェアハウス、Seidoという7人の会社、そしてゼロから全てを作り上げる白紙の日々——やがて疑念が芽生えるまで。"
 author: "Tony Duong"
 category: "note"
+categories: ["work", "reflections"]
 tags: ["career-story", "career", "personal", "japan", "tokyo", "seido"]
 coverImage: ""
 collection: "career-story"

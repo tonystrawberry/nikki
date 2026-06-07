@@ -5,6 +5,7 @@ const categoryOptions = [
   { label: 'Work 💼', value: 'work' },
   { label: 'Tech 💻', value: 'tech' },
   { label: 'Daily 📝', value: 'daily' },
+  { label: 'Reflections 💭', value: 'reflections' },
 ] as const;
 
 function postCollection(label: string, path: `posts/${'fr' | 'en' | 'ja'}/**`) {
@@ -22,9 +23,16 @@ function postCollection(label: string, path: `posts/${'fr' | 'en' | 'ja'}/**`) {
         defaultValue: 'Tony Duong',
       }),
       category: fields.select({
-        label: 'Category',
+        label: 'Category (legacy / primary)',
+        description: 'Kept for backwards-compatibility. Prefer the "Categories" field below for new posts; if Categories is set, it takes precedence.',
         options: categoryOptions,
         defaultValue: 'daily',
+      }),
+      categories: fields.multiselect({
+        label: 'Categories',
+        description: 'A post can belong to several categories (e.g. Note + Tech). Takes precedence over the single Category field.',
+        options: categoryOptions,
+        defaultValue: [],
       }),
       tags: fields.array(
         fields.text({ label: 'Tag' }),

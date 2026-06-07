@@ -4,6 +4,7 @@ date: "2026-06-01"
 excerpt: "Notes from a Les Lueurs conversation with neuroscientist Albert Moukheiber: there is no hidden meaning of life to find, we invent it, and most of the self-help promises around it don't survive contact with how the brain actually works."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "reflections"]
 tags: ["neuroscience", "psychology", "philosophy", "meaning"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=hgiqiVnYXjc"

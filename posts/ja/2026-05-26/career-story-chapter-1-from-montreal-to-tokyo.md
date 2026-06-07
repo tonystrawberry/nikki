@@ -4,6 +4,7 @@ date: "2026-05-26"
 excerpt: "モントリオールでの2年間、週末ごとのゲームジャム、VRのインターン——そしてある日、何気なく目にしたFacebookの広告が、カナダに残るはずだった僕を日本へと連れて行きました。"
 author: "Tony Duong"
 category: "note"
+categories: ["work", "reflections"]
 tags: ["career-story", "career", "personal", "montreal", "japan"]
 coverImage: ""
 collection: "career-story"

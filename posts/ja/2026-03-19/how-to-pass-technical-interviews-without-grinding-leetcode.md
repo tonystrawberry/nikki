@@ -4,6 +4,7 @@ date: "2026-03-19"
 excerpt: "技術面接の効率的な準備：15〜20個のコアパターンに焦点を当てる。話者はこの方法で Microsoft に採用された。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "work"]
 tags: ["career", "interviews", "leetcode", "algorithms", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=yOKMIEOCkRU"
 ---

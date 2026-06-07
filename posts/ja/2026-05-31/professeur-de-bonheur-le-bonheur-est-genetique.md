@@ -4,6 +4,7 @@ date: "2026-05-31"
 excerpt: "ポジティブ心理学の専門家Florence Servan-Schreiberへのインタビュー番組Légendeのメモ。幸福の科学と、日々の生活で気分を良くする実践的なテクニックについて。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "reflections"]
 tags: ["happiness", "psychology", "wellbeing"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=DFyATIx3cP4"

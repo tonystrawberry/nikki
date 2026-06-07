@@ -4,6 +4,7 @@ date: "2026-03-27"
 excerpt: "Un resume pratique axe examen sur les volumes EBS, les snapshots, les systemes de fichiers EFS et les cas d'usage AWS de chacun."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "ec2", "ebs", "efs", "storage", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 5

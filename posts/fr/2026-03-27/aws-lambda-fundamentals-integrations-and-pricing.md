@@ -4,6 +4,7 @@ date: "2026-03-27"
 excerpt: "Un résumé pratique des concepts clés d'AWS Lambda, de son modèle de tarification et de ses intégrations courantes comme EventBridge et S3."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "lambda", "serverless", "eventbridge", "s3", "cloudwatch", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 4

@@ -4,6 +4,7 @@ date: "2026-03-12"
 excerpt: "Notes on Chapter 2 of Designing Data-Intensive Applications — relational vs document models, query languages, and graph databases."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "data-modeling", "sql", "nosql", "graph-databases"]
 coverImage: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1034&auto=format&fit=crop&ixlib=rb-4.1.0"
 collection: "ddia"

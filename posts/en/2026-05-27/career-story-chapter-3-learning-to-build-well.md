@@ -4,6 +4,7 @@ date: "2026-05-27"
 excerpt: "Two and a half years at Overflow — a Tokyo startup, a Slack cron job, a mentor named Ohtani-san, the AWS vocabulary I never had, a couple of Stripe side projects, and the restlessness that eventually walked me into Monstarlab."
 author: "Tony Duong"
 category: "note"
+categories: ["work", "reflections"]
 tags: ["career-story", "career", "personal", "japan", "tokyo", "overflow", "aws"]
 coverImage: ""
 collection: "career-story"

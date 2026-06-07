@@ -4,6 +4,7 @@ date: "2026-03-21"
 excerpt: "Vue d'ensemble des load balancers AWS : rôle, avantages, health checks, quatre types (CLB, ALB, NLB, GWLB) et règles de security group."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "load-balancer", "elb", "alb", "nlb", "gwlb", "ec2", "zcloudops", "cloud"]
 ---
 

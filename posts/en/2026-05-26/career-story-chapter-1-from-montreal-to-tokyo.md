@@ -4,6 +4,7 @@ date: "2026-05-26"
 excerpt: "Two years in Montreal, a stack of weekend gamejams, a VR internship — and then a random Facebook ad that sent me to Japan instead of staying in Canada."
 author: "Tony Duong"
 category: "note"
+categories: ["work", "reflections"]
 tags: ["career-story", "career", "personal", "montreal", "japan"]
 coverImage: ""
 collection: "career-story"

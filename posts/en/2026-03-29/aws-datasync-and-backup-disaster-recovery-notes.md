@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "CloudOps exam notes on AWS DataSync (agents, NFS/SMB/HDFS, S3/EFS/FSx targets, schedules, metadata, Snowcone) and AWS Backup (backup plans, cross-region/account, vault lock WORM, console workflow)."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "datasync", "aws-backup", "disaster-recovery", "snowcone", "s3", "efs", "fsx", "worm", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 15

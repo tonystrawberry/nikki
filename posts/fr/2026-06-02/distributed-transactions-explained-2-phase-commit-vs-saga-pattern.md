@@ -4,6 +4,7 @@ date: "2026-06-02"
 excerpt: "Notes de Hello Interview sur les transactions distribuées — quand l'ACID d'une seule DB casse entre services, pourquoi le 2PC bloque à l'échelle, et comment Saga (chorégraphie vs orchestration) avec compensations et outbox transactionnel fonctionne en production."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["system-design", "distributed-systems", "saga", "two-phase-commit", "microservices", "interview"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=DOFflggE_0Q"

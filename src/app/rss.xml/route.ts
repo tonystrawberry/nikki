@@ -54,7 +54,7 @@ export async function GET() {
       <pubDate>${pubDate}</pubDate>
       <description>${escapeXml(post.excerpt)}</description>
       <author>${AUTHOR_EMAIL} (${AUTHOR_NAME})</author>
-      <category>${escapeXml(post.category)}</category>
+      ${post.categories.map((c) => `<category>${escapeXml(c)}</category>`).join("\n      ")}
     </item>`;
     })
     .join("");

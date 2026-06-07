@@ -4,6 +4,7 @@ date: "2026-03-21"
 excerpt: "レイヤ7 HTTP ロードバランサー：ターゲットグループ、ルーティング（path、host、query string、headers）、X-Forwarded-* ヘッダー、EC2/ECS/Lambda/プライベートIP 対応。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "alb", "load-balancer", "ec2", "ecs", "lambda", "microservices", "zcloudops", "cloud"]
 ---
 

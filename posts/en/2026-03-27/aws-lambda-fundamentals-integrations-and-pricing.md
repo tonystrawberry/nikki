@@ -4,6 +4,7 @@ date: "2026-03-27"
 excerpt: "A practical summary of AWS Lambda core concepts, pricing model, and common integrations like EventBridge and S3."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "lambda", "serverless", "eventbridge", "s3", "cloudwatch", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 7

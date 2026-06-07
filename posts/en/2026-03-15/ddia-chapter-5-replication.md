@@ -4,6 +4,7 @@ date: "2026-03-15"
 excerpt: "Summary of Kleppmann's chapter on replication in data systems: why replicate, single-leader, multi-leader, and leaderless replication, plus consistency trade-offs."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "replication", "distributed-systems", "consistency"]
 collection: "ddia"
 collectionOrder: 5

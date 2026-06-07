@@ -4,6 +4,7 @@ date: "2026-05-24"
 excerpt: "Notes from a 6-hour Apache Spark deep-dive by Ansh Lamba — distributed computing fundamentals, architecture, DataFrames, joins, memory management, caching, partition pruning, and AQE."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["spark", "big-data", "data-engineering", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=FNJze2Ea780"
 ---

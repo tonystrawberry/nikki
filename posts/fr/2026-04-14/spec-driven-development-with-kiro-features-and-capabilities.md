@@ -4,6 +4,7 @@ date: "2026-04-14"
 excerpt: "Notes de mon premier cours AWS Skill Builder, résumant le workflow spec-driven de Kiro, ses fonctionnalités clés et des cas d'usage pratiques."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "skillbuilder", "kiro", "spec-driven-development", "ai", "engineering"]
 ---
 

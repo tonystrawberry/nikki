@@ -4,6 +4,7 @@ date: "2026-04-13"
 excerpt: "Kleppmann のトランザクション章の要約。ACID、分離レベルの異常、snapshot isolation、two-phase locking、serializable snapshot isolation を整理。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "transactions", "acid", "isolation", "distributed-systems", "mvcc"]
 collection: "ddia"
 collectionOrder: 7

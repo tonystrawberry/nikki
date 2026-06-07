@@ -4,6 +4,7 @@ date: "2026-03-21"
 excerpt: "Accessible overview of vertical vs horizontal scaling and high availability, with a call-center analogy and AWS examples (EC2, RDS Multi-AZ, Auto Scaling)."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "scalability", "high-availability", "ec2", "rds", "asg", "zcloudops", "cloud"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 3

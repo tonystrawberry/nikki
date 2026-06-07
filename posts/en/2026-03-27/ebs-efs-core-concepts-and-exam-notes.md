@@ -4,6 +4,7 @@ date: "2026-03-27"
 excerpt: "A practical exam-focused summary of EBS volumes, snapshots, EFS file systems, and when to choose each for AWS workloads."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "ec2", "ebs", "efs", "storage", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 8

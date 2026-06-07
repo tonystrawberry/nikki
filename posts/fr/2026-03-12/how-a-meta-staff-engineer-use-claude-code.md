@@ -4,6 +4,7 @@ date: "2026-03-12"
 excerpt: "Le guide complet de John Kim pour passer du codage manuel a l'orchestration agentique avec Claude Code -- configuration, commandes avancees et workflows professionnels."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["claude-code", "ai", "productivity", "engineering", "workflow"]
 youtubeUrl: "https://www.youtube.com/watch?v=mZzhfPle9QU"
 ---

@@ -4,12 +4,15 @@ date: "2026-05-31"
 excerpt: "TypeScript ActionCableクライアント、チャンネルデータの判別共用体、ReactのWebSocketライフサイクル、無限再接続を防ぐuseRefパターン。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["typescript", "react", "actioncable", "nextjs", "websockets"]
 coverImage: ""
 collection: "building-a-chat"
 collectionOrder: 3
 collectionTitle: "リアルタイムチャットを作る"
 ---
+
+> 💬 **これは、このサイトの右下に表示されているライブチャットそのものの実装です。** このシリーズでは、それをどう作ったかを順を追って解説します。チャットの吹き出しを開いて試してから、その仕組みを読み進めてみてください。
 
 第2章のRailsサーバーはWebSocketを通じてJSONをブロードキャストしています。この章では、それを消費するTypeScriptレイヤーを扱います：ActionCableクライアントラッパー、チャンネルデータの型システム、ChatWidgetのライフサイクル、そして恥ずかしい時間を費やしてようやく正しく実装できた`useRef`パターンです。
 

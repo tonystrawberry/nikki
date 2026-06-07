@@ -4,6 +4,7 @@ date: "2026-05-10"
 excerpt: "Migrated Shirimono's Rails 8 backend from Render to a single Hetzner CPX21 with Kamal. Bill dropped from ~$70 to ~$9 per month. The setup, the cost math, and the four gotchas that ate most of the cutover window."
 author: "Tony Duong"
 category: "tech"
+categories: ["tech", "work"]
 tags: ["devops", "rails", "kamal", "hetzner", "render", "shirimono"]
 ---
 

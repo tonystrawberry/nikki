@@ -4,6 +4,7 @@ date: "2026-03-23"
 excerpt: "Video explaining Git fundamentals from first principles: commits as snapshots, DAG structure, branches as pointers, HEAD, detached HEAD, three areas (working/staging/repo), and undo commands."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["git", "version-control", "video", "fundamentals"]
 youtubeUrl: "https://www.youtube.com/watch?v=Ala6PHlYjmw"
 ---

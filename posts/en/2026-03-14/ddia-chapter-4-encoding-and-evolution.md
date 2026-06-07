@@ -4,6 +4,7 @@ date: "2026-03-14"
 excerpt: "Summary of Kleppmann's chapter on data encoding formats, schema evolution, and compatibility in data-intensive systems."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "encoding", "schema", "evolution"]
 coverImage: ""
 collection: "ddia"

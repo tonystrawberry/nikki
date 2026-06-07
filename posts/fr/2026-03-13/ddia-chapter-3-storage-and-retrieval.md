@@ -4,6 +4,7 @@ date: "2026-03-13"
 excerpt: "Comment les bases de données stockent et récupèrent les données — des moteurs à structure de journal (LSM-trees) aux moteurs orientés pages (B-trees), en passant par les stratégies d'indexation, OLTP vs OLAP et le stockage orienté colonnes."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["databases", "ddia", "architecture"]
 collection: "ddia"
 collectionOrder: 3

@@ -4,6 +4,7 @@ date: "2026-03-13"
 excerpt: "Notes on spec-driven development — how writing specs before code reduces ambiguity and improves AI-assisted coding compared to vibe coding."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ai", "software-engineering", "spec-driven-development", "vibe-coding"]
 youtubeUrl: "https://www.youtube.com/watch?v=mViFYTwWvcM"
 ---

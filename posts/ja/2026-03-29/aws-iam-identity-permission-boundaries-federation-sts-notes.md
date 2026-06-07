@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "CloudOps 試験メモ：IAM パーミッションバウンダリと ID ベースポリシー・SCP、クレデンシャルレポートと Access Advisor、IAM Access Analyzer、STS（AssumeRole、SAML、web identity、MFA）、エンタープライズとアプリのフェデレーション（SAML、カスタムブローカー、Cognito）、IAM ポリシーシミュレータ。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "iam", "sts", "saml", "cognito", "permission-boundary", "access-analyzer", "federation", "cloudops", "certification", "security"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 14

@@ -4,6 +4,7 @@ date: "2026-03-16"
 excerpt: "EC2の要約メモ：起動、リサイズ、配置グループ、SSH/Instance Connect、CloudWatchとエージェント、ステータスチェック、Hibernate、Instance Scheduler、AMI（作成、No-Reboot、クロスアカウント）、EC2 Image Builder、本番でのAMI。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "ec2", "cloudops", "certification", "cloudwatch", "security", "ssm", "ami", "image-builder"]
 ---
 

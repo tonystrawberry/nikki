@@ -4,6 +4,7 @@ date: "2026-04-14"
 excerpt: "DDIA第8章ライブの要点。部分障害、ネットワーク不確実性、トランザクション境界、そして信頼性優先の設計判断を整理。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "distributed-systems", "reliability", "fault-tolerance", "transactions", "mvcc", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=hQKzmYUh774"
 ---

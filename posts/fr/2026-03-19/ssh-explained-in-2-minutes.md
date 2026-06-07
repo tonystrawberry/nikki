@@ -4,6 +4,7 @@ date: "2026-03-19"
 excerpt: "Courte vidéo sur SSH (Secure Shell) : protocole d'accès distant sécurisé, canal chiffré, modèle client/serveur, et authentification par mot de passe vs clé."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ssh", "devops", "security", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=P0Fk-K2eZF8"
 ---

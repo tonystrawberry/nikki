@@ -4,6 +4,7 @@ date: "2026-04-14"
 excerpt: "A concise video summary of what checksums are, how sender/receiver verification works, and where checksums are used in real systems."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["checksum", "data-integrity", "networking", "storage", "databases", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=WaPwqazon9Q"
 ---

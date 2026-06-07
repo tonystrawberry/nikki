@@ -4,6 +4,7 @@ date: "2026-04-14"
 excerpt: "Live-stream notes on DDIA chapter 8 covering partial failure, network uncertainty, transaction boundaries, and reliability-first design choices."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "distributed-systems", "reliability", "fault-tolerance", "transactions", "mvcc", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=hQKzmYUh774"
 ---

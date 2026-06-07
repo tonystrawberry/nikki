@@ -4,6 +4,7 @@ date: "2026-05-31"
 excerpt: "Hello Interviewのメッセージキュー解説メモ — 動機づけの例、ack、配信保証、スケーリング、バックプレッシャー、順序付け、poison message、DLQ、Kafka vs SQS vs RabbitMQ。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["system-design", "message-queue", "kafka", "sqs", "interview", "distributed-systems"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=1ISRd0bS714"

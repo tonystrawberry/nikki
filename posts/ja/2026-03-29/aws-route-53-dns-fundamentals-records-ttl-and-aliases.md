@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "CloudOps 試験メモ：DNS の解決と用語、権威 DNS／レジストラとしての Route 53、A/AAAA/CNAME/NS、メール（MX、TXT/SPF/DKIM/DMARC）、TTL のトレードオフ、ALB とゾーン apex の Route 53 エイリアス。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "route-53", "dns", "alias", "cname", "ttl", "mx", "spf", "dkim", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 15

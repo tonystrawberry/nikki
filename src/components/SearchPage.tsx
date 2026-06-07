@@ -44,7 +44,7 @@ export function SearchPage({
         const inTags = post.tags.some((t) => t.toLowerCase().includes(q));
         if (!inTitle && !inExcerpt && !inTags) return false;
       }
-      if (category !== "all" && post.category !== category) return false;
+      if (category !== "all" && !post.categories.includes(category as Category)) return false;
       if (selectedTags.size > 0) {
         const hasAny = post.tags.some((t) => selectedTags.has(t));
         if (!hasAny) return false;

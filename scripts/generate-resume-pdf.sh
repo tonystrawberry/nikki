@@ -4,7 +4,12 @@
 #
 # Renders each locale with headless Google Chrome's --print-to-pdf, which
 # applies the @media print stylesheet in globals.css. Output goes to
-# public/resume/, which is served at /resume/*.pdf and linked from the page.
+# public/resume/, served at /resume/*.pdf and linked from the résumé page.
+#
+# Chrome's "new" headless mode (the only one in Chrome 132+) writes the PDF but
+# then keeps running against a Next.js dev server because the HMR websocket
+# never goes idle. So instead of waiting for Chrome to exit, we poll until the
+# output file is written and its size stabilizes, then kill Chrome.
 #
 # Usage:  npm run resume:pdf
 #         BASE_URL=http://localhost:3000 npm run resume:pdf   # reuse a server
@@ -47,11 +52,12 @@ cleanup() {
 }
 trap cleanup EXIT
 
-for L in "${LOCALES[@]}"; do
-  URL="$BASE_URL/$L/resume"
-  echo "🖨  Rendering $L → $OUT_DIR/tony-duong-resume-$L.pdf"
-  # Warm the route so the dev server has compiled it before we print.
-  curl -sSf "$URL" >/dev/null 2>&1 || true
+# render <url> <out-file>
+render() {
+  local url="$1" out="$2"
+  rm -f "$out"
+  # Warm the route so the (dev) server has compiled it before printing.
+  curl -sSf "$url" >/dev/null 2>&1 || true
   "$CHROME" \
     --headless=new \
     --disable-gpu \
@@ -59,8 +65,35 @@ for L in "${LOCALES[@]}"; do
     --no-pdf-header-footer \
     --user-data-dir="$PROFILE_DIR" \
     --virtual-time-budget=20000 \
-    --print-to-pdf="$OUT_DIR/tony-duong-resume-$L.pdf" \
-    "$URL" 2>/dev/null
+    --print-to-pdf="$out" \
+    "$url" >/dev/null 2>&1 &
+  local cpid=$!
+
+  # Wait until the PDF exists and its size has been stable for one tick.
+  local waited=0 last=-1 size=0
+  while [ "$waited" -lt 45 ]; do
+    sleep 1
+    waited=$((waited + 1))
+    if [ -f "$out" ]; then
+      size=$(stat -f%z "$out" 2>/dev/null || echo 0)
+      if [ "$size" -gt 0 ] && [ "$size" = "$last" ]; then break; fi
+      last=$size
+    fi
+  done
+
+  kill "$cpid" >/dev/null 2>&1 || true
+  wait "$cpid" 2>/dev/null || true
+
+  if [ ! -s "$out" ]; then
+    echo "❌ Failed to render $url" >&2
+    return 1
+  fi
+}
+
+for L in "${LOCALES[@]}"; do
+  echo "🖨  Rendering $L → $OUT_DIR/tony-duong-resume-$L.pdf"
+  render "$BASE_URL/$L/resume" "$OUT_DIR/tony-duong-resume-$L.pdf"
 done
 
 echo "✅ Done → $OUT_DIR"
+ls -lh "$OUT_DIR"

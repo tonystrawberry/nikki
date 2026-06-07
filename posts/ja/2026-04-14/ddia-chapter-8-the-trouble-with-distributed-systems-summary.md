@@ -4,6 +4,7 @@ date: "2026-04-14"
 excerpt: "DDIA第8章の実践要約。部分障害、信頼できないネットワーク、時間前提、そして本番向け信頼性パターンを整理。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "distributed-systems", "reliability", "fault-tolerance", "timeouts", "consensus"]
 collection: "ddia"
 collectionOrder: 8

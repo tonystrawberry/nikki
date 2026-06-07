@@ -4,6 +4,7 @@ date: "2026-05-11"
 excerpt: "Une exploration accessible du chapitre le plus difficile de Designing Data-Intensive Applications — comment les systèmes distribués se mettent d'accord sur ce qui est vrai."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["distributed-systems", "ddia", "consistency", "consensus"]
 collection: "ddia"
 collectionOrder: 9

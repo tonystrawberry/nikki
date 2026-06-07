@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "Notes CloudOps sur les politiques de routage Route 53 (simple, pondérée, latence, basculement, géolocalisation, géoproximité, multi-valeur, basée sur l’IP), health checks et checks calculés, CloudWatch pour cibles privées, et politiques Traffic Flow."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "route-53", "dns", "health-check", "failover", "latency-routing", "geolocation", "traffic-flow", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 16

@@ -4,6 +4,7 @@ date: "2026-03-28"
 excerpt: "CloudOps メモ：AWS Service Catalog（プロダクト、ポートフォリオ、共有、TagOptions）、us-east-1 の CloudWatch 請求メトリクス、Cost Explorer、アクション付き Budgets、コスト配分タグ、CUR、Compute Optimizer、Billing Conductor。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "service-catalog", "billing", "cost-explorer", "budgets", "cur", "compute-optimizer", "cloudformation", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 11

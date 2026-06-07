@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "CloudOps exam notes on Route 53 routing policies (simple, weighted, latency, failover, geolocation, geoproximity, multi-value, IP-based), health checks and calculated checks, CloudWatch for private targets, and Traffic Flow policies."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "route-53", "dns", "health-check", "failover", "latency-routing", "geolocation", "traffic-flow", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 19

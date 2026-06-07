@@ -4,6 +4,7 @@ date: "2026-05-24"
 excerpt: "Notes d'un cours de 6 heures sur Apache Spark par Ansh Lamba — fondamentaux du calcul distribué, architecture, DataFrames, joins, gestion mémoire, caching, partition pruning et AQE."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["spark", "big-data", "data-engineering", "video"]
 youtubeUrl: "https://www.youtube.com/watch?v=FNJze2Ea780"
 ---

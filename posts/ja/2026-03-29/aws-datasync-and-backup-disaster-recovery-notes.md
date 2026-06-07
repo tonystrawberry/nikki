@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "CloudOps 試験向けメモ：AWS DataSync（エージェント、NFS/SMB/HDFS、S3/EFS/FSx ターゲット、スケジュール、メタデータ、Snowcone）と AWS Backup（バックアッププラン、リージョン／アカウント横断、ボールトロック WORM、コンソール手順）。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "datasync", "aws-backup", "disaster-recovery", "snowcone", "s3", "efs", "fsx", "worm", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 12

@@ -4,6 +4,7 @@ date: "2026-03-13"
 excerpt: "データベースがどのようにデータを保存・取得するか — ログ構造化エンジン（LSM-tree）からページ指向エンジン（B-tree）まで、インデックス戦略、OLTP vs OLAP、カラム指向ストレージについて。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["databases", "ddia", "architecture"]
 collection: "ddia"
 collectionOrder: 3

@@ -4,6 +4,7 @@ date: "2026-06-04"
 excerpt: "DDIA最終章のメモ — バッチとストリーム処理の統合、データベースのアンバンドル、エンドツーエンドの正確性、データ集約システムの倫理。読書進行中。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["distributed-systems", "ddia", "data-integration", "ethics"]
 collection: "ddia"
 collectionOrder: 12

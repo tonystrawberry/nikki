@@ -4,6 +4,7 @@ date: "2026-06-04"
 excerpt: "Notes de Manning sur Grokking Software Architecture de Matt Erman — les trois A (conscience, alignement, responsabilité), les compromis sous pression, le processus clarity engineer, et la leçon Friendster sur les mauvaises priorités architecturales."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["software-architecture", "tradeoffs", "technical-debt", "book", "manning"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=00rLoQs3U1U"

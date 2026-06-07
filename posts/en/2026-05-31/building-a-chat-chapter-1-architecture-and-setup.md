@@ -4,12 +4,15 @@ date: "2026-05-31"
 excerpt: "Two separate apps, four core concepts, and getting Rails ActionCable talking to Next.js over WebSockets."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["rails", "nextjs", "actioncable", "websockets", "architecture"]
 coverImage: ""
 collection: "building-a-chat"
 collectionOrder: 1
 collectionTitle: "Building a Real-Time Chat"
 ---
+
+> 💬 **This is the live chat widget you can see in the bottom-right corner of this very site.** This series walks through exactly how I built it — click the chat bubble to try it, then read on to see how it works under the hood.
 
 This tutorial walks through a real-time chat feature built for a Next.js blog. Visitors open a chat widget and talk to the site admin. The admin sees every conversation in a dashboard. Messages arrive instantly in both directions.
 

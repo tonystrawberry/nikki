@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "CloudOps exam notes on DNS resolution and terminology, Route 53 as authoritative DNS and registrar, A/AAAA/CNAME/NS, email records (MX, TXT/SPF/DKIM/DMARC), TTL tradeoffs, and Route 53 alias records for ALB and zone apex."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "route-53", "dns", "alias", "cname", "ttl", "mx", "spf", "dkim", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 18

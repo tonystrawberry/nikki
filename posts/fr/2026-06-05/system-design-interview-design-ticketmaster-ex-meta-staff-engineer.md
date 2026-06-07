@@ -4,6 +4,7 @@ date: "2026-06-05"
 excerpt: "Notes Hello Interview sur la conception de Ticketmaster — pas de double réservation, réserve/confirm en deux phases, verrous Redis TTL, Elasticsearch + CDC, file d'attente virtuelle pour les pics, et compromis CAP par chemin."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["system-design", "ticketmaster", "interview", "consistency", "elasticsearch", "redis"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=fhdPyoO6aXI"

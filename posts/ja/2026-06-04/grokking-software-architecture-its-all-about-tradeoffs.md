@@ -4,6 +4,7 @@ date: "2026-06-04"
 excerpt: "ManningのMatt ErmanによるGrokking Software Architectureのメモ — 3つのA（awareness・alignment・accountability）、プレッシャー下のトレードオフ、clarity engineerプロセス、間違ったアーキテクチャ優先順位のFriendster教訓。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["software-architecture", "tradeoffs", "technical-debt", "book", "manning"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=00rLoQs3U1U"

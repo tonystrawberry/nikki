@@ -4,6 +4,7 @@ date: "2026-03-15"
 excerpt: "Notes sur l'exécution de Claude 24/7 via deux méthodes : /loop dans Claude Code (par intervalle, technique) et Tâches planifiées dans le cloud desktop (sans code, set-and-forget)."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ai", "claude", "agents", "automation", "scheduled-tasks", "loops"]
 youtubeUrl: "https://www.youtube.com/watch?v=Mf63K5LFivI"
 ---

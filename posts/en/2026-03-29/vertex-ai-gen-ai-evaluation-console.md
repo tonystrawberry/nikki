@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "Screenshots of the Vertex AI Gen AI evaluation UI: dataset view with General Quality pass rates, plus a per-criterion drill-down with pass/fail reasons on a recipe-to-shopping-list task."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["gcp", "vertex-ai", "gemini", "evaluation", "llm", "prompts"]
 coverImage: "/images/blog/2026-03-29/vertex-ai-gen-ai-evaluation-console.png"
 ---

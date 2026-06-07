@@ -4,6 +4,7 @@ date: "2026-03-29"
 excerpt: "CloudOps exam notes on WAF, Shield, Firewall Manager, Inspector, logging with Athena, GuardDuty, Macie, Trusted Advisor, Security Hub, Audit Manager, KMS (rotation, MRK, deletion), ACM, and Secrets Manager vs Parameter Store."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "waf", "shield", "firewall-manager", "kms", "acm", "tls", "secrets-manager", "security-hub", "guardduty", "inspector", "macie", "cloudops", "certification", "compliance", "encryption"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 16

@@ -87,7 +87,8 @@
     "note": "Note",
     "work": "Travail",
     "tech": "Tech",
-    "daily": "Quotidien"
+    "daily": "Quotidien",
+    "reflections": "Réflexions"
   },
   "filter": {
     "showingPostsFrom": "Entrées du",

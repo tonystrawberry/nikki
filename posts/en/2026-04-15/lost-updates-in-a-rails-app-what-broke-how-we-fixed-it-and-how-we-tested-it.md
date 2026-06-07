@@ -4,6 +4,7 @@ date: "2026-04-15"
 excerpt: "A real lost update bug in a Rails app: two jobs merging different keys into the same JSON column drop one another, and how with_lock plus a threaded RSpec reproduce and fix it."
 author: "Tony Duong"
 category: "tech"
+categories: ["tech", "work"]
 tags: ["rails", "ruby", "concurrency", "mysql", "innodb", "rspec", "spacely"]
 ---
 

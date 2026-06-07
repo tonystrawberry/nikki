@@ -4,12 +4,15 @@ date: "2026-05-31"
 excerpt: "Authentification admin, gestion de plusieurs conversations sur un seul WebSocket, et le pipeline complet de notifications Web Push."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["rails", "web-push", "vapid", "service-worker", "react"]
 coverImage: ""
 collection: "building-a-chat"
 collectionOrder: 4
 collectionTitle: "Construire un Chat en Temps Réel"
 ---
+
+> 💬 **C'est le module de chat en direct que tu vois en bas à droite de ce site.** Cette série détaille précisément comment je l'ai construit — clique sur la bulle de chat pour l'essayer, puis lis la suite pour découvrir comment ça fonctionne en coulisses.
 
 Le chat côté visiteur des chapitres 2 et 3 n'est que la moitié de l'histoire. Ce chapitre couvre l'autre moitié : comment l'admin s'authentifie, comment `AdminChat.tsx` multiplex plusieurs conversations sur un seul WebSocket, et comment les notifications Web Push atteignent l'admin même après qu'il a fermé l'onglet du navigateur.
 

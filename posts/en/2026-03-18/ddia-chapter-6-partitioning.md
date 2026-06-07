@@ -4,6 +4,7 @@ date: "2026-03-18"
 excerpt: "Summary of Kleppmann's chapter on partitioning (sharding): splitting data across nodes, partition strategies, secondary indexes, rebalancing, and request routing."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "partitioning", "sharding", "distributed-systems"]
 collection: "ddia"
 collectionOrder: 6

@@ -4,6 +4,7 @@ date: "2026-03-21"
 excerpt: "Step-by-step: launch EC2 instances, create an ALB with a target group, verify load balancing and health checks (stop/start instance). Includes NLB hands-on."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "alb", "load-balancer", "ec2", "target-group", "health-check", "nlb", "zcloudops", "cloud"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 6

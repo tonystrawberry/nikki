@@ -4,6 +4,7 @@ date: "2026-03-18"
 excerpt: "Kleppmann のパーティショニング（シャーディング）の章の要約：ノード間でのデータ分割、戦略、セカンダリインデックス、リバランス、リクエストルーティング。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "partitioning", "sharding", "distributed-systems"]
 collection: "ddia"
 collectionOrder: 6

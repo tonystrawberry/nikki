@@ -4,12 +4,15 @@ date: "2026-05-31"
 excerpt: "Admin authentication, managing multiple conversations over one WebSocket, and the full Web Push notification pipeline from VAPID keys to the service worker."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["rails", "web-push", "vapid", "service-worker", "react"]
 coverImage: ""
 collection: "building-a-chat"
 collectionOrder: 4
 collectionTitle: "Building a Real-Time Chat"
 ---
+
+> 💬 **This is the live chat widget you can see in the bottom-right corner of this very site.** This series walks through exactly how I built it — click the chat bubble to try it, then read on to see how it works under the hood.
 
 The visitor-side chat from chapters 2 and 3 is half the story. This chapter covers the other half: how the admin authenticates, how `AdminChat.tsx` multiplexes many conversations over one WebSocket, and how Web Push notifications reach the admin even after they close the browser tab.
 

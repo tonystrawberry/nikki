@@ -4,6 +4,7 @@ date: "2026-03-28"
 excerpt: "Notes S3 section 10 jusqu’aux sujets avancés : MFA delete, access logs, Object Lock et Glacier Vault Lock, VPC endpoints, Access Analyzer, plus réplication, lifecycle, événements, performance, batch, inventory et Athena."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["aws", "s3", "storage", "iam", "security", "versioning", "replication", "lifecycle", "object-lock", "vpc", "athena", "cloudops", "certification"]
 collection: "aws-cloudops-engineer-associate"
 collectionOrder: 6

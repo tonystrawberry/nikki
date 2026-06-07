@@ -4,6 +4,7 @@ date: "2026-06-04"
 excerpt: "Notes from Manning on Matt Erman's Grokking Software Architecture — the three A's (awareness, alignment, accountability), trade-offs under pressure, the clarity engineer process, and the Friendster lesson on wrong architectural priorities."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["software-architecture", "tradeoffs", "technical-debt", "book", "manning"]
 coverImage: ""
 youtubeUrl: "https://www.youtube.com/watch?v=00rLoQs3U1U"

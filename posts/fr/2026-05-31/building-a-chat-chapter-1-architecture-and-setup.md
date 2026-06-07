@@ -4,12 +4,15 @@ date: "2026-05-31"
 excerpt: "Deux applications distinctes, quatre concepts fondamentaux, et comment faire communiquer Rails ActionCable avec Next.js via WebSockets."
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["rails", "nextjs", "actioncable", "websockets", "architecture"]
 coverImage: ""
 collection: "building-a-chat"
 collectionOrder: 1
 collectionTitle: "Construire un Chat en Temps Réel"
 ---
+
+> 💬 **C'est le module de chat en direct que tu vois en bas à droite de ce site.** Cette série détaille précisément comment je l'ai construit — clique sur la bulle de chat pour l'essayer, puis lis la suite pour découvrir comment ça fonctionne en coulisses.
 
 Ce tutoriel parcourt la fonctionnalité de chat en temps réel construite pour un blog Next.js. Les visiteurs ouvrent un widget de chat et parlent à l'administrateur du site. L'administrateur voit toutes les conversations dans un tableau de bord. Les messages arrivent instantanément dans les deux sens.
 

@@ -4,6 +4,7 @@ date: "2026-03-15"
 excerpt: "Kleppmannのレプリケーションの章の要約：なぜレプリケーションするか、シングルリーダー・マルチリーダー・リーダーレスレプリケーションと一貫性のトレードオフ。"
 author: "Tony Duong"
 category: "note"
+categories: ["note", "tech"]
 tags: ["ddia", "databases", "replication", "distributed-systems", "consistency"]
 collection: "ddia"
 collectionOrder: 5
