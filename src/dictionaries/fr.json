@@ -6,7 +6,22 @@
     "about": "Qui suis-je",
     "todo": "À faire",
     "chat": "Discuter avec moi",
+    "resume": "CV",
     "subscribe": "S'abonner"
+  },
+  "resume": {
+    "title": "CV",
+    "subtitle": "Ingénieur logiciel basé à Tokyo — expérience, projets et compétences.",
+    "download": "Télécharger le PDF",
+    "print": "Imprimer / Enregistrer en PDF",
+    "email": "M'écrire",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "education": "Formation",
+    "certifications": "Certifications",
+    "languages": "Langues",
+    "viewCredential": "Voir le badge →"
   },
   "chat": {
     "title": "Discute avec mon clone numérique",

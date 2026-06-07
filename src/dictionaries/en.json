@@ -6,7 +6,22 @@
     "about": "About me",
     "todo": "Todo",
     "chat": "Chat with me",
+    "resume": "Resume",
     "subscribe": "Subscribe"
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "Software engineer based in Tokyo — experience, projects, and skills.",
+    "download": "Download PDF",
+    "print": "Print / Save as PDF",
+    "email": "Email me",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "education": "Education",
+    "certifications": "Certifications",
+    "languages": "Languages",
+    "viewCredential": "View credential →"
   },
   "chat": {
     "title": "Chat with my digital clone",

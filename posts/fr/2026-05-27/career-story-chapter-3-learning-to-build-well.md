@@ -63,4 +63,18 @@ Prochaine destination : Monstarlab.
 
 ---
 
+## Réalisations
+
+Un récapitulatif plus concret de ce sur quoi j'ai travaillé pendant ces deux ans et demi :
+
+- **Participé au développement d'Offers**, une plateforme de mise en relation pour ingénieurs et designers, en travaillant au quotidien avec les product managers et les designers pour transformer les idées en fonctionnalités livrées.
+- **Construit une intégration Slack** qui notifiait en temps réel les recruteurs et les candidats dès qu'une offre correspondante apparaissait — la bonne opportunité arrivait à la bonne personne sans que personne n'ait à rafraîchir une page.
+- **Devenu un ingénieur autonome.** J'ai commencé en suivant l'ingénieur senior, mais assez rapidement c'était moi qui proposais des solutions et concevais de nouvelles fonctionnalités, au-delà de la simple implémentation.
+- **Appris à communiquer efficacement en japonais**, à l'oral comme à l'écrit — l'écrit, en particulier, est devenu un point fort sur lequel je me suis appuyé.
+- **Travaillé sur Offers Magazine**, un magazine numérique couvrant tout ce qui touche à l'ingénierie et au design, où j'ai mis les mains dans AWS CloudFront, WAF et S3, ainsi qu'un CMS headless avec WordPress en back-end.
+- **Construit un outil d'analyse performant sur AWS Redshift**, agrégeant et extrayant des données analytiques via des requêtes SQL complexes.
+- **Développé le front-end en Vue.js**, en collaboration étroite avec une designer qui me transmettait les maquettes (souvent en HTML et CSS) que je transformais en une expérience pleinement interactive, branchée sur les vraies données.
+
+---
+
 *Traduit par Claude*

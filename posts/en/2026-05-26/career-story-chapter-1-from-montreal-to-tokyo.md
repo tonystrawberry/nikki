@@ -40,3 +40,14 @@ I sat with that for about as long as it took me to read the email. Japan. The co
 So I said yes. Goodbye Canada, hello Japan.
 
 Looking back from May 2026, with the yen weaker than it's ever been in my time here — financially it wasn't the smartest decision I ever made. But you can't have everything in life. And I'd take that version of me, the one who clicked apply on a random Facebook ad, every time.
+
+---
+
+## Achievements
+
+A more concrete record of what I built and shipped during the Montreal years:
+
+- **Pursued an engineering double degree** between UTBM (France) and ÉTS (Montreal) in computer/software engineering, finishing top of the class in several courses.
+- **Shipped six or seven games at weekend gamejams** — a quiz game, a Mario-style platformer, a stealth game built around guards' flashlight cones, and a Tetris-on-a-sphere — culminating in a polished Tetris with proper sound design and visual effects.
+- **Built a VR game prototype at Summit Tech** during my master's internship, integrating the company's internal video-call APIs in Unity and delivering it as a client-facing demo alongside their telecoms platform.
+- **Pushed myself out of my comfort zone** — joining the football team and leading project teams in the game club — turning a shy, introverted default into a habit of just showing up.

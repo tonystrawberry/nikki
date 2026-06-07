@@ -45,4 +45,16 @@ Donc c'était le moment de partir. Et je veux être clair là-dessus : Seido a �
 
 ---
 
+## Réalisations
+
+Un récapitulatif plus concret de ce que j'ai construit chez Seido, en tant que seul développeur :
+
+- **Construit les outils internes de l'entreprise de zéro** — sans mentor ni code reviews — sur Ruby on Rails et PostgreSQL, déployés sur Heroku, avec des livraisons quotidiennes.
+- **Livré un système d'expédition** intégrant l'API Shopify avec DHL, Japan Post et FedEx, ainsi qu'un dashboard de suivi de colis normalisant l'API de chaque transporteur en une vue commune unique.
+- **Automatisé le pipeline de commandes** avec Google Apps Script et écrit un outil de comptabilité calculant le chiffre d'affaires mensuel et la déclaration fiscale.
+- **Corrigé les UIs tierces dont l'équipe dépendait** à l'aide de scripts Tampermonkey, en comblant les manques que personne d'autre n'allait combler.
+- **Utilisé moi-même ces outils à l'entrepôt** — en emballant et en étiquetant les 20 à 30 colis expédiés chaque jour — ce que Jordy (le CEO) a crédité d'un gain réel de productivité pour l'entreprise, débouchant sur une offre à temps plein.
+
+---
+
 *Traduit par Claude*

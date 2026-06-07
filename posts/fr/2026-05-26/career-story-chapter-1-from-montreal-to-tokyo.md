@@ -43,4 +43,15 @@ Avec le recul, depuis mai 2026, avec le yen plus faible qu'il ne l'a jamais ét�
 
 ---
 
+## Réalisations
+
+Un récapitulatif plus concret de ce que j'ai construit et livré pendant les années montréalaises :
+
+- **Suivi un double diplôme d'ingénieur** entre l'UTBM (France) et l'ÉTS (Montréal) en génie informatique/logiciel, en terminant major de promo dans plusieurs cours.
+- **Livré six ou sept jeux lors de gamejams le week-end** — un jeu de quiz, un platformer à la Mario, un jeu d'infiltration autour des cônes de lumière des gardes et un Tetris-sur-une-sphère — jusqu'à un Tetris soigné avec un vrai design sonore et des effets visuels.
+- **Construit un prototype de jeu VR chez Summit Tech** lors de mon stage de master, en intégrant les APIs internes de visioconférence de l'entreprise sous Unity et en le livrant comme démo client aux côtés de leur plateforme télécoms.
+- **Sorti de ma zone de confort** — équipe de football, direction d'équipes projet au sein du club de jeux vidéo — transformant un naturel timide et introverti en l'habitude de simplement être présent.
+
+---
+
 *Traduit par Claude*

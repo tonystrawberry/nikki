@@ -1,7 +1,7 @@
 ---
 title: "DDIA Chapter 12: The Future of Data Systems"
 date: "2026-06-04"
-excerpt: "Notes on the final DDIA chapter — integrating batch and stream processing, unbundling databases, end-to-end correctness, and the ethics of data-intensive systems. Reading in progress."
+excerpt: "Notes on the final DDIA chapter — integrating batch and stream processing, unbundling databases, end-to-end correctness, and the ethics of data-intensive systems."
 author: "Tony Duong"
 category: "note"
 tags: ["distributed-systems", "ddia", "data-integration", "ethics"]
@@ -10,7 +10,7 @@ collectionOrder: 12
 collectionTitle: "Designing Data-Intensive Applications"
 ---
 
-*Reading in progress — started 2026-06-04, to be resumed.*
+*Finished reading — started 2026-06-04, completed 2026-06-07. This wraps up the entire book.*
 
 Chapter 12 of *Designing Data-Intensive Applications* is the closing chapter. After ten chapters on foundations and two on batch and stream processing, it steps back and asks: **how do all these pieces fit together, and where is data-intensive systems heading?**
 

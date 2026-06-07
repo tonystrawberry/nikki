@@ -6,7 +6,22 @@
     "about": "私について",
     "todo": "やりたいこと",
     "chat": "チャット",
+    "resume": "履歴書",
     "subscribe": "購読"
+  },
+  "resume": {
+    "title": "履歴書",
+    "subtitle": "東京を拠点とするソフトウェアエンジニア — 経歴・プロジェクト・スキル。",
+    "download": "PDF をダウンロード",
+    "print": "印刷 / PDF として保存",
+    "email": "メールする",
+    "experience": "職務経歴",
+    "projects": "プロジェクト",
+    "skills": "スキル",
+    "education": "学歴",
+    "certifications": "資格",
+    "languages": "言語",
+    "viewCredential": "認定を見る →"
   },
   "chat": {
     "title": "デジタルクローンと話す",

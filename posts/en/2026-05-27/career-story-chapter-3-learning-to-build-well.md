@@ -60,3 +60,17 @@ I went back to the same recruiter who'd introduced me to Overflow in the first p
 I got the offer. I accepted.
 
 Next destination: Monstarlab.
+
+---
+
+## Achievements
+
+A more concrete record of what I worked on across those two and a half years:
+
+- **Helped build Offers**, a job-matching platform for engineers and designers, working day to day with product managers and designers to turn ideas into shipped features.
+- **Built a Slack integration** that notified recruiters and job seekers in real time when a matching position came up — getting the right opportunity in front of the right person without anyone having to refresh a page.
+- **Grew into an autonomous engineer.** I started out following the lead of the senior engineer, but fairly quickly I was the one proposing solutions and designing new features rather than only implementing them.
+- **Learned to communicate effectively in Japanese**, both spoken and written — the written side in particular became a strength I leaned on.
+- **Worked on Offers Magazine**, a digital magazine covering everything around engineering and design, where I got hands-on with AWS CloudFront, WAF, and S3, and a headless-CMS setup running WordPress as the backend.
+- **Built a performant analytics tool on AWS Redshift**, aggregating and extracting analytical data through complex SQL queries.
+- **Developed the frontend in Vue.js**, working closely with a designer who'd hand off the designs (often as HTML and CSS) that I'd turn into a fully interactive experience wired up to real data.

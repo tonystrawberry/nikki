@@ -42,3 +42,15 @@ The doubt was quieter than that. I'd built a lot at Seido — really a lot — b
 I wanted a mentor. I wanted code reviews. I wanted to work in Japanese, not in French. I wanted to know what good engineering looked like, not just what shippable engineering looked like.
 
 So it was time to go. And I want to be clear about this part: Seido was a blessing. In a lot of ways, those first years were the best years of my life in Japan. But the growth I needed next was somewhere else, and I had to go find it.
+
+---
+
+## Achievements
+
+A more concrete record of what I built at Seido, as the sole developer:
+
+- **Built the company's internal tooling from scratch** — no mentor, no code reviews — on Ruby on Rails and PostgreSQL, deployed to Heroku, shipping every day.
+- **Shipped a shipment system** integrating the Shopify API with DHL, Japan Post, and FedEx, plus a parcel-tracking dashboard that normalized each carrier's API into a single common view.
+- **Automated the order pipeline** with Google Apps Script and wrote an accounting tool that computed monthly revenue and the tax declaration.
+- **Patched the third-party UIs the team depended on** with Tampermonkey userscripts, fixing the gaps nobody else was going to fix.
+- **Used the tools myself in the warehouse** — wrapping and labelling the 20–30 parcels going out each day — which Jordy (CEO) credited with measurably moving the company's productivity forward, leading to a full-time offer.

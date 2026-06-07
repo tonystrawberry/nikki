@@ -170,7 +170,28 @@ export interface Dictionary {
     about: string;       // "Qui suis-je" / "About me" / "私について"
     todo: string;        // "À faire" / "Todo" / "やりたいこと"
     chat: string;        // "Chat" link
+    resume: string;      // "CV" / "Resume" / "履歴書"
     subscribe: string;   // "S'abonner" / "Subscribe" / "購読"
+  };
+
+  /**
+   * Resume page UI labels (section headings + actions)
+   * Used in: src/app/[locale]/resume/page.tsx
+   * The actual resume content lives in src/lib/resume-data.ts
+   */
+  resume: {
+    title: string;
+    subtitle: string;
+    download: string;       // Download pre-rendered PDF button
+    print: string;          // Print / save-as-PDF button
+    email: string;          // Email button
+    experience: string;
+    projects: string;
+    skills: string;
+    education: string;
+    certifications: string;
+    languages: string;
+    viewCredential: string; // Link text for a certification badge
   };
 
   /**

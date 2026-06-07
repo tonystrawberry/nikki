@@ -398,3 +398,150 @@
 .animation-delay-300 { animation-delay: 300ms; }
 .animation-delay-400 { animation-delay: 400ms; }
 .animation-delay-500 { animation-delay: 500ms; }
+
+/* ==========================================================================
+   Print / Save-as-PDF — the /resume page
+   Design rule: rely on TEXT COLOR + BORDERS only (Chrome's --print-to-pdf
+   does not render background-color by default, but text and borders always
+   print). Palette: white paper, orange accents (#ea580c / #c2410c), slate ink.
+   ========================================================================== */
+@media print {
+  @page {
+    margin: 14mm 15mm;
+  }
+
+  /* Hide site chrome / floating UI. NOTE: the résumé's own identity block is a
+     <header>, so we must NOT hide generic <header>. The site header is .fixed. */
+  .fixed,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #1f2937 !important; /* slate-800 ink */
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+
+  .resume {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  /* Neutralize entrance animations so everything is visible */
+  .resume .opacity-0 {
+    opacity: 1 !important;
+  }
+  .resume .animate-fade-in-up {
+    animation: none !important;
+  }
+
+  /* ---- Identity ---------------------------------------------------------- */
+  .resume-identity {
+    margin-bottom: 14pt !important;
+  }
+  .resume-name {
+    font-family: var(--font-serif), Georgia, serif !important;
+    color: #0f172a !important; /* slate-900 */
+    font-size: 27pt !important;
+    line-height: 1.05 !important;
+    margin-bottom: 2pt !important;
+  }
+  .resume-title {
+    color: #ea580c !important; /* orange-600 */
+    font-size: 12pt !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.01em;
+    margin-bottom: 8pt !important;
+  }
+  .resume-contact {
+    color: #4b5563 !important; /* gray-600 */
+    font-size: 9pt !important;
+    gap: 4pt 14pt !important;
+  }
+  .resume-contact a {
+    color: #4b5563 !important;
+    text-decoration: none !important;
+  }
+  .resume-summary {
+    color: #374151 !important; /* gray-700 */
+    font-size: 10pt !important;
+    margin-top: 9pt !important;
+  }
+
+  /* ---- Section headings -------------------------------------------------- */
+  .resume h2 {
+    font-size: 12.5pt !important;
+    color: #111827 !important;
+    margin-bottom: 9pt !important;
+    padding-bottom: 3pt !important;
+    border-bottom: 1.5pt solid #fdba74 !important; /* soft orange rule */
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Orange accents: section numbers, the "▸" bullets, links, the title */
+  .resume .text-primary {
+    color: #ea580c !important;
+  }
+
+  /* Job / project / entry titles */
+  .resume h3 {
+    color: #111827 !important;
+    font-size: 11pt !important;
+  }
+  .resume h3 a {
+    color: #c2410c !important; /* orange-700 for linked project names */
+    text-decoration: none !important;
+  }
+
+  /* Muted text (dates, locations, context, group labels) */
+  .resume .text-muted-foreground {
+    color: #6b7280 !important; /* gray-500 */
+  }
+  .resume .text-foreground\/80,
+  .resume .text-foreground\/90 {
+    color: #374151 !important;
+  }
+  .resume .italic {
+    color: #6b7280 !important;
+  }
+
+  /* ---- Decorative separators (Radix Separator = filled div) -------------- */
+  /* Convert the filled bar into a printable border line. */
+  .resume [data-slot="separator"] {
+    background: transparent !important;
+    height: 0 !important;
+    border-top: 1.5pt solid #ea580c !important;
+    margin: 12pt 0 !important;
+  }
+
+  /* ---- Tech-stack chips: orange outline (borders print) ------------------ */
+  .resume .bg-secondary {
+    background: transparent !important;
+    border: 0.75pt solid #fb923c !important; /* orange-400 */
+    color: #9a3412 !important; /* orange-800 */
+    border-radius: 4pt !important;
+    padding: 1pt 5pt !important;
+    font-size: 7.5pt !important;
+  }
+
+  /* ---- Pagination niceties ---------------------------------------------- */
+  .resume-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .resume section {
+    break-inside: auto;
+  }
+}

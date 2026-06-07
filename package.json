@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "embeddings": "tsx scripts/build-embeddings.ts"
+    "embeddings": "tsx scripts/build-embeddings.ts",
+    "resume:pdf": "bash scripts/generate-resume-pdf.sh"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.98.0",
