@@ -82,6 +82,12 @@
       "text": "Rescue a dog and raise it",
       "done": false,
       "createdAt": "2026-06-07"
+    },
+    {
+      "id": 15,
+      "text": "Add a \"What kind of developer am I?\" section to the About Me page",
+      "done": false,
+      "createdAt": "2026-06-11"
     }
   ]
 }
