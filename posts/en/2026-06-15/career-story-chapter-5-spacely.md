@@ -46,6 +46,8 @@ And I got *very* close to **Datadog** — logs, traces, metrics. I rebuilt dashb
 
 On the debugging front — and I genuinely love debugging — I brought our **Honeybadger alerts down from around 10,000 to under 300** in a two-week window. That one was satisfying in a way that's hard to explain to non-engineers.
 
+I also built a **Jira app** that finally gave us honest burndown and velocity charts. Default Jira couldn't do what we needed — we have many statuses that should count as DONE but don't in the out-of-the-box reports, and sprint points live in different custom fields across several Jira workspaces. Without aggregating all of that correctly, we had no precise way to see how fast the development team was actually moving.
+
 ## Becoming a Tech Lead
 
 In December 2025, ten months after joining, I became **Tech Lead**. I wasn't expecting how much I'd enjoy it.
@@ -79,6 +81,7 @@ A more concrete record of what I did across my time at Spacely:
 - **Joined a four-person backend team as a Senior Backend Engineer** (Ruby on Rails), responsible for the backend of the whole VR platform, and was **promoted to Tech Lead** ten months in (December 2025).
 - **Made a core production job ~4× faster** — a CPU-heavy 360°-to-cubemap conversion run more than 10,000 times a day — by moving it off the shared Sidekiq workers and onto AWS Lambda. ([Full write-up.](/en/posts/off-the-worker-into-lambda-360-cubemap-generation-4x-faster))
 - **Cut Honeybadger error alerts from ~10,000 to under 300** in a two-week window through focused bug-fixing.
+- **Built a custom Jira app** for burndown and velocity charts — aggregating multiple DONE statuses and sprint-point fields across several Jira workspaces, which default Jira couldn't configure.
 - **Led a vulnerability assessment project** end to end — evaluating security firms, scoping, and running the engagement — partly as the fastest route to a bird's-eye view of the codebase.
 - **Upgraded Rails from 7.1 to 7.2** across a multi-database setup, repairing the many cross-database tests it broke along the way.
 - **Led infrastructure and system-design work** on AWS — Step Functions, Lambda, API Gateway, ECS, and the ALB/VPC networking layer — backed by hands-on experience and several AWS certifications.

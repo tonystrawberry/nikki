@@ -46,6 +46,8 @@ Et je me suis *beaucoup* rapproché de **Datadog** — logs, traces, métriques.
 
 Côté débogage — et j'adore vraiment déboguer — j'ai fait passer nos **alertes Honeybadger d'environ 10 000 à moins de 300** en l'espace de deux semaines. Celui-là procurait une satisfaction difficile à expliquer aux non-ingénieurs.
 
+J'ai aussi construit une **application Jira** qui nous a enfin donné des burndown et velocity charts honnêtes. Jira par défaut ne pouvait pas faire ce qu'il nous fallait — nous avons de nombreux statuts qui devraient compter comme DONE mais pas dans les rapports standard, et les story points vivent dans des champs personnalisés différents à travers plusieurs workspaces Jira. Sans agréger tout ça correctement, nous n'avions aucun moyen précis de voir à quelle vitesse l'équipe de développement avançait réellement.
+
 ## Devenir Tech Lead
 
 En décembre 2025, dix mois après mon arrivée, je suis devenu **Tech Lead**. Je ne m'attendais pas à autant aimer ça.
@@ -79,6 +81,7 @@ Un compte rendu plus concret de ce que j'ai fait durant mon passage chez Spacely
 - **Rejoint une équipe backend de quatre personnes comme Senior Backend Engineer** (Ruby on Rails), responsable du backend de toute la plateforme VR, et **promu Tech Lead** dix mois plus tard (décembre 2025).
 - **Rendu un job de production central ~4× plus rapide** — une conversion 360°-vers-cubemap gourmande en CPU, exécutée plus de 10 000 fois par jour — en le déplaçant des workers Sidekiq partagés vers AWS Lambda. ([Compte rendu complet.](/fr/posts/off-the-worker-into-lambda-360-cubemap-generation-4x-faster))
 - **Fait passer les alertes d'erreur Honeybadger d'environ 10 000 à moins de 300** en l'espace de deux semaines grâce à une correction de bugs ciblée.
+- **Construit une application Jira sur mesure** pour les burndown et velocity charts — agrégation de multiples statuts DONE et champs de story points à travers plusieurs workspaces Jira, ce que Jira par défaut ne permettait pas de configurer.
 - **Mené un projet d'évaluation de vulnérabilité** de bout en bout — évaluation des entreprises de sécurité, cadrage et pilotage de la mission — en partie comme la voie la plus rapide vers une vue d'ensemble du code.
 - **Mis à niveau Rails de 7.1 à 7.2** sur une configuration multi-bases de données, en réparant les nombreux tests inter-bases que cela a cassés en chemin.
 - **Mené les travaux d'infrastructure et de conception système** sur AWS — Step Functions, Lambda, API Gateway, ECS, et la couche réseau ALB/VPC — appuyés par une expérience concrète et plusieurs certifications AWS.
