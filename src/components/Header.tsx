@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -20,9 +21,17 @@ export function Header({ locale, dict }: HeaderProps) {
         <nav className="flex h-14 sm:h-16 items-center justify-between">
           <Link
             href={`/${locale}`}
-            className="text-xl font-semibold tracking-tight transition-colors hover:text-primary"
+            className="flex items-center transition-opacity hover:opacity-80"
+            aria-label="Home"
           >
-            <span className="text-gradient">nikki</span>
+            <Image
+              src="/icon.png"
+              alt="tonysekai"
+              width={32}
+              height={32}
+              className="rounded-md"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
