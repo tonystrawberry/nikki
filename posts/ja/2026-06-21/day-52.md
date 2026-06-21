@@ -1,10 +1,10 @@
 ---
 title: "52日目"
 date: "2026-06-21"
-excerpt: "Discord用Eveダイジェストエージェント、Claude Code hooksドキュメント、バックエンドrepoにPostToolUse lint + Stop macOS通知を追加。"
+excerpt: "Discord用Eveエージェント、バックエンドrepoのClaude Code hooks、日本がチュニジアに4-0で勝利 — 今年のW杯はフランス応援。"
 author: "Tony Duong"
 category: "daily"
-tags: ["eve", "vercel", "agents", "discord", "tech-watch", "open-source", "ai", "claude-code", "hooks", "lint", "macos"]
+tags: ["eve", "vercel", "agents", "discord", "tech-watch", "open-source", "ai", "claude-code", "hooks", "lint", "macos", "football", "japan", "world-cup", "france"]
 coverImage: "/images/blog/daily-cover.jpg"
 ---
 
@@ -12,6 +12,7 @@ coverImage: "/images/blog/daily-cover.jpg"
 
 - Vercelの新しいEveエージェントフレームワークで、テックウォッチ用のエージェントを構築 — プライベートDiscordチャンネルに日次ダイジェストを送る [smart-digest-market-intelligence-eve](https://github.com/tonystrawberry/smart-digest-market-intelligence-eve)；ダイジェストの生成と配信は問題なく動いているが、テックソースとニュースの取得元はまだ改善が必要
 - [Claude Code hooks リファレンス](https://code.claude.com/docs/en/hooks) を読み、バックエンドrepoにhooksを追加 — `Edit|Write` の `PostToolUse` で `post_edit.sh` 経由のlintと追加チェック、`Stop` でClaudeの応答完了時にmacOSネイティブ通知
+- 日本対チュニジアのサッカーを観戦 — 日本4-0勝利 🇯🇵；本当にいつかW杯優勝すると思うが、今年はフランスに期待している
 
 ### `.claude/hooks/settings.json`
 

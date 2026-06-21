@@ -1,10 +1,10 @@
 ---
 title: "Jour 52"
 date: "2026-06-21"
-excerpt: "Agent Eve pour Discord, lecture de la doc hooks Claude Code, et hooks PostToolUse (lint) + notification macOS Stop sur le repo backend."
+excerpt: "Agent Eve pour Discord, hooks Claude Code sur le repo backend, et victoire du Japon 4-0 face à la Tunisie — je soutiens la France pour cette Coupe du monde."
 author: "Tony Duong"
 category: "daily"
-tags: ["eve", "vercel", "agents", "discord", "tech-watch", "open-source", "ai", "claude-code", "hooks", "lint", "macos"]
+tags: ["eve", "vercel", "agents", "discord", "tech-watch", "open-source", "ai", "claude-code", "hooks", "lint", "macos", "football", "japan", "world-cup", "france"]
 coverImage: "/images/blog/daily-cover.jpg"
 ---
 
@@ -12,6 +12,7 @@ coverImage: "/images/blog/daily-cover.jpg"
 
 - construit un agent de veille techno qui m'envoie un digest quotidien sur mon canal Discord privé avec le nouveau framework d'agents Eve de Vercel — [smart-digest-market-intelligence-eve](https://github.com/tonystrawberry/smart-digest-market-intelligence-eve) ; la génération et la livraison du digest fonctionnent bien, mais je dois encore affiner les sources tech et d'où récupérer l'info
 - lu la [référence des hooks Claude Code](https://code.claude.com/docs/en/hooks) et ajouté des hooks sur le repo backend — `PostToolUse` sur `Edit|Write` lance le lint et des checks supplémentaires via `post_edit.sh`, et `Stop` envoie une notification macOS native quand Claude a fini de répondre
+- regardé le Japon battre la Tunisie 4-0 🇯🇵 — ils sont trop forts, je pense qu'ils gagneront une Coupe du monde un jour, mais cette année j'espère que la France la remporte
 
 ### `.claude/hooks/settings.json`
 
