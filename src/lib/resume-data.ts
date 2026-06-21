@@ -188,11 +188,11 @@ const en: ResumeData = {
     },
     {
       company: "Seido",
-      role: "Software Engineer",
+      role: "Software Engineering Intern → Software Engineer",
       period: "2018 – ~2020",
       location: "Tokyo, Japan",
       context:
-        "Sole developer at a seven-person e-commerce business (Japanese martial-arts gear), building internal tooling from scratch.",
+        "Started as an intern, then offered a permanent full-time contract. Sole developer at a seven-person e-commerce business (Japanese martial-arts gear), building internal tooling from scratch.",
       highlights: [
         "Built a shipment system integrating the <span class=\"text-primary\">Shopify API</span> with <span class=\"text-primary\">DHL, Japan Post, and FedEx</span>, plus a parcel-tracking dashboard that normalized each carrier's API into one view.",
         "Wrote accounting/revenue and tax-declaration tooling, <span class=\"text-primary\">Google Apps Script</span> automations for the order pipeline, and Tampermonkey scripts to patch third-party UIs.",
@@ -386,11 +386,11 @@ const fr: ResumeData = {
     },
     {
       company: "Seido",
-      role: "Ingénieur logiciel",
+      role: "Stagiaire ingénieur logiciel → ingénieur logiciel",
       period: "2018 – ~2020",
       location: "Tokyo, Japon",
       context:
-        "Seul développeur d'une société e-commerce de sept personnes (équipement d'arts martiaux japonais), construisant les outils internes de zéro.",
+        "Arrivé en stagiaire, puis embauché en CDI temps plein. Seul développeur d'une société e-commerce de sept personnes (équipement d'arts martiaux japonais), construisant les outils internes de zéro.",
       highlights: [
         "Construit un système d'expédition intégrant l'<span class=\"text-primary\">API Shopify</span> avec <span class=\"text-primary\">DHL, Japan Post et FedEx</span>, plus un dashboard de suivi de colis normalisant l'API de chaque transporteur en une vue unique.",
         "Écrit des outils de comptabilité/chiffre d'affaires et de déclaration fiscale, des automatisations <span class=\"text-primary\">Google Apps Script</span> pour le pipeline de commandes, et des scripts Tampermonkey pour corriger des UIs tierces.",
@@ -584,11 +584,11 @@ const ja: ResumeData = {
     },
     {
       company: "Seido",
-      role: "ソフトウェアエンジニア",
+      role: "ソフトウェアエンジニア インターン → ソフトウェアエンジニア",
       period: "2018年 – 2020年頃",
       location: "東京、日本",
       context:
-        "7人規模の EC 企業（日本の武道用品）で唯一の開発者として、社内ツールをゼロから構築。",
+        "インターンとして入社し、のち正社員（フルタイム）として採用。7人規模の EC 企業（日本の武道用品）で唯一の開発者として、社内ツールをゼロから構築。",
       highlights: [
         "<span class=\"text-primary\">Shopify API</span> と <span class=\"text-primary\">DHL・日本郵便・FedEx</span> を連携する出荷システムと、各配送業者の API を1つのビューに正規化する荷物追跡ダッシュボードを構築。",
         "会計/売上・確定申告ツール、受注パイプライン向けの <span class=\"text-primary\">Google Apps Script</span> 自動化、サードパーティ UI を補正する Tampermonkey スクリプトを作成。",
