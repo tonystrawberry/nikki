@@ -412,6 +412,9 @@ label[for] {
 .resume span.text-primary {
   font-weight: inherit;
 }
+.resume li a {
+  text-underline-offset: 2px;
+}
 
 /* ==========================================================================
    Print / Save-as-PDF — the /resume page

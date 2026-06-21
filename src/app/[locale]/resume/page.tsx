@@ -230,7 +230,7 @@ export default async function ResumePage({ params }: PageProps) {
             ))}
           </div>
 
-          <h2 className="text-xl sm:text-2xl font-semibold mt-10 mb-6 flex items-center gap-2">
+          <h2 id="certifications" className="text-xl sm:text-2xl font-semibold mt-10 mb-6 flex items-center gap-2 scroll-mt-24">
             <span className="text-primary">{num()}.</span>
             {dict.resume.certifications}
           </h2>
