@@ -27,7 +27,10 @@
     "certifications": "Certifications",
     "languages": "Langues",
     "viewCredential": "Voir le badge →",
-    "expired": "Expiré"
+    "expired": "Expiré",
+    "aboutChatLead": "Envie d'en savoir plus ? Rendez-vous sur ma ",
+    "aboutChatLink": "page à propos",
+    "aboutChatTail": " et discutez avec mon clone IA."
   },
   "chat": {
     "title": "Demande à mon clone IA ✨",

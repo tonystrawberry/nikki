@@ -203,6 +203,9 @@ export interface Dictionary {
     languages: string;
     viewCredential: string; // Link text for a certification badge
     expired: string;        // Tag shown on lapsed certifications
+    aboutChatLead: string;  // CTA before the about-page link
+    aboutChatLink: string;  // Link label → /[locale]/about
+    aboutChatTail: string;  // CTA after the link
   };
 
   /**

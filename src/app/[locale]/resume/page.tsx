@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { hasLocale, getDictionary } from "@/lib/i18n";
 import { resumeData } from "@/lib/resume-data";
@@ -67,11 +68,29 @@ export default async function ResumePage({ params }: PageProps) {
           >
             <span className="mr-1.5">💼</span>{profile.linkedinLabel}
           </a>
+          <a
+            href={profile.blog}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-foreground transition-colors"
+          >
+            <span className="mr-1.5">📝</span>{profile.blogLabel}
+          </a>
         </div>
         <p
           className="resume-summary mt-5 text-base sm:text-lg leading-relaxed text-foreground/90"
           dangerouslySetInnerHTML={{ __html: profile.summary }}
         />
+        <p className="resume-about-cta no-print mt-4 text-sm text-muted-foreground leading-relaxed border border-border/50 rounded-lg px-4 py-3 bg-muted/20">
+          {dict.resume.aboutChatLead}
+          <Link
+            href={`/${locale}/about`}
+            className="text-primary font-medium hover:underline underline-offset-2"
+          >
+            {dict.resume.aboutChatLink}
+          </Link>
+          {dict.resume.aboutChatTail}
+        </p>
       </header>
 
       {/* Actions (hidden when printing) */}
@@ -110,7 +129,7 @@ export default async function ResumePage({ params }: PageProps) {
                 {job.highlights.map((h, i) => (
                   <li key={i} className="flex gap-2 text-sm sm:text-base leading-relaxed">
                     <span className="text-primary shrink-0">▸</span>
-                    <span>{h}</span>
+                    <span dangerouslySetInnerHTML={{ __html: h }} />
                   </li>
                 ))}
               </ul>

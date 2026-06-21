@@ -27,7 +27,10 @@
     "certifications": "資格",
     "languages": "言語",
     "viewCredential": "認定を見る →",
-    "expired": "失効"
+    "expired": "失効",
+    "aboutChatLead": "もっと知りたい方は ",
+    "aboutChatLink": "about ページ",
+    "aboutChatTail": " で AI クローンとチャットしてください。"
   },
   "chat": {
     "title": "AIクローンに聞く ✨",

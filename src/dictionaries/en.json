@@ -27,7 +27,10 @@
     "certifications": "Certifications",
     "languages": "Languages",
     "viewCredential": "View credential →",
-    "expired": "Expired"
+    "expired": "Expired",
+    "aboutChatLead": "Want to know more about me? Go to my ",
+    "aboutChatLink": "about page",
+    "aboutChatTail": " and chat with my AI clone."
   },
   "chat": {
     "title": "Ask my AI clone ✨",

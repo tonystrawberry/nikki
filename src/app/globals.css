@@ -408,6 +408,11 @@ label[for] {
   cursor: pointer;
 }
 
+/* Résumé inline highlights — orange accent, not bold */
+.resume span.text-primary {
+  font-weight: inherit;
+}
+
 /* ==========================================================================
    Print / Save-as-PDF — the /resume page
    Design rule: rely on TEXT COLOR + BORDERS only (Chrome's --print-to-pdf
@@ -502,6 +507,7 @@ label[for] {
   /* Orange accents: section numbers, the "▸" bullets, links, the title */
   .resume .text-primary {
     color: #ea580c !important;
+    font-weight: inherit !important;
   }
 
   /* Job / project / entry titles */

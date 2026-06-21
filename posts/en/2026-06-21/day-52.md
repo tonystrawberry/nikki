@@ -1,10 +1,10 @@
 ---
 title: "Day 52"
 date: "2026-06-21"
-excerpt: "Built an Eve digest agent for Discord, read the Claude Code hooks docs, and wired PostToolUse lint checks plus a Stop macOS notification on the backend repo."
+excerpt: "Built an Eve digest agent for Discord, wired Claude Code hooks on the backend repo, and watched Japan beat Tunisia 4-0 — rooting for France at this year's World Cup."
 author: "Tony Duong"
 category: "daily"
-tags: ["eve", "vercel", "agents", "discord", "tech-watch", "open-source", "ai", "claude-code", "hooks", "lint", "macos"]
+tags: ["eve", "vercel", "agents", "discord", "tech-watch", "open-source", "ai", "claude-code", "hooks", "lint", "macos", "football", "japan", "world-cup", "france"]
 coverImage: "/images/blog/daily-cover.jpg"
 ---
 
@@ -12,6 +12,7 @@ coverImage: "/images/blog/daily-cover.jpg"
 
 - built an agent for tech watch that sends me a daily digest to my private Discord channel using Vercel's new Eve agent framework — [smart-digest-market-intelligence-eve](https://github.com/tonystrawberry/smart-digest-market-intelligence-eve); digest generation and delivery are working fine, but I still need to refine the tech sources and where to pull news from
 - read the [Claude Code hooks reference](https://code.claude.com/docs/en/hooks) and added hooks to the backend repo — `PostToolUse` on `Edit|Write` runs lint and extra checks via `post_edit.sh`, and `Stop` fires a native macOS notification when Claude finishes responding
+- watched Japan beat Tunisia 4-0 🇯🇵 — they're so good, I really think they'll win a World Cup one day, but this year I'm hoping France takes it
 
 ### `.claude/hooks/settings.json`
 
