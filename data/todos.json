@@ -88,6 +88,13 @@
       "text": "Add a \"What kind of developer am I?\" section to the About Me page",
       "done": false,
       "createdAt": "2026-06-11"
+    },
+    {
+      "id": 16,
+      "text": "Build a complex workflow with n8n or Make (one of the job criteria for AI Engineers — looks fun)",
+      "done": true,
+      "createdAt": "2026-07-15",
+      "completedAt": "2026-07-16"
     }
   ]
 }

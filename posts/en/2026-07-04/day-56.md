@@ -1,10 +1,10 @@
 ---
 title: "Day 56"
 date: "2026-07-04"
-excerpt: "Last week as a permanent Spacely employee — traveled from Karatsu to Tokyo for final goodbyes and received a lovely yosegaki from colleagues."
+excerpt: "Last week as a permanent Spacely employee — traveled from Karatsu to Tokyo for final goodbyes, received a lovely yosegaki from colleagues, and shipped a Notion + Slack release-tracking automation for the CS team."
 author: "Tony Duong"
 category: "daily"
-tags: ["personal", "spacely", "japan", "tokyo", "france", "moving", "relocation", "career"]
+tags: ["personal", "spacely", "japan", "tokyo", "france", "moving", "relocation", "career", "automation", "notion", "slack", "productivity"]
 coverImage: "/images/blog/2026-07-04/spacely-farewell-yosegaki.png"
 ---
 
@@ -12,6 +12,7 @@ coverImage: "/images/blog/2026-07-04/spacely-farewell-yosegaki.png"
 
 - had my last working week as a permanent Spacely employee (July 3 was my final day in the office) — traveled from Karatsu to Tokyo to see colleagues and friends one last time before leaving for France
 - received a lovely yosegaki from my colleagues with heartfelt farewell messages; not quite goodbye since I'm continuing as a contractor from mid-August
+- built a small automation workflow during my final week: every day it creates a new release page in Notion and copies the test steps from each PR scheduled for release that day (pulled from the PR descriptions) so the CS team can track their testing progress, then posts a Slack notification linking to the page — the kind of low-cost, high-leverage automation that really boosts team productivity, and with good documentation the maintenance overhead stays manageable
 
 ![Farewell yosegaki from Spacely colleagues](/images/blog/2026-07-04/spacely-farewell-yosegaki.png)
 

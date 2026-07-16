@@ -1,10 +1,10 @@
 ---
 title: "56日目"
 date: "2026-07-04"
-excerpt: "Spacely 正社員として最後の一週間 — 唐津から東京へ、フランス出国前に同僚や友人と最後の再会。同僚から寄せ書きをもらった。"
+excerpt: "Spacely 正社員として最後の一週間 — 唐津から東京へ、フランス出国前に同僚や友人と最後の再会。同僚から寄せ書きをもらい、CS チーム向けに Notion + Slack のリリース追跡自動化を導入した。"
 author: "Tony Duong"
 category: "daily"
-tags: ["personal", "spacely", "japan", "tokyo", "france", "moving", "relocation", "career"]
+tags: ["personal", "spacely", "japan", "tokyo", "france", "moving", "relocation", "career", "automation", "notion", "slack", "productivity"]
 coverImage: "/images/blog/2026-07-04/spacely-farewell-yosegaki.png"
 ---
 
@@ -12,6 +12,7 @@ coverImage: "/images/blog/2026-07-04/spacely-farewell-yosegaki.png"
 
 - Spacely 正社員として最後の一週間を過ごした（7/3 が最終出社日）— フランスへの出国前に、唐津から東京へ移動して同僚や友人と最後の再会をした
 - 同僚から心のこもった寄せ書き（yosegaki）をもらった — 8月中旬から業務委託で続けるので、完全なお別れではない
+- 最後の一週間で小さな自動化ワークフローを構築した：毎日 Notion に新しいリリースページを作成し、その日にリリース予定の各 PR のテスト手順を（PR の説明文から抽出して）コピーすることで CS チームがテストの進捗を追えるようにし、さらにそのページへのリンク付き通知を Slack に投稿する — 低コストで効果の大きい、チームの生産性を本当に高めてくれるタイプの自動化で、しっかりドキュメント化しておけば保守の負担も無理のない範囲に収まる
 
 ![Spacely 同僚からの寄せ書き](/images/blog/2026-07-04/spacely-farewell-yosegaki.png)
 

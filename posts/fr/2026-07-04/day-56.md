@@ -1,10 +1,10 @@
 ---
 title: "Jour 56"
 date: "2026-07-04"
-excerpt: "Dernière semaine en CDI chez Spacely — voyage de Karatsu à Tokyo pour les adieux et réception d'un joli yosegaki de la part des collègues."
+excerpt: "Dernière semaine en CDI chez Spacely — voyage de Karatsu à Tokyo pour les adieux, réception d'un joli yosegaki de la part des collègues et mise en place d'une automatisation de suivi des releases Notion + Slack pour l'équipe CS."
 author: "Tony Duong"
 category: "daily"
-tags: ["personal", "spacely", "japan", "tokyo", "france", "moving", "relocation", "career"]
+tags: ["personal", "spacely", "japan", "tokyo", "france", "moving", "relocation", "career", "automation", "notion", "slack", "productivity"]
 coverImage: "/images/blog/2026-07-04/spacely-farewell-yosegaki.png"
 ---
 
@@ -12,6 +12,7 @@ coverImage: "/images/blog/2026-07-04/spacely-farewell-yosegaki.png"
 
 - passé ma dernière semaine en CDI chez Spacely (3 juillet = dernier jour au bureau) — voyagé de Karatsu à Tokyo pour revoir collègues et amis une dernière fois avant de partir pour la France
 - reçu un joli yosegaki de mes collègues avec des messages de départ touchants ; pas vraiment un adieu puisque je continue en freelance à partir de mi-août
+- mis en place un petit workflow d'automatisation durant ma dernière semaine : chaque jour, il crée une nouvelle page de release dans Notion et copie les étapes de test de chaque PR programmée pour être publiée ce jour-là (extraites des descriptions de PR) afin que l'équipe CS puisse suivre l'avancement de ses tests, puis publie une notification Slack renvoyant vers la page — le genre d'automatisation peu coûteuse et à fort effet de levier qui booste vraiment la productivité de l'équipe, et avec une bonne documentation la charge de maintenance reste raisonnable
 
 ![Yosegaki d'adieu de mes collègues Spacely](/images/blog/2026-07-04/spacely-farewell-yosegaki.png)
 
