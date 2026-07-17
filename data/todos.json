@@ -42,9 +42,11 @@
     {
       "id": 8,
       "text": "Read Practical Object-Oriented Design: An Agile Primer Using Ruby (POODR) by Sandi Metz",
-      "done": false,
-      "createdAt": "2026-03-26"
+      "done": true,
+      "createdAt": "2026-03-26",
+      "completedAt": "2026-07-17"
     },
+
     {
       "id": 9,
       "text": "Become comfortable using Hotwire, Turbo, and Stimulus.",
