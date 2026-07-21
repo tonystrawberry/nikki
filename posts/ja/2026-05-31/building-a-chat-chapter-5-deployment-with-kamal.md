@@ -25,8 +25,8 @@ Next.js 16 フロントエンド               Rails 8 + Puma + Thruster
   静的ページ、管理UI                      ActionCable WebSocket
   チャットウィジェットJS                   REST API、SQLiteデータベース
                                         Solid Cable / Queue / Cache
-        <── wss://nikki-chat.shirimono.fun/cable ──>
-        <── https://nikki-chat.shirimono.fun/* ──>
+        <── wss://chat.journal.tonystrawberry.fun/cable ──>
+        <── https://chat.journal.tonystrawberry.fun/* ──>
 ```
 
 [第1章](01-architecture-and-setup.md)との重要な違い：本番では`wss://`と`https://`を使用します。TLSはRails自体ではなく、Let's Encrypt経由でkamal-proxyで終端します。
@@ -73,7 +73,7 @@ servers:
 
 proxy:
   ssl: true
-  host: nikki-chat.shirimono.fun
+  host: chat.journal.tonystrawberry.fun
 ```
 
 `proxy.ssl: true`で初回デプロイ時にLet's Encrypt証明書をプロビジョニングします。nginx不要、certbot不要。
@@ -146,8 +146,8 @@ concurrency:
 Vercelの3つの環境変数でフロントエンドをRailsに接続します：
 
 ```
-NEXT_PUBLIC_CHAT_WS_URL=wss://nikki-chat.shirimono.fun/cable
-NEXT_PUBLIC_CHAT_HTTP_URL=https://nikki-chat.shirimono.fun
+NEXT_PUBLIC_CHAT_WS_URL=wss://chat.journal.tonystrawberry.fun/cable
+NEXT_PUBLIC_CHAT_HTTP_URL=https://chat.journal.tonystrawberry.fun
 NEXT_PUBLIC_VAPID_PUBLIC_KEY=<VAPIDパブリックキー>
 ```
 

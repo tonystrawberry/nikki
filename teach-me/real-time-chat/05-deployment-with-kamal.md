@@ -11,8 +11,8 @@ Next.js 16 frontend                   Rails 8 + Puma + Thruster
   Static pages, admin UI                ActionCable WebSocket
   Chat widget JS                        REST API, SQLite databases
                                         Solid Cable / Queue / Cache
-        <── wss://nikki-chat.shirimono.fun/cable ──>
-        <── https://nikki-chat.shirimono.fun/* ──>
+        <── wss://chat.journal.tonystrawberry.fun/cable ──>
+        <── https://chat.journal.tonystrawberry.fun/* ──>
 ```
 
 Key difference from [Chapter 1](01-architecture-and-setup.md): production uses `wss://` and `https://`. TLS terminates at kamal-proxy via Let's Encrypt, not at Rails itself.
@@ -59,7 +59,7 @@ servers:
 
 proxy:
   ssl: true
-  host: nikki-chat.shirimono.fun
+  host: chat.journal.tonystrawberry.fun
 ```
 
 `proxy.ssl: true` provisions a Let's Encrypt cert on first deploy. No nginx, no certbot.
@@ -132,8 +132,8 @@ The job steps: checkout, setup Ruby (with cache), setup Docker Buildx, install S
 Three env vars on Vercel connect the frontend to Rails:
 
 ```
-NEXT_PUBLIC_CHAT_WS_URL=wss://nikki-chat.shirimono.fun/cable
-NEXT_PUBLIC_CHAT_HTTP_URL=https://nikki-chat.shirimono.fun
+NEXT_PUBLIC_CHAT_WS_URL=wss://chat.journal.tonystrawberry.fun/cable
+NEXT_PUBLIC_CHAT_HTTP_URL=https://chat.journal.tonystrawberry.fun
 NEXT_PUBLIC_VAPID_PUBLIC_KEY=<the VAPID public key>
 ```
 
