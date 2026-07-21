@@ -45,8 +45,8 @@ export function CloneChat({ locale, dict }: Props) {
       });
 
       if (!res.ok || !res.body) {
-        const body = await res.text().catch(() => "");
-        throw new Error(body || `HTTP ${res.status}`);
+        // Don't surface raw JSON / provider errors in the UI.
+        throw new Error("UNAVAILABLE");
       }
 
       const reader = res.body.getReader();
@@ -55,11 +55,22 @@ export function CloneChat({ locale, dict }: Props) {
         const { done, value } = await reader.read();
         if (done) break;
         assistantText += decoder.decode(value, { stream: true });
+        // Hide the sentinel while streaming so it never flashes as a bubble.
+        if (assistantText.includes("[[CHAT_UNAVAILABLE]]")) {
+          throw new Error("UNAVAILABLE");
+        }
         setMessages([...next, { role: "assistant", content: assistantText }]);
       }
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : "Unknown error";
-      setError(msg);
+
+      // Belts and braces: treat legacy "[error] …" streams the same way.
+      if (
+        assistantText.includes("[[CHAT_UNAVAILABLE]]") ||
+        assistantText.trimStart().startsWith("[error]")
+      ) {
+        throw new Error("UNAVAILABLE");
+      }
+    } catch {
+      setError(dict.error);
       setMessages(next);
     } finally {
       setIsStreaming(false);
@@ -156,8 +167,8 @@ export function CloneChat({ locale, dict }: Props) {
           </div>
         ))}
         {error && (
-          <div className="text-sm text-destructive">
-            {dict.error}: {error}
+          <div className="rounded-xl border border-amber-500/20 bg-amber-500/10 px-4 py-3 text-sm text-amber-100/90">
+            {error}
           </div>
         )}
       </div>

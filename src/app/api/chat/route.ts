@@ -75,8 +75,11 @@ export async function POST(req: Request) {
           }
         }
       } catch (err) {
-        const message = err instanceof Error ? err.message : 'Unknown error';
-        controller.enqueue(encoder.encode(`\n\n[error] ${message}`));
+        // Never stream raw provider payloads (billing JSON, stack traces, …)
+        // into the transcript — the client maps this sentinel to a friendly
+        // localized message.
+        console.error('[api/chat] Anthropic stream failed:', err);
+        controller.enqueue(encoder.encode('[[CHAT_UNAVAILABLE]]'));
       } finally {
         controller.close();
       }
