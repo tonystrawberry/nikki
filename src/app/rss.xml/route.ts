@@ -15,7 +15,7 @@
 import { getAllPosts } from "@/lib/blog";
 
 // Site configuration
-const SITE_URL = "https://nikki-tony.vercel.app"; // Update this with your actual domain
+const SITE_URL = "https://journal.tonystrawberry.fun";
 const SITE_TITLE = "nikki";
 const SITE_DESCRIPTION = "A personal diary about life, thoughts, and experiences";
 const AUTHOR_NAME = "Tony";
