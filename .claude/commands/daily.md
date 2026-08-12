@@ -19,6 +19,7 @@ When creating a **book chapter** or **video** memo, if the slug matches a known 
 | `ddia` | `ddia-chapter-(\d+)-*`, `designing-data-intensive-applications-chapter-(\d+)` | "Designing Data-Intensive Applications" | First captured number from slug (chapter number) |
 | `career-story` | `career-story-chapter-(\d+)-*` | "Story of My Career" | First captured number from slug (chapter number) |
 | `poodr` | `poodr-chapter-(\d+)-*` | "Practical Object-Oriented Design in Ruby" | First captured number from slug (chapter number) |
+| `system-design-interview` | `system-design-interview-chapter-(\d+)-*` | "System Design Interview" | First captured number from slug (chapter number) |
 
 - **Slug patterns** are regex-style: `ddia-chapter-(\d+)-*` means slugs like `ddia-chapter-7-partitioning`; the `(\d+)` is the chapter number.
 - Add to **every** memo that matches: `collection: "{slug}"`, `collectionOrder: {N}`, `collectionTitle: "{title}"`.

@@ -7,6 +7,7 @@ import { getAllPostSlugs, getPostBySlugWithFallback, getPostAvailableLocales, ge
 import { CATEGORIES } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { PostContent } from "@/components/PostContent";
 import { locales, hasLocale, getDictionary, localeFlags, localeNames } from "@/lib/i18n";
 
 interface PageProps {
@@ -211,9 +212,9 @@ export default async function PostPage({ params }: PageProps) {
       )}
 
       {/* Content */}
-      <div
+      <PostContent
         className="prose prose-mobile overflow-x-auto opacity-0 animate-fade-in-up animation-delay-300"
-        dangerouslySetInnerHTML={{ __html: post.content }}
+        html={post.content}
       />
 
       {/* Author Bio */}

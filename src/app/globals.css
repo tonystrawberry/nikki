@@ -257,6 +257,29 @@
   padding: 0;
 }
 
+.prose .mermaid-diagram {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  overflow-x: auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .prose .mermaid-diagram {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+}
+
+.prose .mermaid-diagram svg {
+  max-width: 100%;
+  height: auto;
+}
+
 .prose ul, .prose ol {
   margin: 1.25rem 0;
   padding-left: 1.25rem;
