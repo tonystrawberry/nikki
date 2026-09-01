@@ -97,6 +97,12 @@
       "done": true,
       "createdAt": "2026-07-15",
       "completedAt": "2026-07-16"
+    },
+    {
+      "id": 17,
+      "text": "Read Ruby Programming with AI: https://www.amazon.com/Ruby-Programming-Development-Automation-Applications/dp/B0H513FD7L/ref=tmm_aud_swatch_0",
+      "done": false,
+      "createdAt": "2026-09-01"
     }
   ]
 }
