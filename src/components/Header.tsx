@@ -55,6 +55,12 @@ export function Header({ locale, dict }: HeaderProps) {
               {dict.nav.todo}
             </Link>
             <Link
+              href={`/${locale}/books`}
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {dict.nav.books}
+            </Link>
+            <Link
               href={`/${locale}/resume`}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
@@ -124,6 +130,13 @@ export function Header({ locale, dict }: HeaderProps) {
                 className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
               >
                 {dict.nav.todo}
+              </Link>
+              <Link
+                href={`/${locale}/books`}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
+              >
+                {dict.nav.books}
               </Link>
               <Link
                 href={`/${locale}/resume`}

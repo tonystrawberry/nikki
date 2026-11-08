@@ -1,0 +1,75 @@
+{
+  "items": [
+    {
+      "title": "Designing Data-Intensive Applications",
+      "author": "Martin Kleppmann",
+      "readAt": "2026-06-07",
+      "collection": "ddia",
+      "cover": "/images/books/ddia.jpg"
+    },
+    {
+      "title": "Practical Object-Oriented Design in Ruby",
+      "author": "Sandi Metz",
+      "readAt": "2026-07-17",
+      "collection": "poodr",
+      "cover": "/images/books/poodr.jpg"
+    },
+    {
+      "title": "Le livre des vacances : et ce qu'elles disent de nous, 1936-2026",
+      "author": "Jean Viard, Guénaëlle Gault",
+      "readAt": "2026-09-01",
+      "post": "day-68",
+      "cover": "/images/books/livre-des-vacances.jpg"
+    },
+    {
+      "title": "Trump : le pouvoir des mots",
+      "author": "Alain Bauer",
+      "readAt": "2026-09-05",
+      "cover": "/images/books/trump-pouvoir-des-mots.jpg",
+      "post": "day-70"
+    },
+    {
+      "title": "L'ego est l'ennemi",
+      "author": "Ryan Holiday",
+      "readAt": "2026-09-23",
+      "post": "day-71",
+      "cover": "/images/books/ego-est-l-ennemi.jpg"
+    },
+    {
+      "title": "Fake news : l'info qui ne tourne pas rond",
+      "author": "Doan Bui, Leslie Plée",
+      "readAt": "2026-10-01",
+      "cover": "/images/books/fake-news.jpg"
+    },
+    {
+      "title": "Le conflit israélo-palestinien : 20 questions pour vous faire votre opinion",
+      "author": "Alain Dieckhoff",
+      "readAt": "2026-10-01",
+      "cover": "/images/books/conflit-israelo-palestinien.jpg"
+    },
+    {
+      "title": "Les tendances éco en 50 graphiques : un panorama des tendances qui façonnent l'économie aujourd'hui et demain",
+      "author": "Bastien Drut",
+      "readAt": "2026-10-01",
+      "cover": "/images/books/tendances-eco.jpg"
+    },
+    {
+      "title": "Le paradoxe de l'abondance",
+      "author": "Hugo Clément, Vincent Ravalec, Dominique Mermoux",
+      "readAt": "2026-10-01",
+      "cover": "/images/books/paradoxe-abondance.jpg"
+    },
+    {
+      "title": "Morts par la France",
+      "author": "Pat Perna, Nicolas Otero",
+      "readAt": "2026-10-01",
+      "cover": "/images/books/morts-par-la-france.jpg"
+    },
+    {
+      "title": "Une histoire critique des États-Unis",
+      "author": "James W. Loewen, Nate Powell",
+      "readAt": "2026-10-01",
+      "cover": "/images/books/histoire-critique-etats-unis.jpg"
+    }
+  ]
+}

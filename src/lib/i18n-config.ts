@@ -169,6 +169,7 @@ export interface Dictionary {
     collections: string; // "Collections" / "Collections" / "コレクション"
     about: string;       // "Qui suis-je" / "About me" / "私について"
     todo: string;        // "À faire" / "Todo" / "やりたいこと"
+    books: string;       // "Livres" / "Books" / "本棚"
     chat: string;        // "Chat" link
     resume: string;      // "CV" / "Resume" / "履歴書"
     subscribe: string;   // "S'abonner" / "Subscribe" / "購読"
@@ -332,6 +333,20 @@ export interface Dictionary {
     emptyPending: string;
     emptyDone: string;
     hint: string;
+  };
+
+  /**
+   * Books page translations
+   * Used in: src/app/[locale]/books/page.tsx
+   */
+  books: {
+    title: string;
+    subtitle: string;
+    readOn: string;  // label before the finish date
+    notes: string;   // link to the book's notes collection
+    empty: string;
+    books: string;   // plural counter
+    book: string;    // singular counter
   };
 
   /**

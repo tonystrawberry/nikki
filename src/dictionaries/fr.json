@@ -5,6 +5,7 @@
     "collections": "Collections",
     "about": "Qui suis-je",
     "todo": "À faire",
+    "books": "Livres",
     "chat": "Discuter avec moi",
     "resume": "CV",
     "subscribe": "S'abonner"
@@ -115,6 +116,15 @@
     "emptyPending": "Rien en attente. Ajoute des éléments via la commande add-todo.",
     "emptyDone": "Pas encore d'éléments terminés.",
     "hint": "Ajoute des éléments avec la commande add-todo ; marque comme fait avec finish-todo et le numéro ID."
+  },
+  "books": {
+    "title": "Livres",
+    "subtitle": "Tous les livres que j'ai terminés, du plus récent au plus ancien.",
+    "readOn": "Terminé le",
+    "notes": "Lire mes notes →",
+    "empty": "Pas encore de livres.",
+    "books": "livres",
+    "book": "livre"
   },
   "search": {
     "title": "Recherche",

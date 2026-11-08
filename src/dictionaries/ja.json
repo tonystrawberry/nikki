@@ -5,6 +5,7 @@
     "collections": "コレクション",
     "about": "私について",
     "todo": "やりたいこと",
+    "books": "本棚",
     "chat": "チャット",
     "resume": "履歴書",
     "subscribe": "購読"
@@ -115,6 +116,15 @@
     "emptyPending": "未完了はありません。add-todo コマンドで追加できます。",
     "emptyDone": "まだ完了した項目はありません。",
     "hint": "add-todo で追加、finish-todo と番号で完了にできます。"
+  },
+  "books": {
+    "title": "本棚",
+    "subtitle": "読み終えた本の一覧（新しい順）。",
+    "readOn": "読了",
+    "notes": "読書メモを見る →",
+    "empty": "まだ本はありません。",
+    "books": "冊",
+    "book": "冊"
   },
   "search": {
     "title": "検索",

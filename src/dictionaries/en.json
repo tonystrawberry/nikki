@@ -5,6 +5,7 @@
     "collections": "Collections",
     "about": "About me",
     "todo": "Todo",
+    "books": "Books",
     "chat": "Chat with me",
     "resume": "Resume",
     "subscribe": "Subscribe"
@@ -115,6 +116,15 @@
     "emptyPending": "Nothing pending. Add items via the add-todo command.",
     "emptyDone": "No completed items yet.",
     "hint": "Add items with the add-todo command; mark done with finish-todo and the number ID."
+  },
+  "books": {
+    "title": "Books",
+    "subtitle": "Every book I've finished reading, most recent first.",
+    "readOn": "Finished",
+    "notes": "Read my notes →",
+    "empty": "No books yet.",
+    "books": "books",
+    "book": "book"
   },
   "search": {
     "title": "Search",
