@@ -88,4 +88,6 @@ coverImage: ""
 
    d. In the daily report bullet point, link to the memo article: `[Title](/en/posts/{slug})` (the app uses slug-only URLs, e.g. `/en/posts/ddia-chapter-6-partitioning`).
 
-8. Print the updated/created file path(s) and the point that was added.
+8. **Auto-translate to FR and JA:** After all EN files (daily report + any memo articles) are created/updated, create or update the matching files `posts/fr/{date}/{filename}.md` and `posts/ja/{date}/{filename}.md` for **each** of them, following the rules in `.claude/commands/translate.md` (translate `title` and `excerpt`; keep `date`, `author`, `category`, `tags`, `coverImage`, `youtubeUrl`, collection fields unchanged; internal links `/en/posts/` → `/{locale}/posts/`; daily heading `## Aujourd'hui, j'ai :` / `## 今日やったこと：`; footer `---\n\n> 🌐 *Traduit par Claude*` / `> 🌐 *Claudeによる翻訳*`). If the translation file already exists (the EN daily file was appended to), regenerate it from the full EN content. Launch the FR and JA translations in parallel with Agent tasks when there are several files.
+
+9. Print the updated/created file path(s) and the point that was added.
