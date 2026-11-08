@@ -32,7 +32,6 @@ const interests = [
   { emoji: "📚", label: { fr: "Une salle d'étude calme à la bibliothèque", en: "A quiet library study room", ja: "図書館の静かな自習室" } },
   { emoji: "☕", label: { fr: "Un chocolat chaud quand il fait froid", en: "Hot chocolate on a cold day", ja: "寒い日のホットチョコレート" } },
   { emoji: "🚶", label: { fr: "Les balades sans but dans les villes ou villages que je visite", en: "Aimless walks around the cities or villages I'm visiting", ja: "訪れる街や村を目的もなく歩くこと" } },
-  { emoji: "🌙", label: { fr: "Réfléchir à la vie et à moi-même avant de dormir", en: "Reflecting on life and myself before bed", ja: "寝る前に人生や自分について考えること" } },
   { emoji: "🧹", label: { fr: "Refactoriser et organiser le code", en: "Refactoring and organizing code", ja: "コードをリファクタリングして整理すること" } },
   { emoji: "🎙️", label: { fr: "Regarder des podcasts sur la vie", en: "Watching podcasts about life", ja: "人生についてのポッドキャストを見ること" } },
   { emoji: "🌿", label: { fr: "Rêver d'une vie simple, au plus près de la nature", en: "Dreaming of a simple life close to nature", ja: "自然の中でシンプルに暮らす生活を夢見ること" } },
