@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
@@ -8,6 +9,33 @@ import { CredlyIcon } from "@/components/CredlyIcon";
 
 interface PageProps {
   params: Promise<{ locale: string }>;
+}
+
+/** Square logo tile; falls back to the name's initials when there is no image. */
+function ResumeLogo({ src, name, size = 40 }: { src?: string; name: string; size?: number }) {
+  const box = "shrink-0 overflow-hidden rounded-md border border-border/50 bg-white";
+  if (!src) {
+    const initials = name
+      .split(/\s+/)
+      .map((w) => w[0])
+      .join("")
+      .slice(0, 2)
+      .toUpperCase();
+    return (
+      <div
+        className={`${box} flex items-center justify-center text-xs font-semibold text-neutral-500`}
+        style={{ width: size, height: size }}
+        aria-hidden
+      >
+        {initials}
+      </div>
+    );
+  }
+  return (
+    <div className={box} style={{ width: size, height: size }}>
+      <Image src={src} alt={name} width={size} height={size} className="h-full w-full object-contain" />
+    </div>
+  );
 }
 
 export async function generateMetadata({ params }: PageProps) {
@@ -116,32 +144,35 @@ export default async function ResumePage({ params }: PageProps) {
         </h2>
         <div className="space-y-8">
           {data.experience.map((job) => (
-            <article key={`${job.company}-${job.period}`} className="resume-item">
-              <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5">
-                <h3 className="text-lg font-semibold">
-                  {job.role} <span className="text-primary">・ {job.company}</span>
-                </h3>
-                <span className="text-sm text-muted-foreground whitespace-nowrap">{job.period}</span>
-              </div>
-              <p className="text-sm text-muted-foreground mb-2">{job.location}</p>
-              <p className="text-sm italic text-foreground/80 mb-3">{job.context}</p>
-              <ul className="space-y-1.5">
-                {job.highlights.map((h, i) => (
-                  <li key={i} className="flex gap-2 text-sm sm:text-base leading-relaxed">
-                    <span className="text-primary shrink-0">▸</span>
-                    <span dangerouslySetInnerHTML={{ __html: h }} />
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-3 flex flex-wrap gap-1.5">
-                {job.stack.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-md bg-secondary px-2 py-0.5 text-xs text-secondary-foreground"
-                  >
-                    {s}
-                  </span>
-                ))}
+            <article key={`${job.company}-${job.period}`} className="resume-item flex gap-3 sm:gap-4">
+              <ResumeLogo src={job.logo} name={job.company} />
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-0.5">
+                  <h3 className="text-lg font-semibold">
+                    {job.role} <span className="text-primary">・ {job.company}</span>
+                  </h3>
+                  <span className="text-sm text-muted-foreground whitespace-nowrap">{job.period}</span>
+                </div>
+                <p className="text-sm text-muted-foreground mb-2">{job.location}</p>
+                <p className="text-sm italic text-foreground/80 mb-3">{job.context}</p>
+                <ul className="space-y-1.5">
+                  {job.highlights.map((h, i) => (
+                    <li key={i} className="flex gap-2 text-sm sm:text-base leading-relaxed">
+                      <span className="text-primary shrink-0">▸</span>
+                      <span dangerouslySetInnerHTML={{ __html: h }} />
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {job.stack.map((s) => (
+                    <span
+                      key={s}
+                      className="rounded-md bg-secondary px-2 py-0.5 text-xs text-secondary-foreground"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
               </div>
             </article>
           ))}
@@ -158,33 +189,36 @@ export default async function ResumePage({ params }: PageProps) {
         </h2>
         <div className="space-y-5">
           {data.projects.map((project) => (
-            <article key={project.name} className="resume-item">
-              <h3 className="text-base font-semibold">
-                {project.url ? (
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-primary transition-colors"
-                  >
-                    {project.name}
-                  </a>
-                ) : (
-                  project.name
-                )}
-              </h3>
-              <p className="text-sm sm:text-base leading-relaxed text-foreground/90 mt-1">
-                {project.description}
-              </p>
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                {project.stack.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-md bg-secondary px-2 py-0.5 text-xs text-secondary-foreground"
-                  >
-                    {s}
-                  </span>
-                ))}
+            <article key={project.name} className="resume-item flex gap-3 sm:gap-4">
+              <ResumeLogo src={project.logo} name={project.name} />
+              <div className="min-w-0 flex-1">
+                <h3 className="text-base font-semibold">
+                  {project.url ? (
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
+                    >
+                      {project.name}
+                    </a>
+                  ) : (
+                    project.name
+                  )}
+                </h3>
+                <p className="text-sm sm:text-base leading-relaxed text-foreground/90 mt-1">
+                  {project.description}
+                </p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {project.stack.map((s) => (
+                    <span
+                      key={s}
+                      className="rounded-md bg-secondary px-2 py-0.5 text-xs text-secondary-foreground"
+                    >
+                      {s}
+                    </span>
+                  ))}
+                </div>
               </div>
             </article>
           ))}
@@ -220,12 +254,19 @@ export default async function ResumePage({ params }: PageProps) {
           </h2>
           <div className="space-y-4">
             {data.education.map((edu) => (
-              <div key={edu.school} className="resume-item">
-                <h3 className="text-base font-semibold">{edu.school}</h3>
-                <p className="text-sm text-foreground/90">{edu.degree}</p>
-                <p className="text-sm text-muted-foreground">
-                  {edu.period} ・ {edu.location}
-                </p>
+              <div key={edu.school} className="resume-item flex gap-3">
+                <div className="flex shrink-0 gap-1">
+                  {(edu.logos?.length ? edu.logos : [undefined]).map((logo, i) => (
+                    <ResumeLogo key={logo ?? i} src={logo} name={edu.school} />
+                  ))}
+                </div>
+                <div className="min-w-0">
+                  <h3 className="text-base font-semibold">{edu.school}</h3>
+                  <p className="text-sm text-foreground/90">{edu.degree}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {edu.period} ・ {edu.location}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -236,22 +277,32 @@ export default async function ResumePage({ params }: PageProps) {
           </h2>
           <div className="space-y-3">
             {data.certifications.map((cert) => (
-              <div key={cert.name} className="resume-item">
-                <h3 className="text-base font-semibold">{cert.name}</h3>
-                <p className="text-sm text-muted-foreground">
-                  {cert.issuer} ・ {cert.date}
-                </p>
-                {cert.url && (
-                  <a
-                    href={cert.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
-                  >
-                    <CredlyIcon className="h-3.5 w-3.5" />
-                    {dict.resume.viewCredential}
-                  </a>
+              <div
+                key={cert.name}
+                className={`resume-item flex gap-3${cert.expired ? " [&_img]:opacity-50 [&_img]:grayscale" : ""}`}
+              >
+                {cert.badge ? (
+                  <Image src={cert.badge} alt="" width={44} height={44} className="h-11 w-11 shrink-0 object-contain" />
+                ) : (
+                  <ResumeLogo name={cert.issuer} size={44} />
                 )}
+                <div className="min-w-0">
+                  <h3 className="text-base font-semibold">{cert.name}</h3>
+                  <p className="text-sm text-muted-foreground">
+                    {cert.issuer} ・ {cert.date}
+                  </p>
+                  {cert.url && (
+                    <a
+                      href={cert.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm text-primary hover:underline"
+                    >
+                      <CredlyIcon className="h-3.5 w-3.5" />
+                      {dict.resume.viewCredential}
+                    </a>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -264,8 +315,19 @@ export default async function ResumePage({ params }: PageProps) {
           </h2>
           <ul className="space-y-2">
             {data.languages.map((lang) => (
-              <li key={lang.language} className="flex items-baseline justify-between gap-2 resume-item">
-                <span className="font-medium">{lang.language}</span>
+              <li key={lang.language} className="flex items-center justify-between gap-2 resume-item">
+                <span className="flex items-center gap-2 font-medium">
+                  {lang.flag && (
+                    <Image
+                      src={lang.flag}
+                      alt=""
+                      width={24}
+                      height={16}
+                      className="h-4 w-6 rounded-[2px] object-cover ring-1 ring-border/60"
+                    />
+                  )}
+                  {lang.language}
+                </span>
                 <span className="text-sm text-muted-foreground text-right">{lang.level}</span>
               </li>
             ))}

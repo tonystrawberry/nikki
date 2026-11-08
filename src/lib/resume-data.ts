@@ -11,7 +11,7 @@
  * the actual resume *content* lives here.
  *
  * NOTE ON DATES: the blog narrates the career arc (Seido → Overflow →
- * Monstarlab → Spacely) but does not state exact transition months, so the year
+ * Monstarlab → Spacely → Jobteaser) but does not state exact transition months, so the year
  * ranges below are best-effort and should be confirmed/adjusted by Tony.
  */
 
@@ -35,6 +35,8 @@ export interface ResumeProfile {
 
 export interface ResumeExperience {
   company: string;
+  /** Square logo under public/images/resume/logos/; initials are shown when absent. */
+  logo?: string;
   role: string;
   period: string;
   location: string;
@@ -46,6 +48,8 @@ export interface ResumeExperience {
 
 export interface ResumeProject {
   name: string;
+  /** Square logo under public/images/resume/logos/; initials are shown when absent. */
+  logo?: string;
   url?: string;
   description: string;
   stack: string[];
@@ -58,6 +62,8 @@ export interface ResumeSkillGroup {
 
 export interface ResumeEducation {
   school: string;
+  /** One logo per school (double degrees list both), under public/images/resume/logos/. */
+  logos?: string[];
   degree: string;
   period: string;
   location: string;
@@ -68,12 +74,16 @@ export interface ResumeCertification {
   issuer: string;
   date: string;
   url?: string;
+  /** Credly badge image under public/images/resume/certs/. */
+  badge?: string;
   /** True for lapsed certifications (still listed, visually marked). */
   expired?: boolean;
 }
 
 export interface ResumeLanguageEntry {
   language: string;
+  /** Flag SVG under public/images/resume/flags/. */
+  flag?: string;
   level: string;
 }
 
@@ -110,7 +120,19 @@ const en: ResumeData = {
   },
   experience: [
     {
+      company: "Jobteaser",
+      logo: "/images/resume/logos/jobteaser.png",
+      role: "Senior Software Engineer",
+      period: "Nov 2026 – Present",
+      location: "Toulouse, France (remote)",
+      context:
+        "Career platform connecting students and recent graduates with internships and first jobs, used by universities and schools across Europe.",
+      highlights: [],
+      stack: [],
+    },
+    {
       company: "Spacely",
+      logo: "/images/resume/logos/spacely.png",
       role: "Senior Backend Engineer → Team Lead",
       period: "~2025 – Present",
       location: "Tokyo, Japan → Toulouse, France (part-time freelance since Jun 2026)",
@@ -144,6 +166,7 @@ const en: ResumeData = {
     },
     {
       company: "Monstarlab",
+      logo: "/images/resume/logos/monstarlab.png",
       role: "Senior Backend Engineer → Tech Lead (Consulting)",
       period: "~2022 – 2024 (~2.5 yrs)",
       location: "Tokyo, Japan (remote from Enoshima)",
@@ -171,6 +194,7 @@ const en: ResumeData = {
     },
     {
       company: "Overflow",
+      logo: "/images/resume/logos/overflow.png",
       role: "Software Engineer",
       period: "~2020 – 2022 (~2.5 yrs)",
       location: "Ebisu, Tokyo, Japan",
@@ -189,6 +213,7 @@ const en: ResumeData = {
     },
     {
       company: "Seido",
+      logo: "/images/resume/logos/seido.png",
       role: "Software Engineering Intern → Software Engineer",
       period: "2018 – ~2020",
       location: "Tokyo, Japan",
@@ -203,6 +228,7 @@ const en: ResumeData = {
     },
     {
       company: "Summit Tech",
+      logo: "/images/resume/logos/summit-tech.jpg",
       role: "Software Engineering Intern (VR)",
       period: "2017 – 2018 (4 mo)",
       location: "Montreal, Canada",
@@ -216,6 +242,7 @@ const en: ResumeData = {
   projects: [
     {
       name: "Shirimono",
+      logo: "/images/resume/logos/shirimono.png",
       url: "https://shirimono.fun",
       description:
         "Japanese-learning app, rebuilt from scratch and shipped on the App Store. AI-generated exercises (Claude Skills), Vertex AI TTS audio, a JLPT N2 course, public multi-locale resource pages, and CloudFront-served assets. Migrated the backend from Render to a single Hetzner VPS with Kamal, saving ~$60/month.",
@@ -223,6 +250,7 @@ const en: ResumeData = {
     },
     {
       name: "This site — blog + digital clone",
+      logo: "/images/resume/logos/tonysekai.png",
       url: "https://shirimono.fun",
       description:
         "A trilingual (fr/en/ja) Next.js 16 blog with a streaming Claude chat grounded in the site's content, a real-time ActionCable chat, and an automated translation pipeline (Claude Code + GitHub Actions) that translates new English posts into French and Japanese.",
@@ -230,6 +258,7 @@ const en: ResumeData = {
     },
     {
       name: "Axie Infinity gene overlay (earlier)",
+      logo: "/images/resume/logos/axie-infinity.png",
       description:
         "A Chrome and Firefox browser extension that pulled each Axie's genes from the API and overlaid them on marketplace listings the site didn't expose. Shared in the game's Discord, it hit hundreds of downloads a day and ~$30/day at peak via a one-time Stripe unlock.",
       stack: ["JavaScript", "Chrome Extension", "Firefox Extension", "Stripe"],
@@ -250,39 +279,42 @@ const en: ResumeData = {
   education: [
     {
       school: "UTBM (France) ・ ÉTS Montréal (Canada)",
+      logos: ["/images/resume/logos/utbm.png", "/images/resume/logos/ets.svg"],
       degree: "Engineering double degree — Computer / Software Engineering (Master's level)",
       period: "2016 – 2018",
       location: "Belfort, France ・ Montreal, Canada",
     },
     {
       school: "UTBM (Université de Technologie de Belfort-Montbéliard)",
+      logos: ["/images/resume/logos/utbm.png"],
       degree: "Engineering — Computer / Software Engineering",
       period: "2014 – 2016",
       location: "Belfort, France",
     },
     {
       school: "IUT de Toulouse",
+      logos: ["/images/resume/logos/iut-toulouse.png"],
       degree: "DUT Informatique (2-year technical degree)",
       period: "2012 – 2014",
       location: "Toulouse, France",
     },
   ],
   certifications: [
-    { name: "AWS Certified Solutions Architect – Professional", issuer: "Amazon Web Services", date: "Aug 2023", url: "https://www.credly.com/badges/78b0a1d5-fd0e-4bb4-a111-e94977cc4649/public_url" },
-    { name: "AWS Certified DevOps Engineer – Professional", issuer: "Amazon Web Services", date: "Nov 2023", url: "https://www.credly.com/badges/ec94c0fe-075f-4be2-a289-1fc42dfe2cf7/public_url" },
-    { name: "AWS Certified CloudOps Engineer – Associate", issuer: "Amazon Web Services", date: "Apr 2026", url: "https://www.credly.com/badges/c0552a82-3353-437f-816d-dd1200690026/public_url" },
-    { name: "AWS Certified Data Engineer – Associate", issuer: "Amazon Web Services", date: "Aug 2024", url: "https://www.credly.com/badges/b2fe9b9a-7d30-47d5-ad06-d6a13d76ad59/public_url" },
-    { name: "AWS Certified AI Practitioner (Early Adopter)", issuer: "Amazon Web Services", date: "Aug 2024", url: "https://www.credly.com/badges/d400ddf2-d889-4d55-87ce-7d1967cb2d63/public_url" },
-    { name: "AWS Certified SysOps Administrator – Associate", issuer: "Amazon Web Services", date: "Apr 2023", url: "https://www.credly.com/badges/c6d76950-27c5-4f66-8be2-4e1db8f044b3/public_url", expired: true },
-    { name: "AWS Certified Developer – Associate", issuer: "Amazon Web Services", date: "Mar 2023", url: "https://www.credly.com/badges/285ae003-e487-4175-b1b2-f86e6e2386cc/public_url", expired: true },
-    { name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: "Feb 2023", url: "https://www.credly.com/badges/cbd4778c-044f-4b84-a1b8-9e3bebabcbec/public_url", expired: true },
-    { name: "HashiCorp Certified: Terraform Associate (003)", issuer: "HashiCorp", date: "Aug 2023", url: "https://www.credly.com/badges/768429a5-a6fe-4ba6-b82b-91ff97e8dc14/public_url", expired: true },
-    { name: "AWS Certified Cloud Practitioner (CLF-C01)", issuer: "Amazon Web Services", date: "Dec 2022", url: "https://www.credly.com/badges/6f52dbc7-f604-483a-9e48-510114d0955c/public_url", expired: true },
+    { name: "AWS Certified Solutions Architect – Professional", issuer: "Amazon Web Services", date: "Aug 2023", badge: "/images/resume/certs/78b0a1d5-fd0e-4bb4-a111-e94977cc4649.png", url: "https://www.credly.com/badges/78b0a1d5-fd0e-4bb4-a111-e94977cc4649/public_url" },
+    { name: "AWS Certified DevOps Engineer – Professional", issuer: "Amazon Web Services", date: "Nov 2023", badge: "/images/resume/certs/ec94c0fe-075f-4be2-a289-1fc42dfe2cf7.png", url: "https://www.credly.com/badges/ec94c0fe-075f-4be2-a289-1fc42dfe2cf7/public_url" },
+    { name: "AWS Certified CloudOps Engineer – Associate", issuer: "Amazon Web Services", date: "Apr 2026", badge: "/images/resume/certs/c0552a82-3353-437f-816d-dd1200690026.png", url: "https://www.credly.com/badges/c0552a82-3353-437f-816d-dd1200690026/public_url" },
+    { name: "AWS Certified Data Engineer – Associate", issuer: "Amazon Web Services", date: "Aug 2024", badge: "/images/resume/certs/b2fe9b9a-7d30-47d5-ad06-d6a13d76ad59.png", url: "https://www.credly.com/badges/b2fe9b9a-7d30-47d5-ad06-d6a13d76ad59/public_url" },
+    { name: "AWS Certified AI Practitioner (Early Adopter)", issuer: "Amazon Web Services", date: "Aug 2024", badge: "/images/resume/certs/d400ddf2-d889-4d55-87ce-7d1967cb2d63.png", url: "https://www.credly.com/badges/d400ddf2-d889-4d55-87ce-7d1967cb2d63/public_url" },
+    { name: "AWS Certified SysOps Administrator – Associate", issuer: "Amazon Web Services", date: "Apr 2023", badge: "/images/resume/certs/c6d76950-27c5-4f66-8be2-4e1db8f044b3.png", url: "https://www.credly.com/badges/c6d76950-27c5-4f66-8be2-4e1db8f044b3/public_url", expired: true },
+    { name: "AWS Certified Developer – Associate", issuer: "Amazon Web Services", date: "Mar 2023", badge: "/images/resume/certs/285ae003-e487-4175-b1b2-f86e6e2386cc.png", url: "https://www.credly.com/badges/285ae003-e487-4175-b1b2-f86e6e2386cc/public_url", expired: true },
+    { name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: "Feb 2023", badge: "/images/resume/certs/cbd4778c-044f-4b84-a1b8-9e3bebabcbec.png", url: "https://www.credly.com/badges/cbd4778c-044f-4b84-a1b8-9e3bebabcbec/public_url", expired: true },
+    { name: "HashiCorp Certified: Terraform Associate (003)", issuer: "HashiCorp", date: "Aug 2023", badge: "/images/resume/certs/768429a5-a6fe-4ba6-b82b-91ff97e8dc14.png", url: "https://www.credly.com/badges/768429a5-a6fe-4ba6-b82b-91ff97e8dc14/public_url", expired: true },
+    { name: "AWS Certified Cloud Practitioner (CLF-C01)", issuer: "Amazon Web Services", date: "Dec 2022", badge: "/images/resume/certs/6f52dbc7-f604-483a-9e48-510114d0955c.png", url: "https://www.credly.com/badges/6f52dbc7-f604-483a-9e48-510114d0955c/public_url", expired: true },
   ],
   languages: [
-    { language: "French", level: "Native" },
-    { language: "English", level: "Fluent" },
-    { language: "Japanese", level: "Business (working in Japanese daily since 2018)" },
+    { language: "French", flag: "/images/resume/flags/fr.svg", level: "Native" },
+    { language: "English", flag: "/images/resume/flags/gb.svg", level: "Fluent" },
+    { language: "Japanese", flag: "/images/resume/flags/jp.svg", level: "Business (working in Japanese daily since 2018)" },
   ],
 };
 
@@ -309,7 +341,19 @@ const fr: ResumeData = {
   },
   experience: [
     {
+      company: "Jobteaser",
+      logo: "/images/resume/logos/jobteaser.png",
+      role: "Ingénieur logiciel senior",
+      period: "nov. 2026 – aujourd'hui",
+      location: "Toulouse, France (remote)",
+      context:
+        "Plateforme d'orientation et d'emploi qui met en relation étudiants et jeunes diplômés avec stages et premiers emplois, utilisée par des universités et écoles partout en Europe.",
+      highlights: [],
+      stack: [],
+    },
+    {
       company: "Spacely",
+      logo: "/images/resume/logos/spacely.png",
       role: "Ingénieur back-end senior → Team Lead",
       period: "~2025 – aujourd'hui",
       location: "Tokyo, Japon → Toulouse, France (freelance à temps partiel depuis juin 2026)",
@@ -343,6 +387,7 @@ const fr: ResumeData = {
     },
     {
       company: "Monstarlab",
+      logo: "/images/resume/logos/monstarlab.png",
       role: "Ingénieur back-end senior → Tech Lead (Conseil)",
       period: "~2022 – 2024 (~2,5 ans)",
       location: "Tokyo, Japon (remote depuis Enoshima)",
@@ -370,6 +415,7 @@ const fr: ResumeData = {
     },
     {
       company: "Overflow",
+      logo: "/images/resume/logos/overflow.png",
       role: "Ingénieur logiciel",
       period: "~2020 – 2022 (~2,5 ans)",
       location: "Ebisu, Tokyo, Japon",
@@ -388,6 +434,7 @@ const fr: ResumeData = {
     },
     {
       company: "Seido",
+      logo: "/images/resume/logos/seido.png",
       role: "Stagiaire ingénieur logiciel → ingénieur logiciel",
       period: "2018 – ~2020",
       location: "Tokyo, Japon",
@@ -402,6 +449,7 @@ const fr: ResumeData = {
     },
     {
       company: "Summit Tech",
+      logo: "/images/resume/logos/summit-tech.jpg",
       role: "Stagiaire ingénieur logiciel (VR)",
       period: "2017 – 2018 (4 mois)",
       location: "Montréal, Canada",
@@ -415,6 +463,7 @@ const fr: ResumeData = {
   projects: [
     {
       name: "Shirimono",
+      logo: "/images/resume/logos/shirimono.png",
       url: "https://shirimono.fun",
       description:
         "Application d'apprentissage du japonais, reconstruite de zéro et publiée sur l'App Store. Exercices générés par IA (Claude Skills), audio TTS via Vertex AI, un cours JLPT N2, des pages de ressources publiques multilingues et des assets servis par CloudFront. Backend migré de Render vers un seul VPS Hetzner avec Kamal, ~60 $/mois économisés.",
@@ -422,6 +471,7 @@ const fr: ResumeData = {
     },
     {
       name: "Ce site — blog + clone numérique",
+      logo: "/images/resume/logos/tonysekai.png",
       url: "https://shirimono.fun",
       description:
         "Un blog trilingue (fr/en/ja) en Next.js 16 avec un chat Claude en streaming ancré dans le contenu du site, un chat temps réel via ActionCable et un pipeline de traduction automatique (Claude Code + GitHub Actions) qui traduit les nouveaux articles anglais en français et japonais.",
@@ -429,6 +479,7 @@ const fr: ResumeData = {
     },
     {
       name: "Overlay de gènes Axie Infinity (plus tôt)",
+      logo: "/images/resume/logos/axie-infinity.png",
       description:
         "Une extension navigateur Chrome et Firefox récupérant les gènes de chaque Axie via l'API pour les afficher sur les annonces du marketplace, données que le site n'exposait pas. Partagée sur le Discord du jeu, elle atteignait des centaines de téléchargements par jour et ~30 $/jour au pic via un déblocage Stripe unique.",
       stack: ["JavaScript", "Extension Chrome", "Extension Firefox", "Stripe"],
@@ -449,39 +500,42 @@ const fr: ResumeData = {
   education: [
     {
       school: "UTBM (France) ・ ÉTS Montréal (Canada)",
+      logos: ["/images/resume/logos/utbm.png", "/images/resume/logos/ets.svg"],
       degree: "Double diplôme d'ingénieur — Génie informatique / logiciel (niveau Master)",
       period: "2016 – 2018",
       location: "Belfort, France ・ Montréal, Canada",
     },
     {
       school: "UTBM (Université de Technologie de Belfort-Montbéliard)",
+      logos: ["/images/resume/logos/utbm.png"],
       degree: "Cycle ingénieur — Génie informatique / logiciel",
       period: "2014 – 2016",
       location: "Belfort, France",
     },
     {
       school: "IUT de Toulouse",
+      logos: ["/images/resume/logos/iut-toulouse.png"],
       degree: "DUT Informatique",
       period: "2012 – 2014",
       location: "Toulouse, France",
     },
   ],
   certifications: [
-    { name: "AWS Certified Solutions Architect – Professional", issuer: "Amazon Web Services", date: "août 2023", url: "https://www.credly.com/badges/78b0a1d5-fd0e-4bb4-a111-e94977cc4649/public_url" },
-    { name: "AWS Certified DevOps Engineer – Professional", issuer: "Amazon Web Services", date: "novembre 2023", url: "https://www.credly.com/badges/ec94c0fe-075f-4be2-a289-1fc42dfe2cf7/public_url" },
-    { name: "AWS Certified CloudOps Engineer – Associate", issuer: "Amazon Web Services", date: "avril 2026", url: "https://www.credly.com/badges/c0552a82-3353-437f-816d-dd1200690026/public_url" },
-    { name: "AWS Certified Data Engineer – Associate", issuer: "Amazon Web Services", date: "août 2024", url: "https://www.credly.com/badges/b2fe9b9a-7d30-47d5-ad06-d6a13d76ad59/public_url" },
-    { name: "AWS Certified AI Practitioner (Early Adopter)", issuer: "Amazon Web Services", date: "août 2024", url: "https://www.credly.com/badges/d400ddf2-d889-4d55-87ce-7d1967cb2d63/public_url" },
-    { name: "AWS Certified SysOps Administrator – Associate", issuer: "Amazon Web Services", date: "avril 2023", url: "https://www.credly.com/badges/c6d76950-27c5-4f66-8be2-4e1db8f044b3/public_url", expired: true },
-    { name: "AWS Certified Developer – Associate", issuer: "Amazon Web Services", date: "mars 2023", url: "https://www.credly.com/badges/285ae003-e487-4175-b1b2-f86e6e2386cc/public_url", expired: true },
-    { name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: "février 2023", url: "https://www.credly.com/badges/cbd4778c-044f-4b84-a1b8-9e3bebabcbec/public_url", expired: true },
-    { name: "HashiCorp Certified: Terraform Associate (003)", issuer: "HashiCorp", date: "août 2023", url: "https://www.credly.com/badges/768429a5-a6fe-4ba6-b82b-91ff97e8dc14/public_url", expired: true },
-    { name: "AWS Certified Cloud Practitioner (CLF-C01)", issuer: "Amazon Web Services", date: "décembre 2022", url: "https://www.credly.com/badges/6f52dbc7-f604-483a-9e48-510114d0955c/public_url", expired: true },
+    { name: "AWS Certified Solutions Architect – Professional", issuer: "Amazon Web Services", date: "août 2023", badge: "/images/resume/certs/78b0a1d5-fd0e-4bb4-a111-e94977cc4649.png", url: "https://www.credly.com/badges/78b0a1d5-fd0e-4bb4-a111-e94977cc4649/public_url" },
+    { name: "AWS Certified DevOps Engineer – Professional", issuer: "Amazon Web Services", date: "novembre 2023", badge: "/images/resume/certs/ec94c0fe-075f-4be2-a289-1fc42dfe2cf7.png", url: "https://www.credly.com/badges/ec94c0fe-075f-4be2-a289-1fc42dfe2cf7/public_url" },
+    { name: "AWS Certified CloudOps Engineer – Associate", issuer: "Amazon Web Services", date: "avril 2026", badge: "/images/resume/certs/c0552a82-3353-437f-816d-dd1200690026.png", url: "https://www.credly.com/badges/c0552a82-3353-437f-816d-dd1200690026/public_url" },
+    { name: "AWS Certified Data Engineer – Associate", issuer: "Amazon Web Services", date: "août 2024", badge: "/images/resume/certs/b2fe9b9a-7d30-47d5-ad06-d6a13d76ad59.png", url: "https://www.credly.com/badges/b2fe9b9a-7d30-47d5-ad06-d6a13d76ad59/public_url" },
+    { name: "AWS Certified AI Practitioner (Early Adopter)", issuer: "Amazon Web Services", date: "août 2024", badge: "/images/resume/certs/d400ddf2-d889-4d55-87ce-7d1967cb2d63.png", url: "https://www.credly.com/badges/d400ddf2-d889-4d55-87ce-7d1967cb2d63/public_url" },
+    { name: "AWS Certified SysOps Administrator – Associate", issuer: "Amazon Web Services", date: "avril 2023", badge: "/images/resume/certs/c6d76950-27c5-4f66-8be2-4e1db8f044b3.png", url: "https://www.credly.com/badges/c6d76950-27c5-4f66-8be2-4e1db8f044b3/public_url", expired: true },
+    { name: "AWS Certified Developer – Associate", issuer: "Amazon Web Services", date: "mars 2023", badge: "/images/resume/certs/285ae003-e487-4175-b1b2-f86e6e2386cc.png", url: "https://www.credly.com/badges/285ae003-e487-4175-b1b2-f86e6e2386cc/public_url", expired: true },
+    { name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: "février 2023", badge: "/images/resume/certs/cbd4778c-044f-4b84-a1b8-9e3bebabcbec.png", url: "https://www.credly.com/badges/cbd4778c-044f-4b84-a1b8-9e3bebabcbec/public_url", expired: true },
+    { name: "HashiCorp Certified: Terraform Associate (003)", issuer: "HashiCorp", date: "août 2023", badge: "/images/resume/certs/768429a5-a6fe-4ba6-b82b-91ff97e8dc14.png", url: "https://www.credly.com/badges/768429a5-a6fe-4ba6-b82b-91ff97e8dc14/public_url", expired: true },
+    { name: "AWS Certified Cloud Practitioner (CLF-C01)", issuer: "Amazon Web Services", date: "décembre 2022", badge: "/images/resume/certs/6f52dbc7-f604-483a-9e48-510114d0955c.png", url: "https://www.credly.com/badges/6f52dbc7-f604-483a-9e48-510114d0955c/public_url", expired: true },
   ],
   languages: [
-    { language: "Français", level: "Langue maternelle" },
-    { language: "Anglais", level: "Courant" },
-    { language: "Japonais", level: "Professionnel (travail quotidien en japonais depuis 2018)" },
+    { language: "Français", flag: "/images/resume/flags/fr.svg", level: "Langue maternelle" },
+    { language: "Anglais", flag: "/images/resume/flags/gb.svg", level: "Courant" },
+    { language: "Japonais", flag: "/images/resume/flags/jp.svg", level: "Professionnel (travail quotidien en japonais depuis 2018)" },
   ],
 };
 
@@ -508,7 +562,19 @@ const ja: ResumeData = {
   },
   experience: [
     {
+      company: "Jobteaser",
+      logo: "/images/resume/logos/jobteaser.png",
+      role: "シニアソフトウェアエンジニア",
+      period: "2026年11月 – 現在",
+      location: "トゥールーズ（リモート）",
+      context:
+        "学生・若手卒業生とインターンシップや初めての仕事をつなぐキャリアプラットフォーム。ヨーロッパ各地の大学・学校で利用。",
+      highlights: [],
+      stack: [],
+    },
+    {
       company: "Spacely",
+      logo: "/images/resume/logos/spacely.png",
       role: "シニアバックエンドエンジニア → Team Lead",
       period: "2025年頃 – 現在",
       location: "東京 → トゥールーズ（2026年6月よりパートタイムフリーランス）",
@@ -542,6 +608,7 @@ const ja: ResumeData = {
     },
     {
       company: "Monstarlab",
+      logo: "/images/resume/logos/monstarlab.png",
       role: "シニアバックエンドエンジニア → Tech Lead（コンサル）",
       period: "2022年頃 – 2024年（約2.5年）",
       location: "東京（江の島からリモート）",
@@ -569,6 +636,7 @@ const ja: ResumeData = {
     },
     {
       company: "Overflow",
+      logo: "/images/resume/logos/overflow.png",
       role: "ソフトウェアエンジニア",
       period: "2020年頃 – 2022年（約2.5年）",
       location: "東京・恵比寿、日本",
@@ -587,6 +655,7 @@ const ja: ResumeData = {
     },
     {
       company: "Seido",
+      logo: "/images/resume/logos/seido.png",
       role: "ソフトウェアエンジニア インターン → ソフトウェアエンジニア",
       period: "2018年 – 2020年頃",
       location: "東京、日本",
@@ -601,6 +670,7 @@ const ja: ResumeData = {
     },
     {
       company: "Summit Tech",
+      logo: "/images/resume/logos/summit-tech.jpg",
       role: "ソフトウェアエンジニア インターン（VR）",
       period: "2017年 – 2018年（4か月）",
       location: "モントリオール、カナダ",
@@ -614,6 +684,7 @@ const ja: ResumeData = {
   projects: [
     {
       name: "Shirimono",
+      logo: "/images/resume/logos/shirimono.png",
       url: "https://shirimono.fun",
       description:
         "ゼロから作り直し、App Store にリリースした日本語学習アプリ。AI による演習生成（Claude Skills）、Vertex AI の TTS 音声、JLPT N2 コース、多言語の公開リソースページ、CloudFront 配信のアセットを備える。バックエンドを Render から Hetzner の単一 VPS へ Kamal で移行し、月約60ドルを削減。",
@@ -621,6 +692,7 @@ const ja: ResumeData = {
     },
     {
       name: "このサイト — ブログ + デジタルクローン",
+      logo: "/images/resume/logos/tonysekai.png",
       url: "https://shirimono.fun",
       description:
         "Next.js 16 製の3言語（fr/en/ja）ブログ。サイトの内容に基づく Claude のストリーミングチャット、ActionCable によるリアルタイムチャット、新しい英語記事をフランス語・日本語へ自動翻訳するパイプライン（Claude Code + GitHub Actions）を備える。",
@@ -628,6 +700,7 @@ const ja: ResumeData = {
     },
     {
       name: "Axie Infinity 遺伝子オーバーレイ（以前）",
+      logo: "/images/resume/logos/axie-infinity.png",
       description:
         "各 Axie の遺伝子情報を API から取得し、サイトが表示していなかったマーケットプレイスの一覧に重ねて表示する Chrome / Firefox ブラウザ拡張機能。ゲームの Discord で共有し、1日あたり数百ダウンロード、ピーク時には Stripe の買い切り解除で1日約30ドルを記録。",
       stack: ["JavaScript", "Chrome 拡張", "Firefox 拡張", "Stripe"],
@@ -648,39 +721,42 @@ const ja: ResumeData = {
   education: [
     {
       school: "UTBM（フランス）・ ÉTS モントリオール（カナダ）",
+      logos: ["/images/resume/logos/utbm.png", "/images/resume/logos/ets.svg"],
       degree: "ダブルディグリー（工学）— コンピュータ / ソフトウェア工学（修士相当）",
       period: "2016年 – 2018年",
       location: "ベルフォール（仏）・ モントリオール（加）",
     },
     {
       school: "UTBM（ベルフォール＝モンベリアール工科大学）",
+      logos: ["/images/resume/logos/utbm.png"],
       degree: "工学 — コンピュータ / ソフトウェア工学",
       period: "2014年 – 2016年",
       location: "ベルフォール（仏）",
     },
     {
       school: "IUT de Toulouse（トゥールーズ大学工学部）",
+      logos: ["/images/resume/logos/iut-toulouse.png"],
       degree: "DUT Informatique（2年制専門学士）",
       period: "2012年 – 2014年",
       location: "トゥールーズ（仏）",
     },
   ],
   certifications: [
-    { name: "AWS Certified Solutions Architect – Professional", issuer: "Amazon Web Services", date: "2023年8月", url: "https://www.credly.com/badges/78b0a1d5-fd0e-4bb4-a111-e94977cc4649/public_url" },
-    { name: "AWS Certified DevOps Engineer – Professional", issuer: "Amazon Web Services", date: "2023年11月", url: "https://www.credly.com/badges/ec94c0fe-075f-4be2-a289-1fc42dfe2cf7/public_url" },
-    { name: "AWS Certified CloudOps Engineer – Associate", issuer: "Amazon Web Services", date: "2026年4月", url: "https://www.credly.com/badges/c0552a82-3353-437f-816d-dd1200690026/public_url" },
-    { name: "AWS Certified Data Engineer – Associate", issuer: "Amazon Web Services", date: "2024年8月", url: "https://www.credly.com/badges/b2fe9b9a-7d30-47d5-ad06-d6a13d76ad59/public_url" },
-    { name: "AWS Certified AI Practitioner (Early Adopter)", issuer: "Amazon Web Services", date: "2024年8月", url: "https://www.credly.com/badges/d400ddf2-d889-4d55-87ce-7d1967cb2d63/public_url" },
-    { name: "AWS Certified SysOps Administrator – Associate", issuer: "Amazon Web Services", date: "2023年4月", url: "https://www.credly.com/badges/c6d76950-27c5-4f66-8be2-4e1db8f044b3/public_url", expired: true },
-    { name: "AWS Certified Developer – Associate", issuer: "Amazon Web Services", date: "2023年3月", url: "https://www.credly.com/badges/285ae003-e487-4175-b1b2-f86e6e2386cc/public_url", expired: true },
-    { name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: "2023年2月", url: "https://www.credly.com/badges/cbd4778c-044f-4b84-a1b8-9e3bebabcbec/public_url", expired: true },
-    { name: "HashiCorp Certified: Terraform Associate (003)", issuer: "HashiCorp", date: "2023年8月", url: "https://www.credly.com/badges/768429a5-a6fe-4ba6-b82b-91ff97e8dc14/public_url", expired: true },
-    { name: "AWS Certified Cloud Practitioner (CLF-C01)", issuer: "Amazon Web Services", date: "2022年12月", url: "https://www.credly.com/badges/6f52dbc7-f604-483a-9e48-510114d0955c/public_url", expired: true },
+    { name: "AWS Certified Solutions Architect – Professional", issuer: "Amazon Web Services", date: "2023年8月", badge: "/images/resume/certs/78b0a1d5-fd0e-4bb4-a111-e94977cc4649.png", url: "https://www.credly.com/badges/78b0a1d5-fd0e-4bb4-a111-e94977cc4649/public_url" },
+    { name: "AWS Certified DevOps Engineer – Professional", issuer: "Amazon Web Services", date: "2023年11月", badge: "/images/resume/certs/ec94c0fe-075f-4be2-a289-1fc42dfe2cf7.png", url: "https://www.credly.com/badges/ec94c0fe-075f-4be2-a289-1fc42dfe2cf7/public_url" },
+    { name: "AWS Certified CloudOps Engineer – Associate", issuer: "Amazon Web Services", date: "2026年4月", badge: "/images/resume/certs/c0552a82-3353-437f-816d-dd1200690026.png", url: "https://www.credly.com/badges/c0552a82-3353-437f-816d-dd1200690026/public_url" },
+    { name: "AWS Certified Data Engineer – Associate", issuer: "Amazon Web Services", date: "2024年8月", badge: "/images/resume/certs/b2fe9b9a-7d30-47d5-ad06-d6a13d76ad59.png", url: "https://www.credly.com/badges/b2fe9b9a-7d30-47d5-ad06-d6a13d76ad59/public_url" },
+    { name: "AWS Certified AI Practitioner (Early Adopter)", issuer: "Amazon Web Services", date: "2024年8月", badge: "/images/resume/certs/d400ddf2-d889-4d55-87ce-7d1967cb2d63.png", url: "https://www.credly.com/badges/d400ddf2-d889-4d55-87ce-7d1967cb2d63/public_url" },
+    { name: "AWS Certified SysOps Administrator – Associate", issuer: "Amazon Web Services", date: "2023年4月", badge: "/images/resume/certs/c6d76950-27c5-4f66-8be2-4e1db8f044b3.png", url: "https://www.credly.com/badges/c6d76950-27c5-4f66-8be2-4e1db8f044b3/public_url", expired: true },
+    { name: "AWS Certified Developer – Associate", issuer: "Amazon Web Services", date: "2023年3月", badge: "/images/resume/certs/285ae003-e487-4175-b1b2-f86e6e2386cc.png", url: "https://www.credly.com/badges/285ae003-e487-4175-b1b2-f86e6e2386cc/public_url", expired: true },
+    { name: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services", date: "2023年2月", badge: "/images/resume/certs/cbd4778c-044f-4b84-a1b8-9e3bebabcbec.png", url: "https://www.credly.com/badges/cbd4778c-044f-4b84-a1b8-9e3bebabcbec/public_url", expired: true },
+    { name: "HashiCorp Certified: Terraform Associate (003)", issuer: "HashiCorp", date: "2023年8月", badge: "/images/resume/certs/768429a5-a6fe-4ba6-b82b-91ff97e8dc14.png", url: "https://www.credly.com/badges/768429a5-a6fe-4ba6-b82b-91ff97e8dc14/public_url", expired: true },
+    { name: "AWS Certified Cloud Practitioner (CLF-C01)", issuer: "Amazon Web Services", date: "2022年12月", badge: "/images/resume/certs/6f52dbc7-f604-483a-9e48-510114d0955c.png", url: "https://www.credly.com/badges/6f52dbc7-f604-483a-9e48-510114d0955c/public_url", expired: true },
   ],
   languages: [
-    { language: "フランス語", level: "母語" },
-    { language: "英語", level: "流暢" },
-    { language: "日本語", level: "ビジネスレベル（2018年から日常的に業務で使用）" },
+    { language: "フランス語", flag: "/images/resume/flags/fr.svg", level: "母語" },
+    { language: "英語", flag: "/images/resume/flags/gb.svg", level: "流暢" },
+    { language: "日本語", flag: "/images/resume/flags/jp.svg", level: "ビジネスレベル（2018年から日常的に業務で使用）" },
   ],
 };
 
