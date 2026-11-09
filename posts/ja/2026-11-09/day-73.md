@@ -1,5 +1,5 @@
 ---
-title: "73日目"
+title: "Day 73"
 date: "2026-11-09"
 excerpt: "Jobteaserでの2週目は忙しくも充実。kubectlを使いこなしたいと思い、週末のために新しいゼルダを購入した。"
 author: "Tony Duong"
